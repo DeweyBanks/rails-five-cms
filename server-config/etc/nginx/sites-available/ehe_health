@@ -1,0 +1,20 @@
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        root /var/www/ehe_health/current/public;
+        passenger_enabled on;
+
+        location ~ ^/(assets)/ {
+          gzip_static on;
+        }
+
+        location / {
+          passenger_enabled on;
+        }
+
+        location /healthcheck {
+          access_log off;
+          passenger_enabled on;
+        }
+}
