@@ -1,7 +1,5 @@
 <div>
   <h1><%= @post.title %></h1>
-  <h4>Tags</h4>
-  <%= render @post.tags %>
   <h5>By: <%= @post.admin.email %> | <%= @post.created_at.to_time.strftime('%B %e %Y') %></h5>
   <p><%= @post.body.html_safe %></p>
 </div>

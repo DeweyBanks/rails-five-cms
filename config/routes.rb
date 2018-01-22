@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   resources :posts, only: [:index, :show] do
     resources :comments
   end
-  get "/posts/tags/:tag" => "posts#by_tag", as: "by_tag"
 
   Post.where.not("slug", nil).all.each do |post|
     get "/#{post.slug}", controller: "posts", action: "show", id: post.id
@@ -25,8 +24,6 @@ Rails.application.routes.draw do
   resources :comments do
     resources :comments
   end
-
-  resources :tags, only: [:index, :show]
 
   resources :commanders, only: [:index, :show]
   resources :messages, only: [:create, :new]
