@@ -1,28 +1,4 @@
 <footer>
   Stay Connected . . .
-  <form action="/email_list" method="post">
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <div>
-        <label for="name">email:</label>
-        <input type="email" id="mail" name="user_mail">
-    </div>
-    <button type="submit">Get Updates</button>
-</form>
 
-  <ul>
-    <li><%= link_to "Latest", posts_path %></li>
-    <li><%= link_to "Careers", "/pages/careers" %></li>
-    <li><%= link_to "Locations", "/pages/locations" %></li>
-    <li><%= link_to "FAQ", "/pages/faq" %></li>
-    <li><%= link_to "HIPAA Notice", "/pages/hipaa_notice" %></li>
-    <li><%= link_to "Terms of Use", "/pages/terms_of_use" %></li>
-    <li><%= link_to "Privacy Policy", "/pages/privacy_policy" %></li>
-  </ul>
-  <br>
-  Questions(000.000.000)
-  <br>
-    <%= link_to image_tag("social_icons/insta.png", class: "menu_icon"), "https://www.instagram.com/eheintl/" %>
-    <%= link_to image_tag("social_icons/twitter.png", class: "menu_icon"), "https://twitter.com/EHEIntl/" %>
-    <%= link_to image_tag("social_icons/facebook.png", class: "menu_icon"), "https://www.facebook.com/ehehealth/" %>
-    <%= link_to image_tag("social_icons/youtube.png"), "https://www.youtube.com/user/EHEintl100" %>
 </footer>

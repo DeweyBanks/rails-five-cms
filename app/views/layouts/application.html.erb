@@ -14,7 +14,9 @@
   </head>
 
   <body>
+    <%= render :partial => 'shared/header' %>
     <hello-angular>Loading...</hello-angular>
     <%= yield %>
+    <%= render :partial => 'shared/footer' %>
   </body>
 </html>
