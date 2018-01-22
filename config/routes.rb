@@ -18,9 +18,9 @@ Rails.application.routes.draw do
   end
   get "/posts/tags/:tag" => "posts#by_tag", as: "by_tag"
 
-  # Post.where.not("slug", nil).all.each do |post|
-  #   get "/#{post.slug}", controller: "posts", action: "show", id: post.id
-  # end
+  Post.where.not("slug", nil).all.each do |post|
+    get "/#{post.slug}", controller: "posts", action: "show", id: post.id
+  end
 
   resources :comments do
     resources :comments
