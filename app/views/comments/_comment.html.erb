@@ -1,0 +1,24 @@
+<li>
+  <%= comment.full_name %><br>
+  <%= comment.body %> -
+  <small>Submitted <%= time_ago_in_words(comment.created_at) %> ago</small>
+
+
+<div id="reply-form">
+  <%= form_for [comment, Comment.new] do |f| %>
+    <%= f.text_field :first_name, :autofocus => true, :placeholder=>"First Name" %>
+    <%= f.text_field :last_name, :autofocus => true, :placeholder=>"Last Name" %>
+    <%= f.email_field :email, :autofocus => true, :placeholder=>"Email" %>
+    <%= f.text_field :website, :autofocus => true, :placeholder=>"Website" %>
+    <%= f.text_area :body, placeholder: "Add a Reply" %><br/>
+    <%= f.submit "Reply"  %>
+  <% end %>
+</div>
+
+  <ul>
+      <%= render partial: 'comments/comment', collection: comment.comments %>
+  </ul>
+
+</li>
+
+

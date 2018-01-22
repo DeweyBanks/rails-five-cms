@@ -1,0 +1,21 @@
+<% title @post.title %>
+<% description 'For over 100 years, EHE has been the leader in healthcare and wellbeing. We are pioneers in employee health and lifestyle management and are devoted to emp' %>
+<% keywords "EHE, " %>
+<div>
+  <h1><%= @post.title %></h1>
+  <h5>By: <%=  %> | <%= @post.created_at.to_time.strftime('%B %e %Y') %></h5>
+  <p><%= @post.body.html_safe %></p>
+<div>
+  <h5>Comments: </h5>
+  <ul>
+     <%= render(partial: 'comments/comment', collection: @post.comments) %>
+  </ul>
+</div>
+
+<div>
+  <h3>Leave a Reply <small> Cancel reply</small></h3>
+  <p><span>Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
+  <%= render :partial => 'reply_form' %>
+</div>
+
+
