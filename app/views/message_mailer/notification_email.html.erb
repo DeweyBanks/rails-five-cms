@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Contact Form Submitted by, <%= @message.full_name %> </h1>
+    <p>
+      Company Name: <%= @message.company_name %>.<br>
+    </p>
+    <p>
+      email: <%= @message.email %>.
+    </p>
+    <p>
+      Interested in: <%= @message.interest %>
+    </p>
+    <p>
+      Comment: <%= @message.comment %>
+    </p>
+  </body>
+</html>

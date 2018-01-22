@@ -1,0 +1,41 @@
+<%= form_with(model: message, local: true) do |form| %>
+  <% if message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% message.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_field :first_name, placeholder: "First Name" %>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :last_name, placeholder: "Last Name" %>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :company_name, placeholder: "Company Name" %>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :email, placeholder: "email@email.com" %>
+  </div>
+
+  <div class="field">
+    <%= form.select :interest, ['What are you interested in?', 'Offering EHE to my company', 'Corporate Events', 'Biometric Screenings'] %>
+  </div>
+
+  <div class="field">
+    <%= form.text_area :comment, placeholder: "Comment" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
