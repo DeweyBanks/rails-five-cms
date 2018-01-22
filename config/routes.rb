@@ -17,9 +17,9 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  Post.where.not("slug", nil).all.each do |post|
-    get "/#{post.slug}", controller: "posts", action: "show", id: post.id
-  end
+  # Post.where.not("slug", nil).all.each do |post|
+  #   get "/#{post.slug}", controller: "posts", action: "show", id: post.id
+  # end
 
   resources :comments do
     resources :comments
