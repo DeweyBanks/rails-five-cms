@@ -1,0 +1,21 @@
+<% title 'Locations' %>
+<% description 'For over 100 years, EHE has been the leader in healthcare and wellbeing. We are pioneers in employee health and lifestyle management and are devoted to emp' %>
+<% keywords 'EHE, Locations' %>
+<%= render :partial => 'shared/about_nav' %>
+<h1>Locations</h1>
+<div id="map">
+</div>
+
+<script type="text/javascript">
+  function initMap() {
+  var uluru = {lat: -25.363, lng: 131.044};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: uluru
+  });
+  var marker = new google.maps.Marker({
+    position: uluru,
+    map: map
+  });
+}
+</script>

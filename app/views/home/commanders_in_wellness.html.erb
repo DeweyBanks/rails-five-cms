@@ -1,0 +1,17 @@
+<% title 'Commanders In Wellness' %>
+<% description 'For over 100 years, EHE has been the leader in healthcare and wellbeing. We are pioneers in employee health and lifestyle management and are devoted to emp' %>
+<% keywords 'EHE, Coaches, Physicians' %>
+<%= render :partial => 'shared/about_nav' %>
+<h1>Commanders In Wellness</h1>
+
+<ul class="main-filter">
+  <li class="<% if !params['filter'].present? || params['filter'] == '' then %>current<% end %>"><a href="/commanders"></a></li>
+  <li class="<% if params['filter'] == 'physicians' then %>current<% end %>"><a href="/commanders?filter=physicians">Physicians</a></li>
+  <li class="<% if params['filter'] == 'coaches' then %>current<% end %>"><a href="/commanders?filter=coaches">Wellness Coaches</a></li>
+</ul>
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+<% title 'Contact' %>
+<% description 'For over 100 years, EHE has been the leader in healthcare and wellbeing. We are pioneers in employee health and lifestyle management and are devoted to emp' %>
+<% keywords 'EHE, Contact' %>
+<%= render :partial => 'shared/about_nav' %>
+<h1>Contact Us</h1>
+
+<h3>Corporate Office</h3>
+<p>123 6th st.</p>
+<p>Melbourne, FL 32904</p>
+<br>
+<br>
+<p>email@email.com</p>
+<p>Phone 000.000.0000</p>
+<br>
+<br>
+<h3>New York Clinic</h3>
+<p>123 6st.</p>
+<p>Melbourne, FL 32904</p>
+<br>
+<p>email@email.com</p>
+<p>Phone 000.000.0000</p>
+
+
+<%= render :partial => 'messages/form', :locals => {:message => Message.new} %>
