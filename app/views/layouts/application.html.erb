@@ -16,6 +16,8 @@
 
   <body>
     <%= render :partial => 'shared/header' %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <hello-angular>Loading...</hello-angular>
     <%= yield %>
     <%= render :partial => 'shared/footer' %>
