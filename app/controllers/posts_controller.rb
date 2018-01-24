@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  skip_before_action :authenticate_admin!, :only => [:index, :show]
+
   def index
     @posts = Post.includes(:comments).order('created_at DESC')
     respond_to do |f|

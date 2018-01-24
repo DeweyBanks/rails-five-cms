@@ -1,10 +1,4 @@
 <h1>Admin Dashboard</h1>
-<p>Welcome: <%=  %></p><br>
-<%= link_to "Dashboard", admin_path %> |
-<%= link_to "Posts", admin_posts_path %> |
-<%= link_to "Campaigns", admin_campaigns_path %> |
-<%= link_to "Admins", "/" %> |
-<%= link_to "Commanders", admin_commanders_path %> |
-<%= link_to "Messages", admin_messages_path %> |
-<%= link_to "Log Out", "", data: { confirm: 'Are you sure?' } %>
+<p>Welcome: <%= current_user.full_name %></p><br>
+<%= render :partial => 'shared/admin_nav' %>
 
