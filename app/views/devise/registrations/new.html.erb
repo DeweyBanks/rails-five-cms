@@ -1,7 +1,38 @@
-<h2>Sign up</h2>
+<h2>Let's get you registered.</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_of_birth %><br />
+    <%= f.date_field :dob, autofocus: true, autocomplete: "date_of_birth" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %><br />
+    <span class="option">Male<span><%= f.radio_button :gender, "male" %></br>
+    <span class="option">Female<span><%= f.radio_button :gender, "female" %></br>
+  </div>
+
+  <div class="field">
+    <%= f.label :employer %><br />
+    <%= f.text_field :employer, autofocus: true, autocomplete: "employer" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :zipcode %><br />
+    <%= f.text_field :zipcode, autofocus: true, autocomplete: "zipcode" %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
