@@ -15,9 +15,7 @@ module Admin
     end
 
     def create
-      role = Role.find_by(name: "Admin")
       @user = User.new(user_params)
-      @user.role = role
 
       respond_to do |format|
         if @user.save
@@ -57,7 +55,7 @@ module Admin
     private
 
     def authenticate_super_admin!
-      redirect_to admin_path notice: 'Access Denied' unless current_user.is_super_admin?
+      redirect_to admin_path notice: 'Access Denied' unless current_user.super_admin?
     end
 
     def set_user
@@ -65,7 +63,7 @@ module Admin
     end
 
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :gender, :zipcode, :dob, :employer, :email, :password, :password_confirmation, :role_id)
+      params.require(:user).permit(:first_name, :last_name, :gender, :zipcode, :dob, :employer, :email, :password, :password_confirmation, :super_admin)
     end
 
   end

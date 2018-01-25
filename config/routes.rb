@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :commanders
     resources :users
     resources :campaigns
-    resources :messages, only: [:index, :show]
+    resources :messages, only: [:index, :show, :destroy]
   end
 
   resources :posts, only: [:index, :show] do

@@ -8,4 +8,4 @@
 
 CommanderType.create([{ name: 'Physician'}, { name: 'Coach'}])
 Category.create([{name: 'News'}, {name: 'Blog'}, {name: 'PR'}])
-Role.create([{name: 'Admin'}, {name: 'User'}, {name: 'SuperAdmin'}])
+
