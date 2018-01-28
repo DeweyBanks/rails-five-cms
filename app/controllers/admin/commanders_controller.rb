@@ -57,7 +57,7 @@ module Admin
     end
 
     def commander_params
-      params.require(:commander).permit(:title, :first_name, :last_name, :about, :commander_type_id)
+      params.require(:commander).permit(:title, :first_name, :last_name, :about, :avatar, :commander_type_id)
     end
   end
 end
