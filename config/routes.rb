@@ -37,7 +37,6 @@ Rails.application.routes.draw do
 
   post "/email_list" => "home#email_list"
 
-  mount Ckeditor::Engine => '/ckeditor'
   get "*path", to: redirect('/')
 
 end
