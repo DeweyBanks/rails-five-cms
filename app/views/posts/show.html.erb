@@ -4,7 +4,8 @@
 <div>
   <h1><%= @post.title %></h1>
   <h5>By: <%=  %> | <%= @post.created_at.to_time.strftime('%B %e %Y') %></h5>
-  <p><%= @post.body.html_safe %></p>
+  <p>Tags: <%=raw tag_links(@post.all_tags)%></p>
+  <p><%=raw @post.body %></p>
 <div>
   <h5>Comments: </h5>
   <ul>

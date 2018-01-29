@@ -1,7 +1,11 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.includes(:comments).order('created_at DESC')
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag]).includes(:comments).order('created_at DESC')
+    else
+      @posts = Post.all
+    end
     respond_to do |f|
       f.html {render :index }
       f.json {render json: @posts}
@@ -13,3 +17,4 @@ class PostsController < ApplicationController
   end
 
 end
+

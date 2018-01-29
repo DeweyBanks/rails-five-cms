@@ -10,8 +10,9 @@
       <p>welcome: <%= current_user.full_name %></p>
       <li><%= link_to "LOG OUT", destroy_user_session_path, :method => :delete, data: { confirm: 'Are you sure?' } %></li>
     <% else %>
-      <li><%= link_to "LOG IN", user_session_path  %></li>
+      <li><%= link_to "ADMIN", user_session_path  %></li>
     <% end %>
+    <li><%= link_to "LOG IN", "https://staging.eheandme.com/" %></li>
   </ul>
 </nav>
 

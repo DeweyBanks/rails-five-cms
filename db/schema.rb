@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180128221112) do
+ActiveRecord::Schema.define(version: 20180129153147) do
 
   create_table "campaigns", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "name"
@@ -99,6 +99,21 @@ ActiveRecord::Schema.define(version: 20180128221112) do
     t.index ["category_id"], name: "index_posts_on_category_id"
   end
 
+  create_table "taggings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+    t.bigint "post_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_taggings_on_post_id"
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+  end
+
+  create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "first_name"
     t.string "last_name"
@@ -126,4 +141,6 @@ ActiveRecord::Schema.define(version: 20180128221112) do
   add_foreign_key "commanders", "commander_types"
   add_foreign_key "posts", "campaigns"
   add_foreign_key "posts", "categories"
+  add_foreign_key "taggings", "posts"
+  add_foreign_key "taggings", "tags"
 end

@@ -22,9 +22,11 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  # Post.where.not("slug", nil).all.each do |post|
-  #   get "/#{post.slug}", controller: "posts", action: "show", id: post.id
-  # end
+  Post.where.not("slug", nil).all.each do |post|
+    get "/#{post.slug}", controller: "posts", action: "show", id: post.id
+  end
+
+  get 'tags/:tag', to: 'posts#index', as: "tag"
 
   resources :comments do
     resources :comments

@@ -58,7 +58,7 @@ module Admin
     end
 
     def post_params
-      params.require(:post).permit(:slug, :title, :body, :campaign_id, :category_id)
+      params.require(:post).permit(:slug, :title, :body, :campaign_id, :category_id, :all_tags)
     end
   end
 end
