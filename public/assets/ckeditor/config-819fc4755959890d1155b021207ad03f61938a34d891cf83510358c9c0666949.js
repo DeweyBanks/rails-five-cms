@@ -1,0 +1,1 @@
+CKEDITOR.editorConfig=function(n){n.allowedContent=!0};
