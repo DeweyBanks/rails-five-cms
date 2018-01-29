@@ -13,8 +13,8 @@
 //= require rails-ujs
 //= require jquery
 //= require foundation
-//= require ckeditor/config
 //= require ckeditor/init
+//= require ckeditor/config
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
