@@ -11,7 +11,9 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
 //= require foundation
+//= require ckeditor/init
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
