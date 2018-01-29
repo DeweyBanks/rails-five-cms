@@ -4,6 +4,11 @@ class Post < ApplicationRecord
   has_many :comments, as: :commentable, :dependent => :destroy
   has_many :taggings, :dependent => :delete_all
   has_many :tags, through: :taggings
+  validates :slug, presence: true
+
+   def to_param
+    "#{slug}"
+  end
 
   def all_tags=(names)
     self.tags = names.split(",").map do |name|
