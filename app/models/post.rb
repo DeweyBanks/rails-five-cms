@@ -4,7 +4,8 @@ class Post < ApplicationRecord
   has_many :comments, as: :commentable, :dependent => :destroy
   has_many :taggings, :dependent => :delete_all
   has_many :tags, through: :taggings
-  validates :slug, presence: true
+  before_validation :set_slug
+  validates :slug, :presence => true
 
    def to_param
     "#{slug}"
@@ -23,5 +24,11 @@ class Post < ApplicationRecord
   def self.tagged_with(name)
     Tag.find_by_name!(name).posts
   end
+
+  protected
+
+    def set_slug
+      self.slug = self.title.downcase.gsub(" ", "-") unless self.slug.present?
+    end
 
 end
