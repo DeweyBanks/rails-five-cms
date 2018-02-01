@@ -5,8 +5,6 @@ class HomeController < ApplicationController
 
   def show
     if valid_page?
-      # @physicians = Commander.all
-      # @coaches = Commander.all
       render template: "home/#{params[:page]}"
     else
       render file: "public/404.html", status: :not_found

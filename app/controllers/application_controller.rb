@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
 
-  http_basic_authenticate_with name: "foo", password: "bar", unless: ->{ Rails.env.development? }
+  http_basic_authenticate_with name: "foo", password: "bar", unless: ->{ Rails.env.development? || Rails.env.test? }
 
   protected
 
