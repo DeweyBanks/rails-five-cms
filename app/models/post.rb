@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   before_validation :set_slug
   validates :slug, :presence => true
 
-   def to_param
+  def to_param
     "#{slug}"
   end
 

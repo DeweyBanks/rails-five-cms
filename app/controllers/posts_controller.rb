@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    if params[:tag]
+    if params[:tag].present?
       @posts = Post.tagged_with(params[:tag]).includes(:comments).order('created_at DESC')
     else
       @posts = Post.all
