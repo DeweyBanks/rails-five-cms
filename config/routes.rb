@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get "/pages/*page" => "home#show", as: "pages"
+
   get "/admin", to: "admin/dashboard#index", module: "admin",  as: "admin"
 
   namespace :admin do

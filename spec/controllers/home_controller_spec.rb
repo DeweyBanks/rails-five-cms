@@ -16,4 +16,22 @@ RSpec.describe HomeController, type: :controller do
     end
   end
 
+  context "Get #show existing page" do
+    let(:params) { { page: 'about' } }
+    it "responds with correct template" do
+      get :show, params: params
+      expect(response).to be_success
+      expect(response).to have_http_status(200)
+      expect(response).to render_template("about")
+    end
+  end
+
+  context "Get #show missing or non-existant page" do
+    let(:params) { { page: 'foo' } }
+    it "responds with 404" do
+      get :show, params: params
+      expect(response).to have_http_status(404)
+    end
+  end
+
 end
