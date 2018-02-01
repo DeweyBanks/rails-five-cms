@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180129153147) do
+ActiveRecord::Schema.define(version: 20180201174013) do
 
   create_table "campaigns", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "name"
@@ -66,12 +66,6 @@ ActiveRecord::Schema.define(version: 20180129153147) do
     t.text "body"
     t.string "commentable_type"
     t.integer "commentable_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "foos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
-    t.string "bar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

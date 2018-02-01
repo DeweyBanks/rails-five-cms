@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   }
 
   root 'home#index'
-  resources :foos
 
   get "/pages/*page" => "home#show"
   get "/admin", to: "admin/dashboard#index", module: "admin",  as: "admin"
