@@ -7,7 +7,6 @@ class CommentsController < ApplicationController
 
    def create
     @comment = @commentable.comments.new comment_params
-
     if @comment.save
       redirect_back(fallback_location: root_path)
     else
@@ -18,6 +17,9 @@ class CommentsController < ApplicationController
   def show
   end
 
+  def destroy
+  end
+
   private
 
 
@@ -25,6 +27,7 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(
       :first_name,
       :last_name,
+      :email,
       :website,
       :body
     )
@@ -32,7 +35,7 @@ class CommentsController < ApplicationController
 
   def find_commentable
     @commentable = Comment.find_by_id(params[:comment_id]) if params[:comment_id]
-    @commentable = Post.find_by_id(params[:post_id]) if params[:post_id]
+    @commentable = Post.find_by_slug(params[:post_slug]) if params[:post_slug]
   end
 
 end
