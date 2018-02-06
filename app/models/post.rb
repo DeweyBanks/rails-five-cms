@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   has_many :taggings, :dependent => :delete_all
   has_many :tags, through: :taggings
   before_validation :set_slug
-  validates :slug, :presence => true
+  validates :title, :presence => true
 
   def to_param
     "#{slug}"
