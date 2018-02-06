@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :user do
-    email ""
+    email "admin@ehe.com"
     password "MyString"
     password_confirmation "MyString"
     super_admin false

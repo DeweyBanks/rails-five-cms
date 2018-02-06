@@ -55,7 +55,7 @@ module Admin
     private
 
     def authenticate_super_admin!
-      redirect_to admin_path notice: 'Access Denied' unless current_user.super_admin?
+      redirect_to admin_path, :flash => { :alert => "Insufficient rights!" } unless current_user.super_admin?
     end
 
     def set_user
