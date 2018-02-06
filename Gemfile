@@ -38,6 +38,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'rails-controller-testing'
   gem "factory_bot_rails", "~> 4.0"
+  gem 'email_spec'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development do

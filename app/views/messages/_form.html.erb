@@ -1,4 +1,4 @@
-<%= form_with(model: message, local: true) do |form| %>
+<%= form_with(model: message, local: true, :html => {:id => "message_form"}) do |form| %>
   <% if message.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
@@ -12,27 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= form.text_field :first_name, placeholder: "First Name" %>
+    <%= form.text_field :first_name, placeholder: "First Name", id: :message_first_name %>
   </div>
 
   <div class="field">
-    <%= form.text_field :last_name, placeholder: "Last Name" %>
+    <%= form.text_field :last_name, placeholder: "Last Name", id: :message_last_name %>
   </div>
 
   <div class="field">
-    <%= form.text_field :company_name, placeholder: "Company Name" %>
+    <%= form.text_field :company_name, placeholder: "Company Name", id: :message_company_name %>
   </div>
 
   <div class="field">
-    <%= form.email_field :email, placeholder: "email@email.com" %>
+    <%= form.email_field :email, placeholder: "email@email.com", id: :message_email %>
   </div>
 
   <div class="field">
-    <%= form.select :interest, ['What are you interested in?', 'Offering EHE to my company', 'Corporate Events', 'Biometric Screenings'] %>
+    <%= form.select(:interest, ['What are you interested in?', 'Offering EHE to my company', 'Corporate Events', 'Biometric Screenings' ], {}, :id => "message_interest")  %>
+
   </div>
 
   <div class="field">
-    <%= form.text_area :comment, placeholder: "Comment" %>
+    <%= form.text_area :comment, placeholder: "Comment", id: :message_comment %>
   </div>
 
   <div class="actions">

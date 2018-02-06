@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe CommandersController, type: :controller do
-  context "get #index Without filter" do
+  context "get #index without filter" do
     before :each do
       get :index
     end
@@ -15,7 +15,7 @@ RSpec.describe CommandersController, type: :controller do
     end
   end
 
-  context "get #index Whith Physicians filter" do
+  context "get #index with Physicians filter" do
     let(:params) { { filter: 'Physicians' } }
     before :each do
       get :index, params: params
