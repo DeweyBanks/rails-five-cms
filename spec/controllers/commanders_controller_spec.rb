@@ -5,6 +5,7 @@ RSpec.describe CommandersController, type: :controller do
     before :each do
       get :index
     end
+
      it "responds successfully with an HTTP 200 status code" do
       expect(response).to be_success
       expect(response).to have_http_status(200)
@@ -62,5 +63,4 @@ RSpec.describe CommandersController, type: :controller do
       expect(response).to render_template("show")
     end
   end
-
 end

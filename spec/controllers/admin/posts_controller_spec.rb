@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Admin::PostsController, type: :controller do
-
   describe "get #index" do
     before :each do
       get :index
@@ -35,7 +34,6 @@ RSpec.describe Admin::PostsController, type: :controller do
   end
 
   describe "get #new" do
-
     it "assigns a new Post instance variable" do
       get :new
       expect(assigns(:post)).to be_a_new(Post)
@@ -49,7 +47,6 @@ RSpec.describe Admin::PostsController, type: :controller do
 
   describe "post #create" do
     context "with valid attributes" do
-
       it "saves a new Post to the database" do
         attrs = attributes_for(:post)
         expect {
@@ -88,6 +85,7 @@ RSpec.describe Admin::PostsController, type: :controller do
         title: 'Healthy Living On The Road.'
       )
     end
+
     it "changes the post's attributes" do
       patch :update, params: {
         id: @post.slug,
@@ -100,7 +98,6 @@ RSpec.describe Admin::PostsController, type: :controller do
       expect(assigns(:post).body).to eq('Pizza in New York . . .')
       expect(response).to redirect_to(admin_post_url(@post.slug))
     end
-
   end
 
   describe "post #destroy" do

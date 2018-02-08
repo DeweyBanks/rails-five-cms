@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe MessagesController, type: :controller do
-
   describe "POST #create" do
     context "with valid params" do
       let(:valid_params) {
@@ -57,10 +56,7 @@ RSpec.describe MessagesController, type: :controller do
         post :create, params: invalid_params
         expect(MessageMailer).to have_received(:notification_email).with(valid_message)
       end
-
-
     end
-
   end
 end
 

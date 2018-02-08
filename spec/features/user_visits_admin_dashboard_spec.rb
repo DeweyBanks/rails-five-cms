@@ -12,6 +12,6 @@ RSpec.feature "User visits admin dashboard" do
     login_as(user, :scope => :user)
     visit admin_path
     expect(page.current_path).to eq(admin_path)
-    expect(page).to have_content "welcome: admin@ehe.com"
+    expect(page).to have_content "welcome: #{user.email}"
   end
 end

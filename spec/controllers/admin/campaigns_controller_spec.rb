@@ -1,12 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Admin::CampaignsController, type: :controller do
-
   describe "get #index" do
     before :each do
       get :index
     end
-
     it "responds successfully with an HTTP 200 status code" do
       expect(response).to be_success
       expect(response).to have_http_status(200)
@@ -18,7 +16,6 @@ RSpec.describe Admin::CampaignsController, type: :controller do
   end
 
   describe "get #new" do
-
     it "assigns a new Campaign instance variable" do
       get :new
       expect(assigns(:campaign)).to be_a_new(Campaign)
@@ -32,7 +29,6 @@ RSpec.describe Admin::CampaignsController, type: :controller do
 
   describe "post #create" do
     context "with valid attributes" do
-
       it "saves a new Campaign to the database" do
         expect {
           post :create, params: { 'campaign' => attributes_for(:campaign) }
@@ -46,7 +42,6 @@ RSpec.describe Admin::CampaignsController, type: :controller do
     end
 
     context "without valid attributes" do
-
       it "does not save the new Campaign" do
         expect{
           post :create, params: { 'campaign' => attributes_for(:campaign, name: nil) }
@@ -72,7 +67,6 @@ RSpec.describe Admin::CampaignsController, type: :controller do
   end
 
   describe "post #destroy" do
-
     it "deletes the Campaign" do
       campaign = FactoryBot.create(:campaign)
       expect{
@@ -80,5 +74,4 @@ RSpec.describe Admin::CampaignsController, type: :controller do
       }.to change(Campaign, :count).by(-1)
     end
   end
-
 end

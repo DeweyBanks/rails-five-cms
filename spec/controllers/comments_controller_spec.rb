@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe CommentsController, type: :controller do
-
   describe "POST #create" do
-
     context "Comment on a Post" do
       before :each do
         @post = FactoryBot.create(:post)
@@ -74,6 +72,5 @@ RSpec.describe CommentsController, type: :controller do
         expect(response).to redirect_to(post_path(@post))
       end
     end
-
   end
 end

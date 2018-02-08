@@ -16,7 +16,6 @@ module Admin
 
     def create
       @user = User.new(user_params)
-
       respond_to do |format|
         if @user.save
           format.html { redirect_to admin_users_path(@user), notice: 'Admin was successfully created.' }

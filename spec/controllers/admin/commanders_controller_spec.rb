@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Admin::CommandersController, type: :controller do
-
   describe "get #index" do
     before :each do
       get :index
@@ -34,7 +33,6 @@ RSpec.describe Admin::CommandersController, type: :controller do
   end
 
   describe "get #new" do
-
     it "assigns a new Commander instance variable" do
       get :new
       expect(assigns(:commander)).to be_a_new(Commander)
@@ -48,7 +46,6 @@ RSpec.describe Admin::CommandersController, type: :controller do
 
   describe "post #create" do
     context "with valid attributes" do
-
       it "saves a new Commander to the database" do
         attrs = attributes_for(:commander, commander_type_id: CommanderType.find_by_name("Coach").id)
         expect {
@@ -64,7 +61,6 @@ RSpec.describe Admin::CommandersController, type: :controller do
     end
 
     context "without valid attributes" do
-
       it "does not save the new Commander" do
         expect{
           post :create, params: { 'commander' => attributes_for(:commander, commander_type_id: nil) }
@@ -90,7 +86,6 @@ RSpec.describe Admin::CommandersController, type: :controller do
   end
 
   describe "post #destroy" do
-
     it "deletes the Commander" do
       commander = FactoryBot.create(:commander, commander_type_id: CommanderType.find_by_name("Coach").id)
       expect{
@@ -98,5 +93,4 @@ RSpec.describe Admin::CommandersController, type: :controller do
       }.to change(Commander, :count).by(-1)
     end
   end
-
 end

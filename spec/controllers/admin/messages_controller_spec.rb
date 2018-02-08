@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Admin::MessagesController, type: :controller do
-
   describe "get #index" do
     before :each do
       get :index
@@ -34,7 +33,6 @@ RSpec.describe Admin::MessagesController, type: :controller do
   end
 
   describe "post #destroy" do
-
     it "deletes the Message" do
       message = FactoryBot.create(:message)
       expect{
