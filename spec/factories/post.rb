@@ -1,10 +1,11 @@
+require 'faker'
 FactoryBot.define do
   factory :post do
-    slug "default test"
-    title  "default test"
-    body  "default test"
+    slug Faker::Internet.slug
+    title  Faker::Book.title
+    body  Faker::BackToTheFuture.quote
     all_tags "test"
-    category_id 1
-    campaign_id 1
+    category_id Category.first.id
+    campaign_id Campaign.first.id
   end
 end

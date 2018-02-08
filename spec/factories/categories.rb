@@ -1,5 +1,6 @@
+require 'faker'
 FactoryBot.define do
   factory :category do
-    name "MyString"
+    name Faker::Job.field
   end
 end

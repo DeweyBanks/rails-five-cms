@@ -9,8 +9,6 @@ Rails.application.routes.draw do
 
   get "/pages/*page" => "home#show", as: "pages"
 
-
-
   get "/admin", to: "admin/dashboard#index", module: "admin",  as: "admin"
   authenticated :user do
     namespace :admin do

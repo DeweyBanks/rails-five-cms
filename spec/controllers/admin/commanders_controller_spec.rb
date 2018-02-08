@@ -92,9 +92,9 @@ RSpec.describe Admin::CommandersController, type: :controller do
   describe "post #destroy" do
 
     it "deletes the Commander" do
-      @commander = FactoryBot.create(:commander, commander_type_id: CommanderType.find_by_name("Coach").id)
+      commander = FactoryBot.create(:commander, commander_type_id: CommanderType.find_by_name("Coach").id)
       expect{
-        delete :destroy, params: {'id' => @commander.id}
+        delete :destroy, params: {'id' => commander.id}
       }.to change(Commander, :count).by(-1)
     end
   end

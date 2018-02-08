@@ -1,5 +1,7 @@
+require 'faker'
+
 FactoryBot.define do
   factory :campaign do
-    name "MyString"
+    name Faker::Fallout.location
   end
 end

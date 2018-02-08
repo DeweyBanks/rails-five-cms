@@ -1,6 +1,5 @@
 module Admin
   class PostsController < ApplicationController
-
     before_action :set_post, only: [:show, :edit, :update, :destroy]
 
     def index
@@ -18,6 +17,7 @@ module Admin
     end
 
     def create
+
       @post = Post.new(post_params)
 
       respond_to do |format|
@@ -33,7 +33,7 @@ module Admin
 
     def update
       respond_to do |format|
-        if @post.update(post_params)
+        if @post.update!(post_params)
           format.html { redirect_to admin_post_path(@post), notice: 'Post was successfully updated.' }
           format.json { render :show, status: :ok, location: @post }
         else

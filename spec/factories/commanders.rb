@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :commander do
-    title "Doctor"
-    first_name "John"
-    last_name  "Doe"
-    commander_type_id 1
+    title Faker::Name.title
+    first_name Faker::Name.first_name
+    last_name  Faker::Name.last_name
+    association :commander_type, name: "Physician"
   end
 end

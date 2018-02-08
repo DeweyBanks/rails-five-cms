@@ -74,9 +74,9 @@ RSpec.describe Admin::CampaignsController, type: :controller do
   describe "post #destroy" do
 
     it "deletes the Campaign" do
-      @campaign = FactoryBot.create(:campaign)
+      campaign = FactoryBot.create(:campaign)
       expect{
-        delete :destroy, params: {'id' => @campaign.id}
+        delete :destroy, params: {'id' => campaign.id}
       }.to change(Campaign, :count).by(-1)
     end
   end

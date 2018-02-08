@@ -6,9 +6,7 @@ RSpec.describe CommentsController, type: :controller do
 
     context "Comment on a Post" do
       before :each do
-        @campaign = FactoryBot.create(:campaign, name: "Healthy Living")
-        @category = Category.find_by(name: "News")
-        @post = FactoryBot.create(:post, category: @category, campaign: @campaign)
+        @post = FactoryBot.create(:post)
       end
 
       let(:valid_params) {
@@ -43,9 +41,7 @@ RSpec.describe CommentsController, type: :controller do
 
     context "Comment on a Comment" do
       before :each do
-        @campaign = FactoryBot.create(:campaign, name: "Healthy Living")
-        @category = Category.find_by(name: "News")
-        @post = FactoryBot.create(:post, category: @category, campaign: @campaign)
+        @post = FactoryBot.create(:post)
         @comment = FactoryBot.create(:comment, commentable_type: "Post", commentable_id: @post.id)
       end
 

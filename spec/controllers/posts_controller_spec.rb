@@ -16,9 +16,7 @@ RSpec.describe PostsController, type: :controller do
   end
 
   context "get #index with tags" do
-    campaign = FactoryBot.create(:campaign, name: "Healthy Living")
-    category = Category.find_by(name: "News")
-    post = FactoryBot.create(:post, category: category, campaign: campaign, all_tags: "Health")
+    post = FactoryBot.create(:post, all_tags: "Health")
     let(:params) { { tag: 'Health' } }
     before :each do
       get :index, params: params
@@ -36,9 +34,7 @@ RSpec.describe PostsController, type: :controller do
 
   context "get #show" do
     before :each do
-      campaign = FactoryBot.create(:campaign, name: "Healthy Living")
-      category = Category.find_by(name: "News")
-      post = FactoryBot.create(:post, category: category, campaign: campaign)
+      post = FactoryBot.create(:post)
       get :show, params: { slug: post.slug }
     end
 
