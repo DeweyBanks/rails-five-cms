@@ -11,7 +11,15 @@ class HomeController < ApplicationController
     end
   end
 
+  def email_list
+    email = email_params["email"]
+  end
+
   private
+
+    def email_params
+      params.require(:connection).permit(:email)
+    end
 
     def valid_page?
       File.exist?(Pathname.new(Rails.root + "app/views/home/#{params[:page]}.html.erb"))

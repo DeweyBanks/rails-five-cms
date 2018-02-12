@@ -1,9 +1,9 @@
 <% title @post.title %>
 <% description 'For over 100 years, EHE has been the leader in healthcare and wellbeing. We are pioneers in employee health and lifestyle management and are devoted to emp' %>
-<% keywords "EHE, " %>
+<% keywords "EHE, #{@post.all_tags}"  %>
 <div>
   <h1><%= @post.title %></h1>
-  <h5>By: <%=  %> | <%= @post.created_at.to_time.strftime('%B %e %Y') %></h5>
+  <h5>By: EHE HEALTH | <%= @post.created_at.to_time.strftime('%B %e %Y') %></h5>
   <p>Tags: <%=raw tag_links(@post.all_tags)%></p>
   <p><%=raw @post.body %></p>
 <div>
