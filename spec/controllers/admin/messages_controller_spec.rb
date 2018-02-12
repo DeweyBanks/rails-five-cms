@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe Admin::MessagesController, type: :controller do
   describe "get #index" do
     before :each do
+      admin = FactoryBot.create(:user)
+      sign_in(admin)
       get :index
     end
 
@@ -18,6 +20,8 @@ RSpec.describe Admin::MessagesController, type: :controller do
 
   describe "get #show" do
     before :each do
+      admin = FactoryBot.create(:user)
+      sign_in(admin)
       message = FactoryBot.create(:message)
       get :show, params: { id: message.id }
     end
@@ -34,6 +38,8 @@ RSpec.describe Admin::MessagesController, type: :controller do
 
   describe "post #destroy" do
     it "deletes the Message" do
+      admin = FactoryBot.create(:user)
+      sign_in(admin)
       message = FactoryBot.create(:message)
       expect{
         delete :destroy, params: {'id' => message.id}

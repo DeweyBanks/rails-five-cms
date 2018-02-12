@@ -66,29 +66,27 @@ RSpec.describe Admin::UsersController, type: :controller do
 
   describe "post #update" do
     it "updates User's attributes" do
-      pending("current_user not transfering")
-      this_should_not_get_executed
-      # admin = FactoryBot.create(:user, super_admin: true)
-      # sign_in(admin)
-      # @user = FactoryBot.create(:user, first_name: 'Joe')
-      # patch :update, params: {
-      #   id: @user.id,
-      #   post: FactoryBot.attributes_for(:user, first_name: 'Jane')
-      # }
-      # expect(assigns(:user).first_name).to eql('Jane')
+      admin = FactoryBot.create(:user, super_admin: true)
+      sign_in(admin)
+      @user = FactoryBot.create(:user, first_name: 'Joe')
+      attrs = @user.attributes
+      attrs['first_name'] = 'Jane'
+      patch :update, params: {
+        id: @user.id,
+        user: attrs
+      }
+      expect(assigns(:user).first_name).to eql('Jane')
     end
   end
 
   describe "post #destroy" do
     it "deletes the User" do
-      pending("current_user not transfering")
-      this_should_not_get_executed
-      # @admin = FactoryBot.create(:user, super_admin: true)
-      # sign_in(@admin)
-      # user = FactoryBot.create(:user)
-      # expect{
-      #   delete :destroy, params: {'id' => user.id}
-      # }.to change(User, :count).by(-1)
+      admin = FactoryBot.create(:user, super_admin: true)
+      sign_in(admin)
+      user = FactoryBot.create(:user)
+      expect{
+        delete :destroy, params: {'id' => user.id}
+      }.to change(User, :count).by(-1)
     end
   end
 end

@@ -1,7 +1,12 @@
+<% if current_user %>
+  <p>welcome: <%= current_user.full_name %>
+    <%= link_to "LOG OUT", destroy_user_session_path, :method => :delete, data: { confirm: 'Are you sure?' } %>
+  </p>
+<% end %>
+<%= link_to "EHE", root_path %> |
 <%= link_to "Dashboard", admin_path %> |
 <%= link_to "Posts", admin_posts_path %> |
 <%= link_to "Campaigns", admin_campaigns_path %> |
 <%= link_to "Admins", admin_users_path %> |
 <%= link_to "Commanders", admin_commanders_path %> |
 <%= link_to "Messages", admin_messages_path %> |
-

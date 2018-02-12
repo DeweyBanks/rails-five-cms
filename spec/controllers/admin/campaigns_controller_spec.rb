@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe Admin::CampaignsController, type: :controller do
   describe "get #index" do
     before :each do
+      admin = FactoryBot.create(:user)
+      sign_in(admin)
       get :index
     end
     it "responds successfully with an HTTP 200 status code" do
@@ -16,6 +18,10 @@ RSpec.describe Admin::CampaignsController, type: :controller do
   end
 
   describe "get #new" do
+    before :each do
+      admin = FactoryBot.create(:user)
+      sign_in(admin)
+    end
     it "assigns a new Campaign instance variable" do
       get :new
       expect(assigns(:campaign)).to be_a_new(Campaign)
@@ -29,6 +35,10 @@ RSpec.describe Admin::CampaignsController, type: :controller do
 
   describe "post #create" do
     context "with valid attributes" do
+      before :each do
+        admin = FactoryBot.create(:user)
+        sign_in(admin)
+      end
       it "saves a new Campaign to the database" do
         expect {
           post :create, params: { 'campaign' => attributes_for(:campaign) }
@@ -42,6 +52,10 @@ RSpec.describe Admin::CampaignsController, type: :controller do
     end
 
     context "without valid attributes" do
+      before :each do
+        admin = FactoryBot.create(:user)
+        sign_in(admin)
+      end
       it "does not save the new Campaign" do
         expect{
           post :create, params: { 'campaign' => attributes_for(:campaign, name: nil) }
@@ -56,7 +70,9 @@ RSpec.describe Admin::CampaignsController, type: :controller do
   end
 
   describe "post #update" do
-    before(:each) do
+    before :each do
+      admin = FactoryBot.create(:user)
+      sign_in(admin)
       @campaign = FactoryBot.create(:campaign, name: 'First test campaign')
       put :update, params: {'id' => @campaign.id, 'campaign' => { 'name' => 'new campaign' } }
       @campaign.reload
@@ -68,6 +84,8 @@ RSpec.describe Admin::CampaignsController, type: :controller do
 
   describe "post #destroy" do
     it "deletes the Campaign" do
+      admin = FactoryBot.create(:user)
+      sign_in(admin)
       campaign = FactoryBot.create(:campaign)
       expect{
         delete :destroy, params: {'id' => campaign.id}

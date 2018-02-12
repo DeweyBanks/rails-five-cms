@@ -1,5 +1,5 @@
 module Admin
-  class UsersController < ApplicationController
+  class UsersController < BaseController
     before_action :authenticate_super_admin!
     before_action :set_user, only: [:show, :edit, :update, :destroy]
 
@@ -54,7 +54,7 @@ module Admin
     private
 
     def authenticate_super_admin!
-      redirect_to admin_path, :flash => { :alert => "Insufficient rights!" } unless current_user.super_admin?
+      redirect_to admin_path, :flash => { :alert => "Insufficient rights!" } unless current_user.try(:super_admin?)
     end
 
     def set_user

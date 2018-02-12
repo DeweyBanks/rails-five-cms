@@ -1,5 +1,5 @@
 module Admin
-  class MessagesController < ApplicationController
+  class MessagesController < BaseController
 
     def index
       @messages = Message.all

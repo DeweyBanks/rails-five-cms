@@ -10,14 +10,13 @@ Rails.application.routes.draw do
   get "/pages/*page" => "home#show", as: "pages"
 
   get "/admin", to: "admin/dashboard#index", module: "admin",  as: "admin"
-  authenticated :user do
-    namespace :admin do
-      resources :posts
-      resources :commanders
-      resources :users
-      resources :campaigns
-      resources :messages, only: [:index, :show, :destroy]
-    end
+
+  namespace :admin do
+    resources :posts
+    resources :commanders
+    resources :users
+    resources :campaigns
+    resources :messages, only: [:index, :show, :destroy]
   end
 
   resources :posts, param: :slug, :path => "blog", only: [:index, :show] do

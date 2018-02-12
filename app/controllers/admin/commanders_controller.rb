@@ -1,5 +1,5 @@
 module Admin
-  class CommandersController < ApplicationController
+  class CommandersController < BaseController
     before_action :set_commander, only: [:show, :edit, :update, :destroy]
 
     def index

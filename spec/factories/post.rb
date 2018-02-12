@@ -5,7 +5,7 @@ FactoryBot.define do
     title  Faker::Book.title
     body  Faker::BackToTheFuture.quote
     all_tags "test"
-    category_id Category.first.id
-    campaign_id Campaign.first.id
+    association :category, name: "News"
+    association :campaign, name: "Helathy Living"
   end
 end

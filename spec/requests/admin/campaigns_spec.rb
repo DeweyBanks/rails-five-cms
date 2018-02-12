@@ -10,8 +10,8 @@ RSpec.describe "Admin/Campaigns" do
 
        it "responds with redirect" do
         expect(response).not_to be_success
-        expect(response).to have_http_status(301)
-        expect(response.redirect_url).to eql(root_url)
+        expect(response).to have_http_status(302)
+        expect(response.redirect_url).to eql(new_user_session_url)
       end
     end
   end

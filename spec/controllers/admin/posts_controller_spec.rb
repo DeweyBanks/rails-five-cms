@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe Admin::PostsController, type: :controller do
   describe "get #index" do
     before :each do
+      admin = FactoryBot.create(:user)
+      sign_in(admin)
       get :index
     end
 
@@ -18,6 +20,8 @@ RSpec.describe Admin::PostsController, type: :controller do
 
   describe "get #show" do
     before :each do
+      admin = FactoryBot.create(:user)
+      sign_in(admin)
       counter = rand(0...100)
       post = FactoryBot.create(:post, slug: "test-post-#{counter}", title: "Test Post")
       get :show, params: { id: post.slug }
@@ -34,6 +38,10 @@ RSpec.describe Admin::PostsController, type: :controller do
   end
 
   describe "get #new" do
+    before :each do
+      admin = FactoryBot.create(:user)
+      sign_in(admin)
+    end
     it "assigns a new Post instance variable" do
       get :new
       expect(assigns(:post)).to be_a_new(Post)
@@ -47,15 +55,19 @@ RSpec.describe Admin::PostsController, type: :controller do
 
   describe "post #create" do
     context "with valid attributes" do
+      before :each do
+        admin = FactoryBot.create(:user)
+        sign_in(admin)
+      end
       it "saves a new Post to the database" do
-        attrs = attributes_for(:post)
+        attrs = build(:post).attributes
         expect {
           post :create, params: { 'post' => attrs }
         }.to change(Post, :count).by(1)
       end
 
       it "redirects to the Post show" do
-        attrs = attributes_for(:post)
+        attrs = build(:post).attributes
         post :create, params: { 'post' => attrs }
         expect(response).to redirect_to admin_post_url(Post.last.slug)
       end
@@ -63,6 +75,8 @@ RSpec.describe Admin::PostsController, type: :controller do
 
     context "without valid attributes" do
       before :each do
+        admin = FactoryBot.create(:user)
+        sign_in(admin)
         @attrs = attributes_for(:post, slug: "test-bad-post", title: "Test", campaign: nil, category: nil)
       end
 
@@ -81,6 +95,8 @@ RSpec.describe Admin::PostsController, type: :controller do
 
   describe "post #update" do
     before :each do
+      admin = FactoryBot.create(:user)
+      sign_in(admin)
       @post = create(:post,
         title: 'Healthy Living On The Road.'
       )
@@ -102,6 +118,8 @@ RSpec.describe Admin::PostsController, type: :controller do
 
   describe "post #destroy" do
     it "deletes the Post" do
+      admin = FactoryBot.create(:user)
+      sign_in(admin)
       @post = FactoryBot.create(:post)
       expect{
         delete :destroy, params: {'id' => @post.slug}

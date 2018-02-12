@@ -1,5 +1,5 @@
 module Admin
-  class CampaignsController < ApplicationController
+  class CampaignsController < BaseController
     before_action :set_campaign, only: [:edit, :update, :destroy]
 
     def index

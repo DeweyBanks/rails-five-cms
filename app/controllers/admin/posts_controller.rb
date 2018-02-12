@@ -1,5 +1,5 @@
 module Admin
-  class PostsController < ApplicationController
+  class PostsController < BaseController
     before_action :set_post, only: [:show, :edit, :update, :destroy]
 
     def index
@@ -17,7 +17,6 @@ module Admin
     end
 
     def create
-
       @post = Post.new(post_params)
 
       respond_to do |format|

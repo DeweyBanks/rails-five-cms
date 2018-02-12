@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "User visits admin dashboard/admins page" do
-  scenario "They are not a super admin" do
+  scenario "They are a super admin" do
     user = FactoryBot.create(:user, super_admin: true)
     login_as(user, :scope => :user)
     visit admin_users_path
@@ -9,7 +9,7 @@ RSpec.feature "User visits admin dashboard/admins page" do
     expect(page).to have_content "Admins"
   end
 
-  scenario "They are a super admin" do
+  scenario "They are a not super admin" do
     user = FactoryBot.create(:user)
     login_as(user, :scope => :user)
     visit admin_users_path
