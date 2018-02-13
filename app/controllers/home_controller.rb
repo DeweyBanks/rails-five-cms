@@ -11,14 +11,14 @@ class HomeController < ApplicationController
     end
   end
 
-  def email_list
-    email = email_params["email"]
+  def subscribe
+    email = subscription_params["email"]
   end
 
   private
 
-    def email_params
-      params.require(:connection).permit(:email)
+    def subscription_params
+      params.require(:subscribe).permit(:email)
     end
 
     def valid_page?

@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   resources :commanders, only: [:index, :show]
   resources :messages, only: [:create, :new]
 
-  post "/email_list" => "home#email_list"
+  post "/subscribe" => "home#subscribe"
 
   get "*path", to: redirect('/')
 
