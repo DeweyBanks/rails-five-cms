@@ -1,4 +1,54 @@
-<nav>
+<header >
+  <div id="header-contain" class="row no-bottom-margin column">
+    <div id="logo" class="small-3 medium-2 large-1 column">
+
+      <%= image_tag "ehe-logo.png" %></div>
+    <div class="small-3 medium-6 large-10 column nav-contain">
+      <div class="slideUp">
+        <nav class="top-bar" data-topbar>
+          <ul>
+            <li id="about"><a href="#">ABOUT</a></li>
+            <li><a href="#">PREVENTIVE CARE</a></li>
+            <li><a href="#">WELLNESS CARE</a></li>
+            <li><a href="#">LATEST</a></li>
+            <li><a href="#">CORPORATE</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+    <div id="hamburger" class="small-3 medium-2 large-0 column"><%= image_tag "hamburger-menu.svg" %></div>
+
+    <div id="login" class="small-3 medium-2 large-1 column"><a href="#">LOG IN</a></div>
+
+  </div>
+  <div class="row expanded no-bottom-margin">
+    <div id="header-bg" class="bg-slideUp"></div>
+  </div>
+  <div id="sub-nav-container" class="sub-slideUp">
+    <div class="row no-bottom-margin">
+      <div class="columns medium-offset-1 medium-10 large-centered">
+        <ul id="about-sub" class="sub-nav">
+
+          <li><a href="">Commanders In Wellness</a></li>
+          <li><a href="">Locations</a></li>
+          <li><a href="">Careers</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row expanded no-bottom-margin">
+      <div class="small-12">
+        <div id="sub-nav-bg"></div>
+      </div>
+    </div>
+
+  </div>
+
+
+</header>
+
+<!-- <nav>
   <ul>
     <li class="menu-text"><%= link_to "EHE", root_path %></li>
     <li><%= link_to "About", "/pages/about" %></li>
@@ -8,5 +58,4 @@
     <li><%= link_to "Corporate", "/pages/corporate_partnership" %></li>
     <li><%= link_to "LOG IN", "https://staging.eheandme.com/" %></li>
   </ul>
-</nav>
-
+</nav>-->

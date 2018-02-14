@@ -16,6 +16,7 @@
 //= require ckeditor/init
 //= require ckeditor/config
 //= require_tree .
+//= require app.js
 
 $(function(){ $(document).foundation(); });
 

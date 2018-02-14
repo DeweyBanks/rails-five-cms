@@ -11,8 +11,6 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require app.css
  *= require_self
- *= require foundation
- *= require foundation_and_overrides
-
  */
