@@ -1,26 +1,27 @@
-<header >
+<header>
   <div id="header-contain" class="row no-bottom-margin column">
     <div id="logo" class="small-3 medium-2 large-1 column">
-
-      <%= image_tag "ehe-logo.png" %></div>
+      <%= link_to image_tag("ehe-logo.png"), root_path %>
+    </div>
     <div class="small-3 medium-6 large-10 column nav-contain">
       <div class="slideUp">
         <nav class="top-bar" data-topbar>
           <ul>
-            <li id="about"><a href="#">ABOUT</a></li>
-            <li><a href="#">PREVENTIVE CARE</a></li>
-            <li><a href="#">WELLNESS CARE</a></li>
-            <li><a href="#">LATEST</a></li>
-            <li><a href="#">CORPORATE</a></li>
+            <li id="about"><%= link_to "About", "/pages/about" %></li>
+            <li><%= link_to "Preventive Care", "/pages/preventive_care" %></li>
+            <li><%= link_to "Wellness Care", "/pages/wellness_care" %></li>
+            <li><%= link_to "Latest", posts_path %></li>
+            <li><%= link_to "Corporate", "/pages/corporate_partnership" %></li>
           </ul>
         </nav>
       </div>
-
     </div>
-    <div id="hamburger" class="small-3 medium-2 large-0 column"><%= image_tag "hamburger-menu.svg" %></div>
-
-    <div id="login" class="small-3 medium-2 large-1 column"><a href="#">LOG IN</a></div>
-
+    <div id="hamburger" class="small-3 medium-2 large-0 column">
+      <%= image_tag "hamburger-menu.svg" %>
+    </div>
+    <div id="login" class="small-3 medium-2 large-1 column">
+      <%= link_to "LOG IN", "https://staging.eheandme.com/" %>
+    </div>
   </div>
   <div class="row expanded no-bottom-margin">
     <div id="header-bg" class="bg-slideUp"></div>
@@ -29,11 +30,10 @@
     <div class="row no-bottom-margin">
       <div class="columns medium-offset-1 medium-10 large-centered">
         <ul id="about-sub" class="sub-nav">
-
-          <li><a href="">Commanders In Wellness</a></li>
-          <li><a href="">Locations</a></li>
-          <li><a href="">Careers</a></li>
-          <li><a href="">Contact</a></li>
+          <li><%= link_to "Commanders in Wellness", "/pages/commanders_in_wellness" %></li>
+          <li><%= link_to "Locations", "/pages/locations" %></li>
+          <li><%= link_to "Careers", "/pages/careers" %></li>
+          <li><%= link_to "Contact", "/pages/contact" %></li>
         </ul>
       </div>
     </div>
@@ -42,20 +42,5 @@
         <div id="sub-nav-bg"></div>
       </div>
     </div>
-
   </div>
-
-
 </header>
-
-<!-- <nav>
-  <ul>
-    <li class="menu-text"><%= link_to "EHE", root_path %></li>
-    <li><%= link_to "About", "/pages/about" %></li>
-    <li><%= link_to "Preventive Care", "/pages/preventive_care" %></li>
-    <li><%= link_to "Wellness Care", "/pages/wellness_care" %></li>
-    <li><%= link_to "Latest", posts_path %></li>
-    <li><%= link_to "Corporate", "/pages/corporate_partnership" %></li>
-    <li><%= link_to "LOG IN", "https://staging.eheandme.com/" %></li>
-  </ul>
-</nav>-->
