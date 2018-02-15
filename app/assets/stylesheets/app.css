@@ -8986,7 +8986,7 @@ SlideUpTopBar for Foundation styles
 #video-container .content-contain.hero a:after {
   position: absolute;
   right: -10px;
-  content: url(../images/home/icon-hero-arrow.png);
+  content: url(../assets/home/icon-hero-arrow.png);
   height: 0;
   width: 0;
   top: -10px;
@@ -9037,7 +9037,7 @@ SlideUpTopBar for Foundation styles
 .coaches-section .img-contain {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  background: url(../images/home/woman-purple.jpg) no-repeat center center;
+  background: url(../assets/home/woman-purple.jpg) no-repeat center center;
   background-size: cover;
   position: absolute;
   width: 100%;
@@ -12709,7 +12709,7 @@ input[type="submit"] {
 }
 
 .meet-commanders .img-contain {
-  background: url(../images/about-us-bg-placeholder.jpg) no-repeat center center;
+  background: url(../assets/about-us-bg-placeholder.jpg) no-repeat center center;
   background-size: cover;
   opacity: 0.58;
   position: absolute;
@@ -12725,7 +12725,7 @@ input[type="submit"] {
 }
 
 .locations {
-  background: url(../images/about-us-locations-nation-wide-bg-placeholder.jpg) no-repeat center center;
+  background: url(../assets/about-us-locations-nation-wide-bg-placeholder.jpg) no-repeat center center;
   background-size: cover;
   padding: 95px 0 75px 0;
   position: relative;
@@ -13243,7 +13243,7 @@ div.corporate-partner img {
 div.corporate-partner .img-contain {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  background: url(../images/become-corp-partner-bg-image.jpg) no-repeat center center;
+  background: url(../assets/become-corp-partner-bg-image.jpg) no-repeat center center;
   background-size: cover;
   position: absolute;
   width: 100%;
@@ -13804,7 +13804,7 @@ div.corporate-partner .content-contain {
   margin: 13px;
   height: 32px;
   width: 32px;
-  background: url(../images/icon-commanders-closex.png) no-repeat center center;
+  background: url(../assets/icon-commanders-closex.png) no-repeat center center;
 }
 
 @media screen and (min-width: 40em) {
@@ -13987,7 +13987,7 @@ div.corporate-partner .content-contain {
 }
 
 button.slick-prev.slick-arrow, button.slick-next.slick-arrow {
-  background: url(../images/icon-left-arrow.png) center center no-repeat;
+  background: url(../assets/icon-left-arrow.png) center center no-repeat;
   line-height: 0;
   position: absolute;
   width: 20px;
@@ -14009,7 +14009,7 @@ button.slick-prev.slick-arrow, button.slick-next.slick-arrow {
 }
 
 button.slick-next.slick-arrow {
-  background: url(../images/icon-right-arrow.png) center center no-repeat;
+  background: url(../assets/icon-right-arrow.png) center center no-repeat;
   right: 20px;
   left: unset;
 }
