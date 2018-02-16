@@ -4,18 +4,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
     <%= display_meta_tags site: 'EHE' %>
-    <%= javascript_pack_tag 'application' %>
-    <%= stylesheet_pack_tag 'application' %>
   </head>
 
   <body class="home">
     <%= render :partial => 'shared/header' %>
     <%= yield %>
     <%= render :partial => 'shared/footer' %>
+    <!-- what are these p tags? They are taking up space but I don't know what they do -->
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <!-- commenting out this angular tag throws an error -- can we stop angular from trying to do this? -->
     <!-- <hello-angular>Loading...</hello-angular> -->
+    <%= javascript_include_tag 'application' %>
+    <!-- What do the javascript and stylesheet pack tags do? Do we need them? Our javascript file above includes the foundation js files we need to make the site work-->
+    <%= javascript_pack_tag 'application' %>
+    <%= stylesheet_pack_tag 'application' %>
+
   </body>
 </html>
