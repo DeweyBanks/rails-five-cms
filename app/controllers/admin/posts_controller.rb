@@ -57,7 +57,16 @@ module Admin
     end
 
     def post_params
-      params.require(:post).permit(:slug, :title, :body, :campaign_id, :category_id, :all_tags)
+      params.require(:post).permit(
+        :slug,
+        :title,
+        :body,
+        :campaign_id,
+        :category_id,
+        :all_tags,
+        :main_image,
+        pictures_attributes: [:id, :image, :caption, :alt, :_destroy]
+        )
     end
   end
 end

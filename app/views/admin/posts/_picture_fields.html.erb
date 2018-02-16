@@ -1,0 +1,11 @@
+<%= form.fields_for :pictures, @post.pictures.build do |picture_form| %>
+  <p>
+    Picture:
+    <%= picture_form.text_field :caption, placeholder: "Caption" %>
+    <%= picture_form.text_field :alt, placeholder: "alt"  %>
+    <%= picture_form.file_field :image %>
+    <%= picture_form.check_box :_destroy %>
+    <%= picture_form.label :_destroy, "Remove Image" %>
+  </p>
+<% end %>
+
