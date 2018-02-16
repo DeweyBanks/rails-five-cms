@@ -1,6 +1,7 @@
 <div>
   <h1><%= @post.title %></h1>
   <h5>By: <%= %> | <%= @post.created_at.to_time.strftime('%B %e %Y') %></h5>
+  <p><%= image_tag @post.main_image.url(:medium) %></p>
   <p><%= @post.all_tags %></p>
   <p><%= @post.body.html_safe %></p>
 </div>

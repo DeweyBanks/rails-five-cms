@@ -4,8 +4,14 @@ class Post < ApplicationRecord
   has_many :comments, as: :commentable, :dependent => :destroy
   has_many :taggings, :dependent => :delete_all
   has_many :tags, through: :taggings
+  has_many :pictures
+  accepts_nested_attributes_for :pictures, reject_if: proc { |attributes| attributes[:image].blank? }, allow_destroy: true
+
   before_validation :set_slug
   validates :title, :presence => true
+  has_attached_file :main_image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :main_image, content_type: /\Aimage\/.*\z/
+
 
   def to_param
     "#{slug}"

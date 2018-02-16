@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+
+
   <div class="field">
     <%= form.label :tags %>
     <%= form.text_field :all_tags, placeholder: "Tags separated with comma" %>
@@ -37,8 +39,28 @@
   </div>
 
   <div class="field">
+    <%= form.label :main_image %>
+    <%= form.file_field :main_image, id: :post_main_image %>
+  </div>
+
+  <div class="field">
     <%= form.label :body %>
     <%= form.cktext_area :body, id: :post_body %>
+  </div>
+
+  <div class="field">
+    <%= form.fields_for :pictures, @post.pictures.build do |picture_form| %>
+      <p>
+        Picture:
+        <%= picture_form.text_field :caption, placeholder: "Caption" %>
+        <%= picture_form.text_field :alt, placeholder: "alt"  %>
+        <%= picture_form.file_field :image %>
+        <%= picture_form.check_box :_destroy %>
+        <%= picture_form.label :_destroy, "Remove Image" %>
+      </p>
+    <% end %>
+
+    <%= link_to_add_fields 'Add new image', form, :pictures %>
   </div>
 
 
@@ -48,6 +70,17 @@
 <% end %>
 
 
-
+<script type="text/javascript">
+  $('[data-form-prepend]').click( function(e) {
+    var obj = $( $(this).attr('data-form-prepend') );
+    obj.find('input, select, textarea').each( function() {
+      $(this).attr( 'name', function() {
+        return $(this).attr('name').replace( 'new_record', (new Date()).getTime() );
+      });
+    });
+    obj.insertBefore( this );
+    return false;
+  });
+</script>
 
 
