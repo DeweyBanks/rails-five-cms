@@ -1,0 +1,31 @@
+{
+
+  "data": [
+
+    {
+      "id": 100,
+      "name": "Martha Aiello",
+      "facility_id": 3
+    },
+
+    {
+      "id": 101,
+      "name": "Shelly Bhowmik",
+      "facility_id": 3,
+    },
+
+    {
+      "id": 102,
+      "name": "John Smith",
+      "facility_id": 2,
+    },
+
+    {
+      "id": 103,
+      "name": "Jessica Smith",
+      "facility_id": 2
+    }
+
+  ]
+
+}
