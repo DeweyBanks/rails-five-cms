@@ -6,4 +6,5 @@ RSpec.describe Post, type: :model do
   it { should have_many(:comments) }
   it { should have_many(:taggings) }
   it { should have_many(:tags) }
+  it { should have_many(:pictures) }
 end
