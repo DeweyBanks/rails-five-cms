@@ -13,7 +13,7 @@ RSpec.feature "User visits admin dashboard/admins page" do
     user = FactoryBot.create(:user)
     login_as(user, :scope => :user)
     visit admin_users_path
-    expect(page.current_path).to eq(admin_path)
+    expect(page.current_path).to eq(admin_dashboard_path)
     expect(page).to have_content "Insufficient rights!"
   end
 end

@@ -46,7 +46,7 @@ module Admin
     def destroy
       @user.destroy
       respond_to do |format|
-        format.html { redirect_to admin_path, notice: 'Admin was successfully destroyed.' }
+        format.html { redirect_to admin_dashboard_path, notice: 'Admin was successfully destroyed.' }
         format.json { head :no_content }
       end
     end
@@ -54,7 +54,7 @@ module Admin
     private
 
     def authenticate_super_admin!
-      redirect_to admin_path, :flash => { :alert => "Insufficient rights!" } unless current_user.try(:super_admin?)
+      redirect_to admin_dashboard_path, :flash => { :alert => "Insufficient rights!" } unless current_user.try(:super_admin?)
     end
 
     def set_user

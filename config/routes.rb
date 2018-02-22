@@ -9,9 +9,9 @@ Rails.application.routes.draw do
 
   get "/pages/*page" => "home#show", as: "pages"
 
-  get "/admin", to: "admin/dashboard#index", module: "admin",  as: "admin"
-
   namespace :admin do
+    root to: "dashboard#index", as: "dashboard"
+    post "/update_commanders" => "dashboard#update_commanders"
     resources :posts
     resources :commanders
     resources :users
