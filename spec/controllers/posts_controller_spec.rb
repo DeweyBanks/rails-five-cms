@@ -11,7 +11,7 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it "assigns all posts" do
-      expect(assigns[:posts]).to eq(Post.all)
+      expect(assigns[:posts].length).to eq(Post.all.length)
     end
   end
 
