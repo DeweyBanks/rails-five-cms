@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: "dashboard#index", as: "dashboard"
-    post "/update_commanders" => "dashboard#update_commanders"
+    post "/update_commanders" => "commanders#update_commanders"
     resources :posts
     resources :commanders
     resources :users

@@ -24,6 +24,24 @@
       "id": 103,
       "name": "Jessica Smith",
       "facility_id": 2
+    },
+
+    {
+      "id": 104,
+      "name": "Peter Griffin",
+      "facility_id": 4
+    },
+
+    {
+      "id": 105,
+      "name": "Rick Grimes",
+      "facility_id": 1
+    },
+
+    {
+      "id": 106,
+      "name": "Bertram Gilfoyle",
+      "facility_id": 2
     }
 
   ]

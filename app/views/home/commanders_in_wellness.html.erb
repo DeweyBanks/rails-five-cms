@@ -10,7 +10,9 @@
 </ul>
 
 
+<%= link_to "Physicians", commanders_path(filter: "physicians") %>
+<%= link_to "Wellness Coaches", commanders_path(filter: "coaches") %>
 
 
-
-
+<%= button_to "Physicians", commanders_path, params: {filter: "physicians"}, :method => :get %>
+<%= button_to "Wellness Coaches", commanders_path, params: {filter: "coaches"}, :method => :get %>
