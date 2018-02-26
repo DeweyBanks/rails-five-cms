@@ -31,6 +31,7 @@ module Admin
     end
 
     def update
+      binding.pry
        respond_to do |format|
         if @commander.update(commander_params)
           format.html { redirect_to admin_commander_path(@commander), notice: 'Commander was successfully updated.' }
@@ -51,6 +52,7 @@ module Admin
     end
 
     def update_commanders
+      type_id = CommanderType.find_by(name: "Physician").id
       file = File.read('public/commanders/commander_data.json')
       data_hash = JSON.parse(file)
       data_hash["data"].each do |d|
@@ -69,9 +71,22 @@ module Admin
             c.first_name = "Name Missing"
             c.last_name = "Name Missing"
           end
-          c.commander_type_id = CommanderType.find_by(name: "Physician").id
+          c.about = d["about"]
+          c.commander_type_id = type_id
           c.emps_id = d["id"]
           c.facility_id = d["facility_id"]
+          c.avatar = File.new("public/assets/test_images/commanders/doctor#{rand(1..9)}.jpg", "r")
+        else
+           if d["name"].present?
+            c.first_name = d["name"].split(" ").first
+            c.last_name = d["name"].split(" ").last
+            d.except!("name")
+            c.avatar = File.new("public/assets/test_images/commanders/doctor#{rand(1..9)}.jpg", "r")
+            c.update(d)
+          else
+            c.first_name = "Name Missing"
+            c.last_name = "Name Missing"
+          end
         end
         c.save
       end
