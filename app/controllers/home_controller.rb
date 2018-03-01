@@ -1,10 +1,12 @@
 class HomeController < ApplicationController
 
   def index
+    @page = "index"
     @posts = Post.all.order('created_at DESC')
   end
 
   def show
+    @page = params[:page]
     if valid_page?
       render template: "home/#{params[:page]}"
     else

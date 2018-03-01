@@ -5,8 +5,9 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= display_meta_tags site: 'EHE' %>
+    <%= yield :js %>
   </head>
-  <body class="home">
+  <body class="<%= controller_name %> <%= @page %>">
     <%= render :partial => 'shared/header' %>
     <%= yield %>
     <%= render :partial => 'shared/footer' %>

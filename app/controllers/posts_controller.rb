@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   def index
+    @page = "index"
     if params[:tag].present?
       @posts = Post.tagged_with(params[:tag]).includes(:comments).order('created_at DESC')
     else
@@ -13,6 +14,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @page = "show"
     @post = Post.includes(:comments).find_by(slug: params[:slug])
   end
 
