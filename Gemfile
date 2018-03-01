@@ -21,7 +21,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'meta-tags'
-gem 'foundation-rails', '~> 6.4.1.3'
 gem "paperclip", "~> 5.0.0"
 gem 'ckeditor', github: 'galetahub/ckeditor'
 # Use ActiveModel has_secure_password
