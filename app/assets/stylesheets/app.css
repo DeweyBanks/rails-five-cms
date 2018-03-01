@@ -7016,6 +7016,7 @@ a.thumbnail image {
 .title-heading {
   color: #86b8c4;
   margin-bottom: 75px;
+  text-transform: uppercase;
 }
 
 .title-heading::after {
@@ -7056,17 +7057,55 @@ a.thumbnail image {
   height: 1px;
   border-top: 1px solid #505153;
   top: 50%;
-  width: 300px;
+  width: 100px;
+}
+
+@media screen and (min-width: 30em) {
+  .title-w-lines span:before,
+  .title-w-lines span:after {
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: 51.5625em) {
+  .title-w-lines span:before,
+  .title-w-lines span:after {
+    width: 300px;
+  }
 }
 
 .title-w-lines span:before {
-  right: 100%;
+  right: 65%;
   margin-right: 15px;
 }
 
+@media screen and (min-width: 30em) {
+  .title-w-lines span:before {
+    right: 90%;
+  }
+}
+
+@media screen and (min-width: 51.5625em) {
+  .title-w-lines span:before {
+    right: 100%;
+  }
+}
+
 .title-w-lines span:after {
-  left: 100%;
+  left: 65%;
   margin-left: 15px;
+}
+
+@media screen and (min-width: 30em) {
+  .title-w-lines span:after {
+    left: 90%;
+  }
+}
+
+@media screen and (min-width: 51.5625em) {
+  .title-w-lines span:after {
+    left: 100%;
+  }
 }
 
 /* ==== make fonts bold  === */
@@ -7085,7 +7124,7 @@ a.thumbnail image {
 }
 
 .gray-text {
-  color: #505153;
+  color: #616264;
 }
 
 .drkr-gray-text {
@@ -7187,7 +7226,7 @@ body{
 .add-arrow::after {
   position: absolute;
   right: -20px;
-  content: url(../images/icon-call-to-action-right-arrow2.png);
+  content: url(../assets/icon-call-to-action-right-arrow2.png);
   height: 0;
   width: 0;
   top: -5px;
@@ -7210,7 +7249,7 @@ body{
 .add-arrow-below::after {
   position: absolute;
   bottom: 0px;
-  content: url(../images/icon-call-to-action-right-arrow2.png);
+  content: url(../assets/icon-call-to-action-right-arrow2.png);
   height: 0;
   width: 0;
   bottom: -5px;
@@ -7235,11 +7274,18 @@ body{
   color: #ffc700;
 }
 
-/*  ===========   margins   ============ */
-div.row {
-  margin-bottom: 60px !important;
+/*  ===========   section padding   ============ */
+.content-contain {
+  padding-top: 75px;
+  padding-bottom: 75px;
 }
 
+.latest-contain .content-contain {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+/*  ===========   margins   ============ */
 .home div.row, div.row div.row, div.no-bottom-margin {
   margin-bottom: 0 !important;
 }
@@ -7258,6 +7304,46 @@ div.row {
 
 .bot-space-25, div.row.bot-space-25 {
   margin-bottom: 25px !important;
+}
+
+/* -- This is to put space between the last paragraph and the tabs -- */
+/* -- p already has 16 px and we want 36px on desk so set to 20px --*/
+.internal div.page-header {
+  margin-top: 75px;
+  margin-bottom: 50px;
+}
+
+@media screen and (min-width: 47.9375em) {
+  .internal div.page-header {
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .internal div.page-header {
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+}
+
+.about-internal div.page-header {
+  margin-top: 75px;
+  margin-bottom: 50px;
+}
+
+@media screen and (min-width: 47.9375em) {
+  .about-internal div.page-header {
+    margin-top: 100px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .about-internal div.page-header {
+    margin-top: 200px;
+    margin-bottom: 20px;
+  }
 }
 
 /* -- WHAT IS THIS????  --*/
@@ -7294,12 +7380,91 @@ div.row {
 }
 
 /*  ===========   parallax   ============ */
-/*
-.paraxify{
+.paraxify {
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
-}*/
+}
+
+/* ========== color overlay for callout boxes that change color =============  */
+.color-overlay {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  opacity: 0.5;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  top: 0;
+}
+
+.color-overlay.bg-opacity {
+  opacity: 0.80;
+}
+
+/* ========== keep focus of anchors (a) white =========== */
+a:hover, a:focus {
+  color: #ffffff;
+}
+
+/* === book your appt callout styles  ===*/
+.book-your-appointment, .corporate-partner {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.book-your-appointment.img-contain, .corporate-partner.img-contain {
+  background-image: url(../assets/CTA-Book-your-appointment1-placeholder.jpg);
+  background-repeat: no-repeat;
+}
+
+.book-your-appointment .row, .corporate-partner .row {
+  position: relative;
+  z-index: 10;
+}
+
+.book-your-appointment .content-contain, .corporate-partner .content-contain {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.book-your-appointment .color-overlay, .corporate-partner .color-overlay {
+  background-color: #315387;
+}
+
+.book-your-appointment a, .corporate-partner a {
+  font-family: "Oswald", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  position: relative;
+  /* this should work... look into why it's not changing the SVG?  */
+}
+
+.book-your-appointment a:hover path.st4, .corporate-partner a:hover path.st4 {
+  fill: #fff;
+  fill-opacity: 0.2;
+  stroke: transparent;
+}
+
+.book-your-appointment a .icon, .corporate-partner a .icon {
+  height: 25px;
+  width: 26px;
+  position: absolute;
+  right: -35px;
+  top: 0px;
+}
+
+@media screen and (min-width: 30em) {
+  .book-your-appointment a .icon, .corporate-partner a .icon {
+    height: 42px;
+    width: 42px;
+    right: -54px;
+    top: -4px;
+  }
+}
+
 /* ========== remove focus outlines on elements */
 *:focus {
   outline: none;
@@ -7382,6 +7547,25 @@ header #header-contain div#logo {
   height: 100%;
 }
 
+header #header-contain div#logo svg.icon {
+  padding: 0;
+  z-index: 1000;
+  position: relative;
+  width: 40px;
+  height: 31px;
+  margin-left: 10px;
+  margin-top: 9px;
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 48em) {
+  header #header-contain div#logo svg.icon {
+    width: 70px;
+    height: 58px;
+    margin-top: 10px;
+  }
+}
+
 header #header-contain div#logo img {
   padding: 13px 0 13px 10px;
   z-index: 1000;
@@ -7405,7 +7589,7 @@ header #header-contain div#login {
 
 header #header-contain div#login a {
   max-width: 100px;
-  padding: 25px 0;
+  padding: 10px 0;
   font-weight: bold;
   display: block;
   height: 100%;
@@ -7418,6 +7602,31 @@ header #header-contain div#login a {
   z-index: 1000;
   position: relative;
   background-color: rgba(26, 24, 24, 0.15);
+}
+
+@media screen and (min-width: 48em) {
+  header #header-contain div#login a {
+    padding: 25px 0;
+  }
+}
+
+header #header-contain div#hamburger svg.icon {
+  height: 35px;
+  width: 98%;
+  margin-top: 5px;
+  padding: 0;
+  margin-right: 0px;
+  z-index: 1000;
+  position: relative;
+}
+
+@media screen and (min-width: 48em) {
+  header #header-contain div#hamburger svg.icon {
+    height: 55px;
+    width: 75%;
+    margin-top: 8px;
+    padding: 5px 0;
+  }
 }
 
 header #header-contain div#hamburger img {
@@ -7512,6 +7721,7 @@ header #sub-nav-container {
   margin-top: 0px;
   display: none;
   opacity: 0;
+  visibility: hidden;
 }
 
 @media screen and (min-width: 64em) {
@@ -7520,6 +7730,7 @@ header #sub-nav-container {
   }
   header #sub-nav-container.active {
     display: inline-block;
+    visibility: visible;
     opacity: 1;
   }
 }
@@ -7648,6 +7859,7 @@ SlideUpTopBar for Foundation styles
 }
 
 #footer-contain ul {
+  list-style: none;
   margin-left: 0;
 }
 
@@ -7697,30 +7909,64 @@ SlideUpTopBar for Foundation styles
 
 #video-container .content-contain.hero h1 {
   text-transform: uppercase;
-  font-size: 50px;
-  line-height: 60px;
-  margin-bottom: 10px;
+  font-size: 30px;
+  line-height: 35px;
+  margin-bottom: 0px;
+}
+
+@media screen and (min-width: 30em) {
+  #video-container .content-contain.hero h1 {
+    font-size: 50px;
+    line-height: 60px;
+    margin-bottom: 10px;
+  }
 }
 
 #video-container .content-contain.hero a {
-  font-size: 30px;
-  line-height: 36px;
+  font-size: 20px;
+  line-height: 20px;
   position: relative;
   margin: 0 0 0 3px;
   padding: 0;
+  /* &:after{
+        position: absolute;
+        right: -54px;
+        content: '';
+        //content: '<object data="../assets/icons-sprite.svg#arrow-circle-white"></object>'; //url(../assets/icons-sprite.svg#arrow-circle-white);
+        background: url(../assets/icons-sprite.svg#arrow-circle-white) center center;
+        height: 40px;
+        width: 40px;
+        top: -6px;
+      }*/
 }
 
-#video-container .content-contain.hero a:hover {
-  color: #ffffff;
+@media screen and (min-width: 30em) {
+  #video-container .content-contain.hero a {
+    font-size: 30px;
+    line-height: 36px;
+  }
 }
 
-#video-container .content-contain.hero a:after {
+#video-container .content-contain.hero a .icon {
+  height: 25px;
+  width: 26px;
   position: absolute;
-  right: -10px;
-  content: url(../images/home/icon-hero-arrow.png);
-  height: 0;
-  width: 0;
-  top: -10px;
+  right: -35px;
+  top: -3px;
+}
+
+@media screen and (min-width: 30em) {
+  #video-container .content-contain.hero a .icon {
+    height: 42px;
+    width: 42px;
+    right: -54px;
+    top: -6px;
+  }
+}
+
+#video-container .content-contain.hero a .icon.active {
+  fill: #fff;
+  border: none;
 }
 
 .color-bar {
@@ -7731,8 +7977,6 @@ SlideUpTopBar for Foundation styles
 
 .blue-section {
   position: relative;
-  padding-top: 30px;
-  padding-bottom: 30px;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
@@ -7757,32 +8001,18 @@ SlideUpTopBar for Foundation styles
 }
 
 .coaches-section {
-  background-color: #615185;
   padding-top: 50px;
   padding-bottom: 50px;
   position: relative;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
 }
 
 .coaches-section img {
   margin-left: 40px;
 }
 
-.coaches-section .img-contain {
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  background: url(../images/home/woman-purple.jpg) no-repeat center center;
-  background-size: cover;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  top: 0;
-}
-
-.coaches-section .bg-opacity {
-  opacity: 0.25;
+.coaches-section.img-contain {
+  background-image: url(../assets/home/woman-purple-big.jpg);
+  background-repeat: no-repeat;
 }
 
 .coaches-section .row {
@@ -7795,6 +8025,10 @@ SlideUpTopBar for Foundation styles
   padding-bottom: 50px;
 }
 
+.coaches-section .color-overlay {
+  background-color: #5e5e7c;
+}
+
 /*
 .book-appointment-section{
   background-color: #615185;
@@ -7805,7 +8039,7 @@ SlideUpTopBar for Foundation styles
   }
     
   .img-contain{
-    background: url(../images/CTA-Book-your-appointment1-placeholder.jpg) no-repeat center center;
+    background: url(../assets/CTA-Book-your-appointment1-placeholder.jpg) no-repeat center center;
     background-size: cover;
     position: absolute;
     width: 100%;
@@ -11299,6 +11533,10 @@ select.ui.dropdown {
   }
 }
 
+#corporate-signup-form form input, #corporate-signup-form form h3, #corporate-signup-form form .dropdown {
+  margin-bottom: 45px;
+}
+
 #corporate-signup-form input {
   font-size: 100%;
 }
@@ -11374,6 +11612,14 @@ select.ui.dropdown {
   opacity: 0.5;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+#corporate-signup-form .close-button svg {
+  width: 40px;
+  height: 40px;
 }
 
 #corporate-signup-form .close-button:hover, #corporate-signup-form .close-button:focus {
@@ -11391,7 +11637,16 @@ select.ui.dropdown {
   margin-bottom: 60px;
 }
 
+#contact-us-signup-form .ui.selection.active.dropdown, #contact-us-signup-form .ui.selection.active.dropdown .menu, #contact-us-signup-form .ui.selection.dropdown:focus, #blog-story-form .ui.selection.active.dropdown, #blog-story-form .ui.selection.active.dropdown .menu, #blog-story-form .ui.selection.dropdown:focus {
+  border-color: #9f9fa1;
+}
+
+#contact-us-signup-form .ui.dropdown .menu > .item:hover, #blog-story-form .ui.dropdown .menu > .item:hover {
+  background-color: #ffc700;
+}
+
 #contact-us-signup-form .ui.dropdown.selected, #contact-us-signup-form .ui.dropdown .menu .selected.item, #blog-story-form .ui.dropdown.selected, #blog-story-form .ui.dropdown .menu .selected.item {
+  background-color: #eeeeef;
   font-weight: normal;
 }
 
@@ -11415,8 +11670,25 @@ select.ui.dropdown {
   /* Firefox 18- */
 }
 
-#contact-us-signup-form [type='text'], #contact-us-signup-form [type='password'], #contact-us-signup-form [type='email'], #contact-us-signup-form textarea, #blog-story-form [type='text'], #blog-story-form [type='password'], #blog-story-form [type='email'], #blog-story-form textarea {
+#contact-us-signup-form [type='text'], #contact-us-signup-form [type='password'], #contact-us-signup-form [type='email'], #contact-us-signup-form textarea, #contact-us-signup-form .ui.dropdown:not(.button) > .default.text, #blog-story-form [type='text'], #blog-story-form [type='password'], #blog-story-form [type='email'], #blog-story-form textarea, #blog-story-form .ui.dropdown:not(.button) > .default.text {
+  color: #616264;
   padding-left: 10px;
+}
+
+#contact-us-signup-form [type='text']::-webkit-input-placeholder, #contact-us-signup-form [type='password']::-webkit-input-placeholder, #contact-us-signup-form [type='email']::-webkit-input-placeholder, #contact-us-signup-form textarea::-webkit-input-placeholder, #contact-us-signup-form .ui.dropdown:not(.button) > .default.text::-webkit-input-placeholder, #blog-story-form [type='text']::-webkit-input-placeholder, #blog-story-form [type='password']::-webkit-input-placeholder, #blog-story-form [type='email']::-webkit-input-placeholder, #blog-story-form textarea::-webkit-input-placeholder, #blog-story-form .ui.dropdown:not(.button) > .default.text::-webkit-input-placeholder {
+  color: #616264;
+}
+
+#contact-us-signup-form [type='text']:-ms-input-placeholder, #contact-us-signup-form [type='password']:-ms-input-placeholder, #contact-us-signup-form [type='email']:-ms-input-placeholder, #contact-us-signup-form textarea:-ms-input-placeholder, #contact-us-signup-form .ui.dropdown:not(.button) > .default.text:-ms-input-placeholder, #blog-story-form [type='text']:-ms-input-placeholder, #blog-story-form [type='password']:-ms-input-placeholder, #blog-story-form [type='email']:-ms-input-placeholder, #blog-story-form textarea:-ms-input-placeholder, #blog-story-form .ui.dropdown:not(.button) > .default.text:-ms-input-placeholder {
+  color: #616264;
+}
+
+#contact-us-signup-form [type='text']::-ms-input-placeholder, #contact-us-signup-form [type='password']::-ms-input-placeholder, #contact-us-signup-form [type='email']::-ms-input-placeholder, #contact-us-signup-form textarea::-ms-input-placeholder, #contact-us-signup-form .ui.dropdown:not(.button) > .default.text::-ms-input-placeholder, #blog-story-form [type='text']::-ms-input-placeholder, #blog-story-form [type='password']::-ms-input-placeholder, #blog-story-form [type='email']::-ms-input-placeholder, #blog-story-form textarea::-ms-input-placeholder, #blog-story-form .ui.dropdown:not(.button) > .default.text::-ms-input-placeholder {
+  color: #616264;
+}
+
+#contact-us-signup-form [type='text']::placeholder, #contact-us-signup-form [type='password']::placeholder, #contact-us-signup-form [type='email']::placeholder, #contact-us-signup-form textarea::placeholder, #contact-us-signup-form .ui.dropdown:not(.button) > .default.text::placeholder, #blog-story-form [type='text']::placeholder, #blog-story-form [type='password']::placeholder, #blog-story-form [type='email']::placeholder, #blog-story-form textarea::placeholder, #blog-story-form .ui.dropdown:not(.button) > .default.text::placeholder {
+  color: #616264;
 }
 
 /* forms typography scss*/
@@ -11435,24 +11707,22 @@ input[type="submit"] {
 }
 
 .meet-commanders {
-  background-color: #1e63af;
-  padding: 120px 0 190px 0;
+  padding-top: 50px;
+  padding-bottom: 50px;
   position: relative;
+}
+
+.meet-commanders.img-contain {
+  background-image: url(../assets/about-us-bg-placeholder.jpg);
+  background-repeat: no-repeat;
+}
+
+.meet-commanders .color-overlay {
+  background-color: #1e63af;
 }
 
 .meet-commanders h3 {
   margin-bottom: 50px;
-}
-
-.meet-commanders .img-contain {
-  background: url(../images/about-us-bg-placeholder.jpg) no-repeat center center;
-  background-size: cover;
-  opacity: 0.58;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  top: 0;
 }
 
 .meet-commanders .row {
@@ -11461,36 +11731,30 @@ input[type="submit"] {
 }
 
 .locations {
-  background: url(../images/about-us-locations-nation-wide-bg-placeholder.jpg) no-repeat center center;
+  background: url(../assets/about-us-locations-nation-wide-bg-placeholder.jpg) no-repeat center center;
   background-size: cover;
   padding: 95px 0 75px 0;
   position: relative;
 }
 
-.about-us.ehe-overlay-text {
-  position: relative;
-  float: left;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(75%, -50%);
-      -ms-transform: translate(75%, -50%);
-          transform: translate(75%, -50%);
-  padding: 0px;
-  color: #fff;
+/*
+.about-us {
+    &.ehe-overlay-text{
+        //display:none;
+        position: relative;
+        float: left;
+        top: 50%;
+        left:50%;
+        transform: translate(75%, -50%);
+        padding:0px;
+        color:#fff;
+    }
+    p{
+        margin-bottom: 60px;
+    }
 }
-
-.about-us p {
-  margin-bottom: 60px;
-}
-
+*/
 /* Commanders in wellness */
-/* -- This is to put space between the last paragraph and the tabs -- */
-/* -- p already has 16 px and we want 36px on desk so set to 20px --*/
-div.page-header {
-  margin-top: 200px;
-  margin-bottom: 20px;
-}
-
 /* -- This is for the title of the physicians and wellness coaches  -- */
 .commander-title {
   margin: 30px 0 0 0;
@@ -11529,34 +11793,6 @@ div.page-header {
   left: unset;
 }
 
-#map {
-  height: 760px;
-  width: 578px;
-}
-
-.child-left {
-  float: left;
-}
-
-.child-right {
-  float: right;
-}
-
-/*
-#map {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-}
-
-#map_container {
-	position: relative;
-	padding-top: 50%;
-  width: 80%;
-  margin: 0 auto;
-}
-*/
 .locations-address-right {
   padding-bottom: 40px;
 }
@@ -11575,28 +11811,13 @@ div.page-header {
   padding-bottom: 10px;
 }
 
-.map-component {
-  margin: 0 auto;
-  width: 100%;
-}
-
-.address-output {
-  background-color: #ffffff;
-  overflow: hidden;
-  word-wrap: break-word;
-}
-
-ul {
-  list-style: none;
-}
-
-.location-heading {
-  margin-bottom: 85px;
+.address-form-container {
+  background-color: #efefef;
 }
 
 #address-form {
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .address-form-field {
@@ -11615,41 +11836,25 @@ ul {
   color: red;
 }
 
-.address-form-container {
-  height: 760px;
-  background-color: #efefef;
+.search-response {
+  max-height: 675px;
+  overflow-y: scroll;
+}
+
+.search-response ul {
+  list-style: none;
+  margin: 0;
   padding: 0;
 }
 
-.address-form-container.input::-webkit-input-placeholder {
-  color: #86b8c4 !important;
-}
-
-.address-form-container.input:-moz-placeholder {
-  /* Firefox 18- */
-  color: #86b8c4 !important;
-}
-
-.address-form-container.input::-moz-placeholder {
-  /* Firefox 19+ */
-  color: #86b8c4 !important;
-}
-
-.address-form-container.input:-ms-input-placeholder {
-  color: #86b8c4 !important;
+.corp-locations h4, .search-response h4 {
+  margin-bottom: 0;
+  color: #616264;
 }
 
 .button-search {
   background-color: #efefef;
   border-bottom: 1px solid #8a8a8a;
-}
-
-.flex-video {
-  position: relative;
-  height: 760px;
-  margin-bottom: 1rem;
-  padding-bottom: 75%;
-  overflow: hidden;
 }
 
 .block-quotation {
@@ -11691,6 +11896,8 @@ ul {
 
 .resumator-job-title, .resumator-jobs-text {
   text-align: left;
+  color: #616264 !important;
+  font-weight: normal  !important;
 }
 
 .resumator-form-iframe {
@@ -11701,18 +11908,13 @@ ul {
 .resumator-job-title {
   border-top: 1px solid #3c3c3e !important;
   padding-top: 0;
-  margin: 45px 0 0 !important;
-  padding: 55px 0 15px  !important;
-  font-family: ProximaNova-Regular !important;
+  margin: 0 !important;
+  padding: 55px 0 0 0 !important;
+  font-family: ProximaNova-Bold !important;
   font-weight: normal  !important;
   font-style: normal  !important;
-  font-size: 24px !important;
-  font: normal 24px ProximaNova-Regular !important;
+  font-size: 20px !important;
   color: #616264 !important;
-}
-
-.resumator-department-heading {
-  padding: 55px 0 0  !important;
 }
 
 .resumator-job-info-details, .resumator-job-info {
@@ -11720,34 +11922,31 @@ ul {
   float: left;
   line-height: 1.5em;
   margin: 0.25em 1em 0 0;
-  padding: 0 0 15px  !important;
+  padding: 0 !important;
   text-align: left;
   font-family: ProximaNova-Regular !important;
   font-weight: normal  !important;
   font-style: normal  !important;
   font-size: 18px !important;
-  font: normal 18px ProximaNova-Regular !important;
   color: #616264 !important;
 }
 
 .resumator-job-view-details {
   clear: both;
   padding-top: 4px;
+  padding-bottom: 55px !important;
   font-family: ProximaNova-Regular !important;
   font-weight: normal  !important;
   font-style: normal  !important;
   font-size: 18px !important;
-  font: normal 18px ProximaNova-Regular !important;
   color: #616264 !important;
 }
 
 a.resumator-job-link {
-  color: #2C659F;
   font-family: ProximaNova-Regular !important;
   font-weight: normal  !important;
   font-style: normal  !important;
-  font-size: 24px !important;
-  font: normal 24px ProximaNova-Regular !important;
+  font-size: 18px !important;
   color: #315387 !important;
 }
 
@@ -11756,7 +11955,7 @@ a.resumator-job-link {
 }
 
 .resumator-job-heading {
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .resumator-job-department, .resumator-job-experience {
@@ -11777,7 +11976,6 @@ a.resumator-job-link {
   font-weight: normal  !important;
   font-style: normal  !important;
   font-size: 18px !important;
-  font: normal 18px ProximaNova-Regular !important;
   color: #616264 !important;
   margin: 0 0 1em;
   padding: 0;
@@ -11813,9 +12011,19 @@ a.resumator-hide-details {
 }
 
 .resumator-department-heading, .resumator-type-heading {
-  margin: 20px 0 0 0;
-  font-size: 28px;
-  line-height: 30px;
+  margin: 0 !important;
+  font-size: 28px !important;
+  line-height: 30px !important;
+  border-top: 1px solid #3c3c3e !important;
+}
+
+.resumator-department-heading:first-child, .resumator-type-heading:first-child {
+  border-top: none !important;
+}
+
+.resumator-department-heading {
+  padding: 100px 0 0 0 !important;
+  margin-bottom: 15px !important;
 }
 
 .resumator-buttons {
@@ -11848,32 +12056,6 @@ a.resumator-hide-details {
   margin-right: 15px;
 }
 
-/*
-ul{
-    display: none !important;
-    
-    .tabs-title{
-        
-        &.is-active{
-            display:block;
-        }
-    }
-    
-}
-*/
-/*
-#mind-health-accordion-tab{
-    display: none !important;
-}
-#performance-accordion-tab{
-    display: none !important;
-
-}
-#prevention-accordion-tab{
-    display: none !important;
-
-}
-*/
 @media screen and (max-width: 42.75em) {
   ul[data-responsive-accordion-tabs] li {
     display: block;
@@ -11904,11 +12086,6 @@ ul{
 
 .tab-content-title.mind-health {
   color: #5e5e7c;
-}
-
-#prevention-article, #performance-article, #mind-health-article {
-  padding-top: 0;
-  padding-bottom: 0;
 }
 
 ul#blog-nav {
@@ -12059,45 +12236,45 @@ ul#blog-nav .button-search {
   padding-left: 5%;
 }
 
-div.corporate-partner {
+/*
+div.corporate-partner{
+ // background-color: get-color(title-color-primary);
+  padding: 50px 0;
+  position: relative;
+//  transition: all 0.5s ease;
+//  margin-bottom: 100px !important;
+  img{
+  //  margin-left:40px; 
+  }
+  &.img-contain{
+    background-image:url(../assets/become-corp-partner-bg-image.jpg);
+    background-repeat: no-repeat;
+  }
+  .bg-opacity{
+    //opacity: 0.25;
+  }
+  .row{
+    position: relative;
+    z-index: 10;
+  }
+  .content-contain{
+    //padding: 50px 0;
+  }
+}
+*/
+.corporate-partner.img-contain {
+  background-image: url(../assets/become-corp-partner-bg-image.jpg);
+}
+
+.corporate-partner .color-overlay {
   background-color: #86b8c4;
-  padding: 50px 0;
-  position: relative;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  margin-bottom: 100px !important;
 }
 
-div.corporate-partner img {
-  margin-left: 40px;
+/*
+#corporate-signup-form{
+>>>====== form styles in ehe-form.scss =============<<<
 }
-
-div.corporate-partner .img-contain {
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  background: url(../images/become-corp-partner-bg-image.jpg) no-repeat center center;
-  background-size: cover;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  top: 0;
-  opacity: 0.52;
-}
-
-div.corporate-partner .bg-opacity {
-  opacity: 0.25;
-}
-
-div.corporate-partner .row {
-  position: relative;
-  z-index: 10;
-}
-
-div.corporate-partner .content-contain {
-  padding: 50px 0;
-}
-
+*/
 /*
 .ehe-modal{
   @include breakpoint(0px) {
@@ -12251,6 +12428,7 @@ div.corporate-partner .content-contain {
 }
 
 #wellness-coach-articles-label, #physician-articles-label {
+  background: #5e5e7c;
   color: #ffffff;
   outline: none;
   font-size: 0.875rem;
@@ -12272,6 +12450,10 @@ div.corporate-partner .content-contain {
   #wellness-coach-articles-label, #physician-articles-label {
     font-size: 1.5rem;
   }
+}
+
+.is-active #wellness-coach-articles-label, .is-active #physician-articles-label {
+  background: #86b8c4;
 }
 
 #coaching-article-label, #clinical-coordination-article-label {
@@ -12310,6 +12492,11 @@ div.corporate-partner .content-contain {
         -ms-transform: rotate(-90deg);
             transform: rotate(-90deg);
   }
+}
+
+#prevention-article, #performance-article, #mind-health-article {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 #performance-article-label {
@@ -12371,12 +12558,11 @@ div.corporate-partner .content-contain {
 }
 
 .custom-article-group.preventive-care {
-  background-image: url(../images/tabs-bg_001-placeholder.jpg);
-  margin-bottom: 100px;
+  background-image: url(../assets/tabs-bg_001-placeholder.jpg);
 }
 
 .custom-article-group.wellness-care {
-  background-image: url(../images/tabs-bg_002-placeholder.jpg);
+  background-image: url(../assets/tabs-bg_002-placeholder.jpg);
   margin-bottom: 100px;
 }
 
@@ -12474,7 +12660,7 @@ div.corporate-partner .content-contain {
 
 .call-to-action-parallax {
   pointer-events: none;
-  background-image: url(../images/CTA-Book-your-appointment1-placeholder.jpg);
+  background-image: url(../assets/CTA-Book-your-appointment1-placeholder.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -12502,7 +12688,7 @@ div.corporate-partner .content-contain {
 
 .call-to-action-section .call-to-action-group {
   pointer-events: none;
-  background-image: url(../images/CTA-Book-your-appointment1-placeholder.jpg);
+  background-image: url(../assets/CTA-Book-your-appointment1-placeholder.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -12515,7 +12701,7 @@ div.corporate-partner .content-contain {
 }
 
 .call-to-action-section .call-to-action-group.about-us {
-  background-image: url(../images/about-us-locations-nation-wide-bg-placeholder.jpg);
+  background-image: url(../assets/about-us-locations-nation-wide-bg-placeholder.jpg);
   height: 311px;
 }
 
@@ -12662,7 +12848,7 @@ div.corporate-partner .content-contain {
   margin: 13px;
   height: 32px;
   width: 32px;
-  background: url(../images/icon-commanders-closex.png) no-repeat center center;
+  background: url(../assets/icon-commanders-closex.png) no-repeat center center;
 }
 
 @media screen and (min-width: 40em) {
@@ -12845,7 +13031,7 @@ div.corporate-partner .content-contain {
 }
 
 button.slick-prev.slick-arrow, button.slick-next.slick-arrow {
-  background: url(../images/icon-left-arrow.png) center center no-repeat;
+  background: url(../assets/icon-left-arrow.png) center center no-repeat;
   line-height: 0;
   position: absolute;
   width: 20px;
@@ -12860,19 +13046,19 @@ button.slick-prev.slick-arrow, button.slick-next.slick-arrow {
   margin-top: -33px;
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 48.0625em) {
   button.slick-prev.slick-arrow, button.slick-next.slick-arrow {
     left: 32.5%;
   }
 }
 
 button.slick-next.slick-arrow {
-  background: url(../images/icon-right-arrow.png) center center no-repeat;
+  background: url(../assets/icon-right-arrow.png) center center no-repeat;
   right: 20px;
   left: unset;
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 48.0625em) {
   button.slick-next.slick-arrow {
     right: 32.5%;
   }
@@ -12887,14 +13073,38 @@ button.slick-next.slick-arrow {
 
 .slick-slide p {
   position: absolute;
-  top: 76%;
-  margin-left: 24px;
+  top: unset;
+  bottom: 0px;
+  margin-left: 15px;
   padding-left: 10px;
   border-left: 1px solid white;
   font-size: 18px;
   line-height: 18px;
-  width: 80%;
+  width: 90%;
   z-index: 50;
+}
+
+@media screen and (min-width: 30em) {
+  .slick-slide p {
+    margin-left: 30px;
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .slick-slide p {
+    margin-left: 10px;
+    font-size: 16px;
+    width: 95%;
+  }
+}
+
+@media screen and (min-width: 62.5em) {
+  .slick-slide p {
+    margin-left: 24px;
+    font-size: 18px;
+    width: 75%;
+  }
 }
 
 .slick-slide img {
@@ -12915,6 +13125,8 @@ button.slick-next.slick-arrow {
   opacity: 0.45;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
 }
 
 .slick-dots {
@@ -12933,9 +13145,15 @@ button.slick-next.slick-arrow {
   display: inline-block;
   width: 20px;
   height: 20px;
-  margin: 0 22px;
+  margin: 0 12px;
   padding: 0;
   cursor: pointer;
+}
+
+@media screen and (min-width: 30em) {
+  .slick-dots li {
+    margin: 0 22px;
+  }
 }
 
 .slick-dots li.slick-active button:before {

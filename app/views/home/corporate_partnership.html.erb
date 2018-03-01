@@ -1,13 +1,140 @@
 <% title 'Corporate Partnership' %>
 <% description 'For over 100 years, EHE has been the leader in healthcare and wellbeing. We are pioneers in employee health and lifestyle management and are devoted to emp' %>
 <% keywords 'EHE, Corporate Partnership' %>
-<div>
-  <h1>CORPORATE PARTNERSHIP</h1>
-  <p>When employees are at their healthiest, your business thrives, EHE produces incredible results for companies of every industry and size, and the scope of what we provide is growing.</p>
-  <p>We offer experience and innovation no one else in the health and wellness space can match. Our clinics and physicians network serve big cities and small towns across the country, giving your employeees convenient access to the most effective care, not matter where they are.</p>
+      <div class="page-header">
+    <div class='row'>
+      <div class='small-12'>
+        <h1 class='title-heading text-center'>CORPORATE PARTNERSHIP</h1>
+      </div>
+     </div>
+        <div class='row'>
+          <div class='small-12 large-6 column'>
+                <p>When employees are at their healthiest, your business thrives. EHE produces incredible results for companies of every industry and size, and the scope of what we provide is growing.</p>
+          </div>
+          <div class='small-12 large-6 column'>
+              <p>We offer experience and innovation no one else in the health and wellness space can match. Our clinics and physicians network serve big cities and small towns across the country, giving your employees convenient access to the most effective care, no matter where they are.</p>
+          </div>
+        </div>
+    </div>
+    
+    
+<!-- Corporate Partner  call to action -->
+<div class="expanded row corporate-partner img-contain paraxify bot-space-95">
+  <div class="color-overlay"> </div>
+   <div class="small-12">
+   <div class="row">
+     <div class="small-8 small-centered columns text-center">
+          <div class="content-contain">
+           <p class="white-text ProximaNova-Medium">Partnering with EHE can enhance your company's health and performance.<br>Let's talk.</p>
+            <a href="#" class="cta ProximaNova-Medium white-text" data-container="corporate-partner" data-open="corporate-signup-form">BECOME A CORPORATE PARTNER <svg class="icon circle-arrow"><use xlink:href="#arrow-circle-white" /></svg></a>
+          </div>
+     </div>
+   </div>  
+   </div>
 </div>
+   
+    <div class="reveal" id="corporate-signup-form" data-reveal>
+            <form>
+                 <div class="row">
+                       <div class="small-12 columns">
+                        <button class="close-button" data-close aria-label="Close modal" type="button">
+                            <span aria-hidden="true"><svg class="icon"><use xlink:href="#white-circle-x" /></svg></span>
+                        </button>
+                     </div>
+                    </div>
+                  <div class="row">
+                      <div class="small-12 columns">
+                          <h3 class="text-left white-text">I would like to become a Corporate Partner</h3>
+                      </div>
+                    </div>
+                    <div class="row">  
+                        <div class="small-12 medium-6 columns">
+                                  <input class="input-group-field white-text" id="first-name" type="text" placeholder="First Name">
+                          </div>
+                          <div class="small-12 medium-6 columns">
+                                  <input class="input-group-field white-text" id="last-name" type="text" placeholder="Last Name">
+                          </div>
+                    </div>                            
+                    <div class="row">  
+                        <div class="small-12 medium-6 columns">
+                                  <input class="input-group-field white-text" id="company-name" type="text" placeholder="Company Name">
+                          </div>
+                          <div class="small-12 medium-6 columns">
+                                  <input class="input-group-field white-text" id="email" type="email" placeholder="email@email.com">
+                          </div>
+                    </div>                            
+                     <div class="row">    
+                          <div class="small-12 white-text columns">
+                              <div class="ui fluid selection dropdown transparent-bg">
+                                <input type="hidden" name="user">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">-What Are You Interested In?-</div>
+                                <div class="menu">
+                                  <div class="item" data-value="husker">
+                                    Husker
+                                  </div>
+                                  <div class="item" data-value="starbuck">
+                                    Starbuck
+                                  </div>
+                                  <div class="item" data-value="hotdog">
+                                    Hot Dog
+                                  </div>
+                                  <div class="item" data-value="apollo">
+                                    Apollo
+                                  </div>
+                                </div>
+                              </div>
 
-<div>
-  <h1>I would like to become a Corporate Partner</h1>
-  <%= render :partial => 'messages/form', :locals => {:message => Message.new} %>
-</div>
+                          </div>
+                    </div>
+                    <div class="row"> 
+                        <div class="small-12 columns">
+                                <input class="input-group-field white-text" id="comment" type="text" placeholder="Comment">
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="small-12 columns">
+                      <input class="round-button button-white ProximaNova-Medium" type="submit" value="Submit">
+                      </div>
+                  </div>
+          </form>
+          <%= render :partial => 'messages/form', :locals => {:message => Message.new} %>
+    </div>
+    <div class="row">
+            <div class="small-12">
+                <ul class="custom-accordion accordion" data-accordion data-allow-all-closed="true">
+                    <li class="accordion-item" accordion-title data-accordion-item>
+                        <a href="#" class="accordion-title corporate-partnership-accordion-section font-bold accordionBtn">corporate-partnership accordion 1</a>
+                        <div class="accordion-content" data-tab-content >
+                            <p>One</p>
+                        </div>
+                    </li>
+                    <li class="accordion-item" data-accordion-item>
+                        <a href="#" class="accordion-title corporate-partnership-accordion-section font-bold accordionBtn">corporate-partnership accordion 2</a>
+                        <div class="accordion-content" data-tab-content>
+                            <p>Two</p>
+                        </div>
+                    </li>
+                    <li class="accordion-item" data-accordion-item>
+                        <a href="#" class="accordion-title corporate-partnership-accordion-section font-bold accordionBtn">corporate-partnership accordion 3</a>
+                        <div class="accordion-content" data-tab-content>
+                            <p>Three</p>
+                        </div>
+                    </li>
+                    <li class="accordion-item" data-accordion-item>
+                        <a href="#" class="accordion-title corporate-partnership-accordion-section font-bold accordionBtn">corporate-partnership accordion 4</a>
+                        <div class="accordion-content" data-tab-content>
+                            <p>Four</p>
+                        </div>
+                    </li>
+                    <li class="accordion-item" data-accordion-item>
+                        <a href="#" class="accordion-title corporate-partnership-accordion-section font-bold accordionBtn">corporate-partnership accordion 5</a>
+                        <div class="accordion-content" data-tab-content>
+                            <p>Five</p>
+                        </div>
+                    </li>
+                        
+                </ul>
+            </div>
+        </div>
+

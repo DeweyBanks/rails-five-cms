@@ -1,46 +1,95 @@
-<header>
-  <div id="header-contain" class="row no-bottom-margin column">
-    <div id="logo" class="small-3 medium-2 large-1 column">
-      <%= link_to image_tag("ehe-logo.png"), root_path %>
-    </div>
-    <div class="small-3 medium-6 large-10 column nav-contain">
-      <div class="slideUp">
-        <nav class="top-bar" data-topbar>
-          <ul>
-            <li id="about"><%= link_to "About", "/pages/about" %></li>
-            <li><%= link_to "Preventive Care", "/pages/preventive_care" %></li>
-            <li><%= link_to "Wellness Care", "/pages/wellness_care" %></li>
-            <li><%= link_to "Latest", posts_path %></li>
-            <li><%= link_to "Corporate", "/pages/corporate_partnership" %></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-    <div id="hamburger" class="small-3 medium-2 large-0 column">
-      <%= image_tag "hamburger-menu.svg" %>
-    </div>
-    <div id="login" class="small-3 medium-2 large-1 column">
-      <%= link_to "LOG IN", "https://staging.eheandme.com/" %>
-    </div>
-  </div>
-  <div class="row expanded no-bottom-margin">
-    <div id="header-bg" class="bg-slideUp"></div>
-  </div>
-  <div id="sub-nav-container" class="sub-slideUp">
-    <div class="row no-bottom-margin">
-      <div class="columns medium-offset-1 medium-10 large-centered">
-        <ul id="about-sub" class="sub-nav">
-          <li><%= link_to "Commanders in Wellness", "/pages/commanders_in_wellness" %></li>
+<!-- SVG ICONS -->
+<svg style="display: none;">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_2_);}
+	.st1{fill:none;stroke:#8A8A8A;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st4{fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st5{opacity:0.2;fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+    .a { fill: #fff;}
+
+</style>
+<symbol class="sprite" id="ehe-logo" viewBox="4 6 34 36">
+    <polygon class="a" points="0.38 5.38 0.38 37.5 11.28 37.5 11.28 34.81 3.23 34.81 3.23 22.67 10.5 22.67 10.5 19.98 3.23 19.98 3.23 8.08 11.28 8.08 11.28 5.38 0.38 5.38"/>
+    <polygon class="a" points="30.76 5.38 30.76 37.5 41.66 37.5 41.66 34.81 33.61 34.81 33.61 22.67 40.88 22.67 40.88 19.98 33.61 19.98 33.61 8.08 41.66 8.08 41.66 5.38 30.76 5.38"/>
+    <polygon class="a" points="24.92 5.38 24.92 19.98 16.76 19.98 16.76 5.38 13.88 5.38 13.88 37.5 16.76 37.5 16.76 22.67 24.92 22.67 24.92 37.5 27.79 37.5 27.79 5.38 24.92 5.38"/>
+</symbol>
+<symbol class="sprite" id="magnify-glass" viewBox="0 0 22 22">
+	<title>icon-mag-glass</title>
+		<defs>
+			<rect id="SVGID_1_" x="10" y="9.5" width="22" height="22"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+		</clipPath>
+			<circle class="st1" cx="18.3" cy="17.7" r="7.2"/>
+			<line class="st1" x1="23.5" y1="23" x2="31.5" y2="31"/>
+</symbol>
+<symbol class="sprite" id="arrow-circle-white" viewBox="0 0 42 42">
+		<path class="st2" d="M18.2,20.7"/>
+		<polyline class="st3" points="18.2,29.8 28,21.1 18.2,12.3 		"/>
+	<path class="st4" d="M21.1,0.5c11.4,0,20.6,9.2,20.6,20.6c0,11.4-9.2,20.6-20.6,20.6S0.5,32.5,0.5,21.1C0.5,9.7,9.7,0.5,21.1,0.5z"
+		/>
+</symbol>
+<symbol class="sprite" id="arrow-circle-white-hover" viewBox="0 0 42 42">
+		<path class="st2" d="M18.2,20.7"/>
+		<polyline class="st3" points="18.2,29.8 28,21.1 18.2,12.3 		"/>
+	<path class="st5" d="M21.1,0.5c11.4,0,20.6,9.2,20.6,20.6c0,11.4-9.2,20.6-20.6,20.6S0.5,32.5,0.5,21.1C0.5,9.7,9.7,0.5,21.1,0.5z"
+		/>
+</symbol>
+<symbol class="sprite" id="hamburger" viewBox="0 0 42 42">
+    <path class="a" d="M39.32,40H2.88A2.88,2.88,0,0,1,0,37.12v-1a2.87,2.87,0,0,1,2.88-2.87H39.32a2.87,2.87,0,0,1,2.88,2.87v1A2.88,2.88,0,0,1,39.32,40Zm0-15.35H2.88A2.87,2.87,0,0,1,0,21.78v-1a2.88,2.88,0,0,1,2.88-2.88H39.32a2.88,2.88,0,0,1,2.88,2.88v1A2.87,2.87,0,0,1,39.32,24.65Zm0-15.34H2.88A2.88,2.88,0,0,1,0,6.43v-1A2.87,2.87,0,0,1,2.88,2.6H39.32A2.87,2.87,0,0,1,42.2,5.47v1A2.88,2.88,0,0,1,39.32,9.31Z"/>
+</symbol>
+</svg>
+
+<!-- END SVG ICONS  -->
+      
+<header >
+ <div id="header-contain" class="row no-bottom-margin column">
+   <div id="logo" class="small-3 medium-2 large-1 column">
+   <%= link_to "<svg class='icon'><use xlink:href='#ehe-logo' /></svg>".html_safe, root_path %><!--<img src="images/ehe-logo.png" alt="ehe">--></div>
+  <div class="small-3 medium-6 large-10 column nav-contain">
+    <div class="slideUp">
+      <nav class="top-bar" data-topbar>
+        <ul>
+          <li id="about"><%= link_to "ABOUT", "/pages/about" %></li>
+          <li><%= link_to "PREVENTIVE CARE", "/pages/preventive_care" %></li>
+          <li><%= link_to "WELLNESS CARE", "/pages/wellness_care" %></li>
+          <li><%= link_to "LATEST", posts_path %></li>
+          <li><%= link_to "CORPORATE", "/pages/corporate_partnership" %></li>
+        </ul>
+      </nav>
+ </div>
+      
+</div>
+  <div id="hamburger" class="small-3 medium-2 large-0 column"><svg class="icon"><use xlink:href="#hamburger" /></svg><!-- <img src="images/hamburger-menu.svg" alt="" > --> </div>
+   
+  <div id="login" class="small-3 medium-2 large-1 column"><%= link_to "LOG IN", "https://staging.eheandme.com/" %></div>
+
+</div>
+<div class="row expanded no-bottom-margin">
+  <div id="header-bg" class="bg-slideUp"></div>
+</div>
+<div id="sub-nav-container" class="sub-slideUp">
+   <div class="row no-bottom-margin">
+     <div class="columns medium-offset-1 medium-10 large-centered">
+      <ul id="about-sub" class="sub-nav">
+          
+        <li><%= link_to "Commanders In Wellness", "/pages/commanders_in_wellness" %></li>
           <li><%= link_to "Locations", "/pages/locations" %></li>
           <li><%= link_to "Careers", "/pages/careers" %></li>
           <li><%= link_to "Contact", "/pages/contact" %></li>
         </ul>
       </div>
-    </div>
-    <div class="row expanded no-bottom-margin">
-      <div class="small-12">
+  </div>
+  <div class="row expanded no-bottom-margin">
+     <div class="small-12">
         <div id="sub-nav-bg"></div>
       </div>
-    </div>
   </div>
+        
+</div>
+ 
+  
 </header>

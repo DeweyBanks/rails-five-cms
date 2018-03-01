@@ -2,15 +2,15 @@
 <% description 'EHE is a pioneer in employee health and lifestyle management. The team is devoted to empowering individuals to lead productive and positive lives.' %>
 <% keywords 'EHE, Work Healthy' %>
 <div id="video-container" class="flex-video widescreen">
-  <video autoplay="" loop="" muted class="home-video" ><!--  controls style="background-image: url(images/main-image-placeholder.jpg);">-->
-    <source src=<%= asset_path('videos/Henry_1.mp4') %>>
-    <source src=<%= asset_path('videos/Henry_1.webm') %> type="video/ogg">
-  </video>
-  <%= image_tag "main-image-placeholder.jpg", class: "static-image" %>
-  <div class="content-contain hero">
-    <h1 class="white-text">Partners in Your<br>Health Journey</h1>
-    <a href="#" class="white-text ProximaNova-Bold">Book Your Appointment</a>
-  </div>
+    <!-- goes in video tag below  controls style="background-image: url(images/main-image-placeholder.jpg);">-->
+	 <video autoplay="" loop="" muted class="home-video" > <!-- autoplay="" -->
+	    
+	</video>
+	<img src="images/main-image-placeholder.jpg" class="static-image" alt="">
+    <div class="content-contain hero">
+      <h1 class="white-text">Partners in Your<br>Health Journey</h1>
+      <a href="#" class="white-text ProximaNova-Bold">Book Your Appointment <svg class="icon"><use xlink:href="#arrow-circle-white" /></svg></a>
+    </div>
 </div>
 <!-- color row -->
 <div class="expanded row">
@@ -24,23 +24,21 @@
   </div>
 </div>
 <!-- end color row -->
-
-
 <div class="expanded row">
-  <div class="small-12 medium-6 large-6 columns drkblue text-center blue-section">
-    <div class="content-contain">
-      <h3 class="white-text">Preventive Care</h3>
-      <p class="white-text">Get a one-of-a-kind comprehensive health exam.</p>
-      <a href="#" class="round-button button-white ProximaNova-Medium">LEARN MORE</a>
-    </div>
+  <div class="small-12 medium-6 large-6 columns drkblue text-center blue-section preventive-care">
+      <div class="content-contain">
+          <h3 class="white-text">Preventive Care</h3>
+          <p class="white-text">Get a one-of-a-kind comprehensive health exam.</p>
+          <a href="#" class="cta round-button button-white ProximaNova-Medium" data-container="blue-section">LEARN MORE</a>
+      </div>
   </div>
-  <div class="small-12 medium-6 large-6 columns drkblue text-center blue-section">
+  <div class="small-12 medium-6 large-6 columns drkblue text-center blue-section yearround-wellness">
     <div class="content-contain">
       <h3 class="white-text">Year-Round Wellness</h3>
       <p class="white-text">Reach your goals with personalized care.</p>
-      <div><a href="#" class="round-button button-white ProximaNova-Medium">LEARN MORE</a></div>
+      <div><a href="#" class="cta round-button button-white ProximaNova-Medium" data-container="blue-section">LEARN MORE</a></div>
     </div>
-  </div>
+  </div>   
 </div>
 
 <div class="row">
@@ -50,22 +48,21 @@
   </div>
 </div>
 
-<div class="expanded row coaches-section">
-  <div class="img-contain paraxify"> </div>
-  <div class="small-12">
-    <div class="row">
-      <div class="small-12 medium-5 medium-offset-1 text-center medium-text-left columns">
-        <h3 class="white-text">Coaches</h3>
-        <p class="white-text ProximaNova-Medium">Our coaches work with you to achieve higher levels of body and mind performance.</p>
-      </div>
-      <div class="small-12 medium-6 medium-offset-0 columns text-center medium-text-left large-text-center">
+<div class="expanded row coaches-section img-contain paraxify">
+  <div class="color-overlay"> </div>
+   <div class="small-12">
+   <div class="row">
+     <div class="small-12 medium-5 medium-offset-1 text-center medium-text-left columns">
+         <h3 class="white-text">Coaches</h3>
+         <p class="white-text ProximaNova-Medium">Our coaches work with you to achieve higher levels of body and mind performance.</p>
+     </div>
+     <div class="small-12 medium-6 medium-offset-0 columns text-center medium-text-left large-text-center">
         <div class="content-contain">
-          <a href="#" class="round-button button-white ProximaNova-Medium">LEARN MORE</a>
+            <a href="#" class="cta round-button button-white ProximaNova-Medium" data-container="coaches-section" >LEARN MORE</a>
         </div>
-      </div>
-    </div>
-  </div>
-
+     </div>
+   </div>  
+   </div>
 </div>
 
 <!-- latest carousel -->
@@ -95,4 +92,13 @@
 </div>
 <!-- end latest carousel-->
 
-
+    <script>
+	window.onload = function(){
+        var myParaxify = paraxify('.img-contain', {
+            speed: 0,
+            boost: 1
+        });
+        
+        getVideo();
+      }
+    </script>

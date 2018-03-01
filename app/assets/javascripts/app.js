@@ -25325,6 +25325,7 @@ return tns;
 $(document).foundation();
 
 //
+/*
 function AubreyTest(){
     //in index.html see body onload
     //alert('Aubrey says hello from app.js');
@@ -25355,7 +25356,7 @@ function fFadeout(id){
     }
     
 }
-
+*/
 
 //js fallback for masonry
 /*
@@ -25380,7 +25381,7 @@ var featured_story_msnry = new Masonry( featured_stories_container, {
                  dots: true,
                   responsive: [
                     {
-                      breakpoint: 768,
+                      breakpoint: 769,
                       settings: {
                         arrows: true,
                         centerPadding: '60px',
@@ -25391,7 +25392,7 @@ var featured_story_msnry = new Masonry( featured_stories_container, {
                       breakpoint: 480,
                       settings: {
                         arrows: true,
-                        centerPadding: '40px',
+                        centerPadding: '0px',
                         slidesToShow: 1
                       }
                     }
@@ -25404,34 +25405,53 @@ var featured_story_msnry = new Masonry( featured_stories_container, {
 
 
 
-/* =====================   homepage coaches section mouse over ========================== */
+/* =====================   homepage video section ========================== */
 
-$('.coaches-section .round-button').mouseenter(function(){
-    $('.coaches-section .img-contain').addClass('bg-opacity');
-  console.log('round button enter - purple sect');
+var heroVideos = ['Henry_1', 'Joan_1', 'Henry_1', 'Joan_1'];
+var heroLength = heroVideos.length;
+var rand = function() {
+    return Math.floor(Math.random()*heroLength);
+};
+
+var getVideo = function(){
+    var videoName = heroVideos[rand()];
+    console.log(videoName);
+    $( "video" ).append( "<source src='/assets/videos/"+videoName+".mp4'>" );
+    $( "video" ).append( "<source src='/assets/videos/"+videoName+".webm' type='video/ogg'>" );    
+}
+
+
+/* =====================   section mouse over ========================== */
+
+$('.cta').mouseenter(function(){
+    var buttonData = $(this).data('container');
+    console.log( buttonData );
+    if(buttonData === "blue-section"){
+        $(this).closest('div.drkblue').addClass('drkrblue');
+    }else if(buttonData === undefined){
+        console.log("do nothing");
+    }else{
+        $('.'+buttonData+' .color-overlay').addClass('bg-opacity');
+    }
 });
 
-$('.coaches-section .round-button').mouseleave(function(){
-    $('.coaches-section .img-contain').removeClass('bg-opacity');
+$('.cta').mouseleave(function(){
+    //$('.color-overlay').removeClass('bg-opacity');
+    var buttonData = $(this).data('container');
+    console.log( buttonData );
+    if(buttonData === "blue-section"){
+         $(this).closest('div.drkblue').removeClass('drkrblue');
+    }else if(buttonData === undefined){
+        console.log("do nothing");
+    }else{
+        $('.'+buttonData+' .color-overlay').removeClass('bg-opacity');
+    }
 });
 
 
 
 
 
-
-
-
-
-/* =====================   homepage blue section mouse over ========================== */
-
-$('.blue-section .round-button').mouseenter(function(){
-  $(this).closest('div.drkblue').addClass('drkrblue');
-});
-
-$('.blue-section .round-button').mouseleave(function(){
-     $(this).closest('div.drkblue').removeClass('drkrblue');
-});
 
 
 
@@ -25453,7 +25473,7 @@ $( 'header' ).mouseenter(function() {
     if( $('body').hasClass('home') ){
       $( this ).addClass('active');
     }
-    console.log("mouse enter nav bar");
+   // console.log("mouse enter nav bar");
 });
 // -- if home -- remove class on mouse leave  -- //
 $( 'header' ).mouseleave(function() {
@@ -25469,19 +25489,32 @@ $( 'header' ).mouseleave(function() {
     $('#header-contain nav li a').removeClass('active-hover');
 });
 
-// all buttons
-$('#header-contain nav li').mouseenter(function() {
-    if($('body').hasClass('about-internal')){
+function controlSubNav(action){
+  if(action=="remove"){
+  // sub nav bar control
+    if($('body').hasClass('about-internal')){ // if one of the about-internal pages don't do anything on mouse over
         
     }else{
-        $('#sub-nav-container, #about-sub').removeClass('active');
+        console.log("remove sub nav container active state");
+        $('#sub-nav-container, #about-sub').removeClass('active');// other pages will remove the active class for the sub nav menu - thus removing it from the screen
     }
-    $('#header-contain nav li a').removeClass('active-hover');
-    $('a', this).addClass('active-hover');
-});
-// about button
-$('#about').mouseenter(function() {
-    $('#sub-nav-container, #about-sub').addClass('active');
+  }else{
+     $('#sub-nav-container, #about-sub').addClass('active');
+  }
+}
+
+// all buttons in main nav - 
+$('#header-contain nav li, #login, #logo').mouseenter(function() {
+  console.log("mouse over button  "+this.id);
+    if(this.id == 'about'){
+      controlSubNav("add");
+    }else{
+      controlSubNav("remove");
+    }
+   // clean up active hover states by removing all of them
+    $('#header-contain nav li a').removeClass('active-hover');// all "a" will have the active-hover tag removed when one is moused over
+  //add active hover state to item mouse is over
+    $('a', this).addClass('active-hover');// this sets the current "a" to active by adding the active-hover tag
 });
 
 
