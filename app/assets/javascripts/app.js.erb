@@ -22405,7 +22405,7 @@ module.exports = __webpack_require__(19);
  *  Under MIT License
  */
 ;(function($) {
-    
+
     //Ensures there will be no 'console is undefined' errors in IE
     window.console = window.console || (function(){
         var c = {}; c.log = c.warn = c.debug = c.info = c.error = c.time = c.dir = c.profile = c.clear = c.exception = c.trace = c.assert = function(){};
@@ -22415,8 +22415,8 @@ module.exports = __webpack_require__(19);
     /* Custom Easing */
     $.fn.extend($.easing,{
         def:"easeInOutExpo", easeInOutExpo:function(e,f,a,h,g){if(f===0){return a;}if(f===g){return a+h;}if((f/=g/2)<1){return h/2*Math.pow(2,10*(f-1))+a;}return h/2*(-Math.pow(2,-10*--f)+2)+a;}
-    });    
-    
+    });
+
     /* KEYPRESS LEFT & RIGHT ARROW */
     /* This will work only if a current gridder is opened. */
     $(document).keydown(function(e) {
@@ -22436,26 +22436,26 @@ module.exports = __webpack_require__(19);
             }
         }else{
             console.log("No active gridder.");
-        }   
+        }
     });
-    
+
     $.fn.gridderExpander = function(options) {
-        
+
         /* GET DEFAULT OPTIONS OR USE THE ONE PASSED IN THE FUNCTION  */
-        var settings = $.extend( {}, $.fn.gridderExpander.defaults, options );      
+        var settings = $.extend( {}, $.fn.gridderExpander.defaults, options );
 
         return this.each(function() {
-            
+
             var mybloc;
             var _this = $(this);
             var visible = false;
-            
+
             // START CALLBACK
             settings.onStart(_this);
-             
+
             // CLOSE FUNCTION
             function closeExpander(base) {
-                
+
                 // SCROLL TO CORRECT POSITION FIRST
                 if(settings.scroll){
                     $("html, body").animate({
@@ -22465,29 +22465,29 @@ module.exports = __webpack_require__(19);
                         easing: settings.animationEasing
                     });
                 }
-                
+
                 _this.removeClass("hasSelectedItem");
 
                 // REMOVES GRIDDER EXPAND AREA
                 visible = false;
                 base.find(".selectedItem").removeClass("selectedItem");
-                
+
                 base.find(".gridder-show").slideUp(settings.animationSpeed, settings.animationEasing, function() {
                     base.find(".gridder-show").remove();
                     settings.onClosed(base);
                 });
-                
+
                 /* REMOVE CURRENT ACTIVE GRIDDER */
                 $(".currentGridder").removeClass("currentGridder");
             }
-            
+
             // OPEN EXPANDER
             function openExpander(myself) {
-                
+
                 /* CURRENT ACTIVE GRIDDER */
                 $(".currentGridder").removeClass("currentGridder");
                 _this.addClass("currentGridder");
-                
+
                 /* ENSURES THE CORRECT BLOC IS ACTIVE */
                 if (!myself.hasClass("selectedItem")) {
                     _this.find(".selectedItem").removeClass("selectedItem");
@@ -22503,7 +22503,7 @@ module.exports = __webpack_require__(19);
 
 
                 /* ADD CLASS TO THE GRIDDER CONTAINER
-                 * So you can apply global style when item selected. 
+                 * So you can apply global style when item selected.
                  */
                 if (!_this.hasClass("hasSelectedItem")) {
                     _this.addClass("hasSelectedItem");
@@ -22512,17 +22512,17 @@ module.exports = __webpack_require__(19);
                 /* ADD LOADING BLOC */
                 var $htmlcontent = $("<div class=\"gridder-show loading\"></div>");
                 mybloc = $htmlcontent.insertAfter(myself);
-                
+
                 /* GET CONTENT VIA AJAX OR #ID*/
                 var thecontent = "";
-                
+
                 if( myself.data("griddercontent").indexOf("#") === 0 ) {
-                    
+
                     // Load #ID Content
                     thecontent = $(myself.data("griddercontent")).html();
                     processContent(myself, thecontent);
                 }else{
-                    
+
                     // Load AJAX Content
                     $.ajax({
                         type: "GET",
@@ -22538,32 +22538,32 @@ module.exports = __webpack_require__(19);
                     });
                 }
             }
-            
+
             // PROCESS CONTENT
             function processContent(myself, thecontent){
 
-                /* FORMAT OUTPUT */   
+                /* FORMAT OUTPUT */
                 var htmlcontent = "<div class=\"gridder-padding\">";
-                
+
                 if(settings.showNav){
-                    
+
                     /* CHECK IF PREV AND NEXT BUTTON HAVE ITEMS */
                     var prevItem = ($(".selectedItem").prev());
                     var nextItem = ($(".selectedItem").next().next());
-                    
+
                     htmlcontent += "<div class=\"gridder-navigation\">";
                     htmlcontent += "<a href=\"#\" class=\"gridder-close\">"+settings.closeText+"</a>";
                     htmlcontent += "<a href=\"#\" class=\"gridder-nav prev "+(!prevItem.length?"disabled":"")+"\">"+settings.prevText+"</a>";
                     htmlcontent += "<a href=\"#\" class=\"gridder-nav next "+(!nextItem.length?"disabled":"")+"\">"+settings.nextText+"</a>";
                     htmlcontent += "</div>";
-                }     
-                
+                }
+
                 htmlcontent += "<div class=\"gridder-expanded-content\">";
                 htmlcontent += thecontent;
                 htmlcontent += "</div>";
                 htmlcontent += "</div>";
 
-                // IF EXPANDER IS ALREADY EXPANDED 
+                // IF EXPANDER IS ALREADY EXPANDED
                 if (!visible) {
                     mybloc.hide().append(htmlcontent).slideDown(settings.animationSpeed, settings.animationEasing, function () {
                         visible = true;
@@ -22593,18 +22593,18 @@ module.exports = __webpack_require__(19);
                         easing: settings.animationEasing
                     });
                 }
-                
+
                 /* REMOVE LOADING CLASS */
                 mybloc.removeClass("loading");
             }
-            
+
             /* CLICK EVENT */
             _this.on("click", ".gridder-list", function (e) {
                 e.preventDefault();
                 var myself = $(this);
                 openExpander(myself);
             });
-            
+
             /* NEXT BUTTON */
             _this.on("click", ".gridder-nav.next", function(e) {
                 e.preventDefault();
@@ -22616,7 +22616,7 @@ module.exports = __webpack_require__(19);
                 e.preventDefault();
                 $(this).parents(".gridder-show").prev().prev().trigger("click");
             });
-            
+
             /* CLOSE BUTTON */
             _this.on("click", ".gridder-close", function(e) {
                 e.preventDefault();
@@ -22624,7 +22624,7 @@ module.exports = __webpack_require__(19);
             });
         });
     };
-    
+
     // Default Options
     $.fn.gridderExpander.defaults = {
         scroll: true,
@@ -22635,12 +22635,12 @@ module.exports = __webpack_require__(19);
         showNav: true,
         nextText: "Next",
         prevText: "Previous",
-        closeText: "Close",    
+        closeText: "Close",
         onStart: function(){},
         onContent: function(){},
         onClosed: function(){}
     };
-     
+
 })(jQuery);
 
 var tns = (function (){
@@ -22704,7 +22704,7 @@ function setLocalStorage(key, value, access) {
 function getSlideId() {
   var id = window.tnsId;
   window.tnsId = !id ? 1 : id + 1;
-  
+
   return 'tns' + window.tnsId;
 }
 
@@ -22746,14 +22746,14 @@ function resetFakeBody (body, docOverflow) {
   }
 }
 
-// get css-calc 
+// get css-calc
 // @return - false | calc | -webkit-calc | -moz-calc
-// @usage - var calc = getCalc(); 
+// @usage - var calc = getCalc();
 function calc() {
-  var doc = document, 
+  var doc = document,
       body = getBody(),
       docOverflow = setFakeBody(body),
-      div = doc.createElement('div'), 
+      div = doc.createElement('div'),
       result = false;
 
   body.appendChild(div);
@@ -22762,13 +22762,13 @@ function calc() {
     for (var i = 0; i < 3; i++) {
       val = vals[i];
       div.style.width = val;
-      if (div.offsetWidth === 10) { 
-        result = val.replace('(10px)', ''); 
+      if (div.offsetWidth === 10) {
+        result = val.replace('(10px)', '');
         break;
       }
     }
   } catch (e) {}
-  
+
   body.fake ? resetFakeBody(body, docOverflow) : div.remove();
 
   return result;
@@ -22867,7 +22867,7 @@ function toDegree (y, x) {
 function getTouchDirection(angle, range) {
   var direction = false,
       gap = Math.abs(90 - Math.abs(angle));
-      
+
   if (gap >= 90 - range) {
     direction = 'horizontal';
   } else if (gap <= range) {
@@ -22903,7 +22903,7 @@ function getAttr(el, attr) {
 
 function isNodeList(el) {
   // Only NodeList has the "item()" function
-  return typeof el.item !== "undefined"; 
+  return typeof el.item !== "undefined";
 }
 
 function setAttrs(els, attrs) {
@@ -23050,8 +23050,8 @@ function jsTransform(element, attr, prefix, postfix, to, duration, callback) {
     duration -= tick;
     from += positionTick;
     element.style[attr] = prefix + from + unit + postfix;
-    if (duration > 0) { 
-      setTimeout(moveElement, tick); 
+    if (duration > 0) {
+      setTimeout(moveElement, tick);
     } else {
       callback();
     }
@@ -23063,8 +23063,8 @@ function jsTransform(element, attr, prefix, postfix, to, duration, callback) {
 
 // helper functions
 // check browser version and local storage
-// if browser upgraded, 
-// 1. delete browser ralated data from local storage and 
+// if browser upgraded,
+// 1. delete browser ralated data from local storage and
 // 2. recheck these options and save them to local storage
 var browserInfo = navigator.userAgent;
 var localStorageAccess = true;
@@ -23117,34 +23117,34 @@ var CALC = checkStorageValue(tnsStorage['tC']) || setLocalStorage('tC', calc(), 
 var SUBPIXEL = checkStorageValue(tnsStorage['tSP']) || setLocalStorage('tSP', subpixelLayout(), localStorageAccess);
 var CSSMQ = checkStorageValue(tnsStorage['tMQ']) || setLocalStorage('tMQ', mediaquerySupport(), localStorageAccess);
 var TRANSFORM = checkStorageValue(tnsStorage['tTf']) || setLocalStorage('tTf', whichProperty([
-      'transform', 
-      'WebkitTransform', 
-      'MozTransform', 
-      'msTransform', 
+      'transform',
+      'WebkitTransform',
+      'MozTransform',
+      'msTransform',
       'OTransform'
     ]), localStorageAccess);
 var TRANSITIONDURATION = checkStorageValue(tnsStorage['tTDu']) || setLocalStorage('tTDu', whichProperty([
-      'transitionDuration', 
-      'WebkitTransitionDuration', 
-      'MozTransitionDuration', 
+      'transitionDuration',
+      'WebkitTransitionDuration',
+      'MozTransitionDuration',
       'OTransitionDuration'
     ]), localStorageAccess);
 var TRANSITIONDELAY = checkStorageValue(tnsStorage['tTDe']) || setLocalStorage('tTDe', whichProperty([
-      'transitionDelay', 
-      'WebkitTransitionDelay', 
-      'MozTransitionDelay', 
+      'transitionDelay',
+      'WebkitTransitionDelay',
+      'MozTransitionDelay',
       'OTransitionDelay'
     ]), localStorageAccess);
 var ANIMATIONDURATION = checkStorageValue(tnsStorage['tADu']) || setLocalStorage('tADu', whichProperty([
-      'animationDuration', 
-      'WebkitAnimationDuration', 
-      'MozAnimationDuration', 
+      'animationDuration',
+      'WebkitAnimationDuration',
+      'MozAnimationDuration',
       'OAnimationDuration'
     ]), localStorageAccess);
 var ANIMATIONDELAY = checkStorageValue(tnsStorage['tADe']) || setLocalStorage('tADe', whichProperty([
-      'animationDelay', 
-      'WebkitAnimationDelay', 
-      'MozAnimationDelay', 
+      'animationDelay',
+      'WebkitAnimationDelay',
+      'MozAnimationDelay',
       'OAnimationDelay'
     ]), localStorageAccess);
 var TRANSITIONEND = checkStorageValue(tnsStorage['tTE']) || setLocalStorage('tTE', getEndProperty(TRANSITIONDURATION, 'Transition'), localStorageAccess);
@@ -23195,7 +23195,7 @@ var tns = function(options) {
     // startIndex: 0,
     onInit: false
   }, options || {});
-  
+
   // get element nodes from selectors
   ['container', 'controlsContainer', 'navContainer', 'autoplayButton'].forEach(function(item) {
     if (typeof options[item] === 'string') { options[item] = doc.querySelector(options[item]); }
@@ -23215,16 +23215,16 @@ var tns = function(options) {
    }
 
   // update responsive
-  // from: { 
-  //    300: 2, 
+  // from: {
+  //    300: 2,
   //    800: {
   //      loop: false
   //    }
   // }
   // to: {
-  //    300: { 
-  //      items: 2 
-  //    }, 
+  //    300: {
+  //      items: 2
+  //    },
   //    800: {
   //      loop: false
   //    }
@@ -23298,7 +23298,7 @@ var tns = function(options) {
     responsiveItems = arr;
 
     setBreakpointZone();
-  } 
+  }
 
   var items = getOption('items'),
       slideBy = getOption('slideBy') === 'page' ? items : getOption('slideBy'),
@@ -23471,7 +23471,7 @@ var tns = function(options) {
 
   function getOption (item, viewport) {
     viewport = viewport ? viewport : windowWidth;
-    
+
     var obj = {
           slideBy: 'page',
           edgePadding: false,
@@ -23507,8 +23507,8 @@ var tns = function(options) {
   }
 
   function getSlideMarginLeft (i) {
-    var str = CALC ? 
-      CALC + '(' + i * 100 + '% / ' + slideCountNew + ')' : 
+    var str = CALC ?
+      CALC + '(' + i * 100 + '% / ' + slideCountNew + ')' :
       i * 100 / slideCountNew + '%';
     return str;
   }
@@ -23540,8 +23540,8 @@ var tns = function(options) {
     if (fixedWidthTem) {
       str = (fixedWidthTem + gutterTem) * slideCountNew + 'px';
     } else {
-      str = CALC ? 
-        CALC + '(' + slideCountNew * 100 + '% / ' + itemsTem + ')' : 
+      str = CALC ?
+        CALC + '(' + slideCountNew * 100 + '% / ' + itemsTem + ')' :
         slideCountNew * 100 / itemsTem + '%';
     }
 
@@ -23557,8 +23557,8 @@ var tns = function(options) {
         str += (fixedWidthTem + gutterTem) + 'px';
       } else {
         var dividend = carousel ? slideCountNew : itemsTem;
-        str += CALC ? 
-          CALC + '(100% / ' + dividend + ')' : 
+        str += CALC ?
+          CALC + '(100% / ' + dividend + ')' :
           100 / dividend + '%';
       }
       str += importantStr + ';';
@@ -23631,7 +23631,7 @@ var tns = function(options) {
     // delete datas after init
     classOuter = classInner = null;
 
-    // add id, class, aria attributes 
+    // add id, class, aria attributes
     // before clone slides
     for (var x = 0; x < slideCount; x++) {
       var item = slideItems[x];
@@ -23646,7 +23646,7 @@ var tns = function(options) {
 
     // clone slides
     if (loop || edgePadding) {
-      var fragmentBefore = doc.createDocumentFragment(), 
+      var fragmentBefore = doc.createDocumentFragment(),
           fragmentAfter = doc.createDocumentFragment();
 
       for (var j = cloneCount; j--;) {
@@ -23677,7 +23677,7 @@ var tns = function(options) {
       removeAttrs(item, ['tabindex']);
       addClass(item, slideActiveClass);
 
-      if (!carousel) { 
+      if (!carousel) {
         item.style.left = (i - index) * 100 / items + '%';
         addClass(item, animateIn);
         removeClass(item, animateNormal);
@@ -23714,7 +23714,7 @@ var tns = function(options) {
 
       // slide styles
       if (horizontal || options.gutter) {
-        str = getSlideWidthStyle(options.fixedWidth, options.gutter, options.items) + 
+        str = getSlideWidthStyle(options.fixedWidth, options.gutter, options.items) +
               getSlideGutterStyle(options.gutter);
         addCSSRule(sheet, '#' + slideId + ' > .tns-item', str, getCssRulesLength(sheet));
       }
@@ -23801,7 +23801,7 @@ var tns = function(options) {
       setSnapInterval();
     }
 
- 
+
     // == navInit ==
     if (hasNav) {
       var initIndex = !carousel ? 0 : cloneCount;
@@ -23819,7 +23819,7 @@ var tns = function(options) {
           });
         });
 
-      // generated nav 
+      // generated nav
       } else {
         var navHtml = '';
         for (var i = 0; i < slideCount; i++) {
@@ -23973,7 +23973,7 @@ var tns = function(options) {
 
   function resizeTasks () {
     var breakpointZoneTem = breakpointZone,
-        indexTem = index, 
+        indexTem = index,
         itemsTem = items,
         freezeTem = freeze;
 
@@ -24008,14 +24008,14 @@ var tns = function(options) {
       if (disable !== disableTem) {
         disableSlider(disable);
       }
-      
+
       if (freeze !== freezeTem) {
         // reset index to initial status
         if (freeze) { index = !carousel ? 0 : cloneCount; }
 
         toggleSlideDisplayAndEdgePadding();
       }
-      
+
       if (breakpointZoneTem !== breakpointZone) {
         speed = getOption('speed');
         edgePadding = getOption('edgePadding');
@@ -24048,7 +24048,7 @@ var tns = function(options) {
         if (controls !== controlsTem) {
           controls ?
             showElement(controlsContainer) :
-            hideElement(controlsContainer); 
+            hideElement(controlsContainer);
         }
         if (controlsText !== controlsTextTem) {
           prevButton.innerHTML = controlsText[0];
@@ -24098,7 +24098,7 @@ var tns = function(options) {
           autoplay = autoplayHoverPause = autoplayResetOnVisibility = false;
         } else {
           autoplay = getOption('autoplay');
-          
+
           if (autoplay) {
             autoplayHoverPause = getOption('autoplayHoverPause');
             autoplayResetOnVisibility = getOption('autoplayResetOnVisibility');
@@ -24155,7 +24155,7 @@ var tns = function(options) {
 
         // slide styles
         if (horizontal && (items !== itemsTem || gutter !== gutterTem || fixedWidth != fixedWidthTem)) {
-          var str = getSlideWidthStyle(fixedWidth, gutter, items) + 
+          var str = getSlideWidthStyle(fixedWidth, gutter, items) +
                     getSlideGutterStyle(gutter);
 
           // remove the last line and
@@ -24169,13 +24169,13 @@ var tns = function(options) {
         if (!fixedWidth && index === indexTem) { doTransform(0); }
       }
 
-      if (index !== indexTem) { 
+      if (index !== indexTem) {
         events.emit('indexChanged', info());
-        doTransform(0); 
+        doTransform(0);
         indexCached = index;
       }
 
-      if (items !== itemsTem) { 
+      if (items !== itemsTem) {
         additionalUpdates();
         runAutoHeight();
 
@@ -24210,7 +24210,7 @@ var tns = function(options) {
 
   // (slideBy, indexMin, indexMax) => index
   var updateIndex = (function () {
-    return loop ? 
+    return loop ?
       function () {
         var leftEdge = indexMin,
             rightEdge = indexMax;
@@ -24288,7 +24288,7 @@ var tns = function(options) {
 
   function disableSlider (disable) {
     var len = slideItems.length;
-    
+
     if (disable) {
       sheet.disabled = true;
       container.className = container.className.replace(classContainer.substring(1), '');
@@ -24304,7 +24304,7 @@ var tns = function(options) {
       if (!horizontal || !carousel) { innerWrapper.style = ''; }
 
       // gallery
-      if (!carousel) { 
+      if (!carousel) {
         for (var i = index; i < index + slideCount; i++) {
           var item = slideItems[i];
           item.style = '';
@@ -24328,7 +24328,7 @@ var tns = function(options) {
       }
 
       // gallery
-      if (!carousel) { 
+      if (!carousel) {
         for (var i = index; i < index + slideCount; i++) {
           var item = slideItems[i],
               classN = i < index + items ? animateIn : animateNormal;
@@ -24342,9 +24342,9 @@ var tns = function(options) {
   // lazyload
   function lazyLoad () {
     if (lazyload && !disable) {
-      var i = index, 
+      var i = index,
           len = index + items;
-          
+
       if (edgePadding) {
         i -=1;
         len +=1;
@@ -24380,7 +24380,7 @@ var tns = function(options) {
       }
 
       if (images.length === 0) {
-        updateInnerWrapperHeight(); 
+        updateInnerWrapperHeight();
       } else {
         checkImagesLoaded(images);
       }
@@ -24395,14 +24395,14 @@ var tns = function(options) {
     if (images.length === 0) {
       updateInnerWrapperHeight();
     } else {
-      setTimeout(function () { 
-        checkImagesLoaded(images); 
+      setTimeout(function () {
+        checkImagesLoaded(images);
       }, 16);
     }
-  } 
+  }
 
   function additionalUpdates () {
-    lazyLoad(); 
+    lazyLoad();
     updateSlideStatus();
     updateControlsStatus();
     updateNavVisibility();
@@ -24581,7 +24581,7 @@ var tns = function(options) {
       }
       removeClass(item, classOut);
       addClass(item, classIn);
-      
+
       if (isOut) { slideItemsOut.push(item); }
     }
   }
@@ -24593,17 +24593,17 @@ var tns = function(options) {
     return carousel ?
       function (duration, distance) {
         if (!distance) { distance = getContainerTransformValue(); }
-        
+
         // constrain the distance when non-loop no-edgePadding fixedWidth reaches the right edge
         if (hasRightDeadZone && index === indexMax) {
           distance = - ((fixedWidth + gutter) * slideCountNew - vpInner) + 'px';
         }
 
         if (TRANSITIONDURATION || !duration) {
-          // for morden browsers with non-zero duration or 
+          // for morden browsers with non-zero duration or
           // zero duration for all browsers
           doContainerTransform(distance);
-          // run fallback function manually 
+          // run fallback function manually
           // when duration is 0 / container is hidden
           if (!duration || !isVisible(container)) { onTransitionEnd(); }
 
@@ -24625,7 +24625,7 @@ var tns = function(options) {
         animateSlide(indexCached, animateIn, animateOut, true);
         animateSlide(index, animateNormal, animateIn);
 
-        // run fallback function manually 
+        // run fallback function manually
         // when transition or animation not supported / duration is 0
         if (!TRANSITIONEND || !ANIMATIONEND || !duration) { onTransitionEnd(); }
       };
@@ -24638,7 +24638,7 @@ var tns = function(options) {
     // if container is hidden, set duration to 0
     // to fix an issue where browser doesn't fire ontransitionend on hidden element
     if (animating && !isVisible(container)) { duration = 0; }
-    
+
     if (TRANSITIONDURATION) { setDurations(duration); }
     transformCore(duration, distance);
   }
@@ -24693,7 +24693,7 @@ var tns = function(options) {
           item.style.left = '';
 
           if (TRANSITIONDURATION) { setDurations(0, item); }
-          if (animateDelay && TRANSITIONDELAY) { 
+          if (animateDelay && TRANSITIONDELAY) {
             item.style[TRANSITIONDELAY] = item.style[ANIMATIONDELAY] = '';
           }
           removeClass(item, animateOut);
@@ -24702,28 +24702,28 @@ var tns = function(options) {
       }
 
       /* update slides, nav, controls after checking ...
-       * => legacy browsers who don't support 'event' 
-       *    have to check event first, otherwise event.target will cause an error 
-       * => or 'gallery' mode: 
+       * => legacy browsers who don't support 'event'
+       *    have to check event first, otherwise event.target will cause an error
+       * => or 'gallery' mode:
        *   + event target is slide item
-       * => or 'carousel' mode: 
-       *   + event target is container, 
+       * => or 'carousel' mode:
+       *   + event target is container,
        *   + event.property is the same with transform attribute
        */
-      if (!event || 
-          !carousel && event.target.parentNode === container || 
+      if (!event ||
+          !carousel && event.target.parentNode === container ||
           event.target === container && strTrans(event.propertyName) === strTrans(transformAttr)) {
 
-        if (!updateIndexBeforeTransform) { 
+        if (!updateIndexBeforeTransform) {
           var indexTem = index;
           updateIndex();
-          if (index !== indexTem) { 
+          if (index !== indexTem) {
             events.emit('indexChanged', info());
 
             if (TRANSITIONDURATION) { setDurations(0); }
             doContainerTransform();
           }
-        } 
+        }
 
         runAutoHeight();
 
@@ -24750,7 +24750,7 @@ var tns = function(options) {
 
     // go to exact slide
     } else if (!running) {
-      var absIndex = index%slideCount, 
+      var absIndex = index%slideCount,
           indexGap = 0;
       if (absIndex < 0) { absIndex += slideCount; }
 
@@ -24883,20 +24883,20 @@ var tns = function(options) {
   }
 
   function mouseoverPause () {
-    if (animating) { 
+    if (animating) {
       stopAutoplayTimer();
       autoplayHoverPaused = true;
     }
   }
 
   function mouseoutRestart () {
-    if (autoplayHoverPaused) { 
+    if (autoplayHoverPaused) {
       setAutoplayTimer();
       autoplayHoverPaused = false;
     }
   }
 
-  // keydown events on document 
+  // keydown events on document
   function onDocumentKeydown (e) {
     e = e || win.event;
     switch(e.keyCode) {
@@ -25016,14 +25016,14 @@ var tns = function(options) {
   }
 
   function onTouchOrMouseStart (e) {
-    // reset 
+    // reset
     moveDirectionExpected = 0;
     touchedOrDraged = false;
     startX = startY = null;
 
     if (!running) {
       e = e || win.event;
-      var ev; 
+      var ev;
 
       if (isTouchEvent(e)) {
         ev = e.changedTouches[0];
@@ -25064,7 +25064,7 @@ var tns = function(options) {
         if (isTouchEvent(e)) {
           events.emit('touchMove', info(e));
         } else {
-          // "mousemove" event after "mousedown" indecate 
+          // "mousemove" event after "mousedown" indecate
           // it is "drag", not "click"
           if (!isDragEvent) { isDragEvent = true; }
           events.emit('dragMove', info(e));
@@ -25109,7 +25109,7 @@ var tns = function(options) {
       disY = parseInt(ev.clientY) - startY;
       var sliderMoved = Boolean(horizontal ? disX : disY);
 
-      // reset 
+      // reset
       moveDirectionExpected = 0;
       touchedOrDraged = false;
       startX = startY = null;
@@ -25132,11 +25132,11 @@ var tns = function(options) {
           } while (i < slideCountNew && moved >= slideOffsetTops[i + 1]);
         }
       }
-      
+
       render(e, sliderMoved);
 
       // drag vs click
-      if (isDragEvent) { 
+      if (isDragEvent) {
         // reset isDragEvent
         isDragEvent = false;
 
@@ -25145,8 +25145,8 @@ var tns = function(options) {
         addEvents(target, {'click': function preventClick (e) {
           preventDefaultBehavior(e);
           removeEvents(target, {'click': preventClick});
-        }}); 
-      } 
+        }});
+      }
     }
   }
 
@@ -25179,7 +25179,7 @@ var tns = function(options) {
       visibleNavIndexes.unshift(0);
     }
   }
-  
+
   /*
    * 1. update visible nav items list
    * 2. add "hidden" attributes to previous visible nav items
@@ -25336,17 +25336,17 @@ function fAlert(){
     //alert('fAlert');
     //$(document).foundation('alert', 'reflow');
     //$('#myAlert').foundation({alert: {speed: 3000}});
-    
+
 }
 
 function fFadeout(id){
     //alert(id);
     // jQuery
-    
+
     //var elementHash ="#"+id;
     //var elem = $(elementHash);
     //$(elementHash).addClass('wiggle');
-    
+
     if (document.getElementById(id).style.display == "none") {
         //alert('hidden');
         //document.getElementById(id).style.display = "block";
@@ -25354,7 +25354,7 @@ function fFadeout(id){
     }else{
         Foundation.Motion.animateOut( ("#"+id) , "fade-out");
     }
-    
+
 }
 */
 
@@ -25366,7 +25366,7 @@ var featured_story_msnry = new Masonry( featured_stories_container, {
   itemSelector: '#featured-stories-container li'
 });
 */
-//toggle arrow in tabs 
+//toggle arrow in tabs
 
 
 
@@ -25416,8 +25416,13 @@ var rand = function() {
 var getVideo = function(){
     var videoName = heroVideos[rand()];
     console.log(videoName);
-    $( "video" ).append( "<source src='/assets/videos/"+videoName+".mp4'>" );
-    $( "video" ).append( "<source src='/assets/videos/"+videoName+".webm' type='video/ogg'>" );    
+    var assetPath = "<%= asset_url('Joan_1.mp4') %>";
+    var secondPath = "<%= asset_url('Joan_1.webm') %>";
+    console.log("ASSET::::: ", assetPath);
+    // $( "video" ).append( "<source src='/assets/videos/"+videoName+".mp4'>" );
+    $( "video" ).append( "<source src='/assets/videos" + assetPath + "''>" );
+    $( "video" ).append( "<source src='/assets/videos" + secondPath + "' type='video/ogg'>" );
+    // $( "video" ).append( "<source src='/assets/videos/"+videoName+".webm' type='video/ogg'>" );
 }
 
 
@@ -25493,7 +25498,7 @@ function controlSubNav(action){
   if(action=="remove"){
   // sub nav bar control
     if($('body').hasClass('about-internal')){ // if one of the about-internal pages don't do anything on mouse over
-        
+
     }else{
         console.log("remove sub nav container active state");
         $('#sub-nav-container, #about-sub').removeClass('active');// other pages will remove the active class for the sub nav menu - thus removing it from the screen
@@ -25503,7 +25508,7 @@ function controlSubNav(action){
   }
 }
 
-// all buttons in main nav - 
+// all buttons in main nav -
 $('#header-contain nav li, #login, #logo').mouseenter(function() {
   console.log("mouse over button  "+this.id);
     if(this.id == 'about'){
