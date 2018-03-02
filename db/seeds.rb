@@ -5,7 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+CommanderType.destroy_all
 CommanderType.create([{ name: 'Physician'}, { name: 'Coach'}])
-Category.create([{name: 'News'}, {name: 'Blog'}, {name: 'PR'}])
+Category.destroy_all
+Category.create([{name: 'News'}, {name: 'Blog'}, {name: 'PR'}, {name: 'Recipes'}])
 

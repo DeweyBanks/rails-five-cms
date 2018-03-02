@@ -1,9 +1,21 @@
 <% title 'Blog' %>
 <% description 'For over 100 years, EHE has been the leader in healthcare and wellbeing. We are pioneers in employee health and lifestyle management and are devoted to emp' %>
 <% keywords 'EHE, Blog' %>
+
+
+<%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<%= link_to "All", posts_path %>
+<% @categories.each do |category| %>
+  <%= link_to category.name, posts_path(:filter => category.name) %>
+<% end %>
 <table>
   <thead>
     <tr>
+      <th></th>
       <th>Title</th>
       <th>body</th>
       <th>Created By: </th>
@@ -14,6 +26,7 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
+        <td><%= link_to (image_tag post.main_image.url(:medium)), post_path(post) %></td>
         <td><%= post.title %></td>
         <td><%=h truncate(post.body, :length => 300, :omission => ". . ." , :escape => false) %></td>
         <td><%=  %></td>
