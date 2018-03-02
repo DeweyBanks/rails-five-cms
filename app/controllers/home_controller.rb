@@ -7,6 +7,9 @@ class HomeController < ApplicationController
 
   def show
     @page = params[:page]
+    if @page == "about"
+      @posts = Post.all.order('created_at DESC')
+    end
     if valid_page?
       render template: "home/#{params[:page]}"
     else

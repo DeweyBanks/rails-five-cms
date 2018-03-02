@@ -65,36 +65,19 @@
 <div class="expanded row">
   <div class="small-12">
     <div class="latest-container">
-      <div>
-        <p class="white-text">These Are the Best Stress Relief Toys and Tools</p>
-        <img src="images/latest/latest-1.jpg">
-      </div>
-      <div>
-        <p class="white-text">Learn How to Make Gluten-Free Banana Bread</p>
-        <img src="images/latest/latest-2.jpg"></div>
-      <div>
-        <p class="white-text">Flu Symptoms You Need to Know</p>
-        <img src="images/latest/latest-3.jpg">
-      </div>
-      <div>
-        <p class="white-text">These Are the Best Stress Relief Toys and Tools</p>
-        <img src="images/latest/latest-4.jpg">
-      </div>
-      <div>
-        <p class="white-text">Learn How to Make Gluten-Free Banana Bread</p>
-        <img src="images/latest/latest-5.jpg">
-      </div>
-      <div>
-        <p class="white-text">Flu Symptoms You Need to Know</p>
-        <img src="images/latest/latest-6.jpg">
-      </div>
+      <% @posts.each do |post| %>
+        <div>
+          <p class="white-text"><%= post.title %></p>
+          <%= link_to image_tag(post.main_image.url(:medium)), post_path(post)  %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
 <div class="row">
    <div class="small-12 text-center">
     <div class="content-contain bot-space-75">
-        <a href="#" class="round-button button-gray ProximaNova-Medium">SEE MORE</a>
+      <%= link_to "SEE MORE", posts_path, :class => "round-button button-gray ProximaNova-Medium" %>
     </div>
    </div>
 </div>
