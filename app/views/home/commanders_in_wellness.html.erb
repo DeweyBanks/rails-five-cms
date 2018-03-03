@@ -18,3 +18,36 @@
 <%= button_to "Wellness Coaches", commanders_path, params: {filter: "coaches"}, :method => :get %>
 
 
+
+<div class="container">
+  <%= render @commanders %>
+</div>
+<div class="load-more-container">
+  <%= image_tag "ajax-loader.gif", style: "display:none;", class: "loading-gif" %>
+  <%= link_to "Load More", commanders_path, class: "load-more" %>
+</div>
+<% content_for :js do %>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      $('a.load-more').click(function (e) {
+        e.preventDefault();
+        $('.load-more').hide();
+        $('.loading-gif').show();
+        var last_id = $('.record').last().attr('data-id');
+
+        $.ajax({
+            type: "GET",
+            url: $(this).attr('href'),
+            data: {
+                id: last_id
+            },
+            dataType: "script",
+            success: function () {
+                $('.loading-gif').hide();
+                $('.load-more').show();
+            }
+        });
+      });
+    });
+  </script>
+<% end %>

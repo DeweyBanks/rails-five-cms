@@ -1,17 +1,21 @@
 class CommandersController < ApplicationController
 
   def index
-    case params['filter']
-    when "physicians"
-      @commanders = Commander.physicians_scope
-    when "coaches"
-      @commanders = Commander.coaches_scope
+    if params[:id]
+      @commanders = Commander.where('id < ?', params[:id]).limit(5)
     else
-      @commanders = Commander.all
+      case params['filter']
+      when "physicians"
+        @commanders = Commander.physicians_scope
+      when "coaches"
+        @commanders = Commander.coaches_scope
+      else
+        @commanders = Commander.all
+      end
     end
     respond_to do |f|
-      f.html {render :index }
-      f.json {render json: @commanders}
+      f.html
+      f.js
     end
   end
 

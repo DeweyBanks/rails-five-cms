@@ -6,6 +6,7 @@ class HomeController < ApplicationController
   end
 
   def show
+    @commanders = Commander.all.limit(5)
     @page = params[:page]
     if @page == "about"
       @posts = Post.all.order('created_at DESC')
