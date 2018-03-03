@@ -25416,13 +25416,8 @@ var rand = function() {
 var getVideo = function(){
     var videoName = heroVideos[rand()];
     console.log(videoName);
-    var assetPath = "<%= asset_url('Joan_1.mp4') %>";
-    var secondPath = "<%= asset_url('Joan_1.webm') %>";
-    console.log("ASSET::::: ", assetPath);
-    // $( "video" ).append( "<source src='/assets/videos/"+videoName+".mp4'>" );
-    $( "video" ).append( "<source src='/assets/videos" + assetPath + "''>" );
-    $( "video" ).append( "<source src='/assets/videos" + secondPath + "' type='video/ogg'>" );
-    // $( "video" ).append( "<source src='/assets/videos/"+videoName+".webm' type='video/ogg'>" );
+    $( "video" ).append( "<source src='/assets/"+videoName+".mp4'>" );
+    $( "video" ).append( "<source src='/assets/"+videoName+".webm' type='video/ogg'>" );
 }
 
 
