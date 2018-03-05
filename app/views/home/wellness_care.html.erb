@@ -166,3 +166,17 @@
    </div>  
    </div>
 </div>
+
+
+
+
+<!--- Add in page specific JS  -->
+
+<% content_for :js do %>
+<script>
+            var myParaxify = paraxify('.img-contain', {
+            speed: 0,
+            boost: 1
+        });
+</script>
+<% end %>

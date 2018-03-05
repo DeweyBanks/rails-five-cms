@@ -11,7 +11,8 @@
 <li class="gridder-list column" data-griddercontent="#<%= commander.id %>" data-id="<%= commander.id %>">
       <div class="callout">
          <%= image_tag commander.avatar.url(:medium) %><!-- <img src="images/physician-placeholder.png" alt="">-->
-          <img class="com-arrow" src="images/icon-commanders-arrow.png" alt="">
+          <!-- <img class="com-arrow" src="images/icon-commanders-arrow.png" alt="">-->
+          <svg class="icon com-arrow"><use xlink:href="#down-arrow-circle" /></svg>
           <p class="commander-title font-bold"><%= commander.title %></p>
           <p class="name"><%= commander.first_name %> <%= commander.last_name %></p>
       </div>
