@@ -7,8 +7,9 @@
                 <p class="ProximaNova-Bold">Stay Connected</p>
                 <div class="row">
                     <div class="small-8 small-centered medium-7 medium-uncentered column" >
-                        <form name="subscribe" action="#" method="post">
-                            <input type="email" placeholder="name@email.com">
+                        <form name="subscribe" action="/subscribe" method="post">
+                            <input type="hidden" name="authenticity_token" value="token_value">
+                            <input type="email" name="subscribe[email]" placeholder="name@email.com">
                             <input class="" type="Submit" value="Submit">
                         </form>
                     </div>
@@ -39,22 +40,17 @@
                     </div>
                     <div class="small-6 medium-1 columns">
                         <a href="https://www.facebook.com/ehehealth/" target="_blank"><img class="social-icons" src="../assets/icon-facebook.png" alt="facebook"></a>
-                    </div>  
+                    </div>
                     <div class="small-6 medium-1 columns">
                         <a href="https://twitter.com/EHEIntl/" target="_blank"><img class="social-icons" src="../assets/icon-twitter.png" alt="twitter"></a>
-                    </div> 
+                    </div>
                     <div class="small-6 medium-1 columns end">
                         <a href="https://www.youtube.com/user/EHEintl100/" target="_blank"><img class="social-icons" src="../assets/icons-youtube.png" alt="youtube"></a>
-                    </div> 
-                </div> 
+                    </div>
+                </div>
           </div>
     </div>
 <!-- end footer -->
-<!--   <form action="/email_list" method="post">
-    <input type="hidden" name="authenticity_token" value="token_value">
-    <input autofocus="autofocus" placeholder="name@email.com" type="email" name="connection[email]">
-    <input type="submit" name="submit" >
-  </form> -->
 
 </footer>
 

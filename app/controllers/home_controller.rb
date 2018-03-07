@@ -20,6 +20,7 @@ class HomeController < ApplicationController
 
   def subscribe
     email = subscription_params["email"]
+    redirect_back(fallback_location: root_path)
   end
 
   private
