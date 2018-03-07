@@ -51,30 +51,30 @@ $masonry-css-column-gap: $global-margin;
 .masonry-css {
     column-count: 1;
     column-gap: $masonry-css-column-gap;
-  
+
     @include breakpoint(400px) {
       column-count: 2;
     }
-  
+
     @include breakpoint(600px) {
       column-count: 3;
     }
-  
+
     @include breakpoint(800px) {
       column-count: 4;
     }
-  
+
     @include breakpoint(1100px) {
       column-count: 5;
     }
   }
-  
+
   .masonry-css-item {
     break-inside: avoid;
     margin-top: $masonry-css-column-gap;
     margin-bottom: $masonry-css-column-gap;
   }
-  
+
   #featured-stories-container li {
     break-inside: avoid;
 
@@ -85,19 +85,19 @@ $masonry-css-column-gap: $global-margin;
     @include breakpoint(400px) {
       width: calc(100% / 2.1 - .25rem);
     }
-  
+
     @include breakpoint(600px) {
       width: calc(100% / 3.1 - .25rem);
     }
-  
+
     @include breakpoint(800px) {
       width: calc(100% / 4.2 - .25rem);
     }
-  
+
     @include breakpoint(1100px) {
       width: calc(100% / 5.2 - .25rem);
     }
-    
+
     background:  #efefef;
    }
 */
@@ -3476,7 +3476,7 @@ select[multiple] {
       transform: rotate(90deg);
       content: '❯';
     }
-  
+
     .is-active > &::before {
       //content: '\2013';
       transform: rotate(-90deg);
@@ -8021,9 +8021,9 @@ SlideUpTopBar for Foundation styles
   padding: 50px 0;
   position: relative;
   img{
-    margin-left:40px; 
+    margin-left:40px;
   }
-    
+
   .img-contain{
     background: url(../assets/CTA-Book-your-appointment1-placeholder.jpg) no-repeat center center;
     background-size: cover;
@@ -11699,7 +11699,7 @@ input[type="submit"] {
 }
 
 .meet-commanders.img-contain {
-  background-image: url(../assets/about-us-bg-placeholder.jpg);
+  background-image: url(about-us-bg-placeholder.jpg);
   background-repeat: no-repeat;
 }
 
@@ -11874,7 +11874,7 @@ input[type="submit"] {
   color: #616264;
   font-family: "Oswald", sans-serif;
   font-size: 24px;
-  /*                          
+  /*
     font-family: ProximaNova-Bold, Helvetica, Arial, sans-serif;
     font-weight: normal;
     */
@@ -12236,7 +12236,7 @@ div.corporate-partner{
 //  transition: all 0.5s ease;
 //  margin-bottom: 100px !important;
   img{
-  //  margin-left:40px; 
+  //  margin-left:40px;
   }
   &.img-contain{
     background-image:url(../assets/become-corp-partner-bg-image.jpg);
@@ -12283,7 +12283,7 @@ div.corporate-partner{
 
   @include breakpoint(1100px) {
     width:1100px;
-  } 
+  }
 }
 */
 #map {
@@ -12405,7 +12405,7 @@ div.corporate-partner{
     left: 50%;
   }
   &.performance{
-    left: 99%; 
+    left: 99%;
   }
   &.mind-health{
     left: 150%;
@@ -12656,7 +12656,7 @@ div.corporate-partner{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  /* parallax 
+  /* parallax
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
