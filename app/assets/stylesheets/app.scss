@@ -51,30 +51,30 @@ $masonry-css-column-gap: $global-margin;
 .masonry-css {
     column-count: 1;
     column-gap: $masonry-css-column-gap;
-
+  
     @include breakpoint(400px) {
       column-count: 2;
     }
-
+  
     @include breakpoint(600px) {
       column-count: 3;
     }
-
+  
     @include breakpoint(800px) {
       column-count: 4;
     }
-
+  
     @include breakpoint(1100px) {
       column-count: 5;
     }
   }
-
+  
   .masonry-css-item {
     break-inside: avoid;
     margin-top: $masonry-css-column-gap;
     margin-bottom: $masonry-css-column-gap;
   }
-
+  
   #featured-stories-container li {
     break-inside: avoid;
 
@@ -85,19 +85,19 @@ $masonry-css-column-gap: $global-margin;
     @include breakpoint(400px) {
       width: calc(100% / 2.1 - .25rem);
     }
-
+  
     @include breakpoint(600px) {
       width: calc(100% / 3.1 - .25rem);
     }
-
+  
     @include breakpoint(800px) {
       width: calc(100% / 4.2 - .25rem);
     }
-
+  
     @include breakpoint(1100px) {
       width: calc(100% / 5.2 - .25rem);
     }
-
+    
     background:  #efefef;
    }
 */
@@ -145,7 +145,7 @@ section {
 
 /**
      * Correct the font size and margin on `h1` elements within `section` and
-     * `article` contexts in Chrome, Fiarefox, and Safari.
+     * `article` contexts in Chrome, Firefox, and Safari.
      */
 h1 {
   font-size: 2em;
@@ -3476,7 +3476,7 @@ select[multiple] {
       transform: rotate(90deg);
       content: '❯';
     }
-
+  
     .is-active > &::before {
       //content: '\2013';
       transform: rotate(-90deg);
@@ -7221,7 +7221,7 @@ a.thumbnail image {
 .add-arrow::after {
   position: absolute;
   right: -20px;
-  content: url(../assets/icon-call-to-action-right-arrow2.png);
+  content: url(../images/icon-call-to-action-right-arrow2.png);
   height: 0;
   width: 0;
   top: -5px;
@@ -7244,7 +7244,7 @@ a.thumbnail image {
 .add-arrow-below::after {
   position: absolute;
   bottom: 0px;
-  content: url(../assets/icon-call-to-action-right-arrow2.png);
+  content: url(../images/icon-call-to-action-right-arrow2.png);
   height: 0;
   width: 0;
   bottom: -5px;
@@ -7410,7 +7410,7 @@ a:hover, a:focus {
 }
 
 .book-your-appointment.img-contain, .corporate-partner.img-contain {
-  background-image: url(../assets/CTA-Book-your-appointment1-placeholder.jpg);
+  background-image: url(../images/CTA-Book-your-appointment1-placeholder.jpg);
   background-repeat: no-repeat;
 }
 
@@ -8041,8 +8041,8 @@ SlideUpTopBar for Foundation styles
         position: absolute;
         right: -54px;
         content: '';
-        //content: '<object data="../assets/icons-sprite.svg#arrow-circle-white"></object>'; //url(../assets/icons-sprite.svg#arrow-circle-white);
-        background: url(../assets/icons-sprite.svg#arrow-circle-white) center center;
+        //content: '<object data="../images/icons-sprite.svg#arrow-circle-white"></object>'; //url(../images/icons-sprite.svg#arrow-circle-white);
+        background: url(../images/icons-sprite.svg#arrow-circle-white) center center;
         height: 40px;
         width: 40px;
         top: -6px;
@@ -8120,7 +8120,7 @@ SlideUpTopBar for Foundation styles
 }
 
 .coaches-section.img-contain {
-  background-image: url(../assets/home/woman-purple-big.jpg);
+  background-image: url(../images/home/woman-purple-big.jpg);
   background-repeat: no-repeat;
 }
 
@@ -8144,11 +8144,11 @@ SlideUpTopBar for Foundation styles
   padding: 50px 0;
   position: relative;
   img{
-    margin-left:40px;
+    margin-left:40px; 
   }
-
+    
   .img-contain{
-    background: url(../assets/CTA-Book-your-appointment1-placeholder.jpg) no-repeat center center;
+    background: url(../images/CTA-Book-your-appointment1-placeholder.jpg) no-repeat center center;
     background-size: cover;
     position: absolute;
     width: 100%;
@@ -11822,7 +11822,7 @@ input[type="submit"] {
 }
 
 .meet-commanders.img-contain {
-  background-image: image-url('/images/about-us-bg-placeholder.jpg');
+  background-image: url(../images/about-us-bg-placeholder.jpg);
   background-repeat: no-repeat;
 }
 
@@ -11840,7 +11840,7 @@ input[type="submit"] {
 }
 
 .locations {
-  background: url(../assets/about-us-locations-nation-wide-bg-placeholder.jpg) no-repeat center center;
+  background: url(../images/about-us-locations-nation-wide-bg-placeholder.jpg) no-repeat center center;
   background-size: cover;
   padding: 95px 0 75px 0;
   position: relative;
@@ -11997,7 +11997,7 @@ input[type="submit"] {
   color: #616264;
   font-family: "Oswald", sans-serif;
   font-size: 24px;
-  /*
+  /*                          
     font-family: ProximaNova-Bold, Helvetica, Arial, sans-serif;
     font-weight: normal;
     */
@@ -12359,10 +12359,10 @@ div.corporate-partner{
 //  transition: all 0.5s ease;
 //  margin-bottom: 100px !important;
   img{
-  //  margin-left:40px;
+  //  margin-left:40px; 
   }
   &.img-contain{
-    background-image:url(../assets/become-corp-partner-bg-image.jpg);
+    background-image:url(../images/become-corp-partner-bg-image.jpg);
     background-repeat: no-repeat;
   }
   .bg-opacity{
@@ -12378,7 +12378,7 @@ div.corporate-partner{
 }
 */
 .corporate-partner.img-contain {
-  background-image: url(../assets/become-corp-partner-bg-image.jpg);
+  background-image: url(../images/become-corp-partner-bg-image.jpg);
 }
 
 .corporate-partner .color-overlay {
@@ -12406,7 +12406,7 @@ div.corporate-partner{
 
   @include breakpoint(1100px) {
     width:1100px;
-  }
+  } 
 }
 */
 #map {
@@ -12528,7 +12528,7 @@ div.corporate-partner{
     left: 50%;
   }
   &.performance{
-    left: 99%;
+    left: 99%; 
   }
   &.mind-health{
     left: 150%;
@@ -12673,11 +12673,11 @@ div.corporate-partner{
 }
 
 .custom-article-group.preventive-care {
-  background-image: url(../assets/tabs-bg_001-placeholder.jpg);
+  background-image: url(../images/tabs-bg_001-placeholder.jpg);
 }
 
 .custom-article-group.wellness-care {
-  background-image: url(../assets/tabs-bg_002-placeholder.jpg);
+  background-image: url(../images/tabs-bg_002-placeholder.jpg);
   margin-bottom: 100px;
 }
 
@@ -12775,11 +12775,11 @@ div.corporate-partner{
 
 .call-to-action-parallax {
   pointer-events: none;
-  background-image: url(../assets/CTA-Book-your-appointment1-placeholder.jpg);
+  background-image: url(../images/CTA-Book-your-appointment1-placeholder.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  /* parallax
+  /* parallax 
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -12803,7 +12803,7 @@ div.corporate-partner{
 
 .call-to-action-section .call-to-action-group {
   pointer-events: none;
-  background-image: url(../assets/CTA-Book-your-appointment1-placeholder.jpg);
+  background-image: url(../images/CTA-Book-your-appointment1-placeholder.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -12816,7 +12816,7 @@ div.corporate-partner{
 }
 
 .call-to-action-section .call-to-action-group.about-us {
-  background-image: url(../assets/about-us-locations-nation-wide-bg-placeholder.jpg);
+  background-image: url(../images/about-us-locations-nation-wide-bg-placeholder.jpg);
   height: 311px;
 }
 
@@ -12963,7 +12963,7 @@ div.corporate-partner{
   margin: 13px;
   height: 32px;
   width: 32px;
-  background: url(../assets/icon-commanders-closex.png) no-repeat center center;
+  background: url(../images/icon-commanders-closex.png) no-repeat center center;
 }
 
 @media screen and (min-width: 40em) {
@@ -13146,7 +13146,7 @@ div.corporate-partner{
 }
 
 button.slick-prev.slick-arrow, button.slick-next.slick-arrow {
-  background: url(../assets/icon-left-arrow.png) center center no-repeat;
+  background: url(../images/icon-left-arrow.png) center center no-repeat;
   line-height: 0;
   position: absolute;
   width: 20px;
@@ -13168,7 +13168,7 @@ button.slick-prev.slick-arrow, button.slick-next.slick-arrow {
 }
 
 button.slick-next.slick-arrow {
-  background: url(../assets/icon-right-arrow.png) center center no-repeat;
+  background: url(../images/icon-right-arrow.png) center center no-repeat;
   right: 20px;
   left: unset;
 }
