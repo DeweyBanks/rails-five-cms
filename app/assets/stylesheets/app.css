@@ -329,7 +329,7 @@ audio:not([controls]) {
 }
 
 /**
-     * Remove the border on images inside links in IE 10-.
+     * Remove the border on assets inside links in IE 10-.
      */
 img {
   border-style: none;
@@ -7515,12 +7515,6 @@ header #header-bg {
   z-index: -1;
 }
 
-@media screen and (min-width: 64em) {
-  header #header-bg {
-    height: 50%;
-  }
-}
-
 header.active #header-bg {
   background-color: rgba(26, 24, 24, 0.7);
   border-color: transparent;
@@ -7720,9 +7714,6 @@ header #sub-nav-container {
 }
 
 @media screen and (min-width: 64em) {
-  header #sub-nav-container {
-    display: block;
-  }
   header #sub-nav-container.active {
     display: inline-block;
     visibility: visible;
@@ -12140,6 +12131,12 @@ ul#blog-nav .button-search {
   width: 22px;
   padding: 3px 0;
   border-bottom: 1px solid #8a8a8a;
+  cursor: pointer;
+}
+
+ul#blog-nav .button-search svg.icon {
+  height: 22px;
+  width: 22px;
 }
 
 #blog-hero-container img {
