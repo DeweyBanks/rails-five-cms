@@ -145,7 +145,7 @@ section {
 
 /**
      * Correct the font size and margin on `h1` elements within `section` and
-     * `article` contexts in Chrome, Firefox, and Safari.
+     * `article` contexts in Chrome, Fiarefox, and Safari.
      */
 h1 {
   font-size: 2em;
@@ -329,7 +329,7 @@ audio:not([controls]) {
 }
 
 /**
-     * Remove the border on assets inside links in IE 10-.
+     * Remove the border on images inside links in IE 10-.
      */
 img {
   border-style: none;
@@ -7477,7 +7477,7 @@ a:hover, a:focus {
 }
 
 #sub-nav-bg {
-  background-color: rgba(26, 24, 24, 0.85);
+  background-color: transparent;
   position: absolute;
   top: 0;
   left: 0;
@@ -7487,6 +7487,12 @@ a:hover, a:focus {
   z-index: -1;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+}
+
+@media screen and (min-width: 64em) {
+  #sub-nav-bg {
+    background-color: rgba(26, 24, 24, 0.85);
+  }
 }
 
 header {
@@ -7499,6 +7505,17 @@ header {
   display: block;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+}
+
+header.active #header-bg {
+  background-color: rgba(26, 24, 24, 0.7);
+  border-color: transparent;
+}
+
+@media screen and (min-width: 64em) {
+  header {
+    height: auto;
+  }
 }
 
 header #header-bg {
@@ -7515,18 +7532,40 @@ header #header-bg {
   z-index: -1;
 }
 
-header.active #header-bg {
-  background-color: rgba(26, 24, 24, 0.7);
-  border-color: transparent;
-}
-
 header #header-contain {
   margin: 0 auto;
   padding: 0;
 }
 
 header #header-contain .nav-contain {
-  position: relative;
+  display: none;
+  position: absolute;
+  height: 100%;
+  background-color: #000;
+  float: none;
+  top: 47px;
+  /* &.active{
+            width: 100%;
+            padding: 0;
+            margin: 0;
+          }*/
+}
+
+@media screen and (min-width: 48em) {
+  header #header-contain .nav-contain {
+    top: 77px;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  header #header-contain .nav-contain {
+    display: block;
+    position: relative;
+    height: auto;
+    background: transparent;
+    float: left;
+    top: unset;
+  }
 }
 
 header #header-contain div#logo {
@@ -7599,6 +7638,15 @@ header #header-contain div#login a {
   }
 }
 
+header #header-contain div#hamburger {
+  cursor: pointer;
+  /*img{
+        padding: 15px 10px 15px 10px;
+        z-index: 1000;
+        position: relative;
+      }*/
+}
+
 header #header-contain div#hamburger svg.icon {
   height: 35px;
   width: 98%;
@@ -7618,17 +7666,11 @@ header #header-contain div#hamburger svg.icon {
   }
 }
 
-header #header-contain div#hamburger img {
-  padding: 15px 10px 15px 10px;
-  z-index: 1000;
-  position: relative;
-}
-
 header #header-contain nav {
   margin: 0;
   padding: 0;
   height: 100%;
-  display: none;
+  display: block;
 }
 
 @media screen and (min-width: 64em) {
@@ -7647,19 +7689,36 @@ header #header-contain nav ul {
 }
 
 header #header-contain nav ul li {
-  padding: 0 3%;
   height: 100%;
-  display: inline-block;
   text-align: center;
   position: relative;
+  padding: 0;
+  display: block;
+  top: 175px;
+}
+
+@media screen and (min-width: 64em) {
+  header #header-contain nav ul li {
+    padding: 0 3%;
+    display: inline-block;
+    top: 0;
+  }
 }
 
 header #header-contain nav ul li:first-child {
-  padding-left: 2.5%;
+  top: 0px;
 }
 
-header #header-contain nav ul li:last-child {
-  padding-right: 0;
+@media screen and (min-width: 64em) {
+  header #header-contain nav ul li:first-child {
+    padding-left: 2.5%;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  header #header-contain nav ul li:last-child {
+    padding-right: 0;
+  }
 }
 
 header #header-contain nav ul li a, header #header-contain nav ul li a:visited, header #header-contain nav ul li a:focus {
@@ -7711,14 +7770,25 @@ header #sub-nav-container {
   display: none;
   opacity: 0;
   visibility: hidden;
+  top: 60px;
 }
 
 @media screen and (min-width: 64em) {
+  header #sub-nav-container {
+    top: 0px;
+  }
   header #sub-nav-container.active {
     display: inline-block;
     visibility: visible;
     opacity: 1;
   }
+}
+
+header #sub-nav-container .row .columns.active {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  float: none;
 }
 
 header #sub-nav-container ul.sub-nav {
@@ -7730,27 +7800,44 @@ header #sub-nav-container ul.sub-nav {
 }
 
 header #sub-nav-container ul.sub-nav li {
+  display: block;
+  padding: 0;
   margin: 0;
-  padding: 0 6%;
   height: 100%;
-  display: inline-block;
   text-align: center;
   position: relative;
 }
 
-header #sub-nav-container ul.sub-nav li:first-child {
-  padding-left: 2.5%;
+@media screen and (min-width: 64em) {
+  header #sub-nav-container ul.sub-nav li {
+    padding: 0 6%;
+    display: inline-block;
+  }
 }
 
-header #sub-nav-container ul.sub-nav li:last-child {
-  padding-right: 0;
+@media screen and (min-width: 64em) {
+  header #sub-nav-container ul.sub-nav li:first-child {
+    padding-left: 2.5%;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  header #sub-nav-container ul.sub-nav li:last-child {
+    padding-right: 0;
+  }
 }
 
 header #sub-nav-container ul.sub-nav li a {
   font-size: 18px;
-  padding: 23px 0px 22px 0;
+  padding: 5px 0px 5px 0;
   display: inline-block;
   border-bottom: 5px solid transparent;
+}
+
+@media screen and (min-width: 64em) {
+  header #sub-nav-container ul.sub-nav li a {
+    padding: 23px 0px 22px 0;
+  }
 }
 
 header #sub-nav-container ul.sub-nav li a:hover, header #sub-nav-container ul.sub-nav li a.active-hover {
@@ -7763,6 +7850,38 @@ header #sub-nav-container ul.sub-nav li a.active {
 
 header #sub-nav-container ul.sub-nav li:last-child {
   padding-right: 0;
+}
+
+header.mobile-active {
+  height: 100%;
+}
+
+header.mobile-active #header-contain .nav-contain {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+header.mobile-active #header-contain .nav-contain ul li {
+  border-top: 1px solid;
+}
+
+header.mobile-active #header-contain .nav-contain ul li:last-child {
+  border-bottom: 1px solid;
+}
+
+header.mobile-active #header-contain .nav-contain ul li a {
+  padding: 22px 0 5px 0;
+  margin-bottom: 15px;
+  border-bottom-color: transparent;
+}
+
+header.mobile-active #sub-nav-container {
+  display: inline-block;
+  visibility: visible;
+  opacity: 1;
+  z-index: 1500;
 }
 
 /*
@@ -7793,6 +7912,10 @@ SlideUpTopBar for Foundation styles
   transition: top 0.4s ease-in-out;
   position: absolute;
   top: 0;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
 
 .top-bar, .top-bar ul {
