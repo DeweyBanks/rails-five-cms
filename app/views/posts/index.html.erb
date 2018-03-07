@@ -5,7 +5,7 @@
     <div class="row expanded bot-space-25">
         <div class="small-12 blog-hero" style="background: url(../assets/latest/Heart-Health-768x459.jpg) no-repeat center center; background-size: cover;">
             <div class="row bot-space-25">
-                <div class="small-12 column"> 
+                <div class="small-12 column">
                     <div class="content-contain">
                         <h1 class="title-heading white-text">FEATURED STORY</h1>
                         <p class="white-text">Get Inspired to Pump Up Your Heart Health!</p>
@@ -20,22 +20,25 @@
    <div class="row bot-space-25">
      <div class="small-12 columns">
        <ul id="blog-nav">
-         <li><a href="#" class="active ProximaNova-Medium">All</a></li>   
-         <li><a href="#" class="ProximaNova-Medium">Blog</a></li>      
-         <li><a href="#" class="ProximaNova-Medium">News</a></li>      
-         <li><a href="#" class="ProximaNova-Medium">Recipes</a></li>      
-         <li><a href="#" class="ProximaNova-Medium">Press Release</a></li>
-         <li><form id="blog-search" action="">
-                <div class="input-group">
-                    <input class="input-group-field" id="search" type="text" placeholder="search">
-                    <div class="input-group-button">
-                        <button class="button-search" type="submit" value="Submit"><svg class="icon"><use xlink:href="#magnify-glass" /></svg></button>
-                    </div>
-                </div>
-             </form></li>
+
+        <li><%= link_to "All", posts_path, class: "active ProximaNova-Medium" %></li>
+        <% @categories.each do |category| %>
+          <li><%= link_to category.name, posts_path(:filter => category.name), class: "ProximaNova-Medium" %></li>
+        <% end %>
+         <li>
+          <%= form_tag(posts_path, :method => "get", id: "blog-search") do %>
+            <div class="input-group">
+              <%= text_field_tag :search, params[:search], placeholder: "Search", class: "input-group-field" %>
+              <div class="input-group-button">
+                <button class="button-search" type="submit" value="Submit">
+                  <svg class="icon"><use xlink:href="#magnify-glass" /></svg>
+                </button>
+              </div>
+            </div>
+          <% end %>
+          </li>
        </ul>
      </div>
-     
    </div>
    <!-- end blog nav -->
   <!-- start blog listing container -->
@@ -96,21 +99,18 @@
         </div>
     </div>
     </div>
-  <!-- end blog listing container -->  
+  <!-- end blog listing container -->
   <!-- LOAD MORE -->
   <div class="row">
     <div class="small-12 medium-4 small-centered column text-center"><a href="" class="text-center load-more-button ProximaNova-Bold add-arrow-below">LOAD MORE</a></div>
-    
+
   </div>
-  
+
   <!-- END LOAD MORE -->
- 
 
 
-<%= form_tag(posts_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search" %>
-  <%= submit_tag "Search" %>
-<% end %>
+
+
 
 <%= link_to "All", posts_path %>
 <% @categories.each do |category| %>

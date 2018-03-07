@@ -5,16 +5,21 @@
 <div id="map">
 </div>
 
+
 <script type="text/javascript">
-  function initMap() {
-  var uluru = {lat: -25.363, lng: 131.044};
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 4,
-    center: uluru
+  document.addEventListener("DOMContentLoaded", function(event) {
+    function initMap() {
+        alert('called');
+      var uluru = {lat: -25.363, lng: 131.044};
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 6,
+        center: uluru
+      });
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+      });
+    }
+    initMap();
   });
-  var marker = new google.maps.Marker({
-    position: uluru,
-    map: map
-  });
-}
 </script>
