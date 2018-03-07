@@ -92,13 +92,17 @@
 </div>
 <!-- end latest carousel-->
 
+<!--- Add in page specific JS  -->
+<% content_for :js do %>
+
     <script>
-	window.onload = function(){
         var myParaxify = paraxify('.img-contain', {
             speed: 0,
             boost: 1
         });
         
         getVideo();
-      }
     </script>
+
+<% end %>
+ 
