@@ -31,7 +31,6 @@ module Admin
     end
 
     def update
-      binding.pry
        respond_to do |format|
         if @commander.update(commander_params)
           format.html { redirect_to admin_commander_path(@commander), notice: 'Commander was successfully updated.' }
@@ -75,7 +74,7 @@ module Admin
           c.commander_type_id = type_id
           c.emps_id = d["id"]
           c.facility_id = d["facility_id"]
-          c.avatar = File.new("public/assets/test_images/commanders/doctor#{rand(1..9)}.jpg", "r")
+          c.avatar = File.new("public/test_images/commanders/doctor#{rand(1..9)}.jpg", "r")
         else
            if d["name"].present?
             c.first_name = d["name"].split(" ").first

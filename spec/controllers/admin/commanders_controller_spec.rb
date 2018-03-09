@@ -103,6 +103,24 @@ RSpec.describe Admin::CommandersController, type: :controller do
     it { expect(@commander.title).to eql('new title') }
   end
 
+
+  describe "get #update_commanders" do
+    before :each do
+      admin = FactoryBot.create(:user)
+      sign_in(admin)
+    end
+
+    it "responds successfully with an HTTP 200 status code" do
+      post :update_commanders
+      expect(response).to be_success
+      expect(response).to have_http_status(200)
+    end
+
+    it "populates commanders" do
+      expect { post :update_commanders }.to change(Commander, :count).by(11)
+    end
+  end
+
   describe "post #destroy" do
     it "deletes the Commander" do
       admin = FactoryBot.create(:user)
