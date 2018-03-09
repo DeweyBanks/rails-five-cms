@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180222213631) do
+ActiveRecord::Schema.define(version: 20180309223000) do
 
   create_table "campaigns", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "name"
@@ -108,6 +108,7 @@ ActiveRecord::Schema.define(version: 20180222213631) do
     t.string "main_image_content_type"
     t.integer "main_image_file_size"
     t.datetime "main_image_updated_at"
+    t.string "meta_description"
     t.index ["campaign_id"], name: "index_posts_on_campaign_id"
     t.index ["category_id"], name: "index_posts_on_category_id"
   end

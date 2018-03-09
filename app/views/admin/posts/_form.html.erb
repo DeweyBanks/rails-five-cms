@@ -18,6 +18,11 @@
     <%= form.text_field :all_tags, placeholder: "Tags separated with comma" %>
   </div>
 
+   <div class="field">
+    <%= form.label :meta_description %>
+    <%= form.text_field :meta_description, placeholder: "Meta Description" %>
+  </div>
+
   <div class="field">
     <%= form.label :campaign %>
     <%= form.collection_select "campaign_id", Campaign.all, "id", "name", {include_blank: true} %>

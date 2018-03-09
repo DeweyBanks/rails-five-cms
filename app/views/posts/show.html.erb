@@ -1,5 +1,5 @@
 <% title @post.title %>
-<% description 'For over 100 years, EHE has been the leader in healthcare and wellbeing. We are pioneers in employee health and lifestyle management and are devoted to emp' %>
+<% description @post.meta_description %>
 <% keywords "EHE, #{@post.all_tags}"  %>
 <div>
   <h1><%= @post.title %></h1>
@@ -18,5 +18,3 @@
   <p><span>Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
   <%= render :partial => 'comment_form' %>
 </div>
-
-

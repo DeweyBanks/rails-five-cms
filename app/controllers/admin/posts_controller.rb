@@ -65,6 +65,7 @@ module Admin
         :category_id,
         :all_tags,
         :main_image,
+        :meta_description,
         pictures_attributes: [:id, :image, :caption, :alt, :_destroy]
         )
     end
