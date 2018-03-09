@@ -17,20 +17,20 @@
             <p class="ProximaNova-Bold">Questions: <span class="ProximaNova-Regular">800.362.8671</span></p>
             </div><!-- end first column -->
             <div class="small-12 medium-2 columns" >
-                <ul>
-                    <li>Latest</li>
-                    <li>Careers</li>
-                    <li>Contact Us</li>
-                    <li>Locations</li>
-                    <li>FAQs</li>
-                </ul>
+              <ul>
+                <li><%= link_to "Latest", posts_path %></li>
+                <li><%= link_to "Careers", "/pages/careers" %></li>
+                <li><%= link_to "Contact Us", "/pages/contact" %></li>
+                <li><%= link_to "Locations", "/pages/locations" %></li>
+                <li><%= link_to "FAQs", "/pages/faq" %></li>
+              </ul>
             </div>
             <div class="small-12 medium-2 columns" >
-                <ul>
-                    <li>Privacy Policy</li>
-                    <li>Terms of Use</li>
-                    <li>HIPAA Notice</li>
-                </ul>
+              <ul>
+                <li><%= link_to "Privacy Policy", "/pages/privacy_policy" %></li>
+                <li><%= link_to "Terms Of Use", "/pages/terms_of_use" %></li>
+                <li><%= link_to "HIPAA Notice", "/pages/hipaa_notice" %></li>
+              </ul>
             </div>
         </div>
         <div class="row">
