@@ -1,23 +1,118 @@
 <% title 'Contact' %>
 <% description 'For over 100 years, EHE has been the leader in healthcare and wellbeing. We are pioneers in employee health and lifestyle management and are devoted to emp' %>
 <% keywords 'EHE, Contact' %>
-<h1>Contact Us</h1>
+ <!-- heading -->
+    <div class="page-header">
+    <div class='row'>
+      <div class='small-12'>
+        <h1 class='title-heading text-center'>CONTACT US</h1>
+      </div>
+     </div>
+    </div>
+    <!-- end heading -->
+    
+    <div class='row'>
+         <div class='small-12 medium-8 large-8 medium-push-4 large-push-3 large-offset-1 columns'>
+               <div id="contact-us-signup-form">
+                <!-- contact-us-form -->
+                           <%= render :partial => 'messages/form', :locals => {:message => Message.new} %>
+                           
+<!--                            <form>
+                                <div class="row">  
+                                    <div class="small-12 large-6 columns">
+                                        <input class="input-group-field" id="first-name" type="text" placeholder="First Name">
+                                    </div>
+                                    <div class="small-12 large-6 columns">
+                                        <input class="input-group-field" id="last-name" type="text" placeholder="Last Name">
+                                    </div>
+                                </div>  
+                                <div class="row">  
+                                    <div class="small-12 large-6 columns">
+                                        <input class="input-group-field" id="company-name" type="text" placeholder="Company Name">
+                                    </div>
+                                    <div class="small-12 large-6 columns">
+                                        <input class="input-group-field" id="email" type="email" placeholder="email@email.com">
+                                    </div>
+                                </div>  
+                                <div class="row">    
+                                        <div class="small-12 columns">
+                                            <div class="ui fluid selection dropdown transparent-bg">
+                                                <input type="hidden" name="user">
+                                                <i class="dropdown icon"></i>
+                                                <div class="default text">-What Are You Interested In?-</div>
+                                                <div class="menu">
+                                                <div class="item" data-value="husker">
+                                                Husker
+                                                </div>
+                                                <div class="item" data-value="starbuck">
+                                                Starbuck
+                                                </div>
+                                                <div class="item" data-value="hotdog">
+                                                Hot Dog
+                                                </div>
+                                                <div class="item" data-value="apollo">
+                                                Apollo
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row"> 
+                                    <div class="small-12 columns">
+                                            <input class="input-group-field" id="comment" type="text" placeholder="Comment">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="small-12 columns">
+                                        <input class="round-button button-gray ProximaNova-Medium" type="submit" value="Submit">
+                                    </div>      
+                                </div> 
+                            </form>
+                                -->                   
+                <!-- end contact-us-form -->
+                </div> 
+                </div>       
+        <!-- locations column -->
+        <div class='small-12 medium-4 large-3 medium-pull-8 large-pull-9 column'>
+            <!-- Corporate Office -->
+            <div class="row">
+               <div class='small-12 column bot-space-75'>
+                        <h4 class="gray-text">Corporate Office</h4>
+                        <p>123 6th st.<br>
+                        Melbourne, FL 32904
+                        </p>
+                        <p>email@email.com<br>
+                        Phone 000.000.0000
+                        </p>
+              </div>
+            </div>
+            <!-- End Corporate Office -->
+             <!-- New York Clinic -->
+            <div class="row">
+                <div class='small-12 column bot-space-75'>
+                    <h4 class="gray-text">New York Clinic</h4>
+                    <p>123 6th st.<br>
+                    Melbourne, FL 32904
+                    </p>
+                    <p>email@email.com<br>
+                    Phone 000.000.0000
+                    </p>
+                </div>
+            </div>
+            <!-- End New York Clinic -->
+        </div>
+        <!-- end locations column -->
+        
+    </div> 
+ 
+<!--- Add in page specific JS  -->
 
-<h3>Corporate Office</h3>
-<p>123 6th st.</p>
-<p>Melbourne, FL 32904</p>
-<br>
-<br>
-<p>email@email.com</p>
-<p>Phone 000.000.0000</p>
-<br>
-<br>
-<h3>New York Clinic</h3>
-<p>123 6st.</p>
-<p>Melbourne, FL 32904</p>
-<br>
-<p>email@email.com</p>
-<p>Phone 000.000.0000</p>
+<% content_for :js do %>
+<script>
+$('.ui.dropdown').dropdown();
+</script>
+<% end %>
 
 
-<%= render :partial => 'messages/form', :locals => {:message => Message.new} %>
+
+

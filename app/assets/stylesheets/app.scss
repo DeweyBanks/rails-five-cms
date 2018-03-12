@@ -7210,6 +7210,20 @@ a.thumbnail image {
   border-color: transparent;
 }
 
+/* ====== search button mag glass icon  === */
+.button-search {
+  background: transparent;
+  width: 22px;
+  padding: 3px 0;
+  border-bottom: 1px solid #8a8a8a;
+  cursor: pointer;
+}
+
+.button-search svg.icon {
+  height: 22px;
+  width: 22px;
+}
+
 /* ==== adds arrow to any text  ====== */
 .add-arrow {
   position: relative;
@@ -7281,24 +7295,24 @@ a.thumbnail image {
 }
 
 /*  ===========   margins   ============ */
-.home div.row, div.row div.row, div.no-bottom-margin {
-  margin-bottom: 0 !important;
+div.row, div.row div.row, div.no-bottom-margin {
+  margin-bottom: 0;
 }
 
-.bot-space-95 {
+div.bot-space-95 {
   margin-bottom: 95px;
 }
 
-.bot-space-75 {
+div.bot-space-75 {
   margin-bottom: 75px;
 }
 
-.bot-space-65 {
+div.bot-space-65 {
   margin-bottom: 65px;
 }
 
-.bot-space-25, div.row.bot-space-25 {
-  margin-bottom: 25px !important;
+div.bot-space-25, div.row.bot-space-25 {
+  margin-bottom: 25px;
 }
 
 /* -- This is to put space between the last paragraph and the tabs -- */
@@ -7508,8 +7522,8 @@ header {
 }
 
 header.active #header-bg {
-  background-color: rgba(26, 24, 24, 0.7);
-  border-color: transparent;
+  background-color: rgba(26, 24, 24, 0.7) !important;
+  border-color: transparent !important;
 }
 
 @media screen and (min-width: 64em) {
@@ -7519,10 +7533,10 @@ header.active #header-bg {
 }
 
 header #header-bg {
-  background: none;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  border-bottom: 1px solid rgba(162, 168, 167, 0.5);
+  background-color: rgba(26, 24, 24, 0.7);
+  border-color: transparent;
   position: absolute;
   top: 0;
   left: 0;
@@ -7850,6 +7864,11 @@ header #sub-nav-container ul.sub-nav li a.active {
 
 header #sub-nav-container ul.sub-nav li:last-child {
   padding-right: 0;
+}
+
+.index header #header-bg {
+  background: none;
+  border-bottom: 1px solid rgba(162, 168, 167, 0.5);
 }
 
 header.mobile-active {
@@ -11646,8 +11665,9 @@ select.ui.dropdown {
   margin-bottom: 45px;
 }
 
-#corporate-signup-form input {
+#corporate-signup-form input, #corporate-signup-form textarea {
   font-size: 100%;
+  margin-bottom: 60px;
 }
 
 #corporate-signup-form .ui.dropdown .menu {
@@ -11716,14 +11736,23 @@ select.ui.dropdown {
   color: #ffffff;
 }
 
+#corporate-signup-form input[type="submit"].button-gray {
+  border: 1px solid #ffffff;
+}
+
+#corporate-signup-form input[type="submit"].button-gray:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: transparent;
+}
+
 #corporate-signup-form .close-button {
   color: #ffffff;
   opacity: 0.5;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: 30px;
+  top: 10px;
 }
 
 #corporate-signup-form .close-button svg {
@@ -11736,7 +11765,7 @@ select.ui.dropdown {
   color: #ffffff;
 }
 
-#contact-us-signup-form input, #blog-story-form input {
+#contact-us-signup-form input, #contact-us-signup-form textarea, #blog-story-form input, #blog-story-form textarea {
   font-size: 100%;
   margin-bottom: 60px;
 }
@@ -11839,7 +11868,7 @@ input[type="submit"] {
   z-index: 10;
 }
 
-.locations {
+.locations-callout {
   background: url(../images/about-us-locations-nation-wide-bg-placeholder.jpg) no-repeat center center;
   background-size: cover;
   padding: 95px 0 75px 0;
@@ -12251,15 +12280,6 @@ ul#blog-nav [type='text'] {
 
 ul#blog-nav .button-search {
   background: transparent;
-  width: 22px;
-  padding: 3px 0;
-  border-bottom: 1px solid #8a8a8a;
-  cursor: pointer;
-}
-
-ul#blog-nav .button-search svg.icon {
-  height: 22px;
-  width: 22px;
 }
 
 #blog-hero-container img {
