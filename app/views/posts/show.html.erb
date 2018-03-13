@@ -6,15 +6,5 @@
   <h5>By: EHE HEALTH | <%= @post.created_at.to_time.strftime('%B %e %Y') %></h5>
   <p>Tags: <%=raw tag_links(@post.all_tags)%></p>
   <p><%=raw @post.body %></p>
-<div>
-  <h5>Comments: </h5>
-  <ul>
-     <%= render(partial: 'comments/comment', collection: @post.comments) %>
-  </ul>
 </div>
 
-<div>
-  <h3>Leave a Comment <small> Cancel reply</small></h3>
-  <p><span>Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
-  <%= render :partial => 'comment_form' %>
-</div>

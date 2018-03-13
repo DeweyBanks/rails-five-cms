@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180309223000) do
+ActiveRecord::Schema.define(version: 20180313172310) do
 
   create_table "campaigns", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "name"
@@ -58,18 +58,6 @@ ActiveRecord::Schema.define(version: 20180309223000) do
     t.integer "emps_id"
     t.integer "facility_id"
     t.index ["commander_type_id"], name: "index_commanders_on_commander_type_id"
-  end
-
-  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.string "website"
-    t.text "body"
-    t.string "commentable_type"
-    t.integer "commentable_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|

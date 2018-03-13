@@ -1,6 +1,0 @@
-<% comment.comments.each do |c| %>
-<li>
-  <%= c.full_name %><br>
-  <%= c.body %> -
-  <small>Submitted <%= time_ago_in_words(c.created_at) %> ago</small>
-<% end %>

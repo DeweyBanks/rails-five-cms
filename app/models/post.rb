@@ -1,12 +1,12 @@
 class Post < ApplicationRecord
-  belongs_to :campaign
+  belongs_to :campaign, optional: true
   belongs_to :category
-  has_many :comments, as: :commentable, :dependent => :destroy
   has_many :taggings, :dependent => :delete_all
   has_many :tags, through: :taggings
   has_many :pictures
+  has_many :documents
   accepts_nested_attributes_for :pictures, reject_if: proc { |attributes| attributes[:image].blank? }, allow_destroy: true
-
+  accepts_nested_attributes_for :documents, reject_if: proc { |attributes| attributes[:file].blank? }, allow_destroy: true
   before_validation :set_slug
   validates :title, :presence => true
   has_attached_file :main_image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"

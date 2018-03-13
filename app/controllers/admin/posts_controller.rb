@@ -10,6 +10,7 @@ module Admin
     end
 
     def new
+      @campaigns = Campaign.all
       @post = Post.new
     end
 
