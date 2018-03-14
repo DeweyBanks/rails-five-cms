@@ -12,20 +12,16 @@ Category.create([{name: 'News'}, {name: 'Blog'}, {name: 'PR'}, {name: 'Recipes'}
 
 require 'csv'
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'ehe_wp_posts.csv'))
-
-quote_chars = %w(" | ~ ^ & *)
-begin
-  csv = CSV.read(csv_text, headers: :first_row, quote_char: quote_chars.shift)
-rescue CSV::MalformedCSVError
-  quote_chars.empty? ? raise : retry
-end
-
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'ehe_ehe_posts.csv'))
+# csv = CSV.read(csv_text, :headers => true, :quote_char => "^")
 
 csv = CSV.parse(csv_text, :headers => true)
-csv.each do |row|
 
-  binding.pry
+
+csv.each do |row|
+  row = row.to_h
+binding.pry
+
   # if TimeZone.exists?(row['id'])
   # else
   #   t = TimeZone.new

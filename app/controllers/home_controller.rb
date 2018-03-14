@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
   def index
     @page = "index"
-    @posts = Post.all.order('created_at DESC')
+    @posts = Post.limit(5).order('created_at DESC')
   end
 
   def show

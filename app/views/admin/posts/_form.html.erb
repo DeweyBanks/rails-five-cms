@@ -25,7 +25,7 @@
 
   <div class="field">
     <%= form.label :campaign %>
-    <%= form.collection_select "campaign_id", @campaigns, "id", "name", {include_blank: true} %>
+    <%= form.collection_select "campaign_id", Campaign.all, "id", "name", {include_blank: true} %>
   </div>
 
    <div class="field">
