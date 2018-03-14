@@ -2,7 +2,7 @@ module Admin
   class MessagesController < BaseController
 
     def index
-      @messages = Message.all
+      @messages = Message.all.order(sort_column + " " + sort_direction).page params[:page]
     end
 
     def show
@@ -17,6 +17,16 @@ module Admin
         format.json { head :no_content }
       end
     end
+
+    private
+
+      def sort_column
+        Post.column_names.include?(params[:sort]) ? params[:sort] : "first_name, last_name, company_name, email, interest"
+      end
+
+      def sort_direction
+        %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+      end
 
   end
 end

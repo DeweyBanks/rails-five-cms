@@ -3,7 +3,7 @@ module Admin
     before_action :set_commander, only: [:show, :edit, :update, :destroy]
 
     def index
-      @commanders = Commander.all
+      @commanders = Commander.all.order(sort_column + " " + sort_direction).page params[:page]
     end
 
     def show
@@ -80,7 +80,7 @@ module Admin
             c.first_name = d["name"].split(" ").first
             c.last_name = d["name"].split(" ").last
             d.except!("name")
-            c.avatar = File.new("public/assets/test_images/commanders/doctor#{rand(1..9)}.jpg", "r")
+            c.avatar = File.new("public/test_images/commanders/doctor#{rand(1..9)}.jpg", "r")
             c.update(d)
           else
             c.first_name = "Name Missing"
@@ -95,12 +95,20 @@ module Admin
 
     private
 
-    def set_commander
-      @commander = Commander.find(params[:id])
-    end
+      def sort_column
+        Post.column_names.include?(params[:sort]) ? params[:sort] : "commander_type_id, title, first_name, last_name"
+      end
 
-    def commander_params
-      params.require(:commander).permit(:title, :first_name, :last_name, :about, :avatar, :commander_type_id, :emps_id, :facility_id)
-    end
+      def sort_direction
+        %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+      end
+
+      def set_commander
+        @commander = Commander.find(params[:id])
+      end
+
+      def commander_params
+        params.require(:commander).permit(:title, :first_name, :last_name, :about, :avatar, :commander_type_id, :emps_id, :facility_id)
+      end
   end
 end

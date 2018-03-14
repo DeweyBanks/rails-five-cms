@@ -53,17 +53,25 @@ module Admin
 
     private
 
-    def authenticate_super_admin!
-      redirect_to admin_dashboard_path, :flash => { :alert => "Insufficient rights!" } unless current_user.try(:super_admin?)
-    end
+      def sort_column
+        Post.column_names.include?(params[:sort]) ? params[:sort] : "full_name, email"
+      end
 
-    def set_user
-      @user = User.find(params[:id])
-    end
+      def sort_direction
+        %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+      end
 
-    def user_params
-      params.require(:user).permit(:first_name, :last_name, :gender, :zipcode, :dob, :employer, :email, :password, :password_confirmation, :super_admin)
-    end
+      def authenticate_super_admin!
+        redirect_to admin_dashboard_path, :flash => { :alert => "Insufficient rights!" } unless current_user.try(:super_admin?)
+      end
+
+      def set_user
+        @user = User.find(params[:id])
+      end
+
+      def user_params
+        params.require(:user).permit(:first_name, :last_name, :gender, :zipcode, :dob, :employer, :email, :password, :password_confirmation, :super_admin)
+      end
 
   end
 end

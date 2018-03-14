@@ -1,10 +1,9 @@
 module Admin
   class PostsController < BaseController
-    helper_method :sort_column, :sort_direction
     before_action :set_post, only: [:show, :edit, :update, :publish_post, :destroy]
 
     def index
-      @posts = Post.all.limit(20).order(sort_column + " " + sort_direction)
+      @posts = Post.all.order(sort_column + " " + sort_direction).page params[:page]
     end
 
     def show

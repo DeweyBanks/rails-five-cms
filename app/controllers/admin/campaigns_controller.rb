@@ -3,7 +3,7 @@ module Admin
     before_action :set_campaign, only: [:edit, :update, :destroy]
 
     def index
-      @campaigns = Campaign.all
+      @campaigns = Campaign.all.order(sort_column + " " + sort_direction)
     end
 
     def new
@@ -49,12 +49,20 @@ module Admin
 
     private
 
-    def set_campaign
-      @campaign = Campaign.find(params[:id])
-    end
+      def sort_column
+        Post.column_names.include?(params[:sort]) ? params[:sort] : "name"
+      end
 
-    def campaign_params
-      params.require(:campaign).permit(:name)
-    end
+      def sort_direction
+        %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+      end
+
+      def set_campaign
+        @campaign = Campaign.find(params[:id])
+      end
+
+      def campaign_params
+        params.require(:campaign).permit(:name)
+      end
   end
 end
