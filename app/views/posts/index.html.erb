@@ -2,140 +2,122 @@
 <% description 'For over 100 years, EHE has been the leader in healthcare and wellbeing. We are pioneers in employee health and lifestyle management and are devoted to emp' %>
 <% keywords 'EHE, Blog' %>
 <!-- Blog hero image -->
-    <div class="row expanded bot-space-25">
-        <div class="small-12 blog-hero" style="background: url(../assets/latest/Heart-Health-768x459.jpg) no-repeat center center; background-size: cover;">
-            <div class="row bot-space-25">
-                <div class="small-12 column">
-                    <div class="content-contain">
-                        <h1 class="title-heading white-text">FEATURED STORY</h1>
-                        <p class="white-text">Get Inspired to Pump Up Your Heart Health!</p>
-                        <p class="white-text">DEC 1st, 2017  eheintel.com</p>
-                    </div>
-                </div>
-            </div>
+<div class="row expanded bot-space-25">
+  <div class="small-12 blog-hero" style="background: url(../assets/latest/Heart-Health-768x459.jpg) no-repeat center center; background-size: cover;">
+    <div class="row bot-space-25">
+      <div class="small-12 column">
+        <div class="content-contain">
+          <h1 class="title-heading white-text">FEATURED STORY</h1>
+          <p class="white-text">Get Inspired to Pump Up Your Heart Health!</p>
+          <p class="white-text">DEC 1st, 2017  eheintel.com</p>
         </div>
+      </div>
     </div>
+  </div>
+</div>
 <!-- end Blog hero image -->
-   <!-- blog nav -->
-   <div class="row bot-space-25">
-     <div class="small-12 columns">
-       <ul id="blog-nav">
+<!-- blog nav -->
+<div class="row bot-space-25">
+ <div class="small-12 columns">
+   <ul id="blog-nav">
+    <li><%= link_to "All", posts_path, class: "active ProximaNova-Medium" %></li>
+    <% @categories.each do |category| %>
+      <li><%= link_to category.name, posts_path(:filter => category.name), class: "ProximaNova-Medium" %></li>
+    <% end %>
+    <li>
+      <%= form_tag(posts_path, :method => "get", id: "blog-search") do %>
+        <div class="input-group">
+          <%= text_field_tag :search, params[:search], placeholder: "Search", class: "input-group-field" %>
+          <div class="input-group-button">
+            <button class="button-search" type="submit" value="Submit">
+              <svg class="icon"><use xlink:href="#magnify-glass" /></svg>
+            </button>
+          </div>
+        </div>
+      <% end %>
+    </li>
+   </ul>
+ </div>
+</div>
+<!-- end blog nav -->
+<!-- start blog listing container -->
+<div class="blog-container bot-space-65">
 
-        <li><%= link_to "All", posts_path, class: "active ProximaNova-Medium" %></li>
-        <% @categories.each do |category| %>
-          <li><%= link_to category.name, posts_path(:filter => category.name), class: "ProximaNova-Medium" %></li>
-        <% end %>
-         <li>
-          <%= form_tag(posts_path, :method => "get", id: "blog-search") do %>
-            <div class="input-group">
-              <%= text_field_tag :search, params[:search], placeholder: "Search", class: "input-group-field" %>
-              <div class="input-group-button">
-                <button class="button-search" type="submit" value="Submit">
-                  <svg class="icon"><use xlink:href="#magnify-glass" /></svg>
-                </button>
-              </div>
-            </div>
-          <% end %>
-          </li>
-       </ul>
-     </div>
-   </div>
-   <!-- end blog nav -->
-  <!-- start blog listing container -->
-    <div class="blog-container bot-space-65">
-    <div class='row'>
-        <div class='small-9 columns' style="background-image: url(../assets/latest/Boost-Immunity-768x459.jpg);">
-            <div class="content-container">
-                <p class="white-text">How to Boost Your Immunity</p>
-                <p class="white-text">DEC 1st, 2017  eheintel.com</p>
-            </div>
-            <div class="color-block"></div>
-        </div>
-        <div class='small-3 columns' style="background-image: url(../assets/latest/Coffee-Alternatives-768x459.jpg);">
-             <div class="content-container">
-                <p class="white-text">These Healthy Coffee Alternatives Are Fantastic</p>
-                <p class="white-text">DEC 1st, 2017  eheintel.com</p>
-            </div>
-            <div class="color-block"></div>
-        </div>
+  <div class='row'>
+    <div class='small-9 columns' style="background-image: url(../assets/latest/Boost-Immunity-768x459.jpg);">
+      <div class="content-container">
+        <p class="white-text">How to Boost Your Immunity</p>
+        <p class="white-text">DEC 1st, 2017  eheintel.com</p>
+      </div>
+      <div class="color-block"></div>
     </div>
-    <div class='row'>
-        <div class='small-4 columns' style="background-image: url(../assets/latest/Dehydration-768x459.jpg);">
-             <div class="content-container">
-                <p class="white-text">What Dehydration Symptoms Should I Know About?</p>
-                <p class="white-text">DEC 1st, 2017  eheintel.com</p>
-            </div>
-            <div class="color-block"></div>
-        </div>
-        <div class='small-4 columns' style="background-image: url(../assets/latest/Motivation-768x459.png);">
-             <div class="content-container">
-                <p class="white-text">How to Motivate Others to Get Healthy</p>
-                <p class="white-text">DEC 1st, 2017  eheintel.com</p>
-            </div>
-            <div class="color-block"></div>
-        </div>
-        <div class='small-4 columns' style="background-image: url(../assets/latest/Hydration-1024x683.jpg);">
-             <div class="content-container">
-                <p class="white-text">How to Get the Hydration You Need</p>
-                <p class="white-text">DEC 1st, 2017  eheintel.com</p>
-            </div>
-            <div class="color-block"></div>
-        </div>
-    </div>
-    <div class='row'>
-        <div class='small-3 columns' style="background-image: url(../assets/latest/Matcha-Latte-768x459.jpg);">
-             <div class="content-container">
-                <p class="white-text">You Can Make This Recipe to Get Amazing Matcha Tea Benefits</p>
-                <p class="white-text">DEC 1st, 2017  eheintel.com</p>
-            </div>
-            <div class="color-block"></div>
-        </div>
-        <div class='small-9 columns' style="background-image: url(../assets/latest/Meditation-768x459.png);">
-             <div class="content-container">
-                <p class="white-text">How to Meditate If You’re Just Starting Out</p>
-                <p class="white-text">DEC 1st, 2017  eheintel.com</p>
-            </div>
-            <div class="color-block"></div>
-        </div>
-    </div>
-    </div>
-  <!-- end blog listing container -->
-  <!-- LOAD MORE -->
-  <div class="row">
-    <div class="small-12 medium-4 small-centered column text-center"><a href="" class="text-center load-more-button ProximaNova-Bold add-arrow-below">LOAD MORE</a></div>
 
+    <div class='small-3 columns' style="background-image: url(../assets/latest/Coffee-Alternatives-768x459.jpg);">
+      <div class="content-container">
+        <p class="white-text">These Healthy Coffee Alternatives Are Fantastic</p>
+        <p class="white-text">DEC 1st, 2017  eheintel.com</p>
+      </div>
+      <div class="color-block"></div>
+    </div>
   </div>
 
-  <!-- END LOAD MORE -->
+  <div class='row'>
+    <div class='small-4 columns' style="background-image: url(../assets/latest/Dehydration-768x459.jpg);">
+      <div class="content-container">
+        <p class="white-text">What Dehydration Symptoms Should I Know About?</p>
+        <p class="white-text">DEC 1st, 2017  eheintel.com</p>
+      </div>
+      <div class="color-block"></div>
+    </div>
+    <div class='small-4 columns' style="background-image: url(../assets/latest/Motivation-768x459.png);">
+      <div class="content-container">
+        <p class="white-text">How to Motivate Others to Get Healthy</p>
+        <p class="white-text">DEC 1st, 2017  eheintel.com</p>
+      </div>
+      <div class="color-block"></div>
+    </div>
+    <div class='small-4 columns' style="background-image: url(../assets/latest/Hydration-1024x683.jpg);">
+      <div class="content-container">
+        <p class="white-text">How to Get the Hydration You Need</p>
+        <p class="white-text">DEC 1st, 2017  eheintel.com</p>
+      </div>
+      <div class="color-block"></div>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class='small-3 columns' style="background-image: url(../assets/latest/Matcha-Latte-768x459.jpg);">
+      <div class="content-container">
+        <p class="white-text">You Can Make This Recipe to Get Amazing Matcha Tea Benefits</p>
+        <p class="white-text">DEC 1st, 2017  eheintel.com</p>
+      </div>
+      <div class="color-block"></div>
+    </div>
+    <div class='small-9 columns' style="background-image: url(../assets/latest/Meditation-768x459.png);">
+      <div class="content-container">
+        <p class="white-text">How to Meditate If You’re Just Starting Out</p>
+        <p class="white-text">DEC 1st, 2017  eheintel.com</p>
+      </div>
+      <div class="color-block"></div>
+    </div>
+  </div>
+
+</div>
+<!-- end blog listing container -->
+<!-- LOAD MORE -->
+<div class="row">
+  <div class="small-12 medium-4 small-centered column text-center">
+    <a href="" class="text-center load-more-button ProximaNova-Bold add-arrow-below">LOAD MORE</a>
+  </div>
+</div>
+<!-- END LOAD MORE -->
 
 
-
-
-
-<%= link_to "All", posts_path %>
-<% @categories.each do |category| %>
-  <%= link_to category.name, posts_path(:filter => category.name) %>
-<% end %>
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Title</th>
-      <th>body</th>
-      <th>Created By: </th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= link_to (image_tag post.main_image.url(:medium)), post_path(post) %></td>
-        <td><%= post.title %></td>
-        <td><%=h truncate(post.body, :length => 300, :omission => ". . ." , :escape => false) %></td>
-        <td><%=  %></td>
-        <td><%= link_to 'Read More', post_path(post) %></td>
-      </tr>
+        <%= link_to (image_tag post.main_image.url(:medium)), post_path(post) %>
+        <%= post.title %>
+        <%=h truncate(post.body, :length => 300, :omission => ". . ." , :escape => false) %>
+        <%=  %>
+        <%= link_to 'Read More', post_path(post) %>
     <% end %>
-  </tbody>
-</table>
+
