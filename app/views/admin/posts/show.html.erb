@@ -5,7 +5,10 @@
   <p><%= @post.all_tags %></p>
   <p><%= @post.body.html_safe %></p>
 </div>
-
+<div>
+  <h4>Post Status: <%= @post.status %></h4>
+  <%= button_to "Publish", admin_publish_post_path(@post) %>
+</div>
 
 
 

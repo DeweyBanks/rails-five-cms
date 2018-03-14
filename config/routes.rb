@@ -11,9 +11,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: "dashboard#index", as: "dashboard"
-    post "/update_commanders" => "commanders#update_commanders"
     resources :posts
+    post "/publish_post/:id" => "posts#publish_post", as: "publish_post"
     resources :commanders
+    post "/update_commanders" => "commanders#update_commanders"
     resources :users
     resources :campaigns
     resources :messages, only: [:index, :show, :destroy]
@@ -24,10 +25,6 @@ Rails.application.routes.draw do
   end
 
   get 'tags/:tag', to: 'posts#index', as: "tag"
-
-  resources :comments do
-    resources :comments
-  end
 
   resources :commanders, only: [:index, :show]
   resources :messages, only: [:create, :new]

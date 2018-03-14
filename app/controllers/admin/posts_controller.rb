@@ -1,9 +1,10 @@
 module Admin
   class PostsController < BaseController
-    before_action :set_post, only: [:show, :edit, :update, :destroy]
+    helper_method :sort_column, :sort_direction
+    before_action :set_post, only: [:show, :edit, :update, :publish_post, :destroy]
 
     def index
-      @posts = Post.all.order('created_at DESC')
+      @posts = Post.all.limit(20).order(sort_column + " " + sort_direction)
     end
 
     def show
@@ -43,6 +44,15 @@ module Admin
       end
     end
 
+    def publish_post
+      @post.status = "published"
+      @post.save
+      respond_to do |format|
+        format.html { redirect_to admin_post_path(@post), notice: 'Post has been published.' }
+        format.json { head :no_content }
+      end
+    end
+
     def destroy
       @post.destroy
       respond_to do |format|
@@ -53,22 +63,31 @@ module Admin
 
     private
 
-    def set_post
-      @post = Post.find_by(slug: params[:id])
-    end
+      def sort_column
+        Post.column_names.include?(params[:sort]) ? params[:sort] : "slug, title, status"
+      end
 
-    def post_params
-      params.require(:post).permit(
-        :slug,
-        :title,
-        :body,
-        :campaign_id,
-        :category_id,
-        :all_tags,
-        :main_image,
-        :meta_description,
-        pictures_attributes: [:id, :image, :caption, :alt, :_destroy]
-        )
-    end
+      def sort_direction
+        %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+      end
+
+      def set_post
+        @post = Post.find_by(slug: params[:id])
+      end
+
+      def post_params
+        params.require(:post).permit(
+          :slug,
+          :title,
+          :body,
+          :campaign_id,
+          :category_id,
+          :all_tags,
+          :main_image,
+          :meta_description,
+          :status,
+          pictures_attributes: [:id, :image, :caption, :alt, :_destroy]
+          )
+      end
   end
 end

@@ -35,6 +35,14 @@ class Post < ApplicationRecord
     where("title LIKE ? OR body LIKE ?", "%#{search}%", "%#{search}%")
   end
 
+  def self.published_scope
+    where(:status => "published")
+  end
+
+  def self.preview_scope
+    where(:status => "preview")
+  end
+
   protected
 
     def set_slug
