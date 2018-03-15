@@ -2,12 +2,13 @@
   <div class='row'>
     <div class='small-12'>
       <h1 class='title-heading text-center'>Posts</h1>
-      <%= button_to 'New Post', new_admin_post_path, :class => 'large-offset-5 text-center' %>
+      <%= link_to 'New Post', new_admin_post_path, :class => 'large-offset-5 text-center' %>
     </div>
     <div class="row">
       <div class="small-12 columns">
         <table>
           <thead>
+              <th>Featured Image</th>
               <th><%= sortable "title" %></th>
               <th><%= sortable "category_id","cagtegory" %></th>
               <th><%= sortable "campaign_id", "campaign" %></th>
@@ -20,6 +21,7 @@
           <tbody>
             <% @posts.each do |post| %>
               <tr>
+                <td><%= image_tag post.main_image.url(:thumb) %></td>
                 <td><%= post.title %></td>
                 <% if !post.category.blank? %>
                   <td><%= post.category.name %></td>

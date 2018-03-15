@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   end
 
   resources :posts, param: :slug, :path => "blog", only: [:index, :show] do
-    resources :comments
+
   end
 
   get 'tags/:tag', to: 'posts#index', as: "tag"

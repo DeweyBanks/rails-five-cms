@@ -42,66 +42,39 @@
 <!-- end blog nav -->
 <!-- start blog listing container -->
 <div class="blog-container bot-space-65">
-
   <div class='row'>
-    <div class='small-9 columns' style="background-image: url(../assets/latest/Boost-Immunity-768x459.jpg);">
-      <div class="content-container">
-        <p class="white-text">How to Boost Your Immunity</p>
-        <p class="white-text">DEC 1st, 2017  eheintel.com</p>
-      </div>
-      <div class="color-block"></div>
-    </div>
-
-    <div class='small-3 columns' style="background-image: url(../assets/latest/Coffee-Alternatives-768x459.jpg);">
-      <div class="content-container">
-        <p class="white-text">These Healthy Coffee Alternatives Are Fantastic</p>
-        <p class="white-text">DEC 1st, 2017  eheintel.com</p>
-      </div>
-      <div class="color-block"></div>
-    </div>
+    <% @first_blog_row.each_with_index do |post, index| %>
+        <div class="<%= get_first_row_class(index, 1) %>" style="background-image: url(<%= post.main_image.url(:medium) %>);">
+          <div class="content-container">
+            <p class="white-text"><%= post.title %></p>
+            <p class="white-text"><%= post.created_at.strftime('%m/%d/%Y') %>  eheintel.com</p>
+          </div>
+          <div class="color-block"></div>
+        </div>
+    <% end %>
   </div>
-
   <div class='row'>
-    <div class='small-4 columns' style="background-image: url(../assets/latest/Dehydration-768x459.jpg);">
-      <div class="content-container">
-        <p class="white-text">What Dehydration Symptoms Should I Know About?</p>
-        <p class="white-text">DEC 1st, 2017  eheintel.com</p>
+    <% @second_blog_row.each_with_index do |post, index| %>
+      <div class='small-4 columns' style="background-image: url(<%= post.main_image.url(:medium) %>);">
+        <div class="content-container">
+          <p class="white-text"><%= post.title %></p>
+          <p class="white-text"><%= post.created_at.strftime('%m/%d/%Y') %>  eheintel.com</p>
+        </div>
+        <div class="color-block"></div>
       </div>
-      <div class="color-block"></div>
-    </div>
-    <div class='small-4 columns' style="background-image: url(../assets/latest/Motivation-768x459.png);">
-      <div class="content-container">
-        <p class="white-text">How to Motivate Others to Get Healthy</p>
-        <p class="white-text">DEC 1st, 2017  eheintel.com</p>
-      </div>
-      <div class="color-block"></div>
-    </div>
-    <div class='small-4 columns' style="background-image: url(../assets/latest/Hydration-1024x683.jpg);">
-      <div class="content-container">
-        <p class="white-text">How to Get the Hydration You Need</p>
-        <p class="white-text">DEC 1st, 2017  eheintel.com</p>
-      </div>
-      <div class="color-block"></div>
-    </div>
+    <% end %>
   </div>
-
   <div class='row'>
-    <div class='small-3 columns' style="background-image: url(../assets/latest/Matcha-Latte-768x459.jpg);">
+    <% @third_blog_row.each_with_index do |post, index| %>
+    <div class="<%= get_first_row_class(index, 3) %>" style="background-image: url(<%= post.main_image.url(:medium) %>);">
       <div class="content-container">
-        <p class="white-text">You Can Make This Recipe to Get Amazing Matcha Tea Benefits</p>
-        <p class="white-text">DEC 1st, 2017  eheintel.com</p>
+        <p class="white-text"><%= post.title %></p>
+        <p class="white-text"><%= post.created_at.strftime('%m/%d/%Y') %>  eheintel.com</p>
       </div>
       <div class="color-block"></div>
     </div>
-    <div class='small-9 columns' style="background-image: url(../assets/latest/Meditation-768x459.png);">
-      <div class="content-container">
-        <p class="white-text">How to Meditate If You’re Just Starting Out</p>
-        <p class="white-text">DEC 1st, 2017  eheintel.com</p>
-      </div>
-      <div class="color-block"></div>
-    </div>
+    <% end %>
   </div>
-
 </div>
 <!-- end blog listing container -->
 <!-- LOAD MORE -->
@@ -113,11 +86,4 @@
 <!-- END LOAD MORE -->
 
 
-    <% @posts.each do |post| %>
-        <%= link_to (image_tag post.main_image.url(:medium)), post_path(post) %>
-        <%= post.title %>
-        <%=h truncate(post.body, :length => 300, :omission => ". . ." , :escape => false) %>
-        <%=  %>
-        <%= link_to 'Read More', post_path(post) %>
-    <% end %>
 
