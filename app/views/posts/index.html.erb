@@ -47,7 +47,7 @@
         <div class="<%= get_first_row_class(index, 1) %>" style="background-image: url(<%= post.main_image.url(:medium) %>);">
           <div class="content-container">
             <p class="white-text"><%= post.title %></p>
-            <p class="white-text"><%= post.created_at.strftime('%m/%d/%Y') %>  eheintel.com</p>
+            <p class="white-text"><%= h post.created_at.to_s(:post_date) %>  eheintel.com</p>
           </div>
           <div class="color-block"></div>
         </div>
@@ -58,7 +58,7 @@
       <div class='small-4 columns' style="background-image: url(<%= post.main_image.url(:medium) %>);">
         <div class="content-container">
           <p class="white-text"><%= post.title %></p>
-          <p class="white-text"><%= post.created_at.strftime('%m/%d/%Y') %>  eheintel.com</p>
+          <p class="white-text"><%= h post.created_at.to_s(:post_date) %>  eheintel.com</p>
         </div>
         <div class="color-block"></div>
       </div>
@@ -69,7 +69,7 @@
     <div class="<%= get_first_row_class(index, 3) %>" style="background-image: url(<%= post.main_image.url(:medium) %>);">
       <div class="content-container">
         <p class="white-text"><%= post.title %></p>
-        <p class="white-text"><%= post.created_at.strftime('%m/%d/%Y') %>  eheintel.com</p>
+        <p class="white-text"><%= h post.created_at.to_s(:post_date) %>  eheintel.com</p>
       </div>
       <div class="color-block"></div>
     </div>
