@@ -12,25 +12,46 @@ Category.create([{name: 'News'}, {name: 'Blog'}, {name: 'PR'}, {name: 'Recipes'}
 
 require 'csv'
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'ehe_ehe_posts.csv'))
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'wp-post.csv'))
 # csv = CSV.read(csv_text, :headers => true, :quote_char => "^")
 
 csv = CSV.parse(csv_text, :headers => true)
 
+pr_id = Category.find_by(name: 'PR').id
+blog_id = Category.find_by(name: 'Blog').id
+
+
 
 csv.each do |row|
   row = row.to_h
-binding.pry
-
-  # if TimeZone.exists?(row['id'])
-  # else
-  #   t = TimeZone.new
-  #   t.id = row['id']
-  #   t.offset = row['offset']
-  #   t.name = row['name']
-  #   t.abbr = row['abbr']
-  #   t.save!
-  #   puts "#{t.id}, #{t.offset}, #{t.name} saved"
-  # end
+  p = Post.new
+  p.id = row["id"]
+  p.title = row["Title"]
+  p.body = row["Content"]
+  if row["Date"].length == 8
+    p.created_at = Time.zone.parse(row["Date"]).utc
+  end
+  category = row["Categories"]
+  if category == "Press Release"
+    p.category_id = pr_id
+  else
+    p.category_id = blog_id
+  end
+  if row["Tags"].present?
+    p.all_tags = row["Tags"].gsub("|", ",")
+  end
+  if row["Excerpt"].present?
+    p.meta_description = row["Excerpt"][0..190]
+  end
+  if row["Image URL"].present?
+    begin p.main_image =  URI.parse(row["Image URL"])
+    rescue
+      next
+    ensure
+      puts "moving on"
+    end
+  end
+  p.save
+  puts "Saved #{p.id}: #{p.title}"
 end
 
