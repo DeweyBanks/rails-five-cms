@@ -44,6 +44,7 @@
 <div class="blog-container bot-space-65">
   <div class='row'>
     <% @first_blog_row.each_with_index do |post, index| %>
+      <%= link_to post_path(post) do %>
         <div class="<%= get_first_row_class(index, 1) %>" style="background-image: url(<%= post.main_image.url(:medium) %>);">
           <div class="content-container">
             <p class="white-text"><%= post.title %></p>
@@ -51,28 +52,33 @@
           </div>
           <div class="color-block"></div>
         </div>
+      <% end %>
     <% end %>
   </div>
   <div class='row'>
     <% @second_blog_row.each_with_index do |post, index| %>
-      <div class='small-4 columns' style="background-image: url(<%= post.main_image.url(:medium) %>);">
-        <div class="content-container">
-          <p class="white-text"><%= post.title %></p>
-          <p class="white-text"><%= h post.created_at.to_s(:post_date) %>  eheintel.com</p>
+      <%= link_to post_path(post) do %>
+        <div class='small-4 columns' style="background-image: url(<%= post.main_image.url(:medium) %>);">
+          <div class="content-container">
+            <p class="white-text"><%= post.title %></p>
+            <p class="white-text"><%= h post.created_at.to_s(:post_date) %>  eheintel.com</p>
+          </div>
+          <div class="color-block"></div>
         </div>
-        <div class="color-block"></div>
-      </div>
+      <% end %>
     <% end %>
   </div>
   <div class='row'>
     <% @third_blog_row.each_with_index do |post, index| %>
-    <div class="<%= get_first_row_class(index, 3) %>" style="background-image: url(<%= post.main_image.url(:medium) %>);">
-      <div class="content-container">
-        <p class="white-text"><%= post.title %></p>
-        <p class="white-text"><%= h post.created_at.to_s(:post_date) %>  eheintel.com</p>
-      </div>
-      <div class="color-block"></div>
-    </div>
+      <%= link_to post_path(post) do %>
+        <div class="<%= get_first_row_class(index, 3) %>" style="background-image: url(<%= post.main_image.url(:medium) %>);">
+          <div class="content-container">
+            <p class="white-text"><%= post.title %></p>
+            <p class="white-text"><%= h post.created_at.to_s(:post_date) %>  eheintel.com</p>
+          </div>
+          <div class="color-block"></div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
