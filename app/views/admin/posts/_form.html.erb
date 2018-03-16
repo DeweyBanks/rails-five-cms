@@ -68,6 +68,10 @@
     <%= link_to_add_fields 'Add new image', form, :pictures %>
   </div>
 
+   <div class="field">
+    <%= form.label :featured %>
+    <%= form.check_box :featured %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

@@ -85,6 +85,7 @@ module Admin
           :main_image,
           :meta_description,
           :status,
+          :featured,
           pictures_attributes: [:id, :image, :caption, :alt, :_destroy]
           )
       end

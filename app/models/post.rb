@@ -12,6 +12,7 @@ class Post < ApplicationRecord
   has_attached_file :main_image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :main_image, content_type: /\Aimage\/.*\z/
 
+  after_save :ensure_only_one_featured_post
 
   def to_param
     "#{slug}"
@@ -35,15 +36,27 @@ class Post < ApplicationRecord
     where("title LIKE ? OR body LIKE ?", "%#{search}%", "%#{search}%")
   end
 
-  def self.published_scope
+  def self.published
     where(:status => "published")
   end
 
-  def self.preview_scope
+  def self.preview
     where(:status => "preview")
   end
 
-  protected
+  def self.featured
+    where(:featured => true).first
+  end
+
+  def self.without(id)
+    where.not(:id => id)
+  end
+
+  private
+
+    def ensure_only_one_featured_post
+      Post.where(featured: true).where.not(id: id).update_all(featured: false)
+    end
 
     def set_slug
       self.slug = self.title.downcase.gsub(" ", "-") unless self.slug.present?

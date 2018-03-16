@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
   def index
     @categories = Category.all
+    @featured_post = Post.featured
     @page = "index"
     if params[:filter].present?
       @posts = Post.where(category: Category.find_by(name: params[:filter])).order('created_at DESC').limit(7)

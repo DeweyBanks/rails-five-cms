@@ -3,17 +3,33 @@
 <% keywords 'EHE, Blog' %>
 <!-- Blog hero image -->
 <div class="row expanded bot-space-25">
-  <div class="small-12 blog-hero" style="background: url(../assets/latest/Heart-Health-768x459.jpg) no-repeat center center; background-size: cover;">
-    <div class="row bot-space-25">
-      <div class="small-12 column">
-        <div class="content-contain">
-          <h1 class="title-heading white-text">FEATURED STORY</h1>
-          <p class="white-text">Get Inspired to Pump Up Your Heart Health!</p>
-          <p class="white-text">DEC 1st, 2017  eheintel.com</p>
+  <% if @featured_post %>
+     <%= link_to post_path(@featured_post)  do %>
+      <div class="small-12 blog-hero" style="background: url(<%= @featured_post.main_image.url(:medium) %>) no-repeat center center; background-size: cover;">
+        <div class="row bot-space-25">
+          <div class="small-12 column">
+            <div class="content-contain">
+              <h1 class="title-heading white-text"><%= @featured_post.title %></h1>
+              <p class="white-text"><%= @featured_post.meta_description %></p>
+              <p class="white-text"><%= h @featured_post.created_at.to_s(:post_date) %>  eheintel.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="small-12 blog-hero" style="background: url(../assets/latest/Heart-Health-768x459.jpg) no-repeat center center; background-size: cover;">
+      <div class="row bot-space-25">
+        <div class="small-12 column">
+          <div class="content-contain">
+            <h1 class="title-heading white-text">FEATURED STORY</h1>
+            <p class="white-text">Get Inspired to Pump Up Your Heart Health!</p>
+            <p class="white-text">DEC 1st, 2017  eheintel.com</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>
 <!-- end Blog hero image -->
 <!-- blog nav -->
