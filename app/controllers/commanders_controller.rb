@@ -10,9 +10,10 @@ class CommandersController < ApplicationController
       when "coaches"
         @commanders = Commander.limit(9).coaches_scope
       else
-        @commanders = Commander.all
+        @commanders = Commander.all.limit(9)
       end
     end
+      binding.pry
     respond_to do |f|
       f.html
       f.js
