@@ -14,7 +14,6 @@
 //= require rails-ujs
 //= require ckeditor/init
 //= require ckeditor/config
-//= require fonts/MyFontsWebfontsKit
 //= require_tree .
 //= require app.js
 
