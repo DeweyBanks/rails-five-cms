@@ -17,6 +17,6 @@
 //= require_tree .
 //= require app.js
 
-$(function(){ $(document).foundation(); });
+//$(function(){ $(document).foundation(); });
 
 
