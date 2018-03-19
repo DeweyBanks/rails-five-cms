@@ -30,24 +30,16 @@
         <div class="tabs-panel is-active" id="physician-articles">
             <div class="row small-up-1 medium-up-2 large-up-3">
                 <ul class="gridder clearfix">
-                     <%= render @commanders %>
-                </ul>
+                  <%= render @commanders %>
+              </ul>
             </div>
-            <!-- this is where the DRs about content should be loaded so the page works correctly. Could we create something like render @commanders-about ? so it will loop through and add the content? I set up the tag in inside the @commanders file -->
-            <!-- Gridder content -->
-            <!-- You can specify which content is loaded by specifying the #ID of the div where the content is  -->
-            <div id="content1" class="gridder-content"><p>Dr. Levy is an accomplished physician executive with a record of achievement in complex systems involving patients and a range of organizations. He is a renowned strategic thinker who has executed effective strategies for his own enterprises and a diverse set of public and private sector entities. Drawing on a vast network of business relationships, Dr. Levy brings global best-in-practice solutions to the healthcare industry.</p>
-            <p>At Franklin Health, Dr. Levy used his insights to create a scalable business that helped patients and families receive better, more satisfying care.</p>
-            <p>As strategy leader at PwC, he led the effort to recommend public health and hospital reform for the Louisiana Recovery Authority after Hurricane Katrina. Dr. Levy then directed the team that helped California’s Department of Public Health re-engineer the state’s catastrophic surge response system. In both engagements, he successfully managed all of the stakeholders – including hospitals, private providers, payers, professional associations, and organized labor.</p>
-            <p>At PwC, Dr. Levy elevated the firm’s worldwide healthcare practice to prominence by navigating an intricate matrix of domestic and international governance arrangements. His leadership helped PwC become an acclaimed solutions provider across all healthcare sectors in more than 30 countries.</p></div>
-            <div id="content2" class="gridder-content"> 2 Content goes here... </div>
-            <div id="content3" class="gridder-content"> 3 Content goes here... </div>
+            <%= render :partial => 'commanders/about', :collection => @commanders, :as => :commander %>
 
         <div class="load-more-container">
           <%= image_tag "ajax-loader.gif", style: "display:none;", class: "loading-gif" %>
           <%= link_to "Load More", commanders_path, class: "load-more" %>
         </div>
-       
+
         </div>
     </div>
 
@@ -61,71 +53,72 @@
                     <li class="gridder-list column" data-griddercontent="#content1">
                         <div class="callout">
                             <img src="images/physician-placeholder.png" alt="">
-                            <img class="com-arrow" src="images/icon-commanders-arrow.png" alt="">
+                            <%= image_tag "physician-placeholder.png" %>
+                            <%= image_tag "icon-commanders-arrow.png" %>
                             <p class="commander-title font-bold">Title Goes Here</p>
                             <p class="name">First and Last Name</p>
                         </div>
                     </li>
                     <li class="gridder-list column" data-griddercontent="#content2">
                         <div class="callout">
-                            <img src="images/physician-placeholder.png" alt="">
-                            <img class="com-arrow" src="images/icon-commanders-arrow.png" alt="">
+                            <%= image_tag "physician-placeholder.png" %>
+                            <%= image_tag "icon-commanders-arrow.png" %>
                             <p class="commander-title font-bold">Title Goes Here</p>
                             <p class="name">First and Last Name</p>
                         </div>
                     </li>
                     <li class="gridder-list column" data-griddercontent="#content3">
                         <div class="callout">
-                            <img src="images/physician-placeholder.png" alt="">
-                            <img class="com-arrow" src="images/icon-commanders-arrow.png" alt="">
+                            <%= image_tag "physician-placeholder.png" %>
+                            <%= image_tag "icon-commanders-arrow.png" %>
                             <p class="commander-title font-bold">Title Goes Here</p>
                             <p class="name">First and Last Name</p>
                         </div>
                     </li>
                     <li class="gridder-list column" data-griddercontent="#content1">
                         <div class="callout">
-                            <img src="images/physician-placeholder.png" alt="">
-                            <img class="com-arrow" src="images/icon-commanders-arrow.png" alt="">
+                            <%= image_tag "physician-placeholder.png" %>
+                            <%= image_tag "icon-commanders-arrow.png" %>
                             <p class="commander-title font-bold">Title Goes Here</p>
                             <p class="name">First and Last Name</p>
                         </div>
                     </li>
                     <li class="gridder-list column" data-griddercontent="#content2">
                         <div class="callout">
-                            <img src="images/physician-placeholder.png" alt="">
-                            <img class="com-arrow" src="images/icon-commanders-arrow.png" alt="">
+                            <%= image_tag "physician-placeholder.png" %>
+                            <%= image_tag "icon-commanders-arrow.png" %>
                             <p class="commander-title font-bold">Title Goes Here</p>
                             <p class="name">First and Last Name</p>
                         </div>
                     </li>
                     <li class="gridder-list column" data-griddercontent="#content3">
                         <div class="callout">
-                            <img src="images/physician-placeholder.png" alt="">
-                            <img class="com-arrow" src="images/icon-commanders-arrow.png" alt="">
+                            <%= image_tag "physician-placeholder.png" %>
+                            <%= image_tag "icon-commanders-arrow.png" %>
                             <p class="commander-title font-bold">Title Goes Here</p>
                             <p class="name">First and Last Name</p>
                         </div>
                     </li>
                     <li class="gridder-list column" data-griddercontent="#content1">
                         <div class="callout">
-                            <img src="images/physician-placeholder.png" alt="">
-                            <img class="com-arrow" src="images/icon-commanders-arrow.png" alt="">
+                            <%= image_tag "physician-placeholder.png" %>
+                            <%= image_tag "icon-commanders-arrow.png" %>
                             <p class="commander-title font-bold">Title Goes Here</p>
                             <p class="name">First and Last Name</p>
                         </div>
                     </li>
                     <li class="gridder-list column" data-griddercontent="#content2">
                         <div class="callout">
-                            <img src="images/physician-placeholder.png" alt="">
-                            <img class="com-arrow" src="images/icon-commanders-arrow.png" alt="">
+                            <%= image_tag "physician-placeholder.png" %>
+                            <%= image_tag "icon-commanders-arrow.png" %>
                             <p class="commander-title font-bold">Title Goes Here</p>
                             <p class="name">First and Last Name</p>
                         </div>
                     </li>
                     <li class="gridder-list column" data-griddercontent="#content3">
                         <div class="callout">
-                             <img src="images/physician-placeholder.png" alt="">
-                            <img class="com-arrow" src="images/icon-commanders-arrow.png" alt="">
+                             <%= image_tag "physician-placeholder.png" %>
+                            <%= image_tag "icon-commanders-arrow.png" %>
                             <p class="commander-title font-bold">Title Goes Here</p>
                             <p class="name">First and Last Name</p>
                         </div>
@@ -139,7 +132,7 @@
             <p>At PwC, Dr. Levy elevated the firm’s worldwide healthcare practice to prominence by navigating an intricate matrix of domestic and international governance arrangements. His leadership helped PwC become an acclaimed solutions provider across all healthcare sectors in more than 30 countries.</p></div>
             <div id="content2" class="gridder-content"> 2 Content goes here... </div>
             <div id="content3" class="gridder-content"> 3 Content goes here... </div>
- 
+
         </div>
     </div>
 
@@ -189,16 +182,16 @@
             },
             onContent: function () {
                 //Gridder Content Loaded
-                console.log('On Gridder Expand...');
+                console.log('On Gridder Expand...', this);
             },
             onClosed: function () {
                 //Gridder Closed
                 console.log('On Gridder Closed...');
             }
         });
-    
-    
-    
+
+
+
     document.addEventListener("DOMContentLoaded", function(event) {
       $('a.load-more').click(function (e) {
         e.preventDefault();
