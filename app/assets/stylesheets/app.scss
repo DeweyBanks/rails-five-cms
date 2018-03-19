@@ -45,62 +45,6 @@ body {
 }
 
 /* motion */
-/*
-$masonry-css-column-gap: $global-margin;
-
-.masonry-css {
-    column-count: 1;
-    column-gap: $masonry-css-column-gap;
-
-    @include breakpoint(400px) {
-      column-count: 2;
-    }
-
-    @include breakpoint(600px) {
-      column-count: 3;
-    }
-
-    @include breakpoint(800px) {
-      column-count: 4;
-    }
-
-    @include breakpoint(1100px) {
-      column-count: 5;
-    }
-  }
-
-  .masonry-css-item {
-    break-inside: avoid;
-    margin-top: $masonry-css-column-gap;
-    margin-bottom: $masonry-css-column-gap;
-  }
-
-  #featured-stories-container li {
-    break-inside: avoid;
-
-    display: inline-block;
-    margin:  0.25rem;
-    padding:  1rem;
-    width: calc(100% - 1rem);
-    @include breakpoint(400px) {
-      width: calc(100% / 2.1 - .25rem);
-    }
-
-    @include breakpoint(600px) {
-      width: calc(100% / 3.1 - .25rem);
-    }
-
-    @include breakpoint(800px) {
-      width: calc(100% / 4.2 - .25rem);
-    }
-
-    @include breakpoint(1100px) {
-      width: calc(100% / 5.2 - .25rem);
-    }
-
-    background:  #efefef;
-   }
-*/
 /* includes */
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
 /* Document
@@ -3476,7 +3420,7 @@ select[multiple] {
       transform: rotate(90deg);
       content: '❯';
     }
-
+  
     .is-active > &::before {
       //content: '\2013';
       transform: rotate(-90deg);
@@ -7012,6 +6956,8 @@ a.thumbnail image {
           animation-delay: 700ms !important;
 }
 
+/* custom styles */
+/* typography */
 /*  ===== PAGE HEADINGS with underline ====== */
 .title-heading {
   color: #86b8c4;
@@ -7149,6 +7095,7 @@ a.thumbnail image {
   white-space: pre-wrap;
 }
 
+/* helpers */
 .yellow {
   background-color: #ffc700;
 }
@@ -7479,6 +7426,7 @@ a:hover, a:focus {
   outline: none;
 }
 
+/* nav */
 #hamburger {
   display: block;
   float: right;
@@ -7946,6 +7894,7 @@ SlideUpTopBar for Foundation styles
   width: 100%;
 }
 
+/* footer */
 #footer-contain {
   padding: 50px 0 100px 0;
   background-color: #eeeeef;
@@ -8009,184 +7958,8 @@ SlideUpTopBar for Foundation styles
   margin-bottom: 31px;
 }
 
-#video-container {
-  position: relative;
-  margin-bottom: 0;
-  height: auto;
-}
-
-#video-container .static-image {
-  height: auto;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: none;
-}
-
-#video-container.flex-video video {
-  height: auto;
-}
-
-#video-container .content-contain.hero {
-  position: absolute;
-  padding: 20% 0 0 10%;
-  top: 0;
-  left: 0;
-}
-
-#video-container .content-contain.hero h1 {
-  text-transform: uppercase;
-  font-size: 30px;
-  line-height: 35px;
-  margin-bottom: 0px;
-}
-
-@media screen and (min-width: 30em) {
-  #video-container .content-contain.hero h1 {
-    font-size: 50px;
-    line-height: 60px;
-    margin-bottom: 10px;
-  }
-}
-
-#video-container .content-contain.hero a {
-  font-size: 20px;
-  line-height: 20px;
-  position: relative;
-  margin: 0 0 0 3px;
-  padding: 0;
-  /* &:after{
-        position: absolute;
-        right: -54px;
-        content: '';
-        //content: '<object data="../images/icons-sprite.svg#arrow-circle-white"></object>'; //url(../images/icons-sprite.svg#arrow-circle-white);
-        background: url(../images/icons-sprite.svg#arrow-circle-white) center center;
-        height: 40px;
-        width: 40px;
-        top: -6px;
-      }*/
-}
-
-@media screen and (min-width: 30em) {
-  #video-container .content-contain.hero a {
-    font-size: 30px;
-    line-height: 36px;
-  }
-}
-
-#video-container .content-contain.hero a .icon {
-  height: 25px;
-  width: 26px;
-  position: absolute;
-  right: -35px;
-  top: -3px;
-}
-
-@media screen and (min-width: 30em) {
-  #video-container .content-contain.hero a .icon {
-    height: 42px;
-    width: 42px;
-    right: -54px;
-    top: -6px;
-  }
-}
-
-#video-container .content-contain.hero a .icon.active {
-  fill: #fff;
-  border: none;
-}
-
-.color-bar {
-  height: 13px;
-  margin: 0;
-  padding: 0;
-}
-
-.blue-section {
-  position: relative;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.blue-section:first-child {
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.blue-section h3 {
-  margin-bottom: 10px;
-}
-
-.blue-section p {
-  margin-bottom: 20px;
-}
-
-.white-section {
-  padding-top: 100px;
-  padding-bottom: 100px;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.coaches-section {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  position: relative;
-}
-
-.coaches-section img {
-  margin-left: 40px;
-}
-
-.coaches-section.img-contain {
-  background-image: url(../images/home/woman-purple-big.jpg);
-  background-repeat: no-repeat;
-}
-
-.coaches-section .row {
-  position: relative;
-  z-index: 10;
-}
-
-.coaches-section .content-contain {
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-.coaches-section .color-overlay {
-  background-color: #5e5e7c;
-}
-
-/*
-.book-appointment-section{
-  background-color: #615185;
-  padding: 50px 0;
-  position: relative;
-  img{
-    margin-left:40px;
-  }
-
-  .img-contain{
-    background: url(../images/CTA-Book-your-appointment1-placeholder.jpg) no-repeat center center;
-    background-size: cover;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    top:0;
-  }
-  .bg-opacity{
-    opacity: 0.25;
-  }
-  .row{
-    position: relative;
-    z-index: 10;
-  }
-  .content-contain{
-    padding: 50px 0;
-  }
-}
-*/
+/* modal */
+/* ui dropdown styles */
 /*!
  * # Semantic UI 2.2.14 - Dropdown
  * http://github.com/semantic-org/semantic-ui/
@@ -9722,6 +9495,7 @@ select.ui.dropdown {
 /*******************************
         User Overrides
 *******************************/
+/* ui transitions */
 /*!
  * # Semantic UI 2.2.14 - Transition
  * http://github.com/semantic-org/semantic-ui/
@@ -11661,6 +11435,7 @@ select.ui.dropdown {
   }
 }
 
+/* form styles */
 #corporate-signup-form form input, #corporate-signup-form form h3, #corporate-signup-form form .dropdown {
   margin-bottom: 45px;
 }
@@ -11844,6 +11619,145 @@ input[type="submit"] {
   padding-left: 0;
 }
 
+/* home page styles */
+#video-container {
+  position: relative;
+  margin-bottom: 0;
+  height: auto;
+}
+
+#video-container .static-image {
+  height: auto;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+#video-container.flex-video video {
+  height: auto;
+}
+
+#video-container .content-contain.hero {
+  position: absolute;
+  padding: 20% 0 0 10%;
+  top: 0;
+  left: 0;
+}
+
+#video-container .content-contain.hero h1 {
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 35px;
+  margin-bottom: 0px;
+}
+
+@media screen and (min-width: 30em) {
+  #video-container .content-contain.hero h1 {
+    font-size: 50px;
+    line-height: 60px;
+    margin-bottom: 10px;
+  }
+}
+
+#video-container .content-contain.hero a {
+  font-size: 20px;
+  line-height: 20px;
+  position: relative;
+  margin: 0 0 0 3px;
+  padding: 0;
+}
+
+@media screen and (min-width: 30em) {
+  #video-container .content-contain.hero a {
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+
+#video-container .content-contain.hero a .icon {
+  height: 25px;
+  width: 26px;
+  position: absolute;
+  right: -35px;
+  top: -3px;
+}
+
+@media screen and (min-width: 30em) {
+  #video-container .content-contain.hero a .icon {
+    height: 42px;
+    width: 42px;
+    right: -54px;
+    top: -6px;
+  }
+}
+
+#video-container .content-contain.hero a .icon.active {
+  fill: #fff;
+  border: none;
+}
+
+.color-bar {
+  height: 13px;
+  margin: 0;
+  padding: 0;
+}
+
+.blue-section {
+  position: relative;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.blue-section:first-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.blue-section h3 {
+  margin-bottom: 10px;
+}
+
+.blue-section p {
+  margin-bottom: 20px;
+}
+
+.white-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.coaches-section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.coaches-section img {
+  margin-left: 40px;
+}
+
+.coaches-section.img-contain {
+  background-image: url(../images/home/woman-purple-big.jpg);
+  background-repeat: no-repeat;
+}
+
+.coaches-section .row {
+  position: relative;
+  z-index: 10;
+}
+
+.coaches-section .content-contain {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.coaches-section .color-overlay {
+  background-color: #5e5e7c;
+}
+
 .meet-commanders {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -11859,8 +11773,8 @@ input[type="submit"] {
   background-color: #1e63af;
 }
 
-.meet-commanders h3 {
-  margin-bottom: 50px;
+.meet-commanders h3, .meet-commanders p {
+  margin-bottom: 30px;
 }
 
 .meet-commanders .row {
@@ -11873,6 +11787,10 @@ input[type="submit"] {
   background-size: cover;
   padding: 95px 0 75px 0;
   position: relative;
+}
+
+.locations-callout h3, .locations-callout p {
+  margin-bottom: 30px;
 }
 
 /*
@@ -12026,7 +11944,7 @@ input[type="submit"] {
   color: #616264;
   font-family: "Oswald", sans-serif;
   font-size: 24px;
-  /*
+  /*                          
     font-family: ProximaNova-Bold, Helvetica, Arial, sans-serif;
     font-weight: normal;
     */
@@ -12371,32 +12289,6 @@ ul#blog-nav .button-search {
   padding-left: 5%;
 }
 
-/*
-div.corporate-partner{
- // background-color: get-color(title-color-primary);
-  padding: 50px 0;
-  position: relative;
-//  transition: all 0.5s ease;
-//  margin-bottom: 100px !important;
-  img{
-  //  margin-left:40px;
-  }
-  &.img-contain{
-    background-image:url(../images/become-corp-partner-bg-image.jpg);
-    background-repeat: no-repeat;
-  }
-  .bg-opacity{
-    //opacity: 0.25;
-  }
-  .row{
-    position: relative;
-    z-index: 10;
-  }
-  .content-contain{
-    //padding: 50px 0;
-  }
-}
-*/
 .corporate-partner.img-contain {
   background-image: url(../images/become-corp-partner-bg-image.jpg);
 }
@@ -12405,35 +12297,7 @@ div.corporate-partner{
   background-color: #86b8c4;
 }
 
-/*
-#corporate-signup-form{
->>>====== form styles in ehe-form.scss =============<<<
-}
-*/
-/*
-.ehe-modal{
-  @include breakpoint(0px) {
-    $reveal-width: 600px;
-  }
-
-  @include breakpoint(600px) {
-    width:100%;
-  }
-
-  @include breakpoint(800px) {
-    width:100%;
-  }
-
-  @include breakpoint(1100px) {
-    width:1100px;
-  }
-}
-*/
-#map {
-  height: 760px;
-  width: 578px;
-}
-
+/* custom tabs */
 .tabs-title {
   display: inline-block;
   width: 50%;
@@ -12548,7 +12412,7 @@ div.corporate-partner{
     left: 50%;
   }
   &.performance{
-    left: 99%;
+    left: 99%; 
   }
   &.mind-health{
     left: 150%;
@@ -12799,7 +12663,7 @@ div.corporate-partner{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  /* parallax
+  /* parallax 
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -13057,6 +12921,7 @@ div.corporate-partner{
   height: 56px;
 }
 
+/* slick carousel styles */
 /* Slider */
 .slick-slider {
   position: relative;
