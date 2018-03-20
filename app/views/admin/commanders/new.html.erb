@@ -1,6 +1,14 @@
-<h1>Add Commander In Health</h1>
-
-<%= render 'form', commander: @commander %>
-
-<%= link_to 'Back', admin_dashboard_path %>
+<div class="page-header">
+  <div class='row'>
+    <div class='small-12'>
+      <h1 class='title-heading text-center'>Add Commander In Health</h1>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= render 'form', commander: @commander %>
+        <%= link_to 'Back', admin_dashboard_path %>
+      </div>
+    </div>
+  </div>
+</div>
 

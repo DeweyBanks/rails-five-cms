@@ -1,17 +1,24 @@
-<div>
-  <h1><%= @post.title %></h1>
-  <h5>By: <%= %> | <%= @post.created_at.to_time.strftime('%B %e %Y') %></h5>
-  <p><%= image_tag @post.main_image.url(:medium) %></p>
-  <p><%= @post.all_tags %></p>
-  <p><%= @post.body.html_safe %></p>
+<div class="page-header">
+  <div class='row'>
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="row">
+          <h4>Post Status: <%= @post.status %></h4>
+            <% unless @post.published? %>
+              <%= button_to "Publish", admin_publish_post_path(@post) %>
+            <% end %>
+        </div>
+        <div>
+          <h1><%= @post.title %></h1>
+          <h3>url: <%= @post.slug %></h3>
+          <h5>By: <%= %> | <%= @post.created_at.to_time.strftime('%B %e %Y') %></h5>
+          <p><%= image_tag @post.main_image.url(:medium) %></p>
+          <p><%= @post.all_tags %></p>
+          <p><%= @post.body.html_safe %></p>
+        </div>
+      </div>
+      <%= link_to 'Edit', edit_admin_post_path(@post) %> |
+      <%= link_to 'Back', admin_posts_path %>
+    </div>
+  </div>
 </div>
-<div>
-  <h4>Post Status: <%= @post.status %></h4>
-  <%= button_to "Publish", admin_publish_post_path(@post) %>
-</div>
-
-
-
-
-<%= link_to 'Edit', edit_admin_post_path(@post) %> |
-<%= link_to 'Back', admin_posts_path %>

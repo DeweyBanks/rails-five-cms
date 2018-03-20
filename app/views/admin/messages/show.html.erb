@@ -1,31 +1,38 @@
-<p>
-  <strong>First name:</strong>
-  <%= @message.first_name %>
-</p>
+<div class="page-header">
+  <div class='row'>
+    <div class="row">
+      <div class="small-12 columns">
+        <p>
+          <strong>First name:</strong>
+          <%= @message.first_name %>
+        </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @message.last_name %>
-</p>
+        <p>
+          <strong>Last name:</strong>
+          <%= @message.last_name %>
+        </p>
 
-<p>
-  <strong>Company name:</strong>
-  <%= @message.company_name %>
-</p>
+        <p>
+          <strong>Company name:</strong>
+          <%= @message.company_name %>
+        </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @message.email %>
-</p>
+        <p>
+          <strong>Email:</strong>
+          <%= @message.email %>
+        </p>
 
-<p>
-  <strong>Interest:</strong>
-  <%= @message.interest %>
-</p>
+        <p>
+          <strong>Interest:</strong>
+          <%= @message.interest %>
+        </p>
 
-<p>
-  <strong>Comment:</strong>
-  <%= @message.comment %>
-</p>
-
-<%= link_to 'Back', admin_messages_path %>
+        <p>
+          <strong>Comment:</strong>
+          <%= @message.comment %>
+        </p>
+      </div>
+      <%= link_to 'Back', admin_messages_path %>
+    </div>
+  </div>
+</div>

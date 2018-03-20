@@ -11,7 +11,10 @@
     </div>
   <% end %>
 
-
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.select(:status, ['preview', 'published' ], {})  %>
+  </div>
 
   <div class="field">
     <%= form.label :tags %>

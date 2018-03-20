@@ -6,7 +6,6 @@ class MessagesController < ApplicationController
 
 
   def create
-    binding.pry
     @message = Message.new(message_params)
 
     respond_to do |format|

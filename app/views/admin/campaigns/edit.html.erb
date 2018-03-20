@@ -1,6 +1,14 @@
-<h1>Editing Campaign</h1>
-
-<%= render 'form', campaign: @campaign %>
-
-<%= link_to 'Show', admin_campaign_path(@campaign) %> |
-<%= link_to 'Back', admin_campaigns_path %>
+<div class="page-header">
+  <div class='row'>
+    <div class='small-12'>
+      <h1 class='title-heading text-center'>Editing Campaign</h1>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= render 'form', campaign: @campaign %>
+        <%= link_to 'Show', admin_campaign_path(@campaign) %> |
+        <%= link_to 'Back', admin_campaigns_path %>
+      </div>
+    </div>
+  </div>
+</div>

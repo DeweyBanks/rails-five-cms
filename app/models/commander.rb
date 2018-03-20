@@ -1,7 +1,6 @@
 class Commander < ApplicationRecord
   paginates_per 10
   belongs_to :commander_type
-  validates :title, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
 

@@ -1,20 +1,22 @@
-<div>
-  <div>
-    <%= image_tag @commander.avatar.url(:medium) %>
+<div class="page-header">
+  <div class='row'>
+    <div class="row">
+      <div class="small-12 columns">
+        <div>
+          <div>
+            <%= image_tag @commander.avatar.url(:medium) %>
+          </div>
+          <h1><%= @commander.title %></h1>
+          <% if @commander.commander_type.present? %>
+            <p>Type: <%= @commander.commander_type.name %></p>
+          <% else %>
+            <p>Type: Not Set</p>
+          <% end %>
+          <h2><%= @commander.first_name %> <%= @commander.last_name %></h2>
+          <p><%= @commander.about %></p>
+        </div>
+        <%= link_to 'Edit', edit_admin_commander_path(@commander) %> |
+        <%= link_to 'Back', admin_commanders_path %>
+    </div>
   </div>
-  <h1><%= @commander.title %></h1>
-  <% if @commander.commander_type.present? %>
-    <p>Type: <%= @commander.commander_type.name %></p>
-  <% else %>
-    <p>Type: Not Set</p>
-  <% end %>
-  <h2><%= @commander.first_name %> <%= @commander.last_name %></h2>
-  <p><%= @commander.about %></p>
 </div>
-
-
-
-
-
-<%= link_to 'Edit', edit_admin_commander_path(@commander) %> |
-<%= link_to 'Back', admin_commanders_path %>

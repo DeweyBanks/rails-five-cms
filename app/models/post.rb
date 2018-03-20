@@ -36,6 +36,10 @@ class Post < ApplicationRecord
     where("title LIKE ? OR body LIKE ?", "%#{search}%", "%#{search}%")
   end
 
+  def published?
+    status == "published"
+  end
+
   def self.published
     where(:status => "published")
   end
