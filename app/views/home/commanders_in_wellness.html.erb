@@ -27,20 +27,18 @@
 
     <!--</div>-->
     <div class="tabs-content" data-tabs-content="article-tabs">
-        <div class="tabs-panel is-active" id="physician-articles">
-            <div class="row small-up-1 medium-up-2 large-up-3">
-                <ul class="gridder clearfix">
-                  <%= render @commanders %>
-              </ul>
-            </div>
-            <%= render :partial => 'commanders/about', :collection => @commanders, :as => :commander %>
-
+      <div class="tabs-panel is-active" id="physician-articles">
+        <div class="row small-up-1 medium-up-2 large-up-3">
+          <ul class="gridder clearfix">
+            <%= render @commanders %>
+          </ul>
+        </div>
+        <%= render :partial => 'commanders/about', :collection => @commanders, :as => :commander %>
         <div class="load-more-container">
           <%= image_tag "ajax-loader.gif", style: "display:none;", class: "loading-gif" %>
           <%= link_to "Load More", commanders_path, class: "load-more" %>
         </div>
-
-        </div>
+      </div>
     </div>
 
 
