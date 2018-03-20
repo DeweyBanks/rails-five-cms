@@ -9,11 +9,11 @@ class Commander < ApplicationRecord
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   default_scope { order('created_at DESC') }
 
-  def self.physicians_scope
+  def self.physicians
     where(commander_type_id: CommanderType.find_by(name: 'Physician').id)
   end
 
-  def self.coaches_scope
+  def self.coaches
     where(commander_type_id: CommanderType.find_by(name: 'Coach').id)
   end
 end

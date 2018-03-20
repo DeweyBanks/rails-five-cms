@@ -13,7 +13,6 @@ class CommandersController < ApplicationController
         @commanders = Commander.all.limit(9)
       end
     end
-      binding.pry
     respond_to do |f|
       f.html
       f.js

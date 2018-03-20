@@ -30,10 +30,10 @@
       <div class="tabs-panel is-active" id="physician-articles">
         <div class="row small-up-1 medium-up-2 large-up-3">
           <ul class="gridder clearfix">
-            <%= render @commanders %>
+            <%= render :partial => 'commanders/commander', :collection => @physicians, :as => :commander %>
           </ul>
         </div>
-        <%= render :partial => 'commanders/about', :collection => @commanders, :as => :commander %>
+        <%= render :partial => 'commanders/about', :collection => @physicians, :as => :commander %>
         <div class="load-more-container">
           <%= image_tag "ajax-loader.gif", style: "display:none;", class: "loading-gif" %>
           <%= link_to "Load More", commanders_path, class: "load-more" %>
@@ -41,126 +41,17 @@
       </div>
     </div>
 
-
     <div class="tabs-content" data-tabs-content="article-tabs">
-        <div class="tabs-panel" id="wellness-coach-articles">
-            <div class="row small-up-1 medium-up-2 large-up-3">
-
-                <ul class="gridder clearfix">
-
-                    <li class="gridder-list column" data-griddercontent="#content1">
-                        <div class="callout">
-                            <img src="images/physician-placeholder.png" alt="">
-                            <%= image_tag "physician-placeholder.png" %>
-                            <%= image_tag "icon-commanders-arrow.png" %>
-                            <p class="commander-title font-bold">Title Goes Here</p>
-                            <p class="name">First and Last Name</p>
-                        </div>
-                    </li>
-                    <li class="gridder-list column" data-griddercontent="#content2">
-                        <div class="callout">
-                            <%= image_tag "physician-placeholder.png" %>
-                            <%= image_tag "icon-commanders-arrow.png" %>
-                            <p class="commander-title font-bold">Title Goes Here</p>
-                            <p class="name">First and Last Name</p>
-                        </div>
-                    </li>
-                    <li class="gridder-list column" data-griddercontent="#content3">
-                        <div class="callout">
-                            <%= image_tag "physician-placeholder.png" %>
-                            <%= image_tag "icon-commanders-arrow.png" %>
-                            <p class="commander-title font-bold">Title Goes Here</p>
-                            <p class="name">First and Last Name</p>
-                        </div>
-                    </li>
-                    <li class="gridder-list column" data-griddercontent="#content1">
-                        <div class="callout">
-                            <%= image_tag "physician-placeholder.png" %>
-                            <%= image_tag "icon-commanders-arrow.png" %>
-                            <p class="commander-title font-bold">Title Goes Here</p>
-                            <p class="name">First and Last Name</p>
-                        </div>
-                    </li>
-                    <li class="gridder-list column" data-griddercontent="#content2">
-                        <div class="callout">
-                            <%= image_tag "physician-placeholder.png" %>
-                            <%= image_tag "icon-commanders-arrow.png" %>
-                            <p class="commander-title font-bold">Title Goes Here</p>
-                            <p class="name">First and Last Name</p>
-                        </div>
-                    </li>
-                    <li class="gridder-list column" data-griddercontent="#content3">
-                        <div class="callout">
-                            <%= image_tag "physician-placeholder.png" %>
-                            <%= image_tag "icon-commanders-arrow.png" %>
-                            <p class="commander-title font-bold">Title Goes Here</p>
-                            <p class="name">First and Last Name</p>
-                        </div>
-                    </li>
-                    <li class="gridder-list column" data-griddercontent="#content1">
-                        <div class="callout">
-                            <%= image_tag "physician-placeholder.png" %>
-                            <%= image_tag "icon-commanders-arrow.png" %>
-                            <p class="commander-title font-bold">Title Goes Here</p>
-                            <p class="name">First and Last Name</p>
-                        </div>
-                    </li>
-                    <li class="gridder-list column" data-griddercontent="#content2">
-                        <div class="callout">
-                            <%= image_tag "physician-placeholder.png" %>
-                            <%= image_tag "icon-commanders-arrow.png" %>
-                            <p class="commander-title font-bold">Title Goes Here</p>
-                            <p class="name">First and Last Name</p>
-                        </div>
-                    </li>
-                    <li class="gridder-list column" data-griddercontent="#content3">
-                        <div class="callout">
-                             <%= image_tag "physician-placeholder.png" %>
-                            <%= image_tag "icon-commanders-arrow.png" %>
-                            <p class="commander-title font-bold">Title Goes Here</p>
-                            <p class="name">First and Last Name</p>
-                        </div>
-                    </li>
-
-                </ul>
-            </div>
-        <div id="content1" class="gridder-content"><p>Dr. Levy is an accomplished physician executive with a record of achievement in complex systems involving patients and a range of organizations. He is a renowned strategic thinker who has executed effective strategies for his own enterprises and a diverse set of public and private sector entities. Drawing on a vast network of business relationships, Dr. Levy brings global best-in-practice solutions to the healthcare industry.</p>
-            <p>At Franklin Health, Dr. Levy used his insights to create a scalable business that helped patients and families receive better, more satisfying care.</p>
-            <p>As strategy leader at PwC, he led the effort to recommend public health and hospital reform for the Louisiana Recovery Authority after Hurricane Katrina. Dr. Levy then directed the team that helped California’s Department of Public Health re-engineer the state’s catastrophic surge response system. In both engagements, he successfully managed all of the stakeholders – including hospitals, private providers, payers, professional associations, and organized labor.</p>
-            <p>At PwC, Dr. Levy elevated the firm’s worldwide healthcare practice to prominence by navigating an intricate matrix of domestic and international governance arrangements. His leadership helped PwC become an acclaimed solutions provider across all healthcare sectors in more than 30 countries.</p></div>
-            <div id="content2" class="gridder-content"> 2 Content goes here... </div>
-            <div id="content3" class="gridder-content"> 3 Content goes here... </div>
-
+      <div class="tabs-panel" id="wellness-coach-articles">
+        <div class="row small-up-1 medium-up-2 large-up-3">
+          <ul class="gridder clearfix">
+            <%= render :partial => 'commanders/commander', :collection => @coaches, :as => :commander %>
+          </ul>
         </div>
+        <%= render :partial => 'commanders/about', :collection => @coaches, :as => :commander %>
+      </div>
     </div>
 
-
-
-
-<ul class="main-filter">
-  <li class="<% if !params['filter'].present? || params['filter'] == '' then %>current<% end %>"><a href="/commanders"></a></li>
-  <li class="<% if params['filter'] == 'physicians' then %>current<% end %>"><a href="/commanders?filter=physicians">Physicians</a></li>
-  <li class="<% if params['filter'] == 'coaches' then %>current<% end %>"><a href="/commanders?filter=coaches">Wellness Coaches</a></li>
-</ul>
-
-
-<%= link_to "Physicians", commanders_path(filter: "physicians") %>
-<%= link_to "Wellness Coaches", commanders_path(filter: "coaches") %>
-
-
-<%= button_to "Physicians", commanders_path, params: {filter: "physicians"}, :method => :get %>
-<%= button_to "Wellness Coaches", commanders_path, params: {filter: "coaches"}, :method => :get %>
-
-
-<!--
-<div class="container">
-  < %= render @commanders %>
-</div>
-<div class="load-more-container">
-  < %= image_tag "ajax-loader.gif", style: "display:none;", class: "loading-gif" %>
-  < %= link_to "Load More", commanders_path, class: "load-more" %>
-</div>
--->
 <% content_for :js do %>
   <script>
     // Call Gridder
