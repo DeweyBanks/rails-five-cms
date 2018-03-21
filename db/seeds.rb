@@ -40,8 +40,14 @@ csv.each do |row|
   if row["Tags"].present?
     p.all_tags = row["Tags"].gsub("|", ",")
   end
+
   if row["Excerpt"].present?
-    p.meta_description = row["Excerpt"][0..190]
+    p.meta_description = row["Excerpt"]
+  else
+    p.meta_description = row["Title"]
+  end
+  if p.meta_description.nil?
+    binding.pry
   end
   if row["Image URL"].present?
     begin p.main_image =  URI.parse(row["Image URL"])
@@ -51,6 +57,8 @@ csv.each do |row|
       puts "moving on"
     end
   end
+  p.valid?
+
   p.save
   puts "Saved #{p.id}: #{p.title}"
 end

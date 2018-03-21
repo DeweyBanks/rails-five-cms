@@ -5,11 +5,12 @@ class PostsController < ApplicationController
     @featured_post = Post.featured
     @page = "index"
     if params[:filter].present?
-      @posts = Post.where(category: Category.find_by(name: params[:filter])).order('created_at DESC').limit(7)
+      @posts = Post.limit(7).where(category: Category.find_by(name: params[:filter])).order('created_at DESC')
     elsif params[:tag].present?
-      @posts = Post.tagged_with(params[:tag]).order('created_at DESC').limit(7)
+      @posts = Post.tagged_with(params[:tag]).limit(7).order('created_at DESC')
     elsif params[:search]
-      @posts = Post.search(params[:search]).order("created_at DESC").limit(7)
+      binding.pry
+      @posts = Post.search(params[:search]).limit(7).order("created_at DESC")
     else
       @posts = Post.all.order('created_at DESC').limit(7)
     end

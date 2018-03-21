@@ -13,6 +13,7 @@ class Post < ApplicationRecord
   validates_attachment_content_type :main_image, content_type: /\Aimage\/.*\z/
 
   after_save :ensure_only_one_featured_post
+  default_scope { order('created_at DESC') }
 
   def to_param
     "#{slug}"
@@ -63,7 +64,12 @@ class Post < ApplicationRecord
     end
 
     def set_slug
-      self.slug = self.title.downcase.gsub(" ", "-") unless self.slug.present?
+      self.slug = self.title.downcase.gsub(" ", "-").gsub(",","") unless self.slug.present?
+      check = Post.find_by(slug: self.slug)
+      if !check.nil?
+        self.slug += "-#{self.id}"
+      end
+      self.slug
     end
 
 end

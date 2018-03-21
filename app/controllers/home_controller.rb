@@ -2,7 +2,8 @@ class HomeController < ApplicationController
 
   def index
     @page = "index"
-    @posts = Post.limit(5).order("created_at DESC")
+    @posts = Post.limit(5)
+
   end
 
   def show
@@ -10,7 +11,7 @@ class HomeController < ApplicationController
     @coaches = Commander.coaches.limit(9)
     @page = params[:page]
     if @page == "about"
-      @posts = Post.limit(5).order("created_at DESC")
+      @posts = Post.limit(5)
     end
     if valid_page?
       render template: "home/#{params[:page]}"

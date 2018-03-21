@@ -74,13 +74,13 @@ module Admin
           c.commander_type_id = type_id
           c.emps_id = d["id"]
           c.facility_id = d["facility_id"]
-          c.avatar = File.new("public/test_images/commanders/doctor#{rand(1..9)}.jpg", "r")
+          c.avatar = File.new("/test_images/commanders/doctor#{rand(1..9)}.jpg", "r")
         else
            if d["name"].present?
             c.first_name = d["name"].split(" ").first
             c.last_name = d["name"].split(" ").last
             d.except!("name")
-            c.avatar = File.new("public/test_images/commanders/doctor#{rand(1..9)}.jpg", "r")
+            c.avatar = File.new("/test_images/commanders/doctor#{rand(1..9)}.jpg", "r")
             c.update(d)
           else
             c.first_name = "Name Missing"
