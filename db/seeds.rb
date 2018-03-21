@@ -46,9 +46,6 @@ csv.each do |row|
   else
     p.meta_description = row["Title"]
   end
-  if p.meta_description.nil?
-    binding.pry
-  end
   if row["Image URL"].present?
     begin p.main_image =  URI.parse(row["Image URL"])
     rescue

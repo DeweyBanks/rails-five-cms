@@ -9,7 +9,6 @@ class PostsController < ApplicationController
     elsif params[:tag].present?
       @posts = Post.tagged_with(params[:tag]).limit(7).order('created_at DESC')
     elsif params[:search]
-      binding.pry
       @posts = Post.search(params[:search]).limit(7).order("created_at DESC")
     else
       @posts = Post.all.order('created_at DESC').limit(7)
