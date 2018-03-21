@@ -91,71 +91,8 @@
                             <%=raw @post.body %>
                         </div>
                 <!-- end Blog Story -->
-                <!-- blog-comment -->
-                        <div class="blog-comment bot-space-95">
-                            <div class="small-12 blog-user-info bot-space-65">
-                                <p>
-                                    <span class="blog-user-info font-bold">Helovescookies  |</span>
-                                    <span class="blog-user-info float-right">12.01.2017</span>
-                                    <span class="float-right">0.00.00 PM</span>
-                                </p>
-                            </div>
-                            <p class="bot-space-65">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                            </p>
-                            <div class="small-12 bot-space-65">
-                                <p>
-                                    <span class="">{ICON}</span>
-                                    <span class="float-right">Reply to</span>
-                                    <span class="font-bold float-right">Helovescookies</span>
-                                </p>
-                            </div>
 
-                        </div>
-                <!-- end blog-comment -->
-
-                <!-- blog-story-form -->
-                            <div id="blog-story-form">
-                                <form>
-                                    <div class="row">
-                                        <div class="small-12 medium-6 columns">
-                                            <input class="input-group-field" id="first-name" type="text" placeholder="First Name">
-                                        </div>
-                                        <div class="small-12 medium-6 columns">
-                                            <input class="input-group-field" id="last-name" type="text" placeholder="Last Name">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="small-12 medium-6 columns">
-                                            <input class="input-group-field" id="company-name" type="text" placeholder="Company Name">
-                                        </div>
-                                        <div class="small-12 medium-6 columns">
-                                            <input class="input-group-field" id="email" type="email" placeholder="email@email.com">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="small-12 columns">
-                                                <input class="input-group-field" id="comment" type="text" placeholder="Comment">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="small-12 columns">
-                                            <input class="round-button button-gray ProximaNova-Medium" type="submit" value="Submit">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                <!-- blog-story-form -->
                         </div>
             </div>
     </div>
-
-
-
-<div>
-  <h1><%= @post.title %></h1>
-  <h5>By: EHE HEALTH | <%= @post.created_at.to_time.strftime('%B %e %Y') %></h5>
-  <p>Tags: <%=raw tag_links(@post.all_tags)%></p>
-  <p><%=raw @post.body %></p>
-</div>
 
