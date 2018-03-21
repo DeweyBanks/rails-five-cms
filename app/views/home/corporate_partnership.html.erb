@@ -46,73 +46,14 @@
                   <h3 class="text-left white-text">I would like to become a Corporate Partner</h3>
               </div>
           </div>
-           <!-- 
-            <form>
-                 <div class="row">
-                       <div class="small-12 columns">
-                        <button class="close-button" data-close aria-label="Close modal" type="button">
-                            <span aria-hidden="true"><svg class="icon"><use xlink:href="#white-circle-x" /></svg></span>
-                        </button>
-                     </div>
-                    </div>
-                  <div class="row">
-                      <div class="small-12 columns">
-                          <h3 class="text-left white-text">I would like to become a Corporate Partner</h3>
-                      </div>
-                    </div>
-                    <div class="row">  
-                        <div class="small-12 medium-6 columns">
-                                  <input class="input-group-field white-text" id="first-name" type="text" placeholder="First Name">
-                          </div>
-                          <div class="small-12 medium-6 columns">
-                                  <input class="input-group-field white-text" id="last-name" type="text" placeholder="Last Name">
-                          </div>
-                    </div>                            
-                    <div class="row">  
-                        <div class="small-12 medium-6 columns">
-                                  <input class="input-group-field white-text" id="company-name" type="text" placeholder="Company Name">
-                          </div>
-                          <div class="small-12 medium-6 columns">
-                                  <input class="input-group-field white-text" id="email" type="email" placeholder="email@email.com">
-                          </div>
-                    </div>                            
-                     <div class="row">    
-                          <div class="small-12 white-text columns">
-                              <div class="ui fluid selection dropdown transparent-bg">
-                                <input type="hidden" name="user">
-                                <i class="dropdown icon"></i>
-                                <div class="default text">-What Are You Interested In?-</div>
-                                <div class="menu">
-                                  <div class="item" data-value="husker">
-                                    Husker
-                                  </div>
-                                  <div class="item" data-value="starbuck">
-                                    Starbuck
-                                  </div>
-                                  <div class="item" data-value="hotdog">
-                                    Hot Dog
-                                  </div>
-                                  <div class="item" data-value="apollo">
-                                    Apollo
-                                  </div>
-                                </div>
-                              </div>
-
-                          </div>
-                    </div>
-                    <div class="row"> 
-                        <div class="small-12 columns">
-                                <input class="input-group-field white-text" id="comment" type="text" placeholder="Comment">
-                        </div>
-                    </div>
-                    <div class="row">
-                      <div class="small-12 columns">
-                      <input class="round-button button-white ProximaNova-Medium" type="submit" value="Submit">
-                      </div>
-                  </div>
-          </form>-->
+           
           <%= render :partial => 'messages/form', :locals => {:message => Message.new} %>
     </div>
+    <!-- 
+    
+    ============== REMOVED ACCORDION  =======================
+    
+    
     <div class="row">
             <div class="small-12">
                 <ul class="custom-accordion accordion" data-accordion data-allow-all-closed="true">
@@ -151,7 +92,7 @@
             </div>
         </div>
 
-
+-->
 <!--- Add in page specific JS  -->
 
 <% content_for :js do %>
