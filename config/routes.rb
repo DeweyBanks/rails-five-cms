@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :commanders
     post "/update_commanders" => "commanders#update_commanders"
     resources :users
+    resources :pictures
     resources :campaigns
     resources :messages, only: [:index, :show, :destroy]
   end
