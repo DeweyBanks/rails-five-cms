@@ -87,7 +87,7 @@
   <div class='row'>
     <% @third_blog_row.each_with_index do |post, index| %>
       <%= link_to post_path(post) do %>
-        <div class="<%= get_first_row_class(index, 3) %>" style="background-image: url(<%= post.main_image.url(:medium) %>);">
+        <div class="record <%= get_first_row_class(index, 3) %>" data_id="<%= post.id %>" style="background-image: url(<%= post.main_image.url(:medium) %>);">
           <div class="content-container">
             <p class="white-text"><%= post.title %></p>
             <p class="white-text"><%= h post.created_at.to_s(:post_date) %></p>
@@ -97,15 +97,43 @@
       <% end %>
     <% end %>
   </div>
+  <div class="container row">
+</div>
+
 </div>
 <!-- end blog listing container -->
 <!-- LOAD MORE -->
 <div class="row">
   <div class="small-12 medium-4 small-centered column text-center">
-    <a href="" class="text-center load-more-button ProximaNova-Bold add-arrow-below">LOAD MORE</a>
+    <a href="" class="load-more text-center load-more-button ProximaNova-Bold add-arrow-below">LOAD MORE</a>
+    <%= image_tag "ajax-loader.gif", style: "display:none;", class: "loading-gif" %>
   </div>
 </div>
 <!-- END LOAD MORE -->
-
-
+<% content_for :js do %>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('a.load-more').click(function (e) {
+          e.preventDefault();
+          $('.load-more').hide();
+          $('.loading-gif').show();
+          var last_id = $('.record').last().attr('data_id');
+          $.ajax({
+              type: "GET",
+              url: "/blog",
+              data: {
+                  id: last_id
+              },
+              dataType: "script",
+              success: function () {
+                  $('.loading-gif').hide();
+                  $('.load-more').show();
+              }, function(err) {
+                console.log("ERROR::: ", err);
+              }
+          });
+      });
+    });
+  </script>
+<% end %>
 

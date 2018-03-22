@@ -4,14 +4,16 @@ class PostsController < ApplicationController
     @categories = Category.all
     @featured_post = Post.featured
     @page = "index"
-    if params[:filter].present?
-      @posts = Post.limit(7).where(category: Category.find_by(name: params[:filter])).order('created_at DESC')
+    if params[:id].present?
+      @posts = Post.where('id < ?', params[:id]).limit(7)
+    elsif params[:filter].present?
+      @posts = Post.limit(7).where(category: Category.find_by(name: params[:filter]))
     elsif params[:tag].present?
-      @posts = Post.tagged_with(params[:tag]).limit(7).order('created_at DESC')
+      @posts = Post.tagged_with(params[:tag]).limit(7)
     elsif params[:search]
-      @posts = Post.search(params[:search]).limit(7).order("created_at DESC")
+      @posts = Post.search(params[:search]).limit(7)
     else
-      @posts = Post.all.order('created_at DESC').limit(7)
+      @posts = Post.limit(7)
     end
 
     @first_blog_row = []
@@ -29,9 +31,9 @@ class PostsController < ApplicationController
       end
     end
 
-    respond_to do |f|
-      f.html {render :index }
-      f.json {render json: @posts}
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 

@@ -7,12 +7,13 @@ class HomeController < ApplicationController
   end
 
   def show
-    @physicians = Commander.physicians.limit(9)
-    @coaches = Commander.coaches.limit(9)
     @page = params[:page]
-    if @page == "about"
-      @posts = Post.limit(5)
+    if @page == "commanders_in_wellness"
+      @physicians = Commander.physicians.limit(9)
+      @coaches = Commander.coaches.limit(9)
     end
+    @posts = Post.limit(5) if @page == "about"
+
     if valid_page?
       render template: "home/#{params[:page]}"
     else
