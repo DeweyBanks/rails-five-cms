@@ -6,10 +6,10 @@
   <div id="blog-hero-container">
     <div class="row no-bottom-margin" >
       <div class="content-contain hero">
-        <h1 class="title-heading white-text">BLOG</h1>
+        <h1 class="title-heading white-text"><%= @post.title %></h1>
       </div>
     </div>
-    <img src="images/blog-story-hero-bg-placeholder.jpg" alt="">
+    <%= image_tag @post.main_image.url  %>
   </div>
 </div>
 <div class='row'>
@@ -32,59 +32,30 @@
           <!--  social container -->
           <div class="social-icons-container">
             <div class="small-4 large-4">
-              <a href="https://www.instagram.com/eheintl/" target="_blank"><img class="social-icons" src="/images/icon-instagram.png" alt="instagram"></a>
-              <a href="https://www.facebook.com/ehehealth/" target="_blank"><img class="social-icons" src="/images/icon-facebook.png" alt="facebook"></a>
-              <a href="https://twitter.com/EHEIntl/" target="_blank"><img class="social-icons" src="/images/icon-twitter.png" alt="twitter"></a>
-              <a href="https://www.youtube.com/user/EHEintl100/" target="_blank"><img class="social-icons" src="/images/icons-youtube.png" alt="youtube"></a>
+              <%= link_to image_tag("icon-instagram", :alt => "instagram", :class => "social-icons"), "https://www.instagram.com/eheintl/", target: :_blank %>
+              <%= link_to image_tag("icon-facebook", :alt => "facebook", :class => "social-icons"), "https://www.facebook.com/ehehealth/", target: :_blank %>
+              <%= link_to image_tag("icon-twitter", :alt => "twitter", :class => "social-icons"), "https://twitter.com/EHEIntl/", target: :_blank %>
+              <%= link_to image_tag("icons-youtube", :alt => "youtube", :class => "social-icons"), "https://www.youtube.com/user/EHEintl100/", target: :_blank %>
             </div>
           </div><!-- end social container -->
         </div>
       </div>
       <!-- End SHARE Social Media -->
       <!-- Additional Blog posts -->
-      <div class="row">
-        <div class="bot-space-75">
-          <p class="gray-text">DEC 1st, 2017  |  Blog</p>
-          <a href="#" class="drkr-blue-text font-bold">
-            These Are the Best Stress Relief Toys and Tools
-          </a>
-
+      <% @recent_posts.each do |post| %>
+        <div class="row">
+          <div class="bot-space-75">
+            <p class="gray-text"><%= h post.created_at.to_s(:post_date) %>  |  <%= post.category.name %></p>
+            <%= link_to post.title, post_path(post), :class => "drkr-blue-text font-bold" %>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="bot-space-75">
-          <p class="gray-text">DEC 1st, 2017  |  PR</p>
-          <a href="#" class="drkr-blue-text font-bold">
-            Make These Amazing and Healthy Holiday Cocktails
-          </a>
-
-        </div>
-      </div>
-      <div class="row">
-        <div class="bot-space-75">
-          <p class="gray-text">DEC 1st, 2017  |  News</p>
-          <a href="#" class="drkr-blue-text font-bold">
-            How to Soothe Your Holiday Stress
-          </a>
-
-        </div>
-      </div>
-      <div class="row">
-        <div class="bot-space-75">
-          <p class="gray-text">DEC 1st, 2017  |  Blog</p>
-          <a href="#" class="drkr-blue-text font-bold">
-            How to Spread Good Health with Holiday Gifts
-          </a>
-
-        </div>
-      </div>
+      <% end %>
       <!-- End Additional Blog posts -->
     </div>
     <!-- end left column -->
     <div class='small-12 large-8 columns'>
       <!-- Blog Story -->
       <div class="bot-space-75">
-        <%= image_tag @post.main_image.url %>
         <h3 class="gray-text"><%= @post.title %></h3>
         <%=raw @post.body %>
       </div>

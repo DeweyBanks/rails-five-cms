@@ -25,7 +25,6 @@ blog_id = Category.find_by(name: 'Blog').id
 csv.each do |row|
   row = row.to_h
   p = Post.new
-  p.id = row["id"]
   p.title = row["Title"]
   p.body = row["Content"]
   if row["Date"].length == 8

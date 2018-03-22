@@ -5,7 +5,7 @@ class PostsController < ApplicationController
     @featured_post = Post.featured
     @page = "index"
     if params[:id].present?
-      @posts = Post.where('id < ?', params[:id]).limit(7)
+      @posts = Post.where('id < ?', params[:id]).limit(6)
     elsif params[:filter].present?
       @posts = Post.limit(7).where(category: Category.find_by(name: params[:filter]))
     elsif params[:tag].present?
@@ -40,6 +40,7 @@ class PostsController < ApplicationController
   def show
     @page = "show"
     @post = Post.find_by(slug: params[:slug])
+    @recent_posts = Post.limit(5)
   end
 
 end
