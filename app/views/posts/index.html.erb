@@ -36,14 +36,22 @@
 <div class="row bot-space-25">
  <div class="small-12 columns">
    <ul id="blog-nav">
-    <li><%= link_to "All", posts_path, class: "active ProximaNova-Medium" %></li>
+    <% if @posts.any? %>
+      <li><%= link_to "All", posts_path, :class => "active ProximaNova-Medium", data_id: @posts.last.id %></li>
+    <% else %>
+      <li><%= link_to "All", posts_path, :class => "active ProximaNova-Medium" %></li>
+    <% end %>
     <% @categories.each do |category| %>
-      <li><%= link_to category.name, posts_path(:filter => category.name), class: "ProximaNova-Medium" %></li>
+      <% if @posts.any? %>
+        <li><%= link_to category.name, posts_path(:filter => category.name, :id => @posts.last.id), :class => "ProximaNova-Medium" %></li>
+      <% else %>
+        <li><%= link_to category.name, posts_path(:filter => category.name), :class => "ProximaNova-Medium" %></li>
+      <% end %>
     <% end %>
     <li>
       <%= form_tag(posts_path, :method => "get", id: "blog-search") do %>
         <div class="input-group">
-          <%= text_field_tag :search, params[:search], placeholder: "Search", class: "input-group-field" %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search", :class => "input-group-field" %>
           <div class="input-group-button">
             <button class="button-search" type="submit" value="Submit">
               <svg class="icon"><use xlink:href="#magnify-glass" /></svg>
@@ -59,35 +67,9 @@
 <!-- start blog listing container -->
 <div class="blog-container bot-space-65">
   <div class='row'>
-    <% @first_blog_row.each_with_index do |post, index| %>
+    <% @posts.each_with_index do |post, index| %>
       <%= link_to post_path(post) do %>
-        <div class="<%= get_first_row_class(index, 1) %>" style="background-image: url(<%= post.main_image.url(:medium) %>);">
-          <div class="content-container">
-            <p class="white-text"><%= post.title %></p>
-            <p class="white-text"><%= h post.created_at.to_s(:post_date) %></p>
-          </div>
-          <div class="color-block"></div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-  <div class='row'>
-    <% @second_blog_row.each_with_index do |post, index| %>
-      <%= link_to post_path(post) do %>
-        <div class='small-4 columns' style="background-image: url(<%= post.main_image.url(:medium) %>);">
-          <div class="content-container">
-            <p class="white-text"><%= post.title %></p>
-            <p class="white-text"><%= h post.created_at.to_s(:post_date) %></p>
-          </div>
-          <div class="color-block"></div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-  <div class='row'>
-    <% @third_blog_row.each_with_index do |post, index| %>
-      <%= link_to post_path(post) do %>
-        <div class="record <%= get_first_row_class(index, 3) %>" data_id="<%= post.id %>" style="background-image: url(<%= post.main_image.url(:medium) %>);">
+        <div class="record <%= get_row_class(index) %>" data_id="<%= post.id %>" style="background-image: url(<%= post.main_image.url(:medium) %>);">
           <div class="content-container">
             <p class="white-text"><%= post.title %></p>
             <p class="white-text"><%= h post.created_at.to_s(:post_date) %></p>
@@ -113,17 +95,38 @@
 <% content_for :js do %>
   <script type="text/javascript">
     $(document).ready(function () {
+      function get(name){
+         if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+            return decodeURIComponent(name[1]);
+      };
+
       $('a.load-more').click(function (e) {
           e.preventDefault();
           $('.load-more').hide();
           $('.loading-gif').show();
           var last_id = $('.record').last().attr('data_id');
+          var filter = get("filter");
+          var tag = get("tag");
+          var search = get("search");
+          var data = {};
+
+          if(filter) {
+            data['filter'] = filter
+          }
+          if(last_id) {
+            data['id'] = last_id
+          }
+          if(tag){
+            data['tag'] = tag
+          }
+          if(search) {
+            data['search'] = search
+          }
+          console.log("data:::::: ", data);
           $.ajax({
               type: "GET",
               url: "/blog",
-              data: {
-                  id: last_id
-              },
+              data: data,
               dataType: "script",
               success: function () {
                   $('.loading-gif').hide();

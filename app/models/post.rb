@@ -13,7 +13,7 @@ class Post < ApplicationRecord
   validates_attachment_content_type :main_image, content_type: /\Aimage\/.*\z/
 
   after_save :ensure_only_one_featured_post
-  default_scope { order('created_at DESC') }
+  default_scope { includes(:category).order('created_at DESC') }
 
   def to_param
     "#{slug}"
@@ -55,6 +55,10 @@ class Post < ApplicationRecord
 
   def self.without(id)
     where.not(:id => id)
+  end
+
+  def self.last_loaded(id)
+    where('id > ?', id).limit(7)
   end
 
   private

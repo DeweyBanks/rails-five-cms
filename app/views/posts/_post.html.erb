@@ -1,5 +1,5 @@
 <%= link_to post_path(post) do %>
-  <div class="record small-4 columns" data_id="<%= post.id %>" style="background-image: url(<%= post.main_image.url(:medium) %>);">
+  <div class="record <%= get_row_class(@posts.index {|p| p[:id] == post.id }) %>" data_id="<%= post.id %>" style="background-image: url(<%= post.main_image.url(:medium) %>);">
     <div class="content-container">
       <p class="white-text"><%= post.title %></p>
       <p class="white-text"><%= h post.created_at.to_s(:post_date) %></p>
@@ -7,3 +7,4 @@
     <div class="color-block"></div>
   </div>
 <% end %>
+
