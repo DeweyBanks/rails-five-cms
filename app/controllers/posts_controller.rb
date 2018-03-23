@@ -40,7 +40,7 @@ class PostsController < ApplicationController
   def show
     @page = "show"
     @post = Post.find_by(slug: params[:slug])
-    @recent_posts = Post.includes(:category).limit(5)
+    @recent_posts = Post.limit(5)
   end
 
 end
