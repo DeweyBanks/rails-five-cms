@@ -2,67 +2,80 @@
 <% description @post.meta_description %>
 <% keywords "EHE, #{@post.all_tags}"  %>
 <!-- Blog hero image -->
-<div class="bot-space-75">
+<div class="expanded row bot-space-75">
+ <div class='small-12'>
   <div id="blog-hero-container">
    <div class="grad-bg"></div>
     <div class="row no-bottom-margin" >
+      <div class="small-12 column">
       <div class="content-contain hero">
         <h1 class="title-heading white-text"><%= @post.title %></h1>
+      </div>
       </div>
     </div>
     <%= image_tag @post.main_image.url  %>
   </div>
+  </div>
 </div>
-<div class='row'>
-  <div class="small-12">
-    <!-- left column -->
-    <div class='small-12 large-3 column'>
-      <!-- Today's Date -->
+
+   <div class='row bot-space-75'>
+    
+    <div class='small-12 medium-8 medium-offset-1 column medium-push-3'>
+    <!-- Blog Date -->
       <div class="row">
-        <div class="bot-space-75">
+         <div class="small-12 column">
           <p class="gray-text font-bold"><%= @post.created_at.to_time.strftime('%B %e %Y') %></p>
-        </div>
+          </div>
       </div>
-      <!-- End Today's Date -->
+      <!-- End Blog Date -->
+
+      <!-- Blog Story -->
+        <!--<h3 class="gray-text">< %= @post.title %></h3> -->
+        <%=raw @post.body %>
+      <!-- end Blog Story -->
+    </div>
+
+    
+    <!-- left column -->
+
+    <div class='small-12 medium-3 column medium-pull-9'>
+  
+       <!-- removed date from here and moved to main column -->
+        
       <!-- SHARE Social Media -->
-      <div class="row">
-        <div class="bot-space-75">
+      <div class="row ">
+        <div class="small-12 column">
           <p class="font-bold">
             SHARE
           </p>
-          <!--  social container -->
-          <div class="social-icons-container">
-            <div class="small-4 large-4">
-              <%= link_to image_tag("/images/icon-instagram.png", :alt => "instagram", :class => "social-icons"), "https://www.instagram.com/eheintl/", target: :_blank %>
-              <%= link_to image_tag("/images/icon-facebook.png", :alt => "facebook", :class => "social-icons"), "https://www.facebook.com/ehehealth/", target: :_blank %>
-              <%= link_to image_tag("/images/icon-twitter.png", :alt => "twitter", :class => "social-icons"), "https://twitter.com/EHEIntl/", target: :_blank %>
-              <%= link_to image_tag("/images/icons-youtube.png", :alt => "youtube", :class => "social-icons"), "https://www.youtube.com/user/EHEintl100/", target: :_blank %>
-            </div>
-          </div><!-- end social container -->
         </div>
       </div>
+      <div class="row bot-space-75">
+          <!--  social container -->
+  
+        <!-- <div class="social-icons-container"> -->
+            <div class="small-3 medium-3 column"><%= link_to image_tag("/images/icon-instagram.png", :alt => "instagram", :class => "social-icons"), "https://www.instagram.com/eheintl/", target: :_blank %></div>
+               <div class="small-3 medium-3 column"><%= link_to image_tag("/images/icon-facebook.png", :alt => "facebook", :class => "social-icons"), "https://www.facebook.com/ehehealth/", target: :_blank %></div>
+              <div class="small-3 medium-3 column"> <%= link_to image_tag("/images/icon-twitter.png", :alt => "twitter", :class => "social-icons"), "https://twitter.com/EHEIntl/", target: :_blank %></div>
+              <div class="small-3 medium-3 column"> <%= link_to image_tag("/images/icons-youtube.png", :alt => "youtube", :class => "social-icons"), "https://www.youtube.com/user/EHEintl100/", target: :_blank %>
+            </div>
+      </div><!-- end social container -->
+
       <!-- End SHARE Social Media -->
       <!-- Additional Blog posts -->
       <% @recent_posts.each do |post| %>
-        <div class="row">
-          <div class="bot-space-75">
+        <div class="row bot-space-75">
+           <div class="small-12 column">
             <p class="gray-text"><%= h post.created_at.to_s(:post_date) %>  |  <%= post.category.name %></p>
             <%= link_to post.title, post_path(post), :class => "drkr-blue-text font-bold" %>
-          </div>
+            </div>
         </div>
       <% end %>
       <!-- End Additional Blog posts -->
     </div>
     <!-- end left column -->
-    <div class='small-12 large-8 columns'>
-      <!-- Blog Story -->
-      <div class="bot-space-75">
-        <!--<h3 class="gray-text">< %= @post.title %></h3> -->
-        <%=raw @post.body %>
-      </div>
-      <!-- end Blog Story -->
-    </div>
-  </div>
+
+
 </div>
 
 
