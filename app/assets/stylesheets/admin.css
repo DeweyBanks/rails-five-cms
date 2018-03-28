@@ -1,0 +1,26 @@
+body {
+    font-size: 18px;
+  }
+
+.post-body {
+  margin-bottom: 30px;
+}
+
+.post-form {
+  margin-bottom: 50px;
+}
+
+.post-form .field {
+  border-width: .5px;
+  border-color: black;
+}
+
+
+.post-pagination a {
+  display: inline-block;
+  margin-bottom: 50px;
+}
+
+
+
+

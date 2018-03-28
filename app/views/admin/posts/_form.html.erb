@@ -31,9 +31,9 @@
     <%= form.text_area :meta_description, placeholder: "Meta Description" %>
   </div>
 
-  <div class="field">
+  <div class="field" id="campaign">
     <%= form.label :campaign %>
-    <%= form.collection_select "campaign_id", Campaign.all, "id", "name", {include_blank: true} %>
+    <%= form.collection_select "campaign_id", Campaign.all, "id", "name", {:class => "campaign", include_blank: true} %>
   </div>
 
    <div class="field">
@@ -56,7 +56,7 @@
     <%= form.file_field :main_image, id: :post_main_image %>
   </div>
 
-  <div class="field">
+  <div class="post-body">
     <%= form.label :body %>
     <%= form.cktext_area :body, id: :post_body %>
   </div>
