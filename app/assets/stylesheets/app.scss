@@ -7064,6 +7064,11 @@ a.thumbnail image {
   font-weight: 400;
 }
 
+/* === <a> Anchors ==== */
+a:hover, .posts a:hover {
+  color: #ffc700;
+}
+
 /* ==== site  p font media query  ==== */
 .drkr-blue-text {
   color: #11346d;
@@ -12358,6 +12363,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 .blog-user-info {
   padding-top: 65px;
   padding-right: 15px;
+}
+
+.blog-categories a {
+  font-weight: bold;
+  color: #11346d;
+  display: block;
+}
+
+.posts a {
+  color: #11346d;
 }
 
 .blog-hero {
