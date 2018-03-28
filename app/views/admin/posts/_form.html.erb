@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :featured %>
+    <%= form.check_box :featured %>
+  </div>
+
+  <div class="field">
     <%= form.label :status %>
     <%= form.select(:status, ['preview', 'published' ], {})  %>
   </div>
@@ -54,26 +59,6 @@
   <div class="field">
     <%= form.label :body %>
     <%= form.cktext_area :body, id: :post_body %>
-  </div>
-
-  <div class="field">
-    <%= form.fields_for :pictures, @post.pictures.build do |picture_form| %>
-      <p>
-        Picture:
-        <%= picture_form.text_field :caption, placeholder: "Caption" %>
-        <%= picture_form.text_field :alt, placeholder: "alt"  %>
-        <%= picture_form.file_field :image %>
-        <%= picture_form.check_box :_destroy %>
-        <%= picture_form.label :_destroy, "Remove Image" %>
-      </p>
-    <% end %>
-
-    <%= link_to_add_fields 'Add new image', form, :pictures %>
-  </div>
-
-   <div class="field">
-    <%= form.label :featured %>
-    <%= form.check_box :featured %>
   </div>
 
   <div class="actions">
