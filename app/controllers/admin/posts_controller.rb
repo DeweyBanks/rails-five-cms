@@ -3,7 +3,17 @@ module Admin
     before_action :set_post, only: [:show, :edit, :update, :publish_post, :destroy]
 
     def index
-      @posts = Post.all.order(sort_column + " " + sort_direction).page params[:page]
+      @posts = Post.all
+      case params['sort']
+      when "title"
+        @posts = @posts.order("title #{sort_direction}").paginate(:page => params[:page])
+      when "category"
+        @posts = @posts.includes(:category).order("categories.name #{sort_direction}").paginate(:page => params[:page])
+      when "campaign"
+         @posts = @posts.includes(:campaign).order("campaigns.name #{sort_direction}").paginate(:page => params[:page])
+      else
+        @posts = Post.all.order(sort_column + " " + sort_direction).page params[:page]
+      end
     end
 
     def show
@@ -63,11 +73,11 @@ module Admin
     private
 
       def sort_column
-        Post.column_names.include?(params[:sort]) ? params[:sort] : "slug, title, status"
+        ['slug', 'category', 'campaign', 'title', 'status', 'created_at'].include?(params[:sort]) ? params[:sort] : "title"
       end
 
       def sort_direction
-        %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+        params[:direction] == "desc" ? params[:direction] : "asc"
       end
 
       def set_post

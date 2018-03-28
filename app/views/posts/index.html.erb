@@ -106,7 +106,10 @@
           $('.loading-gif').show();
           var last_id = $('.record').last().attr('data_id');
           var filter = get("filter");
-          var tag = get("tag");
+          var pathname = window.location.pathname;
+          if(pathname.includes("tags")) {
+            var tag = decodeURI(pathname.split("/").pop());
+          };
           var search = get("search");
           var data = {};
 
@@ -122,7 +125,6 @@
           if(search) {
             data['search'] = search
           }
-          console.log("data:::::: ", data);
           $.ajax({
               type: "GET",
               url: "/blog",
