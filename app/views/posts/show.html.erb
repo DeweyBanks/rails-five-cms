@@ -32,10 +32,15 @@
   </div>
     <!-- left column -->
   <div class='small-12 medium-3 column medium-pull-9'>
+     
+     <div class="row bot-space-75">
+      <div class="small-12 column blog-categories">
+        <%=raw tag_links(@post.all_tags) %>
+      </div>
+    </div>
       <!-- SHARE Social Media -->
     <div class="row ">
       <div class="small-12 column">
-        <%=raw tag_links(@post.all_tags) %>
         <p class="font-bold">SHARE</p>
       </div>
     </div>
@@ -68,8 +73,8 @@
       <!-- End Additional Blog posts -->
     </div>
     <!-- end left column -->
-  ß</div>
-</div>
+  </div>
+<!--</div>-->
 
 
 

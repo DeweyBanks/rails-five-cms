@@ -7064,6 +7064,11 @@ a.thumbnail image {
   font-weight: 400;
 }
 
+/* === <a> Anchors ==== */
+a:hover, .posts a:hover {
+  color: #ffc700;
+}
+
 /* ==== site  p font media query  ==== */
 .drkr-blue-text {
   color: #11346d;
@@ -7219,15 +7224,27 @@ a.thumbnail image {
 }
 
 /* -------------  LOAD MORE  ---------------*/
-.load-more-button {
+.load-more-button, .posts a.load-more-button {
   color: #ffc700;
   border-top: 2px solid #ffc700;
-  padding: 20px 40px;
+  padding: 20px 40px 30px 40px;
   position: relative;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
-.load-more-button:hover, .load-more-button:focus {
-  color: #ffc700;
+.load-more-button:hover, .load-more-button:focus, .posts a.load-more-button:hover, .posts a.load-more-button:focus {
+  border-top: 2px solid #505153;
+  color: #505153;
+}
+
+.load-more-button svg.icon, .posts a.load-more-button svg.icon {
+  position: absolute;
+  left: 50%;
+  margin-left: -20px;
+  bottom: -10px;
+  width: 40px;
+  height: 30px;
 }
 
 /*  ===========   section padding   ============ */
@@ -12358,6 +12375,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 .blog-user-info {
   padding-top: 65px;
   padding-right: 15px;
+}
+
+.blog-categories a {
+  font-weight: bold;
+  color: #11346d;
+  display: block;
+}
+
+.posts a {
+  color: #11346d;
 }
 
 .blog-hero {
