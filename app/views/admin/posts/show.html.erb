@@ -9,11 +9,12 @@
             <% end %>
         </div>
         <div>
-          <h1><%= @post.title %></h1>
+          <h1>Title: <%= @post.title %></h1>
           <h3>url: <%= @post.slug %></h3>
           <h5>By: <%= %> | <%= @post.created_at.to_time.strftime('%B %e %Y') %></h5>
-          <p><%= image_tag @post.main_image.url(:medium) %></p>
-          <p><%= @post.all_tags %></p>
+          <p>Featured Image: <%= image_tag @post.main_image.url(:medium) %></p>
+          <p>Tags: <%= @post.all_tags %></p>
+          <p>Keywords: <%= @post.all_keywords %></p>
           <p><%= @post.body.html_safe %></p>
         </div>
       </div>

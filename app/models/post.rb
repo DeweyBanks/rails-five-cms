@@ -3,6 +3,8 @@ class Post < ApplicationRecord
   belongs_to :category
   has_many :taggings, :dependent => :delete_all
   has_many :tags, through: :taggings
+  has_many :keywordings, :dependent => :delete_all
+  has_many :keywords, through: :keywordings
   has_many :pictures
   has_many :documents
   accepts_nested_attributes_for :pictures, reject_if: proc { |attributes| attributes[:image].blank? }, allow_destroy: true
@@ -25,8 +27,18 @@ class Post < ApplicationRecord
     end
   end
 
+  def all_keywords=(names)
+    self.keywords = names.split(",").map do |name|
+        Keyword.where(name: name.strip).first_or_create!
+    end
+  end
+
   def all_tags
     self.tags.map(&:name).uniq.join(", ")
+  end
+
+  def all_keywords
+    self.keywords.map(&:name).uniq.join(", ")
   end
 
   def self.tagged_with(name)

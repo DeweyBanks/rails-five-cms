@@ -92,6 +92,7 @@ module Admin
           :campaign_id,
           :category_id,
           :all_tags,
+          :all_keywords,
           :main_image,
           :meta_description,
           :status,

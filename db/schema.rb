@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180321185646) do
+ActiveRecord::Schema.define(version: 20180329174936) do
 
   create_table "campaigns", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "name"
@@ -58,6 +58,21 @@ ActiveRecord::Schema.define(version: 20180321185646) do
     t.integer "emps_id"
     t.integer "facility_id"
     t.index ["commander_type_id"], name: "index_commanders_on_commander_type_id"
+  end
+
+  create_table "keywordings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+    t.bigint "post_id"
+    t.bigint "keyword_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["keyword_id"], name: "index_keywordings_on_keyword_id"
+    t.index ["post_id"], name: "index_keywordings_on_post_id"
+  end
+
+  create_table "keywords", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
@@ -143,6 +158,8 @@ ActiveRecord::Schema.define(version: 20180321185646) do
   end
 
   add_foreign_key "commanders", "commander_types"
+  add_foreign_key "keywordings", "keywords"
+  add_foreign_key "keywordings", "posts"
   add_foreign_key "pictures", "posts"
   add_foreign_key "posts", "campaigns"
   add_foreign_key "posts", "categories"
