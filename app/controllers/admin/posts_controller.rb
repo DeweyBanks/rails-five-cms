@@ -6,13 +6,13 @@ module Admin
       @posts = Post.all
       case params['sort']
       when "title"
-        @posts = @posts.order("title #{sort_direction}").paginate(:page => params[:page])
+        @posts = @posts.order("title #{sort_direction}").paginate(:page => params[:page], :per_page => 10)
       when "category"
-        @posts = @posts.includes(:category).order("categories.name #{sort_direction}").paginate(:page => params[:page])
+        @posts = @posts.includes(:category).order("categories.name #{sort_direction}").paginate(:page => params[:page], :per_page => 10)
       when "campaign"
-         @posts = @posts.includes(:campaign).order("campaigns.name #{sort_direction}").paginate(:page => params[:page])
+         @posts = @posts.includes(:campaign).order("campaigns.name #{sort_direction}").paginate(:page => params[:page], :per_page => 10)
       else
-        @posts = Post.all.order(sort_column + " " + sort_direction).page params[:page]
+        @posts = Post.all.order(sort_column + " " + sort_direction).paginate(:page => params[:page], :per_page => 10)
       end
     end
 
@@ -25,6 +25,24 @@ module Admin
     end
 
     def edit
+    end
+
+    def edit_multiple
+      @posts = Post.find(params[:post_ids])
+    end
+
+    def update_multiple
+      @posts = Post.find(params["post_ids"])
+      @posts.reject! do |post|
+        post.update_attributes(post_params.reject { |k,v| v.blank? })
+      end
+      if @posts.empty?
+        redirect_to(admin_posts_url) and return
+      else
+        @post = Post.new(post_params)
+        render :edit_multiple
+      end
+
     end
 
     def create
@@ -96,8 +114,7 @@ module Admin
           :main_image,
           :meta_description,
           :status,
-          :featured,
-          pictures_attributes: [:id, :image, :caption, :alt, :_destroy]
+          :featured
           )
       end
   end

@@ -6,44 +6,49 @@
     </div>
     <div class="row">
       <div class="small-12 columns">
+        <%= form_tag edit_multiple_admin_posts_path, method: :get, id: :edit_posts do %>
         <table>
           <thead>
+              <th><button type="button" id="check_all">Check ALL</button></th>
               <th>Featured Image</th>
               <th><%= sortable "title" %></th>
               <th><%= sortable "category" %></th>
               <th><%= sortable "campaign" %></th>
-              <th><%= sortable "preview" %></th>
-              <th><%= sortable "published" %></th>
+              <th><%= sortable "status" %></th>
               <th><%= sortable "created_at", "Created" %></th>
-              <th></th>
+              <th colspan="1"></th>
+              <th><button id="bulkActions">Bulk Actions</button></th>
             </tr>
           </thead>
           <tbody>
             <% @posts.each do |post| %>
               <tr>
+                <td><%= check_box_tag "post_ids[]", post.id %></td>
                 <td><%= image_tag post.main_image.url(:thumb) %></td>
-                <td><%= post.title %></td>
+                <td><%= truncate(post.title, length: 37, omission: "...") %></td>
                 <% if !post.category.blank? %>
                   <td><%= post.category.name %></td>
                 <% else %>
                   <td>category not set</td>
                 <% end %>
                 <% if !post.campaign.blank? %>
-                  <td><%= post.campaign %></td>
+                  <td><%= post.campaign.name %></td>
                 <% else %>
                   <td>campaign not set</td>
                 <% end %>
-                <td></td>
                 <td><%= post.status %></td>
                 <td><%= post.created_at.strftime('%m/%d/%Y') %></td>
-                <td><%= link_to 'Show', admin_post_path(post.slug) %> |
-                    <%= link_to 'Edit', edit_admin_post_path(post) %> |
-                    <%= link_to 'Destroy', admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <td colspan="3">
+                  <%= link_to '<span class="far fa-file" aria-hidden="true"></span>'.html_safe, admin_post_path(post.slug) %> |
+                  <%= link_to '<span class="fas fa-edit" aria-hidden="true"></span>'.html_safe, edit_admin_post_path(post) %> |
+                  <%= link_to '<span class="fas fa-trash-alt" aria-hidden="true"></span>'.html_safe, admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
                 </td>
               </tr>
             <% end %>
           </tbody>
         </table>
+          <%= submit_tag "Bulk Actions", :id => "bulk-edit" %>
+         <% end %>
         <div class="post-pagination">
           <%= paginate @posts %>
         </div>

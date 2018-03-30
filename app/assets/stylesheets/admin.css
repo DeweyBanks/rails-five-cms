@@ -22,5 +22,25 @@ body {
 }
 
 
+#check_all {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: .8em;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4088D9;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px #999;
+}
 
+#check_all:hover {background-color: #085EBF}
 
+#check_all:active {
+  background-color: #085EBF;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}

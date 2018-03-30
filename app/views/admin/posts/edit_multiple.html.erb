@@ -1,0 +1,28 @@
+<h1>Edit Checked Posts</h1>
+
+<%= form_tag update_multiple_admin_posts_path, method: :put do %>
+  <ul>
+    <% @posts.each do |post| %>
+      <li>
+        <%= hidden_field_tag "post_ids[]", post.id %>
+        <%= post.title %>
+      </li>
+    <% end %>
+  </ul>
+    <%= fields_for :post do |f| %>
+      <div class="field" id="campaign">
+        <%= f.label :campaign %>
+        <%= f.collection_select "campaign_id", Campaign.all, "id", "name", {:class => "campaign", include_blank: true} %>
+      </div>
+
+       <div class="field">
+        <%= f.label :category %>
+        <%= f.collection_select "category_id", Category.all, "id", "name", include_blank: true %>
+      </div>
+      <div class="field">
+        <%= f.label :status %>
+        <%= f.select(:status, ['preview', 'published', 'archived' ], include_blank: true)  %>
+      </div>
+  <% end %>
+  <%= submit_tag "Update" %>
+<% end %>

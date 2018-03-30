@@ -11,7 +11,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: "dashboard#index", as: "dashboard"
-    resources :posts
+    resources :posts do
+      collection do
+        get :edit_multiple
+        put :update_multiple
+      end
+    end
     post "/publish_post/:id" => "posts#publish_post", as: "publish_post"
     resources :commanders
     post "/update_commanders" => "commanders#update_commanders"
