@@ -80,11 +80,13 @@ class Post < ApplicationRecord
     end
 
     def set_slug
-      self.slug = self.title.downcase.gsub(" ", "-").gsub(",","").gsub(".","") unless self.slug.present?
-      check = Post.find_by(slug: self.slug)
-      if !check.nil?
-        self.slug += "-#{self.id}"
+      title = self.title.to_s.downcase.gsub(" ", "-").gsub(",","").gsub(".","").gsub("'","")
+      if title.length > 37
+        title = title[0...37]
       end
+      self.slug = self.title unless self.slug.present?
+      check = Post.find_by(slug: self.slug)
+      self.slug += "-#{self.id}" unless check.nil?
       self.slug
     end
 

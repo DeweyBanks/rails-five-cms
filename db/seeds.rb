@@ -22,6 +22,33 @@ csv.each do |row|
   else
     p = Post.new
     p.title = row["Title"]
+
+    # SLUG LOGIC
+    title = row["Title"].gsub(/[^\w]/, ' ').gsub("  ", "").gsub(" ", "-")
+    if title.last == "-"
+      title = title[0...title.length - 1]
+    end
+    if title.first == "-"
+      title.slice!(0)
+    end
+    if title.length > 37
+      title = title[0...37]
+    end
+    p.slug = title
+
+    # if row["Content"] =~ /(png|jpg|gif)/
+    #   doc = Nokogiri::HTML( row["Content"] )
+    #   img_srcs = doc.css('img').map{ |i| { src: i['src'], alt: i['alt']}  }
+    #   img_srcs.each do |img|
+    #     if img[:alt].include?("Footer")
+    #       doc.search('//a[not(starts-with(img, "img"))]').each do |a|
+    #         binding.pry
+
+    #       end
+    #     end
+    #   end
+    # end
+
     p.body = row["Content"]
     if row["Date"].length == 8
       p.created_at = Time.zone.parse(row["Date"]).utc
