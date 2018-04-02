@@ -2,15 +2,17 @@ class PostsController < ApplicationController
 
   def index
     @categories = Category.all
-    @featured_post = Post.featured
+    @featured_post = Category.find_by(name: "Blog").featured_post
     @page = "index"
 
     if params[:filter].present?
+        category = Category.find_by(name: params[:filter])
       if params[:id].present?
-        @posts = Post.last_loaded(params[:id]).limit(7).order("created_at desc").where(category: Category.find_by(name: params[:filter]))
+        @posts = Post.last_loaded(params[:id]).limit(7).order("created_at desc").where(category: category)
       else
-        @posts = Post.limit(7).order("created_at desc").where(category: Category.find_by(name: params[:filter]))
+        @posts = Post.limit(7).order("created_at desc").where(category: category)
       end
+      @featured_post = category.featured_post
     elsif params[:tag].present?
       if params[:id].present?
         @posts = Post.limit(7).where('id > ?', params[:id]).order("created_at desc").tagged_with(params[:tag])

@@ -77,10 +77,6 @@ class Post < ApplicationRecord
     where(:status => "preview")
   end
 
-  def self.featured
-    where(:featured => true).first
-  end
-
   def self.without(id)
     where.not(:id => id)
   end

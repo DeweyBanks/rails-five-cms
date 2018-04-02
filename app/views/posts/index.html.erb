@@ -42,10 +42,13 @@
       <li><%= link_to "All", posts_path, :class => "active ProximaNova-Medium" %></li>
     <% end %>
     <% @categories.each do |category| %>
-      <% if @posts.any? %>
-        <li><%= link_to category.name, posts_path(:filter => category.name, :id => @posts.last.id), :class => "ProximaNova-Medium" %></li>
+      <% if category.name == "Uncategorized" && category.posts.length <= 0 %>
       <% else %>
-        <li><%= link_to category.name, posts_path(:filter => category.name), :class => "ProximaNova-Medium" %></li>
+        <% if @posts.any? %>
+          <li><%= link_to category.name, posts_path(:filter => category.name, :id => @posts.last.id), :class => "ProximaNova-Medium" %></li>
+        <% else %>
+          <li><%= link_to category.name, posts_path(:filter => category.name), :class => "ProximaNova-Medium" %></li>
+        <% end %>
       <% end %>
     <% end %>
     <li>
