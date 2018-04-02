@@ -4,9 +4,10 @@
         <div class="row">
             <div class="small-12 medium-8 columns" >
                <h6 class="ProximaNova-Bold">Engaging Healthy Employees <span class="small">| EST</span> 1913</h6>
-                <p class="ProximaNova-Bold">Stay Connected</p>
+                
                 <div class="row">
                     <div class="small-8 small-centered medium-7 medium-uncentered column" >
+                       <p class="ProximaNova-Bold">Stay Connected</p>
                         <form name="subscribe" action="/subscribe" method="post">
                             <input type="hidden" name="authenticity_token" value="token_value">
                             <input type="email" name="subscribe[email]" placeholder="name@email.com">
@@ -18,7 +19,7 @@
             </div><!-- end first column -->
             <div class="small-12 medium-2 columns" >
               <ul>
-                <li><%= link_to "Latest", posts_path %></li>
+                <li><%= link_to "Corporate", "/pages/corporate_partnership" %></li>
                 <li><%= link_to "Careers", "/pages/careers" %></li>
                 <li><%= link_to "Contact Us", "/pages/contact" %></li>
                 <li><%= link_to "Locations", "/pages/locations" %></li>
