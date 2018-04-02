@@ -1767,9 +1767,9 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: "Oswald", sans-serif;
+  font-family: ProximaNova-Regular, Helvetica, Arial, sans-serif;
   font-style: normal;
-  font-weight: 700;
+  font-weight: normal;
   color: #86b8c4;
   text-rendering: optimizeLegibility;
 }
@@ -1828,7 +1828,7 @@ h6, .h6 {
 
 @media print, screen and (min-width: 42.8125em) {
   h1, .h1 {
-    font-size: 2.625rem;
+    font-size: 2.25rem;
   }
   h2, .h2 {
     font-size: 2.5rem;
@@ -6958,10 +6958,14 @@ a.thumbnail image {
 
 /* custom styles */
 /* typography */
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+}
+
 /*  ===== PAGE HEADINGS with underline ====== */
 .title-heading {
-  color: #86b8c4;
-  margin-bottom: 75px;
+  color: #616264;
+  margin-bottom: 55px;
   text-transform: uppercase;
 }
 
@@ -6971,8 +6975,8 @@ a.thumbnail image {
   height: auto;
   display: block;
   position: relative;
-  bottom: -35px;
-  border-bottom: 3px solid #86b8c4;
+  bottom: -20px;
+  border-bottom: 3px solid #616264;
 }
 
 .title-heading.white-text::after {
@@ -7291,7 +7295,7 @@ div.bot-space-25, div.row.bot-space-25 {
 
 @media screen and (min-width: 64em) {
   .internal div.page-header, .home div.page-header {
-    margin-top: 100px;
+    margin-top: 120px;
     margin-bottom: 50px;
   }
 }
@@ -7591,9 +7595,9 @@ header #header-contain div#login {
 }
 
 header #header-contain div#login a {
-  max-width: 100px;
-  padding: 10px 0;
-  font-weight: bold;
+  padding: 8px 0;
+  font-size: 16px;
+  line-height: 18px;
   display: block;
   height: 100%;
   border-left: 1px solid rgba(162, 168, 167, 0.5);
@@ -7607,9 +7611,23 @@ header #header-contain div#login a {
   background-color: rgba(26, 24, 24, 0.15);
 }
 
+@media screen and (min-width: 28.125em) {
+  header #header-contain div#login a {
+    padding: 10px 0;
+    line-height: 20px;
+    font-size: 18px;
+  }
+}
+
 @media screen and (min-width: 48em) {
   header #header-contain div#login a {
-    padding: 25px 0;
+    padding: 18px 0;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  header #header-contain div#login a {
+    padding: 28px 0;
   }
 }
 
@@ -7929,20 +7947,16 @@ SlideUpTopBar for Foundation styles
 }
 
 #footer-contain h6 {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   color: #505153;
 }
 
 #footer-contain p {
-  margin-bottom: 30px;
-}
-
-#footer-contain [type='email'] {
-  margin-bottom: 50px;
+  margin-bottom: 0px;
 }
 
 #footer-contain [type='submit'] {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   padding: 15px 100px;
 }
 
@@ -11665,6 +11679,45 @@ input[type="submit"] {
   left: 5%;
   bottom: 5%;
   padding: 0;
+  width: auto;
+  /*
+    a{
+      font-size: 20px;
+      line-height: 20px;
+      @include breakpoint(480px){
+        font-size: 30px;
+        line-height: 36px;
+      }
+      position: relative;
+      margin: 0 0 0 3px;
+      padding: 0;
+      .icon{
+        height: 25px;
+        width: 26px;
+        position: absolute;
+        right: -35px;
+        top: -3px;
+        @include breakpoint(480px){
+          height: 42px;
+          width: 42px;
+          right: -54px;
+          top: -6px;
+        }
+        &.active{
+          fill:#fff;
+          border: none;
+        }
+      }
+    }
+	  */
+}
+
+@media screen and (min-width: 48.0625em) {
+  #video-container .content-contain.hero {
+    left: 10%;
+    bottom: 25%;
+    width: 50%;
+  }
 }
 
 @media screen and (min-width: 64.0625em) {
@@ -11687,43 +11740,6 @@ input[type="submit"] {
     line-height: 60px;
     margin-bottom: 10px;
   }
-}
-
-#video-container .content-contain.hero a {
-  font-size: 20px;
-  line-height: 20px;
-  position: relative;
-  margin: 0 0 0 3px;
-  padding: 0;
-}
-
-@media screen and (min-width: 30em) {
-  #video-container .content-contain.hero a {
-    font-size: 30px;
-    line-height: 36px;
-  }
-}
-
-#video-container .content-contain.hero a .icon {
-  height: 25px;
-  width: 26px;
-  position: absolute;
-  right: -35px;
-  top: -3px;
-}
-
-@media screen and (min-width: 30em) {
-  #video-container .content-contain.hero a .icon {
-    height: 42px;
-    width: 42px;
-    right: -54px;
-    top: -6px;
-  }
-}
-
-#video-container .content-contain.hero a .icon.active {
-  fill: #fff;
-  border: none;
 }
 
 .color-bar {
@@ -11949,13 +11965,13 @@ input[type="submit"] {
 }
 
 .block-quotation {
-  font-family: "Oswald", sans-serif;
+  font-family: ProximaNova-Regular, Helvetica, Arial, sans-serif;
   font-size: 30px;
   font-weight: 700;
 }
 
 .block-quote-primary-color {
-  font-family: "Oswald", sans-serif;
+  font-family: ProximaNova-Regular, Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: 400;
   padding-top: 70px;
@@ -11977,7 +11993,7 @@ input[type="submit"] {
 
 #resumator-jobs {
   color: #616264;
-  font-family: "Oswald", sans-serif;
+  font-family: ProximaNova-Regular, Helvetica, Arial, sans-serif;
   font-size: 24px;
   /*                          
     font-family: ProximaNova-Bold, Helvetica, Arial, sans-serif;
@@ -12162,8 +12178,8 @@ a.resumator-hide-details {
 .tab-content-title {
   color: #636466;
   padding-bottom: 20px;
-  font-family: "Oswald", sans-serif;
-  font-weight: 700;
+  font-family: ProximaNova-Regular, Helvetica, Arial, sans-serif;
+  font-weight: normal;
   font-size: 18px;
 }
 
@@ -12430,7 +12446,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 }
 
 .tabs-title .tabs-title-text {
-  font-family: "Oswald", sans-serif;
+  font-family: ProximaNova-Regular, Helvetica, Arial, sans-serif;
   font-weight: 700;
   max-width: 612px;
   text-align: center;
@@ -12585,8 +12601,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 @media screen and (max-width: 42.75em) {
   #prevention-article-label {
-    font-family: "Oswald", sans-serif;
-    font-weight: 700;
+    font-family: ProximaNova-Regular, Helvetica, Arial, sans-serif;
+    font-weight: normal;
     text-align: center;
     clear: both;
     min-width: 100%;
@@ -12621,8 +12637,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 @media screen and (max-width: 42.75em) {
   #performance-article-label {
-    font-family: "Oswald", sans-serif;
-    font-weight: 700;
+    font-family: ProximaNova-Regular, Helvetica, Arial, sans-serif;
+    font-weight: normal;
     text-align: center;
     clear: both;
     min-width: 100%;
@@ -12647,8 +12663,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 @media screen and (max-width: 42.75em) {
   #mind-health-article-label {
-    font-family: "Oswald", sans-serif;
-    font-weight: 700;
+    font-family: ProximaNova-Regular, Helvetica, Arial, sans-serif;
+    font-weight: normal;
     text-align: center;
     clear: both;
     min-width: 100%;
@@ -12972,7 +12988,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
   margin: 13px;
   height: 32px;
   width: 32px;
-  background: url(../images/icon-commanders-closex.png) no-repeat center center;
+  background: url(../images/icon-commanders-closex_2x.png) no-repeat center center;
+  background-size: 100%;
 }
 
 @media screen and (min-width: 40em) {
@@ -13151,7 +13168,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 }
 
 .slick-slider {
-  margin: 0 0 86px 0;
+  margin: 0 0 70px 0;
   padding: 0 0 15px 0;
 }
 
