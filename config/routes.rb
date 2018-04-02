@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "dashboard#index", as: "dashboard"
     resources :posts do
+      post :set_featured, on: :member
       collection do
         get :edit_multiple
         put :update_multiple
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
     resources :users
     resources :campaigns
     resources :messages, only: [:index, :show, :destroy]
+    resources :categories
   end
 
   resources :posts, param: :slug, :path => "blog", only: [:index, :show] do

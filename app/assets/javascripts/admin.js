@@ -20,4 +20,54 @@ $(document).ready(function(){
     });
   });
 
+  // $('.category-set-featured:checkbox').change(function() {
+  //   var selected = this;
+  //   return $.ajax({
+  //     url: '/admin/posts/' + this.value + '/set_featured',
+  //     type: 'PUT',
+  //     data: {
+  //       post: {
+  //         featured: $(this).prop('checked')
+  //       }
+  //     },
+  //     success: function() {
+  //       alert('Post set as featured');
+  //       selected.prop('checked', false);
+  //       return
+  //     }
+  //   });
+  // });
+
+   $('#setFeatured')
+    .bind('ajax:success', function(evt, data, status, xhr) {
+      //function called on status: 200 (for ex.)
+      $('#setFeatured')[0].reset();
+    })
+    .bind("ajax:error", function(evt, xhr, status, error) {
+      //function called on status: 401 or 500 (for ex.)
+      console.log(xhr.responseText);
+    });
+
+  // $( "#set-featured" ).submit(function(event) {
+  //      event.preventDefault();
+
+  //       var value = $('#set-featured').val();
+  //       console.log("value::: ", value);
+  //    $.ajax({
+  //      url: "/tasks",
+  //      type: "post",
+  //      contentType: "application/json",
+
+  //      data: JSON.stringify({ assignee: assignee, value: value }),
+  //      success: function(data) {
+  //          alert('successfully');
+  //      },
+  //      error: function(xhr, textStatus, error) {
+  //        alert(xhr.statusText+" "+textStatus+" "+error);
+  //      }
+  //   });
+
+  //   });
+
+
 });

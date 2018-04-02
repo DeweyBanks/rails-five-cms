@@ -1,5 +1,6 @@
 module Admin
   class PostsController < BaseController
+    skip_before_action :verify_authenticity_token, only: [:set_featured]
     before_action :set_post, only: [:show, :edit, :update, :publish_post, :destroy]
 
     def index
@@ -17,6 +18,22 @@ module Admin
     end
 
     def show
+    end
+
+    def set_featured
+      @category = Category.find(params["category"])
+      @post = Post.find params[:id]
+      @post.featured = true
+      respond_to do |format|
+        if @post.save
+          format.html { redirect_to admin_category_path(@category), notice: 'Post was set as featured.' }
+          format.js   {}
+          format.json { render json: @category, status: :created, location: @category }
+        else
+          format.html { render action: "show" }
+          format.json { render json: @post.errors, status: :unprocessable_entity }
+        end
+      end
     end
 
     def new

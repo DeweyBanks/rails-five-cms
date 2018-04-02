@@ -53,6 +53,22 @@ class Post < ApplicationRecord
     status == "published"
   end
 
+  def archived?
+    status == "archived"
+  end
+
+  def preview?
+    status == "preview"
+  end
+
+  def featured?
+    featured
+  end
+
+  def self.archived
+    where(:status => "archived")
+  end
+
   def self.published
     where(:status => "published")
   end
@@ -76,7 +92,7 @@ class Post < ApplicationRecord
   private
 
     def ensure_only_one_featured_post
-      Post.where(featured: true).where.not(id: id).update_all(featured: false)
+      category.posts.where(featured: true).where.not(id: id).update_all(featured: false)
     end
 
     def set_slug
