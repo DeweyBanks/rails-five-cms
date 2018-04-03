@@ -113,7 +113,7 @@ ActiveRecord::Schema.define(version: 20180402223113) do
     t.datetime "main_image_updated_at"
     t.text "meta_description"
     t.string "status", default: "preview", null: false
-    t.boolean "featured", default: false
+    t.boolean "featured"
     t.datetime "published_at"
     t.index ["campaign_id"], name: "index_posts_on_campaign_id"
     t.index ["category_id"], name: "index_posts_on_category_id"
