@@ -27,6 +27,14 @@ module Admin
       @posts = Post.archived.includes(:category, :campaign).order("created_at desc").paginate(:page => params[:page], :per_page => 10)
     end
 
+    def preview
+      @posts = Post.preview.includes(:category, :campaign).order("created_at desc").paginate(:page => params[:page], :per_page => 10)
+    end
+
+    def scheduled
+      @posts = Post.scheduled.includes(:category, :campaign).order("created_at desc").paginate(:page => params[:page], :per_page => 10)
+    end
+
     def set_featured
       @category = Category.find(params["category"])
       @post = Post.find params[:id]
@@ -97,6 +105,7 @@ module Admin
 
     def publish_post
       @post.status = "published"
+      @post.published_at = Time.zone.now
       @post.save
       respond_to do |format|
         format.html { redirect_to admin_post_path(@post), notice: 'Post has been published.' }

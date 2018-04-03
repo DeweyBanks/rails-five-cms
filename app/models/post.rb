@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :campaign, optional: true
-  belongs_to :category
+  belongs_to :category, optional: true
   has_many :taggings, :dependent => :delete_all
   has_many :tags, through: :taggings
   has_many :keywordings, :dependent => :delete_all
@@ -51,7 +51,11 @@ class Post < ApplicationRecord
   end
 
   def published?
-    self.published_at <= Time.zone.now.to_s
+    if self.published_at
+      self.published_at <= Time.zone.now.to_s
+    else
+      false
+    end
   end
 
   def archived?
@@ -75,7 +79,7 @@ class Post < ApplicationRecord
   end
 
   def self.scheduled
-    where.not(published_at: nil).where("published_at ?" > Time.zone.now.to_s)
+    where("published_at >= ?", Time.now )
   end
 
   def self.preview

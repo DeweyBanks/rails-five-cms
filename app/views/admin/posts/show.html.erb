@@ -5,8 +5,8 @@
         <div class="row">
           <h4>Post Status: <%= @post.status %></h4>
             <% if @post.status == "scheduled" %>
-            <%  %>
-              <h4>Will be published on: <%= @post.published_at %></h4>
+              <%  %>
+                <h4>Will be published on: <%= @post.published_at.strftime('%m/%d/%Y') %></h4>
             <% end %>
             <% unless @post.published? %>
               <%= button_to "Publish Now", admin_publish_post_path(@post) %>
