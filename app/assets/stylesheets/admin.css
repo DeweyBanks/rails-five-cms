@@ -49,3 +49,36 @@ input .hidden {
   transform: translateY(4px);
 }
 
+
+.header-name{
+  background-color: rgba(26, 24, 24, 0.7);
+  padding: 5px 0;
+}
+.header-name p{
+  color:#fff;
+  margin-bottom: 0;
+}
+.header-name p span{
+  margin-right:20px;
+}
+.header-name a{
+  color: #fff;
+}
+.header-name a:hover, .header-nav a:hover{
+  color: #ffc700;
+}
+
+.header-nav{
+  background-color: rgba(26, 24, 24, 0.85);
+  padding: 10px 0;
+}
+.header-nav a{
+  color: #fff;
+  margin: 0 2%;
+}
+.header-nav a:first-child{
+  margin-left: 0;
+}
+.header-nav a:last-child{
+  margin-right: 0;
+}
