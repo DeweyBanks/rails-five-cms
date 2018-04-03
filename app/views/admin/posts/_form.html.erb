@@ -18,7 +18,12 @@
 
   <div class="field">
     <%= form.label :status %>
-    <%= form.select(:status, ['preview', 'published' ], {})  %>
+    <%= form.select(:status, ['preview', 'published', 'scheduled', 'archived' ], selected: post.status,id: "post_status")  %>
+  </div>
+
+  <div class="field published-field">
+    <%= form.label :published_at %>
+    <%= form.datetime_select :published_at %>
   </div>
 
   <div class="field">

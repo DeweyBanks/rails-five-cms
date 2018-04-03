@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :posts do
       post :set_featured, on: :member
       collection do
+        get :archived
         get :edit_multiple
         put :update_multiple
       end

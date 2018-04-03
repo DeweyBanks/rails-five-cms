@@ -10,6 +10,7 @@ class Post < ApplicationRecord
   accepts_nested_attributes_for :pictures, reject_if: proc { |attributes| attributes[:image].blank? }, allow_destroy: true
   accepts_nested_attributes_for :documents, reject_if: proc { |attributes| attributes[:file].blank? }, allow_destroy: true
   before_validation :set_slug
+  before_validation :clean_up_status
   validates :title, :presence => true
   has_attached_file :main_image, styles: { medium: "300x300>", thumb: "100x100>" , carousel: "550x550>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :main_image, content_type: /\Aimage\/.*\z/
@@ -70,11 +71,15 @@ class Post < ApplicationRecord
   end
 
   def self.published
-    where(:status => "published")
+    where.not(published_at: nil).where("published_at ?" <= Time.zone.now.to_s).where(status: "published")
+  end
+
+  def self.scheduled
+    where.not(published_at: nil).where("published_at ?" > Time.zone.now.to_s)
   end
 
   def self.preview
-    where(:status => "preview")
+    where(published_at: nil)
   end
 
   def self.without(id)
@@ -100,6 +105,18 @@ class Post < ApplicationRecord
       check = Post.find_by(slug: self.slug)
       self.slug += "-#{self.id}" unless check.nil?
       self.slug
+    end
+
+    def clean_up_status
+      case status
+      when "preview"
+        self.published_at = nil
+      when "published"
+        self.published_at = Time.zone.now
+      when "archived"
+        self.published_at = nil
+      end
+      true
     end
 
 end
