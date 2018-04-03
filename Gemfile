@@ -25,6 +25,9 @@ gem "paperclip", "~> 5.0.0"
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'kaminari'
 gem 'will_paginate', '~> 3.1.0'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-datetimepicker'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

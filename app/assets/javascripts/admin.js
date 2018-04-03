@@ -2,6 +2,7 @@
 //= require rails-ujs
 //= require ckeditor/init
 //= require ckeditor/config
+//= require datetimepicker
 
 $(document).ready(function(){
 
@@ -39,23 +40,41 @@ $(document).ready(function(){
   // });
 
 
-  var change_visibility;
+  // var change_visibility;
 
-  change_visibility = function(status) {
-    console.log("status::  ", status);
-    if (status === "scheduled") {
-      return $(".published-field").show();
-    } else {
-      return $(".published-field").hide();
-    }
-  };
 
-  change_visibility($("#post_status :selected").text());
+  // change_visibility = function(status) {
+  //   console.log("status::  ", status);
+  //   if (status === "scheduled") {
+  //     return $('.published_at').datetimepicker({
+  //                   dateFormat: 'yy-mm-dd ',
+  //                   timeFormat: 'hh:mm:ss ',
+  //                   step: 5,
+  //                   ampm: true,
+  //                   inline:true,
+  //                   lang:'en'
+  //                 });
+  //   } else {
+  //     $('.published-field').hide();
+  //     return $('.published-field').datetimepicker('hide');
+  //   }
+  // };
+
+  // change_visibility($("#post_status :selected").text());
+
+  $('.published_at').datetimepicker({
+                    dateFormat: 'yy-mm-dd ',
+                    timeFormat: 'hh:mm:ss ',
+                    step: 5,
+                    ampm: true,
+                    inline:true,
+                    lang:'en'
+                  });
 
   $("#post_status").on("change", function(e) {
+    console.log("Status changed::  ", $(this).find(":selected").text())
     return change_visibility($(this).find(":selected").text());
   });
-
 
 
 

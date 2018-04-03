@@ -9,6 +9,9 @@ class PostsController < ApplicationController
         category = Category.find_by(name: params[:filter])
       if params[:id].present?
         @posts = Post.published.last_loaded(params[:id]).limit(7).order("created_at desc").where(category: category)
+        # if @posts.length <= 0
+        #   @posts = Post.published.limit(7).order("created_at desc").where(category: category)
+        # end
       else
         @posts = Post.published.limit(7).order("created_at desc").where(category: category)
       end

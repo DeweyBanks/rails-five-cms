@@ -16,7 +16,7 @@ class Post < ApplicationRecord
   validates_attachment_content_type :main_image, content_type: /\Aimage\/.*\z/
 
   after_save :ensure_only_one_featured_post
-
+  after_touch :update_status
 
   def to_param
     "#{slug}"
@@ -71,7 +71,7 @@ class Post < ApplicationRecord
   end
 
   def self.published
-    where.not(published_at: nil).where("published_at ?" <= Time.zone.now.to_s).where(status: "published")
+    where.not(published_at: nil).where("published_at ?" <= Time.zone.now.to_s)
   end
 
   def self.scheduled
@@ -117,6 +117,13 @@ class Post < ApplicationRecord
         self.published_at = nil
       end
       true
+    end
+
+    def update_status
+      if self.published_at >= Time.zone.now
+        self.status == "published"
+        self.save
+      end
     end
 
 end

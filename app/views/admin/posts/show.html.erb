@@ -4,8 +4,12 @@
       <div class="small-12 columns">
         <div class="row">
           <h4>Post Status: <%= @post.status %></h4>
+            <% if @post.status == "scheduled" %>
+            <%  %>
+              <h4>Will be published on: <%= @post.published_at %></h4>
+            <% end %>
             <% unless @post.published? %>
-              <%= button_to "Publish", admin_publish_post_path(@post) %>
+              <%= button_to "Publish Now", admin_publish_post_path(@post) %>
             <% end %>
         </div>
         <div>
