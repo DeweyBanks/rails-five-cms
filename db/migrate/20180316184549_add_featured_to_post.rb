@@ -1,5 +1,5 @@
 class AddFeaturedToPost < ActiveRecord::Migration[5.1]
   def change
-    add_column :posts, :featured, :boolean
+    add_column :posts, :featured, :boolean, default: false
   end
 end

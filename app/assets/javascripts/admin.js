@@ -38,6 +38,27 @@ $(document).ready(function(){
   //   });
   // });
 
+
+  var change_visibility;
+
+  change_visibility = function(status) {
+    console.log("status::  ", status);
+    if (status === "scheduled") {
+      return $(".published-field").show();
+    } else {
+      return $(".published-field").hide();
+    }
+  };
+
+  change_visibility($("#post_status :selected").text());
+
+  $("#post_status").on("change", function(e) {
+    return change_visibility($(this).find(":selected").text());
+  });
+
+
+
+
    $('#setFeatured')
     .bind('ajax:success', function(evt, data, status, xhr) {
       //function called on status: 200 (for ex.)
@@ -47,6 +68,7 @@ $(document).ready(function(){
       //function called on status: 401 or 500 (for ex.)
       console.log(xhr.responseText);
     });
+
 
   // $( "#set-featured" ).submit(function(event) {
   //      event.preventDefault();

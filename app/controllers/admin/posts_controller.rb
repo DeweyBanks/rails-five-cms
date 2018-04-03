@@ -4,20 +4,27 @@ module Admin
     before_action :set_post, only: [:show, :edit, :update, :publish_post, :destroy]
 
     def index
-      @posts = Post.all
       case params['sort']
       when "title"
-        @posts = @posts.order("title #{sort_direction}").paginate(:page => params[:page], :per_page => 10)
+        @posts = Post.includes(:category, :campaign).order("title #{sort_direction}").paginate(:page => params[:page], :per_page => 10)
       when "category"
-        @posts = @posts.includes(:category).order("categories.name #{sort_direction}").paginate(:page => params[:page], :per_page => 10)
+        @posts = Post.includes(:category, :campaign).order("categories.name #{sort_direction}").paginate(:page => params[:page], :per_page => 10)
       when "campaign"
-         @posts = @posts.includes(:campaign).order("campaigns.name #{sort_direction}").paginate(:page => params[:page], :per_page => 10)
+         @posts = Post.includes(:category, :campaign).order("campaigns.name #{sort_direction}").paginate(:page => params[:page], :per_page => 10)
+      when "status"
+        @posts = Post.includes(:category, :campaign).order("status #{sort_direction}").paginate(:page => params[:page], :per_page => 10)
+      when "created_at"
+        @posts = Post.includes(:category, :campaign).order("created_at #{sort_direction}").paginate(:page => params[:page], :per_page => 10)
       else
-        @posts = Post.all.order(sort_column + " " + sort_direction).paginate(:page => params[:page], :per_page => 10)
+        @posts = Post.includes(:category, :campaign).all.order("created_at desc").paginate(:page => params[:page], :per_page => 10)
       end
     end
 
     def show
+    end
+
+    def archived
+      @posts = Post.archived.includes(:category, :campaign).order("created_at desc").paginate(:page => params[:page], :per_page => 10)
     end
 
     def set_featured
@@ -131,7 +138,8 @@ module Admin
           :main_image,
           :meta_description,
           :status,
-          :featured
+          :featured,
+          :published_at
           )
       end
   end
