@@ -1,11 +1,24 @@
-<div class="row">
-  <div class="small-12 columns">
+<div class="row expanded header-name">
+  <div class="small-12">
+ <div class="row">
+      
     <% if current_user %>
-      <p>welcome: <%= current_user.full_name %>
-        <%= link_to "LOG OUT", destroy_user_session_path, :method => :delete, data: { confirm: 'Are you sure?' } %>
-      </p>
+     <div class="small-6 columns">
+        <p><span>Welcome: <%= current_user.full_name %></span> </p>
+      </div>
+      <div class="small-6 columns text-right">  
+        <p><span><%= link_to "LOG OUT", destroy_user_session_path, :method => :delete, data: { confirm: 'Are you sure?' } %></span></p>
+      </div>
     <% end %>
-    <%= link_to "EHE", root_path %> |
+
+</div>
+  </div>
+</div>
+
+<div class="row expanded header-nav">
+  <div class="small-12">
+<div class="row">
+  <div class="small-12 columns text-center">
     <%= link_to "Dashboard", admin_dashboard_path %> |
     <%= link_to "Posts", admin_posts_path %> |
     <%= link_to "Campaigns", admin_campaigns_path %> |
@@ -14,5 +27,8 @@
     <%= link_to "Categories", admin_categories_path %> |
     <%= link_to "Messages", admin_messages_path %> |
     <%= link_to "Archived", archived_admin_posts_path %>
+  <%= link_to "EHE Homepage", root_path %>
+  </div>
+</div>
   </div>
 </div>
