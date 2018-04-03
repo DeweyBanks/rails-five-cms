@@ -4,6 +4,7 @@ namespace :post do
     posts = Post.where.not(:status => "published")
     posts.each do |post|
       post.status = "published"
+      post.published_at = Time.zone.now
       post.save
     end
   end

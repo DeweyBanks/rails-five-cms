@@ -16,7 +16,7 @@ class Post < ApplicationRecord
   validates_attachment_content_type :main_image, content_type: /\Aimage\/.*\z/
 
   after_save :ensure_only_one_featured_post
-  after_touch :update_status
+
 
   def to_param
     "#{slug}"
@@ -51,7 +51,7 @@ class Post < ApplicationRecord
   end
 
   def published?
-    status == "published"
+    self.published_at <= Time.zone.now.to_s
   end
 
   def archived?
@@ -120,7 +120,7 @@ class Post < ApplicationRecord
     end
 
     def update_status
-      if self.published_at >= Time.zone.now
+      if self.published_at <= Time.zone.now
         self.status == "published"
         self.save
       end

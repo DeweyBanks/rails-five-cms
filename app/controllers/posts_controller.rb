@@ -9,9 +9,6 @@ class PostsController < ApplicationController
         category = Category.find_by(name: params[:filter])
       if params[:id].present?
         @posts = Post.published.last_loaded(params[:id]).limit(7).order("created_at desc").where(category: category)
-        # if @posts.length <= 0
-        #   @posts = Post.published.limit(7).order("created_at desc").where(category: category)
-        # end
       else
         @posts = Post.published.limit(7).order("created_at desc").where(category: category)
       end
@@ -45,7 +42,8 @@ class PostsController < ApplicationController
   def show
     @page = "show"
     @post = Post.find_by(slug: params[:slug])
-    if @post.status != "published"
+
+    unless @post.published?
       redirect_to root_path
     end
     @recent_posts = Post.limit(5)

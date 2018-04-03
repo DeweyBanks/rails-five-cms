@@ -84,7 +84,6 @@ module Admin
     end
 
     def update
-      binding.pry
       respond_to do |format|
         if @post.update!(post_params)
           format.html { redirect_to admin_post_path(@post), notice: 'Post was successfully updated.' }
