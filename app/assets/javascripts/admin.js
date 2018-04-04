@@ -6,10 +6,9 @@
 
 
 $(document).ready(function(){
-  $(function(){ $(document).foundation(); });
 
   $(document).foundation();
-  
+
   $('#check_all').on("click", function(){
     var cbxs = $('input[type="checkbox"]');
     cbxs.prop("checked", !cbxs.prop("checked"));
