@@ -4,10 +4,8 @@
 //= require ckeditor/config
 //= require datetimepicker
 
-$(function(){ $(document).foundation(); });
 
 $(document).ready(function(){
-  $(document).foundation();
 
   $('#check_all').on("click", function(){
     var cbxs = $('input[type="checkbox"]');
@@ -115,4 +113,4 @@ $(document).ready(function(){
   //   });
 
 
-});
+}).foundation();
