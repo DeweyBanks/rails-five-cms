@@ -25324,67 +25324,29 @@ return tns;
 //call foundation on the entire document to initialize it before any foundation functionality will work.
 $(document).foundation();
 
-//
-/*
-function AubreyTest(){
-    //in index.html see body onload
-    //alert('Aubrey says hello from app.js');
-    $('#exampleModal1').foundation('open');
-}
-
-function fAlert(){
-    //alert('fAlert');
-    //$(document).foundation('alert', 'reflow');
-    //$('#myAlert').foundation({alert: {speed: 3000}});
-    
-}
-
-function fFadeout(id){
-    //alert(id);
-    // jQuery
-    
-    //var elementHash ="#"+id;
-    //var elem = $(elementHash);
-    //$(elementHash).addClass('wiggle');
-    
-    if (document.getElementById(id).style.display == "none") {
-        //alert('hidden');
-        //document.getElementById(id).style.display = "block";
-        Foundation.Motion.animateIn( ("#"+id) , "fade-in");
-    }else{
-        Foundation.Motion.animateOut( ("#"+id) , "fade-out");
-    }
-    
-}
-*/
-
-//js fallback for masonry
-/*
-var featured_stories_container = document.querySelector('#featured-stories-container');
-var featured_story_msnry = new Masonry( featured_stories_container, {
-  // options
-  itemSelector: '#featured-stories-container li'
-});
-*/
-//toggle arrow in tabs 
-
-
-
 
 /* =====================   latest carousel start ========================== */
     $(document).ready(function(){
         if($('.latest-container')){
             $('.latest-container').slick({
                   centerMode: true,
-                  centerPadding: '60px',
+                  centerPadding: '150px',
                   slidesToShow: 3,
                  dots: true,
                   responsive: [
-                    {
-                      breakpoint: 769,
+                     {
+                      breakpoint: 1440,
                       settings: {
                         arrows: true,
                         centerPadding: '60px',
+                        slidesToShow: 3
+                      }
+                    },
+                    {
+                      breakpoint: 768,
+                      settings: {
+                        arrows: true,
+                        centerPadding: '120px',
                         slidesToShow: 1
                       }
                     },
@@ -25425,10 +25387,12 @@ var getVideo = function(){
 
 $('.cta').mouseenter(function(){
     var buttonData = $(this).data('container');
-    console.log( buttonData );
+    /*console.log( buttonData );
     if(buttonData === "blue-section"){
         $(this).closest('div.drkblue').addClass('drkrblue');
-    }else if(buttonData === undefined){
+    }else 
+      */
+    if(buttonData === undefined){
         console.log("do nothing");
     }else{
         $('.'+buttonData+' .color-overlay').addClass('bg-opacity');
@@ -25438,10 +25402,11 @@ $('.cta').mouseenter(function(){
 $('.cta').mouseleave(function(){
     //$('.color-overlay').removeClass('bg-opacity');
     var buttonData = $(this).data('container');
-    console.log( buttonData );
+    /*console.log( buttonData );
     if(buttonData === "blue-section"){
          $(this).closest('div.drkblue').removeClass('drkrblue');
-    }else if(buttonData === undefined){
+    }else*/ 
+    if(buttonData === undefined){
         console.log("do nothing");
     }else{
         $('.'+buttonData+' .color-overlay').removeClass('bg-opacity');
