@@ -79,7 +79,7 @@ class Post < ApplicationRecord
   end
 
   def self.scheduled
-    where("published_at >= ?", Time.now )
+    where("published_at >= ?", Time.zone.now )
   end
 
   def self.preview
