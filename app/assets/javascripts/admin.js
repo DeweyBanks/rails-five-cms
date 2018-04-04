@@ -1,14 +1,13 @@
-
-//= require jquery
+//= require app.js
 //= require rails-ujs
 //= require ckeditor/init
 //= require ckeditor/config
 //= require datetimepicker
-//= require app.js
 
 $(function(){ $(document).foundation(); });
 
 $(document).ready(function(){
+  $(document).foundation();
 
   $('#check_all').on("click", function(){
     var cbxs = $('input[type="checkbox"]');
