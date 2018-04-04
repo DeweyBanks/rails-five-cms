@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require rails-ujs
-//= require_tree .
 //= require app.js
 
 //$(function(){ $(document).foundation(); });

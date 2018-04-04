@@ -86,12 +86,7 @@
 <div class="expanded row">
   <div class="small-12">
     <div class="latest-container">
-      <% @posts.each do |post| %>
-        <div>
-          <p class="white-text"><%= post.title %></p>
-          <%= link_to image_tag(post.main_image.url(:carousel)), post_path(post)  %>
-        </div>
-      <% end %>
+      <%= render partial: 'post', collection: @posts, cached: true %>
     </div>
   </div>
 </div>

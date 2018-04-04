@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
   def index
     @page = "index"
-    @posts = Post.includes(:category).limit(5)
+    @posts = Post.published.limit(5).order("created_at desc")
 
   end
 
