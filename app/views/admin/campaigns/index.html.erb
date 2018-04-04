@@ -1,9 +1,19 @@
-<div class="page-header">
+ <div class="admin">
+  <div class="page-header">
   <div class='row'>
-    <div class='small-12'>
-      <h1 class='title-heading text-center'>Campaigns</h1>
-      <%= link_to 'Add Campaign', new_admin_campaign_path, :class => 'large-offset-5 text-center' %>
+      <div class='small-12 columns'>
+        <h1 class='title-heading text-center'>Campaigns</h1>
+      </div>
     </div>
+  </div>
+  <div class='row bot-space-25'>
+    <div class='small-12 columns text-center'>
+           <%= link_to 'Add Campaign', new_admin_campaign_path, :class => 'round-button ProximaNova-Medium cta button-gray' %>
+    </div>
+  </div>
+  
+  
+
     <div class="row">
       <div class="small-12 columns">
         <table>
@@ -26,7 +36,6 @@
         </table>
       </div>
     </div>
-  </div>
 </div>
 
 

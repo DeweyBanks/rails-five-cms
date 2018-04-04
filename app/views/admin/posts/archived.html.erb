@@ -1,14 +1,20 @@
-<div class="page-header">
-  <div class='row'>
-    <div class='small-12'>
-      <h1 class='title-heading text-center'>Archived Posts</h1>
+ <div class="admin">
+ <div class="page-header">
+  <div class='row bot-space-25'>
+      <div class='small-12 columns'>
+        <h1 class='title-heading text-center'>Archived Posts</h1>
+      </div>
     </div>
+  </div>
+
+
     <div class="row">
       <div class="small-12 columns">
       <% if !@posts.nil? %>
         <%= form_tag edit_multiple_admin_posts_path, method: :get, id: :edit_posts do %>
         <table>
           <thead>
+             <tr>
               <th><button type="button" id="check_all">Check ALL</button></th>
               <th>Featured Image</th>
               <th><%= sortable "title" %></th>
@@ -58,4 +64,4 @@
     <% end %>
     </div>
   </div>
-</div>
+

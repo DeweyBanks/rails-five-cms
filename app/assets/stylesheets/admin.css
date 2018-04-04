@@ -42,29 +42,45 @@ input .hidden {
 
 
 #check_all {
+    border-radius: 0;
+    background-color: #fff;
+    border: 1px solid #505153;
+    font-size: 1px;
+    height: 15px;
+    margin: 0 4px 0 1px;
+    outline: 0;
+    vertical-align: text-bottom;
+    width: 15px;
+  
   display: inline-block;
-  padding: 5px 10px;
-  font-size: .8em;
+
   cursor: pointer;
-  text-align: center;
+
+
+  /*
+    padding: 5px 5px;
+  font-size: .8em;
+    text-align: center;
   text-decoration: none;
-  outline: none;
   color: #fff;
+  border-radius: 10px;
   background-color: #4088D9;
   border: none;
-  border-radius: 10px;
-  box-shadow: 0 5px #999;
+    outline: none;
+*/
+ /* box-shadow: 0 5px #999;*/
 }
 
-#check_all:hover {background-color: #085EBF}
+#check_all:hover {    
+  border: 1px solid #ffc700;
+}
 
 #check_all:active {
-  background-color: #085EBF;
-  box-shadow: 0 3px #666;
-  transform: translateY(4px);
+  /*background: url(/images/checkmark.png) no-repeat -5px -3px;*/
 }
 
 
+/*================= admin nav   =================*/
 .header-name{
   background-color: rgba(26, 24, 24, 0.7);
   padding: 5px 0;
@@ -96,4 +112,16 @@ input .hidden {
 }
 .header-nav a:last-child{
   margin-right: 0;
+}
+
+
+/*====================== POSTS  =====================*/
+.admin-posts thead, .admin thead{
+  background-color:#505153 ;
+}
+.admin-posts thead a,.admin thead a, th, button{
+  color: #fff;
+}
+.admin-posts table a:hover, .admin table a:hover{
+  color: #ffc700;
 }

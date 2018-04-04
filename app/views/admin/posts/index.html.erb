@@ -1,15 +1,26 @@
-<div class="page-header">
+<div class="admin-posts">
+ <div class="page-header">
   <div class='row'>
-    <div class='small-12'>
-      <h1 class='title-heading text-center'>Posts</h1>
-      <%= link_to 'New Post', new_admin_post_path, :class => 'large-offset-5 text-center' %>
+      <div class='small-12 columns'>
+        <h1 class='title-heading text-center'>Posts</h1>
+      </div>
     </div>
+  </div>
+  <div class='row bot-space-25'>
+      <div class='small-12 medium-6 columns text-center'>
+           <a id="bulk-edit" class="round-button ProximaNova-Medium cta button-gray">Bulk Actions</a>
+    </div>
+    <div class='small-12 medium-6 columns text-center'>
+           <%= link_to 'Create New Post', new_admin_post_path, :class => 'round-button ProximaNova-Medium cta button-gray' %>
+    </div>
+  </div>
     <div class="row">
       <div class="small-12 columns">
         <%= form_tag edit_multiple_admin_posts_path, method: :get, id: :edit_posts do %>
         <table>
           <thead>
-              <th><button type="button" id="check_all">Check ALL</button></th>
+             <tr>
+              <th><button type="button" id="check_all"></button></th>
               <th>Featured Image</th>
               <th><%= sortable "title" %></th>
               <th><%= sortable "category" %></th>
@@ -17,7 +28,7 @@
               <th><%= sortable "status" %></th>
               <th><%= sortable "created_at", "Created" %></th>
               <th colspan="1"></th>
-              <th><button id="bulk-edit">Bulk Actions</button></th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -54,5 +65,4 @@
         </div>
       </div>
     </div>
-  </div>
 </div>

@@ -1,8 +1,12 @@
+
+
 //= require jquery
 //= require rails-ujs
 //= require ckeditor/init
 //= require ckeditor/config
 //= require datetimepicker
+
+$(function(){ $(document).foundation(); });
 
 $(document).ready(function(){
 
