@@ -127,6 +127,9 @@ input .hidden {
 }
 
 /*====================== POSTS  =====================*/
+.admin-posts button{
+  line-height: 27px;
+}
 .admin-posts thead, .admin thead{
   background-color:#505153 ;
 }
@@ -135,4 +138,8 @@ input .hidden {
 }
 .admin-posts table a:hover, .admin table a:hover{
   color: #ffc700;
+}
+
+.admin select{
+  background-color: #eee;
 }
