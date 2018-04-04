@@ -1,10 +1,10 @@
 
-
 //= require jquery
 //= require rails-ujs
 //= require ckeditor/init
 //= require ckeditor/config
 //= require datetimepicker
+//= require app.js
 
 $(function(){ $(document).foundation(); });
 
@@ -16,6 +16,7 @@ $(document).ready(function(){
   });
 
   $('#bulkActions').on('click', function() {
+    alert
     $('#edit_posts').submit(function(e){
        e.preventDefault();
       var ck_box = $('input[type="checkbox"]:checked').length;
@@ -75,10 +76,10 @@ $(document).ready(function(){
                     lang:'en'
                   });
 
-  $("#post_status").on("change", function(e) {
-    console.log("Status changed::  ", $(this).find(":selected").text())
-    return change_visibility($(this).find(":selected").text());
-  });
+  // $("#post_status").on("change", function(e) {
+  //   console.log("Status changed::  ", $(this).find(":selected").text())
+  //   return change_visibility($(this).find(":selected").text());
+  // });
 
 
 
