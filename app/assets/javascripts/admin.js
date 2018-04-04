@@ -7,6 +7,8 @@
 
 $(document).ready(function(){
 
+  $(document).foundation();
+  
   $('#check_all').on("click", function(){
     var cbxs = $('input[type="checkbox"]');
     cbxs.prop("checked", !cbxs.prop("checked"));
@@ -113,4 +115,4 @@ $(document).ready(function(){
   //   });
 
 
-}).foundation();
+});
