@@ -1,0 +1,67 @@
+<div class="page-header">
+  <div class='row'>
+    <div class='small-12'>
+      <h1 class='title-heading text-center'>Scheduled Posts</h1>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+      <% if !@posts.nil? %>
+        <%= form_tag edit_multiple_admin_posts_path, method: :get, id: :edit_posts do %>
+        <table>
+          <thead>
+              <th><button type="button" id="check_all">Check ALL</button></th>
+              <th>Featured Image</th>
+              <th><%= sortable "title" %></th>
+              <th><%= sortable "category" %></th>
+              <th><%= sortable "campaign" %></th>
+              <th><%= sortable "status" %></th>
+              <th><%= sortable "created_at", "Created" %></th>
+              <th> Published At </th>
+              <th colspan="1"></th>
+              <th><button id="bulk-edit">Bulk Actions</button></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @posts.each do |post| %>
+              <tr>
+                <td><%= check_box_tag "post_ids[]", post.id %></td>
+                <td><%= image_tag post.main_image.url(:thumb) %></td>
+                <td><%= truncate(post.title, length: 37, omission: "...") %></td>
+                <% if !post.category.blank? %>
+                  <td><%= post.category.name %></td>
+                <% else %>
+                  <td>category not set</td>
+                <% end %>
+                <% if !post.campaign.blank? %>
+                  <td><%= post.campaign.name %></td>
+                <% else %>
+                  <td>campaign not set</td>
+                <% end %>
+                <td><%= post.status %></td>
+                <td><%= post.created_at.strftime('%m/%d/%Y') %></td>
+                <% if post.published_at %>
+                  <td><%= post.published_at.strftime('%m/%d/%Y') %></td>
+                <% else %>
+                  <td style="font-size: .8em; font-style: italic;">Time Not Set</td>
+                <% end %>
+                <td colspan="3">
+                  <%= link_to '<span class="far fa-file" aria-hidden="true"></span>'.html_safe, admin_post_path(post.slug) %> |
+                  <%= link_to '<span class="fas fa-edit" aria-hidden="true"></span>'.html_safe, edit_admin_post_path(post) %> |
+                  <%= link_to '<span class="fas fa-trash-alt" aria-hidden="true"></span>'.html_safe, admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+          <p><%= submit_tag 'Bulk Actions', :name => 'submit', :style => 'visibility: hidden;' %></p>
+         <% end %>
+        <div class="post-pagination">
+          <%= paginate @posts %>
+        </div>
+      </div>
+    <% else %>
+      <h2>No Scheduled Posts</h2>
+    <% end %>
+    </div>
+  </div>
+</div>
