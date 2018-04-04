@@ -7,7 +7,7 @@
         <p><span>Welcome: <%= current_user.full_name %></span> </p>
       </div>
       <div class="small-6 columns text-right">  
-        <p><span><%= link_to "LOG OUT", destroy_user_session_path, :method => :delete, data: { confirm: 'Are you sure?' } %></span></p>
+        <p><%= link_to "EHE Homepage", root_path %> &nbsp;|&nbsp; <%= link_to "LOG OUT", destroy_user_session_path, :method => :delete, data: { confirm: 'Are you sure?' } %></p>
       </div>
     <% end %>
 
@@ -19,15 +19,24 @@
   <div class="small-12">
 <div class="row">
   <div class="small-12 columns text-center">
-    <%= link_to "Dashboard", admin_dashboard_path %> |
-    <%= link_to "Posts", admin_posts_path %> |
-    <%= link_to "Campaigns", admin_campaigns_path %> |
-    <%= link_to "Admins", admin_users_path %> |
-    <%= link_to "Commanders", admin_commanders_path %> |
-    <%= link_to "Categories", admin_categories_path %> |
-    <%= link_to "Messages", admin_messages_path %> |
-    <%= link_to "Archived", archived_admin_posts_path %>
-  <%= link_to "EHE Homepage", root_path %>
+   <ul class="dropdown menu" data-dropdown-menu>
+    <li><%= link_to "Dashboard", admin_dashboard_path %></li>
+    <li><%= link_to "Posts", admin_posts_path %>
+     <ul class="menu">
+        <li> <%= link_to "Archived", archived_admin_posts_path %></li>
+        <li> <%= link_to "Scheduled", archived_admin_posts_path %></li>
+        <li> <%= link_to "Preview Links", archived_admin_posts_path %></li>
+      </ul> 
+      </li>
+      <li><%= link_to "Campaigns", admin_campaigns_path %></li>
+      <li><%= link_to "Admins", admin_users_path %></li>
+      <li><%= link_to "Commanders", admin_commanders_path %></li>
+      <li><%= link_to "Categories", admin_categories_path %></li>
+      <li><%= link_to "Messages", admin_messages_path %></li>
+    </ul>
+
+  
+ 
   </div>
 </div>
   </div>
