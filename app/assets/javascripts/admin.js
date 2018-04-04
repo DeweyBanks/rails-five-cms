@@ -6,6 +6,7 @@
 
 
 $(document).ready(function(){
+  $(function(){ $(document).foundation(); });
 
   $('#check_all').on("click", function(){
     var cbxs = $('input[type="checkbox"]');
@@ -13,7 +14,7 @@ $(document).ready(function(){
   });
 
   $('#bulkActions').on('click', function() {
-    alert
+    alert('alert');
     $('#edit_posts').submit(function(e){
        e.preventDefault();
       var ck_box = $('input[type="checkbox"]:checked').length;
@@ -113,4 +114,4 @@ $(document).ready(function(){
   //   });
 
 
-}).foundation();
+});

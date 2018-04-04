@@ -7,6 +7,7 @@
     </div>
   </div>
   <div class='row bot-space-25'>
+        <%= form_tag edit_multiple_admin_posts_path, method: :get, id: :edit_posts do %>
       <div class='small-12 medium-6 columns text-center'>
            <button id="bulk-edit" class="round-button ProximaNova-Medium cta button-gray">Bulk Actions</button>
     </div>
@@ -16,7 +17,6 @@
   </div>
     <div class="row">
       <div class="small-12 columns">
-        <%= form_tag edit_multiple_admin_posts_path, method: :get, id: :edit_posts do %>
         <table>
           <thead>
              <tr>
