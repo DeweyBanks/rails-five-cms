@@ -6,7 +6,6 @@
 
 
 $(document).ready(function(){
-
   $(document).foundation();
 
   $('#check_all').on("click", function(){

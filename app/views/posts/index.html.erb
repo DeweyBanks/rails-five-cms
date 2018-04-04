@@ -37,17 +37,17 @@
  <div class="small-12 columns">
    <ul id="blog-nav">
     <% if @posts.any? %>
-      <li><%= link_to "All", posts_path, :class => "active ProximaNova-Medium", data_id: @posts.last.id %></li>
+      <li><%= link_to "All", posts_path, :class => "#{current_class?(posts_path)} ProximaNova-Medium", data_id: @posts.last.id %></li>
     <% else %>
-      <li><%= link_to "All", posts_path, :class => "active ProximaNova-Medium" %></li>
+      <li><%= link_to "All", posts_path, :class => "#{current_class?(posts_path)} ProximaNova-Medium" %></li>
     <% end %>
     <% @categories.each do |category| %>
       <% if category.name == "Uncategorized" %>
       <% else %>
         <% if @posts.any? %>
-          <li><%= link_to category.name, posts_path(:filter => category.name, :id => @posts.last.id), :class => "ProximaNova-Medium" %></li>
+          <li><%= link_to category.name, posts_path(:filter => category.name, :id => @posts.last.id), :class => "#{current_class?('?filter=' + category.name)} ProximaNova-Medium" %></li>
         <% else %>
-          <li><%= link_to category.name, posts_path(:filter => category.name), :class => "ProximaNova-Medium" %></li>
+          <li><%= link_to category.name, posts_path(:filter => category.name), :class => "#{current_class?('?filter=' + category.name)} ProximaNova-Medium" %></li>
         <% end %>
       <% end %>
     <% end %>

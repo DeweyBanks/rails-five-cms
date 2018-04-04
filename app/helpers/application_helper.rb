@@ -38,5 +38,20 @@ module ApplicationHelper
     link_to title, {:sort => column, :direction => direction}, {:class => css_class}
   end
 
+  def current_class?(test_path)
+    if params[:filter].present?
+      if test_path == "/blog"
+        ''
+      else
+        return 'active' if request.fullpath.include?(test_path)
+        ''
+      end
+    elsif test_path == "/blog"
+      'active'
+    else
+      ''
+    end
+  end
+
 
 end
