@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  include Filterable
   belongs_to :campaign, optional: true
   belongs_to :category, optional: true
   has_many :taggings, :dependent => :delete_all
@@ -16,6 +17,7 @@ class Post < ApplicationRecord
   validates_attachment_content_type :main_image, content_type: /\Aimage\/.*\z/
 
   after_save :ensure_only_one_featured_post
+  scope :category, -> (category_id) { where category_id: category_id }
 
 
   def to_param

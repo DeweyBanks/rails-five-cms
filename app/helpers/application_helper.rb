@@ -39,7 +39,8 @@ module ApplicationHelper
   end
 
   def current_class?(test_path)
-    if params[:filter].present?
+
+    if params[:category].present?
       if test_path == "/blog"
         ''
       else
