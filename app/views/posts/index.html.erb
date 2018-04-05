@@ -3,7 +3,7 @@
 <% keywords 'EHE, Blog' %>
 <!-- Blog hero image -->
 <div class="row expanded bot-space-25">
-  <% if @featured_post %>
+  <% if @featured_post.present? %>
      <%= link_to post_path(@featured_post)  do %>
       <div class="small-12 blog-hero" style="background: url(<%= @featured_post.main_image.url %>) no-repeat center center; background-size: cover;">
         <div class="row bot-space-25">
@@ -18,7 +18,7 @@
       </div>
     <% end %>
   <% else %>
-    <div class="small-12 blog-hero" style="background: url(../assets/latest/Heart-Health-768x459.jpg) no-repeat center center; background-size: cover;">
+    <div class="small-12 blog-hero" style="background: url(<%= image_path('latest/Heart-Health-768x459.jpg') %>) no-repeat center center; background-size: cover;">
       <div class="row bot-space-25">
         <div class="small-12 column">
           <div class="content-contain">

@@ -3,6 +3,9 @@ class PostsController < ApplicationController
   def index
     @categories = Category.all
     @featured_post = Category.find_by(name: "Blog").featured_post
+    if params[:category]
+      @featured_post = Category.find(params[:category]).featured_post
+    end
     @page = "index"
     if params[:id]
       @posts = Post.last_loaded(params[:id]).filter(params.slice(:category, :tagged_with, :search))
