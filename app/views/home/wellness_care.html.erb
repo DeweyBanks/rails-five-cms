@@ -17,20 +17,21 @@
 
 <!-- Tabs -->
     <div class="row expanded">
-        <div class='row'>
+
+        <div class='row hide-for-small-only'>
         <div class="small-12">
             <ul class="tabs white-background" data-tabs id="article-tabs">
-                <li class="tabs-title tabs-title-3-up is-active">
-                  <a href="#coaching-article" aria-selected="true" class="text-right tabs-title-text custom-tabs-arrow font-bold">
-                  Lead Navigation</a>
+                <li class="tabs-title tabs-title-3-up is-active" role="presentation">
+                  <a href="#coaching-article" aria-selected="true" class="text-right tabs-title-text custom-tabs-arrow font-bold" role="tab" aria-controls="coaching-article" id="coaching-article-label" tabindex="0">
+                  LEAD NAVIGATION</a>
                 </li>
-                <li class="tabs-title tabs-title-3-up">
-                  <a href="#clinical-coordination-article" class="text-center tabs-title-text custom-tabs-arrow font-bold">
-                  Health Mentors</a>
+                <li class="tabs-title tabs-title-3-up" role="presentation">
+                  <a href="#clinical-coordination-article" class="text-center tabs-title-text custom-tabs-arrow font-bold" role="tab" aria-controls="clinical-coordination-article" aria-selected="false" id="clinical-coordination-article-label" tabindex="-1">
+                  HEALTH MENTORS</a>
                 </li>
-                <li class="tabs-title tabs-title-3-up">
-                  <a href="#eheme-article" class="text-left tabs-title-text custom-tabs-arrow font-bold">
-                  EHE + Me</a>
+                <li class="tabs-title tabs-title-3-up" role="presentation">
+                  <a href="#eheme-article" class="text-left tabs-title-text custom-tabs-arrow font-bold" role="tab" aria-controls="eheme-article" aria-selected="false" id="eheme-article-label" tabindex="-1">
+                  EHE + ME</a>
                 </li>
             </ul>
         </div>
@@ -38,192 +39,195 @@
  <!-- end Tabs -->
 
 <!-- Coaching Tabs content -->
-    <div class="row expanded">
-        <div class="small-12">
-            <div class="tabs-content" data-tabs-content="article-tabs">
-                <div class="tabs-panel is-active" id="coaching-article"><!-- tabs-panel coaching-article -->
+<div class="row expanded">
+    <div class="small-12">
+        <div class="tabs-content" data-tabs-content="article-tabs">
+            <div class="tabs-panel is-active" id="coaching-article"><!-- tabs-panel coaching-article -->
+                <div class="tab-content-title text-center show-for-small-only coaching">LEAD NAVIGATION</div>
 
-                    <div class="row expanded">
-                        <div class="small-12">
-                            <div class="custom-article-group coaching-bg">
-                                <div class="row expanded">
-                                    <div class="large-6">
-                                        <div class="custom-article-overlay coaching">
-                                            <div class="row">
-                                                <div class="small-8 small-centered columns">
-                                                    <p class="white-text ProximaNova-Medium">Your lead navigator is your partner on this health journey. At every step of the way, from preparing for your first visit through post-exam wellness coordination, your navigator makes your experience caring and frictionless. We want to ensure your questions are answered and resources delivered conveniently. The navigator makes this possible.</p>
-                                                </div><!-- emd small 8 centered text -->
-                                            </div><!-- end row -->
-                                        </div><!-- emd custom art overlay coaching -->
-                                    </div><!-- emd larg 6 -->
-                                </div> <!-- end row -->
-                            </div> <!-- end custom article group?? wellness care -->
-                        </div><!-- small 12 close -->
-                    </div><!-- row expanded close -->  
+                <div class="row expanded">
+                    <div class="small-12">
+                        <div class="custom-article-group coaching-bg">
+                            <div class="row expanded">
+                                <div class="large-6">
+                                    <div class="custom-article-overlay coaching">
+                                        <div class="row">
+                                            <div class="small-8 small-centered columns">
+                                                <p class="white-text ProximaNova-Medium">Your lead navigator is your partner on this health journey. At every step of the way, from preparing for your first visit through post-exam wellness coordination, your navigator makes your experience caring and frictionless. We want to ensure your questions are answered and resources delivered conveniently. The navigator makes this possible.</p>
+                                            </div><!-- emd small 8 centered text -->
+                                        </div><!-- end row -->
+                                    </div><!-- emd custom art overlay coaching -->
+                                </div><!-- emd larg 6 -->
+                            </div> <!-- end row -->
+                        </div> <!-- end custom article group?? wellness care -->
+                    </div><!-- small 12 close -->
+                </div><!-- row expanded close -->  
 
-                    <!-- accordian -->
-                    <!-- coaching-accordion-section -->
-                    <!--
-                    <section>
-                    -->
-                    <div class="row">
-                        <div class="small-12">
-                            <ul class="custom-accordion accordion" data-accordion data-allow-all-closed="true">
-                                <li class="accordion-item" accordion-title data-accordion-item>
-                                    <a href="#" class="accordion-title coaching-accordion-section font-bold accordionBtn">Pre-Exam Orientation</a>
-                                    <div class="accordion-content" data-tab-content >
-                                        <p>Before you even visit, your navigator makes sure you have what you need to start your EHE experience informed and comfortable.</p>
-                                    </div>
-                                </li>
-                                <li class="accordion-item" data-accordion-item>
-                                    <a href="#" class="accordion-title coaching-accordion-section font-bold accordionBtn">In-Clinic Experience</a>
-                                    <div class="accordion-content" data-tab-content>
-                                        <p>The most comprehensive prevention is also the smoothest, thanks to your navigator. who guides you through the process on exam day.</p>
-                                    </div>
-                                </li>
-                                <li class="accordion-item" data-accordion-item>
-                                    <a href="#" class="accordion-title coaching-accordion-section font-bold accordionBtn">Post-Exam Coordination</a>
-                                    <div class="accordion-content" data-tab-content>
-                                        <p>As you begin your post-exam journey, your navigator is integral in helping you understand and access every resource you need.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                <!-- accordian -->
+                <!-- coaching-accordion-section -->
+                <!--
+                <section>
+                -->
+                <div class="row">
+                    <div class="small-12">
+                        <ul class="custom-accordion accordion" data-accordion data-allow-all-closed="true">
+                            <li class="accordion-item" accordion-title data-accordion-item>
+                                <a href="#" class="accordion-title coaching-accordion-section font-bold accordionBtn">Pre-Exam Orientation</a>
+                                <div class="accordion-content" data-tab-content >
+                                    <p>Before you even visit, your navigator makes sure you have what you need to start your EHE experience informed and comfortable.</p>
+                                </div>
+                            </li>
+                            <li class="accordion-item" data-accordion-item>
+                                <a href="#" class="accordion-title coaching-accordion-section font-bold accordionBtn">In-Clinic Experience</a>
+                                <div class="accordion-content" data-tab-content>
+                                    <p>The most comprehensive prevention is also the smoothest, thanks to your navigator. who guides you through the process on exam day.</p>
+                                </div>
+                            </li>
+                            <li class="accordion-item" data-accordion-item>
+                                <a href="#" class="accordion-title coaching-accordion-section font-bold accordionBtn">Post-Exam Coordination</a>
+                                <div class="accordion-content" data-tab-content>
+                                    <p>As you begin your post-exam journey, your navigator is integral in helping you understand and access every resource you need.</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
+                </div>
 
-                </div><!-- tabs-panel coaching-article -->
-            </div><!-- tabs content 3 end -->
-        </div><!-- small 12 end -->
-    </div><!-- end expanded row -->
+            </div><!-- tabs-panel coaching-article -->
+        </div><!-- tabs content 3 end -->
+    </div><!-- small 12 end -->
+</div><!-- end expanded row -->
 <!-- End Coaching Tabs content -->
 
 <!-- Clinical-coordination Tabs content -->
-    <div class="row expanded">
-        <div class="small-12">
-            <div class="tabs-content" data-tabs-content="article-tabs">
-                <div class="tabs-panel" id="clinical-coordination-article"><!-- tabs-panel clinical-coordination-article -->
+<div class="row expanded">
+    <div class="small-12">
+        <div class="tabs-content" data-tabs-content="article-tabs">
+            <div class="tabs-panel" id="clinical-coordination-article"><!-- tabs-panel clinical-coordination-article -->
+                <div class="tab-content-title text-center show-for-small-only clinical-coordination">HEALTH MENTORS</div>
+                
+                <div class="row expanded">
+                    <div class="small-12">
+                        <div class="custom-article-group clinical-coordination-bg">
+                            <div class="row expanded">
+                                <div class="large-6">
+                                    <div class="custom-article-overlay clinical-coordination">
+                                        <div class="row">
+                                            <div class="small-8 small-centered columns">
+                                                <p class="white-text ProximaNova-Medium">Health mentors bring expertise and empathy to every patient, guiding you toward the daily lifestyle choices that make a big difference. They help you to see how your habits can lead to new potential. The personalized approach works because it’s both conversational and motivational, tailored to your specific needs.</p>
+                                            </div><!-- emd small 8 centered text -->
+                                        </div><!-- end row -->
+                                    </div><!-- emd custom art overlay clinical-coordination -->
+                                </div><!-- emd larg 6 -->
+                            </div> <!-- end row -->
+                        </div> <!-- end custom article group?? wellness care -->
+                    </div><!-- small 12 close -->
+                </div><!-- row expanded close -->  
 
-                    <div class="row expanded">
-                        <div class="small-12">
-                            <div class="custom-article-group clinical-coordination-bg">
-                                <div class="row expanded">
-                                    <div class="large-6">
-                                        <div class="custom-article-overlay clinical-coordination">
-                                            <div class="row">
-                                                <div class="small-8 small-centered columns">
-                                                    <p class="white-text ProximaNova-Medium">Health mentors bring expertise and empathy to every patient, guiding you toward the daily lifestyle choices that make a big difference. They help you to see how your habits can lead to new potential. The personalized approach works because it’s both conversational and motivational, tailored to your specific needs.</p>
-                                                </div><!-- emd small 8 centered text -->
-                                            </div><!-- end row -->
-                                        </div><!-- emd custom art overlay clinical-coordination -->
-                                    </div><!-- emd larg 6 -->
-                                </div> <!-- end row -->
-                            </div> <!-- end custom article group?? wellness care -->
-                        </div><!-- small 12 close -->
-                    </div><!-- row expanded close -->  
+                <!-- accordian -->
+                <!-- clinical-coordination-accordion-section -->
 
-                    <!-- accordian -->
-                    <!-- clinical-coordination-accordion-section -->
-  
-                   <!-- 
-                   
-                   ===========================  remove accordion per client   ===========================
-				   -->
-                   
-                    <div class="row">
-                        <div class="small-12">
-                            <ul class="custom-accordion accordion" data-accordion data-allow-all-closed="true">
-                                <li class="accordion-item" accordion-title data-accordion-item>
-                                    <a href="#" class="accordion-title clinical-coordination-accordion-section font-bold accordionBtn">Nutritional Coaching</a>
-                                    <div class="accordion-content" data-tab-content >
-                                        <p>It’s about more than counting calories. When it comes to understanding your nutritional life with real depth and designing a new approach to food, your health mentor can put you on the right path.</p>
-                                    </div>
-                                </li>
-                                <li class="accordion-item" data-accordion-item>
-                                    <a href="#" class="accordion-title clinical-coordination-accordion-section font-bold accordionBtn">Fitness</a>
-                                    <div class="accordion-content" data-tab-content>
-                                        <p>Your mentor utilizes exam insights to build out a plan to help you move in new ways. Approach your fitness in new ways so that you can feel better in your body while improving your agility, strength, and balance.</p>
-                                    </div>
-                                </li>
-                                <li class="accordion-item" data-accordion-item>
-                                    <a href="#" class="accordion-title clinical-coordination-accordion-section font-bold accordionBtn">Mind Health</a>
-                                    <div class="accordion-content" data-tab-content>
-                                        <p>Think differently and you will live differently. Mentors give you supported guidance through different methods for ensuring you find the peace of mind, life balance, and quality rest you need to be your healthiest.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+               <!-- 
+               
+               ===========================  remove accordion per client   ===========================
+               -->
+               
+                <div class="row">
+                    <div class="small-12">
+                        <ul class="custom-accordion accordion" data-accordion data-allow-all-closed="true">
+                            <li class="accordion-item" accordion-title data-accordion-item>
+                                <a href="#" class="accordion-title clinical-coordination-accordion-section font-bold accordionBtn">Nutritional Coaching</a>
+                                <div class="accordion-content" data-tab-content >
+                                    <p>It’s about more than counting calories. When it comes to understanding your nutritional life with real depth and designing a new approach to food, your health mentor can put you on the right path.</p>
+                                </div>
+                            </li>
+                            <li class="accordion-item" data-accordion-item>
+                                <a href="#" class="accordion-title clinical-coordination-accordion-section font-bold accordionBtn">Fitness</a>
+                                <div class="accordion-content" data-tab-content>
+                                    <p>Your mentor utilizes exam insights to build out a plan to help you move in new ways. Approach your fitness in new ways so that you can feel better in your body while improving your agility, strength, and balance.</p>
+                                </div>
+                            </li>
+                            <li class="accordion-item" data-accordion-item>
+                                <a href="#" class="accordion-title clinical-coordination-accordion-section font-bold accordionBtn">Mind Health</a>
+                                <div class="accordion-content" data-tab-content>
+                                    <p>Think differently and you will live differently. Mentors give you supported guidance through different methods for ensuring you find the peace of mind, life balance, and quality rest you need to be your healthiest.</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    
-                    
+                </div>
+                
+                
 
-                </div><!-- tabs-panel clinical-coordination-article -->
-            </div><!-- tabs content 3 end -->
-        </div><!-- small 12 end -->
-    </div><!-- end expanded row -->
+            </div><!-- tabs-panel clinical-coordination-article -->
+        </div><!-- tabs content 3 end -->
+    </div><!-- small 12 end -->
+</div><!-- end expanded row -->
 <!-- End Clinical-coordination Tabs content -->
 
 <!-- Ehe + Me Tabs content -->
-    <div class="row expanded">
-        <div class="small-12">
-            <div class="tabs-content" data-tabs-content="article-tabs">
-                <div class="tabs-panel is-active" id="eheme-article"><!-- tabs-panel eheme-article -->
+<div class="row expanded">
+    <div class="small-12">
+        <div class="tabs-content" data-tabs-content="article-tabs">
+            <div class="tabs-panel" id="eheme-article"><!-- tabs-panel eheme-article -->
+                <div class="tab-content-title text-center show-for-small-only eheme">EHE + ME</div>
 
-                    <div class="row expanded"> 
-                        <div class="small-12">
-                            <div class="custom-article-group eheme-bg">
-                                <div class="row expanded">
-                                    <div class="large-6">
-                                        <div class="custom-article-overlay eheme">
-                                            <div class="row">
-                                                <div class="small-8 small-centered columns">
-                                                    <p class="white-text ProximaNova-Medium">This is your online portal for a seamless health experience. Connect with our team for appointments, clinical coordination, questions, and anything else you need. It is the digital home for the most advanced preventive care anywhere.</p>
-                                                </div><!-- emd small 8 centered text -->
-                                            </div><!-- end row -->
-                                        </div><!-- emd custom art overlay eheme -->
-                                    </div><!-- emd larg 6 -->
-                                </div> <!-- end row -->
-                            </div> <!-- end custom article group?? wellness care -->
-                        </div><!-- small 12 close -->
-                    </div><!-- row expanded close -->  
+                <div class="row expanded"> 
+                    <div class="small-12">
+                        <div class="custom-article-group eheme-bg">
+                            <div class="row expanded">
+                                <div class="large-6">
+                                    <div class="custom-article-overlay eheme">
+                                        <div class="row">
+                                            <div class="small-8 small-centered columns">
+                                                <p class="white-text ProximaNova-Medium">This is your online portal for a seamless health experience. Connect with our team for appointments, clinical coordination, questions, and anything else you need. It is the digital home for the most advanced preventive care anywhere.</p>
+                                            </div><!-- emd small 8 centered text -->
+                                        </div><!-- end row -->
+                                    </div><!-- emd custom art overlay eheme -->
+                                </div><!-- emd larg 6 -->
+                            </div> <!-- end row -->
+                        </div> <!-- end custom article group?? wellness care -->
+                    </div><!-- small 12 close -->
+                </div><!-- row expanded close -->  
 
-                    <!-- accordian -->
-                    <!-- eheme-accordion-section -->
-                    <!--
-                    <section>
-                    -->
-                    <div class="row">
-                        <div class="small-12">
-                            <ul class="custom-accordion accordion" data-accordion data-allow-all-closed="true">
-                                <li class="accordion-item" accordion-title data-accordion-item>
-                                    <a href="#" class="accordion-title eheme-accordion-section font-bold accordionBtn">Accessing the Patient Portal</a>
-                                    <div class="accordion-content" data-tab-content >
-                                        <p>We want your digital experience to be as intuitive and helpful as your in-person interactions with EHE. That's why we've made it easy to navigate through appointment booking, messaging, medical records, and all the other resources you want at your fingertips.</p>
-                                    </div>
-                                </li>
-                                <li class="accordion-item" data-accordion-item>
-                                    <a href="#" class="accordion-title eheme-accordion-section font-bold accordionBtn">Communicating with Your Doctor</a>
-                                    <div class="accordion-content" data-tab-content>
-                                        <p>You can communicate with your doctor and full EHE team in total privacy, through our HIPAA-secure platform.</p>
-                                    </div>
-                                </li>
-                                <li class="accordion-item" data-accordion-item>
-                                    <a href="#" class="accordion-title eheme-accordion-section font-bold accordionBtn">Referrals</a>
-                                    <div class="accordion-content" data-tab-content>
-                                        <p>When you need referrals for specialists, EHE works with you to ensure the process is smooth, rapid, and convenient. Our clinical coordination guides you toward the best solutions for good health.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                <!-- accordian -->
+                <!-- eheme-accordion-section -->
+                <!--
+                <section>
+                -->
+                <div class="row">
+                    <div class="small-12">
+                        <ul class="custom-accordion accordion" data-accordion data-allow-all-closed="true">
+                            <li class="accordion-item" accordion-title data-accordion-item>
+                                <a href="#" class="accordion-title eheme-accordion-section font-bold accordionBtn">Accessing the Patient Portal</a>
+                                <div class="accordion-content" data-tab-content >
+                                    <p>We want your digital experience to be as intuitive and helpful as your in-person interactions with EHE. That's why we've made it easy to navigate through appointment booking, messaging, medical records, and all the other resources you want at your fingertips.</p>
+                                </div>
+                            </li>
+                            <li class="accordion-item" data-accordion-item>
+                                <a href="#" class="accordion-title eheme-accordion-section font-bold accordionBtn">Communicating with Your Doctor</a>
+                                <div class="accordion-content" data-tab-content>
+                                    <p>You can communicate with your doctor and full EHE team in total privacy, through our HIPAA-secure platform.</p>
+                                </div>
+                            </li>
+                            <li class="accordion-item" data-accordion-item>
+                                <a href="#" class="accordion-title eheme-accordion-section font-bold accordionBtn">Referrals</a>
+                                <div class="accordion-content" data-tab-content>
+                                    <p>When you need referrals for specialists, EHE works with you to ensure the process is smooth, rapid, and convenient. Our clinical coordination guides you toward the best solutions for good health.</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
+                </div>
 
-                </div><!-- tabs-panel eheme-article -->
-            </div><!-- tabs content 3 end -->
-        </div><!-- small 12 end -->
-    </div><!-- end expanded row -->
+            </div><!-- tabs-panel eheme-article -->
+        </div><!-- tabs content 3 end -->
+    </div><!-- small 12 end -->
+</div><!-- end expanded row -->
 <!-- End EHE + Me Tabs content -->
 
 
-    </div>
+</div>
     
     
     
@@ -254,6 +258,82 @@
             var myParaxify = paraxify('.img-contain', {
             speed: 0,
             boost: 1
+        });
+        var isBreakPoint = function (bp) {
+            var bps = [0, 685, 1024, 1200, 1440],
+                w = $(window).width(),
+                min, max
+            for (var i = 0, l = bps.length; i < l; i++) {
+            if (bps[i] === bp) {
+                min = bps[i-1] || 0
+                max = bps[i]
+                break
+            }
+            }
+            return w > min && w <= max
+        }
+
+        $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
+            // newSize is the name of the now-current breakpoint, oldSize is the previous breakpoint
+            //alert("newSize: "+newSize);
+            setTabsMediaQuery(event, newSize, oldSize);
+        });
+
+        $(window).on("load orientationchange", function(event, newSize, oldSize) {
+            //doSomething();
+            console.log('load, or orientationchange');
+            //if (isBreakPoint(685)) { 
+            /*
+            if(Foundation.MediaQuery.current == "small"){
+                newSize = "small";
+            }
+            */
+            
+            setTabsMediaQuery(event, Foundation.MediaQuery.current, oldSize);
+        });
+
+        function setTabsMediaQuery(event, newSize, oldSize){
+            console.log('setTabsMediaQuery event:'+event);
+            console.log('setTabsMediaQuery newSize:'+newSize);
+            console.log('setTabsMediaQuery oldSize:'+oldSize);
+            if( newSize == "small"){
+                $( "#coaching-article" ).addClass( "is-active" );//add
+                $( "#clinical-coordination-article" ).addClass( "is-active" );//add
+                $( "#eheme-article" ).addClass( "is-active" );//add
+                if( $("#tab-coaching-article").hasClass( "is-active" ) ){
+                    $("html, body").animate({ scrollTop: $('#coaching-article').offset().top - (window.innerHeight/2) }, 0);
+                }
+                if( $("#tab-clinical-coordination-article").hasClass( "is-active" ) ){
+                    $("html, body").animate({ scrollTop: $('#clinical-coordination-article').offset().top - (window.innerHeight/2) }, 0);
+                }
+                if( $("#tab-eheme-article").hasClass( "is-active" ) ){
+                    $("html, body").animate({ scrollTop: $('#eheme-article').offset().top - (window.innerHeight/2) }, 0);
+                }
+                
+            }else{
+                if(oldSize=="small"){
+                    $("html, body").animate({ scrollTop: $('#tab-coaching-article').offset().top - (window.innerHeight/2) }, 0);
+                }
+                
+                if( $("#tab-coaching-article").hasClass( "is-active" ) ){
+                    $( "#coaching-article" ).addClass( "is-active" );//add
+                    $( "#clinical-coordination-article" ).removeClass( "is-active" );
+                    $( "#eheme-article" ).removeClass( "is-active" );
+                }
+                if( $("#tab-clinical-coordination-article").hasClass( "is-active" ) ){
+                    $( "#coaching-article" ).removeClass( "is-active" );
+                    $( "#clinical-coordination-article" ).addClass( "is-active" );//add
+                    $( "#eheme-article" ).removeClass( "is-active" );
+                }
+                if( $("#tab-eheme-article").hasClass( "is-active" ) ){
+                    $( "#coaching-article" ).removeClass( "is-active" );
+                    $( "#clinical-coordination-article" ).removeClass( "is-active" );
+                    $( "#eheme-article" ).addClass( "is-active" );//add
+                }
+            }
+        }
+       $('.accordionBtn').on('click', function(event) {
+            $('html,body').animate({scrollTop: $(event.target).offset().top-300}, 'slow');
         });
 </script>
 <% end %>
