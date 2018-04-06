@@ -39,11 +39,11 @@ module ApplicationHelper
   end
 
   def current_class?(test_path)
-    if params[:filter].present?
+    if params[:category].present?
       if test_path == "/blog"
         ''
       else
-        return 'active' if request.fullpath.include?(test_path)
+        return 'active' if test_path === request.fullpath.gsub("/blog", "")
         ''
       end
     elsif test_path == "/blog"

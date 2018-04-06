@@ -3,7 +3,7 @@
 <% keywords 'EHE, Blog' %>
 <!-- Blog hero image -->
 <div class="row expanded bot-space-25">
-  <% if @featured_post %>
+  <% if @featured_post.present? %>
      <%= link_to post_path(@featured_post)  do %>
       <div class="small-12 blog-hero" style="background: url(<%= @featured_post.main_image.url %>) no-repeat center center; background-size: cover;">
         <div class="row bot-space-25">
@@ -18,7 +18,7 @@
       </div>
     <% end %>
   <% else %>
-    <div class="small-12 blog-hero" style="background: url(../assets/latest/Heart-Health-768x459.jpg) no-repeat center center; background-size: cover;">
+    <div class="small-12 blog-hero" style="background: url(<%= image_path('latest/Heart-Health-768x459.jpg') %>) no-repeat center center; background-size: cover;">
       <div class="row bot-space-25">
         <div class="small-12 column">
           <div class="content-contain">
@@ -35,20 +35,12 @@
 <!-- blog nav -->
 <div class="row bot-space-25">
  <div class="small-12 columns">
-   <ul id="blog-nav">
-    <% if @posts.any? %>
-      <li><%= link_to "All", posts_path, :class => "#{current_class?(posts_path)} ProximaNova-Medium", data_id: @posts.last.id %></li>
-    <% else %>
-      <li><%= link_to "All", posts_path, :class => "#{current_class?(posts_path)} ProximaNova-Medium" %></li>
-    <% end %>
+  <ul id="blog-nav">
+    <li><%= link_to "All", posts_path, :class => "#{current_class?(posts_path)} ProximaNova-Medium", data_id: @posts.any? ? @posts.last.id : nil %></li>
     <% @categories.each do |category| %>
       <% if category.name == "Uncategorized" %>
       <% else %>
-        <% if @posts.any? %>
-          <li><%= link_to category.name, posts_path(:filter => category.name, :id => @posts.last.id), :class => "#{current_class?('?filter=' + category.name)} ProximaNova-Medium" %></li>
-        <% else %>
-          <li><%= link_to category.name, posts_path(:filter => category.name), :class => "#{current_class?('?filter=' + category.name)} ProximaNova-Medium" %></li>
-        <% end %>
+        <li><%= link_to category.name, posts_path(:category => category.id), :class => "#{current_class?('?category=' + category.id.to_s)} ProximaNova-Medium", :data_id => category.id %></li>
       <% end %>
     <% end %>
     <li>
@@ -108,7 +100,7 @@
           $('.load-more').hide();
           $('.loading-gif').show();
           var last_id = $('.record').last().attr('data_id');
-          var filter = get("filter");
+          var category = get("category");
           var pathname = window.location.pathname;
           if(pathname.includes("tags")) {
             var tag = decodeURI(pathname.split("/").pop());
@@ -116,8 +108,8 @@
           var search = get("search");
           var data = {};
 
-          if(filter) {
-            data['filter'] = filter
+          if(category) {
+            data['category'] = category
           }
           if(last_id) {
             data['id'] = last_id
@@ -128,6 +120,7 @@
           if(search) {
             data['search'] = search
           }
+          console.log("data::: ", data);
           $.ajax({
               type: "GET",
               url: "/blog",
