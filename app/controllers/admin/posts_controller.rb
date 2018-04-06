@@ -148,7 +148,11 @@ module Admin
           :meta_description,
           :status,
           :featured,
-          :published_at
+          :published_at,
+          :locked,
+          :username,
+          :password,
+          :password_confirmation
           )
       end
   end

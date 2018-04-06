@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180402223113) do
+ActiveRecord::Schema.define(version: 20180405205747) do
 
   create_table "campaigns", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "name"
@@ -115,6 +115,9 @@ ActiveRecord::Schema.define(version: 20180402223113) do
     t.string "status", default: "preview", null: false
     t.boolean "featured"
     t.datetime "published_at"
+    t.string "username"
+    t.string "password_digest"
+    t.boolean "locked", default: false
     t.index ["campaign_id"], name: "index_posts_on_campaign_id"
     t.index ["category_id"], name: "index_posts_on_category_id"
   end

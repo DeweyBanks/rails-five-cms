@@ -1,0 +1,38 @@
+<% title @post.title %>
+<% description @post.meta_description %>
+<% keywords "EHE, #{@post.all_keywords}"  %>
+<!-- Blog hero image -->
+<div class="expanded row bot-space-75">
+  <div class='small-12'>
+    <div id="blog-hero-container">
+      <div class="grad-bg"></div>
+      <div class="row no-bottom-margin" >
+        <div class="small-12 column">
+          <div class="content-contain hero">
+            <h1 class="title-heading white-text"><%= @post.title %></h1>
+          </div>
+        </div>
+      </div>
+      <%= image_tag @post.main_image.url  %>
+    </div>
+  </div>
+</div>
+
+<div class='row bot-space-75'>
+  <div class='medium medium column'>
+    <!-- Blog Date -->
+    <div class="row">
+      <div class="column">
+        <p class="gray-text font-bold"><%= @post.created_at.to_time.strftime('%B %e %Y') %></p>
+      </div>
+    </div>
+      <!-- End Blog Date -->
+        <%=raw @post.body %>
+      <!-- end Blog Story -->
+  </div>
+
+  </div>
+<!--</div>-->
+
+
+
