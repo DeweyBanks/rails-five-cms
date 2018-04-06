@@ -32,23 +32,23 @@
 
      <div class="row bot-space-75">
       <div class="small-12 column blog-categories">
-        <h4>Url</h4>
+        <h4>Url:</h4>
         <%=raw "http://13.88.22.83/" + post_path(@post) %>
       </div>
     </div>
       <!-- SHARE Social Media -->
     <div class="row ">
       <div class="small-12 column">
-        <p class="font-bold">Post Status</p>
+        <h4 class="font-bold">Post Status:</h4>
       </div>
     </div>
     <div class="row bot-space-75">
       <!--  social container -->
       <div class="small-3 medium-3 column">
         <% if @post.locked %>
-          <h4>Locked</h4>
+          <p>Locked</p>
         <% else %>
-          <h4><%= @post.status %></h4>
+          <p><%= @post.status %></p>
            <% if @post.status == "scheduled" %>
               <p>Will be published on: <%= @post.published_at.strftime('%m/%d/%Y') %></p>
             <% end %>
