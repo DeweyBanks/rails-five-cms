@@ -1,29 +1,81 @@
-<div class="page-header">
-  <div class='row'>
+<!-- Blog hero image -->
+<div class="expanded row bot-space-75">
+  <div class='small-12'>
+    <div id="blog-hero-container">
+      <div class="grad-bg"></div>
+      <div class="row no-bottom-margin" >
+        <div class="small-12 column">
+          <div class="content-contain hero">
+            <h1 class="title-heading white-text"><%= @post.title %></h1>
+          </div>
+        </div>
+      </div>
+      <%= image_tag @post.main_image.url  %>
+    </div>
+  </div>
+</div>
+
+<div class='row bot-space-75'>
+  <div class='small-12 medium-8 medium-offset-1 column medium-push-3'>
+    <!-- Blog Date -->
     <div class="row">
-      <div class="small-12 columns">
-        <div class="row">
-          <h4>Post Status: <%= @post.status %></h4>
-            <% if @post.status == "scheduled" %>
-              <%  %>
-                <h4>Will be published on: <%= @post.published_at.strftime('%m/%d/%Y') %></h4>
+      <div class="small-12 column">
+        <p class="gray-text font-bold"><%= @post.created_at.to_time.strftime('%B %e %Y') %></p>
+      </div>
+    </div>
+      <!-- End Blog Date -->
+        <%=raw @post.body %>
+      <!-- end Blog Story -->
+  </div>
+    <!-- left column -->
+  <div class='small-12 medium-3 column medium-pull-9'>
+
+     <div class="row bot-space-75">
+      <div class="small-12 column blog-categories">
+        <h4>Url</h4>
+        <%=raw "http://13.88.22.83/" + post_path(@post) %>
+      </div>
+    </div>
+      <!-- SHARE Social Media -->
+    <div class="row ">
+      <div class="small-12 column">
+        <p class="font-bold">Post Status</p>
+      </div>
+    </div>
+    <div class="row bot-space-75">
+      <!--  social container -->
+      <div class="small-3 medium-3 column">
+        <% if @post.locked %>
+          <h4>Locked</h4>
+        <% else %>
+          <h4><%= @post.status %></h4>
+           <% if @post.status == "scheduled" %>
+              <p>Will be published on: <%= @post.published_at.strftime('%m/%d/%Y') %></p>
             <% end %>
             <% unless @post.published? %>
               <%= button_to "Publish Now", admin_publish_post_path(@post) %>
             <% end %>
-        </div>
-        <div>
-          <h1>Title: <%= @post.title %></h1>
-          <h3>url: <%= @post.slug %></h3>
-          <h5>By: <%= %> | <%= @post.created_at.to_time.strftime('%B %e %Y') %></h5>
-          <p>Featured Image: <%= image_tag @post.main_image.url(:medium) %></p>
-          <p>Tags: <%= @post.all_tags %></p>
-          <p>Keywords: <%= @post.all_keywords %></p>
-          <p><%= @post.body.html_safe %></p>
-        </div>
+        <% end %>
       </div>
-      <%= link_to 'Edit', edit_admin_post_path(@post) %> |
-      <%= link_to 'Back', admin_posts_path %>
+
+      <!-- end social container -->
     </div>
+
+      <!-- Additional Blog posts -->
+        <div class="row bot-space-75">
+           <div class="small-12 column">
+              <p>
+                <%= link_to 'Edit', edit_admin_post_path(@post) %> |
+                <%= link_to 'Back', admin_posts_path %>
+              </p>
+            </div>
+        </div>
+      <!-- End Additional Blog posts -->
+    </div>
+    <!-- end left column -->
   </div>
-</div>
+<!--</div>-->
+
+
+
+
