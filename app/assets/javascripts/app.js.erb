@@ -25376,10 +25376,13 @@ var rand = function() {
 };
 
 var getVideo = function(){
+  var screenWidth = $( document ).width();
+  if(screenWidth>480){
     var videoName = heroVideos[rand()];
     console.log(videoName);
     $( "video" ).append( "<source src='/images/videos/"+videoName+".mp4'>" );
     $( "video" ).append( "<source src='/images/videos/"+videoName+".webm' type='video/ogg'>" );    
+  }
 }
 
 

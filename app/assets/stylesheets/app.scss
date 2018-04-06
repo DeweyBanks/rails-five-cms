@@ -12075,7 +12075,13 @@ input[type="submit"] {
 #video-container {
   position: relative;
   margin-bottom: 0;
-  height: auto;
+  height: 280px;
+}
+
+@media screen and (min-width: 30em) {
+  #video-container {
+    height: auto;
+  }
 }
 
 #video-container .static-image {
@@ -12084,7 +12090,13 @@ input[type="submit"] {
   position: absolute;
   top: 0;
   left: 0;
-  display: none;
+  display: block;
+}
+
+@media screen and (min-width: 30em) {
+  #video-container .static-image {
+    display: none;
+  }
 }
 
 #video-container.flex-video video {
@@ -12608,6 +12620,18 @@ a.resumator-hide-details {
   color: #5e5e7c;
 }
 
+.tab-content-title.coaching {
+  color: #5e5e7c;
+}
+
+.tab-content-title.clinical-coordination {
+  color: #ffc700;
+}
+
+.tab-content-title.eheme {
+  color: #86b8c4;
+}
+
 ul#blog-nav {
   margin: 0;
   padding: 0;
@@ -13125,7 +13149,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 }
 
 .custom-article-group.eheme-bg {
-  background-image: url(../images/wellness_care-clinical_coordination-tab.jpg);
+  background-image: url(../images/wellness_care-eheme-tab.jpg);
 }
 
 .custom-article-overlay {
