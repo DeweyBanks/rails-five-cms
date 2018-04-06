@@ -21,10 +21,28 @@ class PostsController < ApplicationController
   def show
     @page = "show"
     @post = Post.find_by(slug: params[:slug])
+   if @post.locked
+    redirect_to locked_path(@post.slug)
+   end
     unless @post.published?
       redirect_to root_path
     end
     @recent_posts = Post.limit(5)
   end
+
+  def locked
+    @post = Post.find_by(slug: params[:slug])
+  end
+
+  def unlock
+    @post = Post.find_by(slug: params[:slug])
+    verified_username = (params["username"] == @post.username)
+    if @post && @post.user_verified(verified_username, params[:password])
+    else
+      flash.now.alert = 'Username or password is invalid'
+      render :locked
+    end
+  end
+
 
 end

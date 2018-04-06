@@ -1,5 +1,7 @@
 class Post < ApplicationRecord
   include Filterable
+  has_secure_password
+
   belongs_to :campaign, optional: true
   belongs_to :category, optional: true
   has_many :taggings, :dependent => :delete_all
@@ -18,7 +20,6 @@ class Post < ApplicationRecord
 
   after_save :ensure_only_one_featured_post
   scope :category, -> (category_id) { where category_id: category_id }
-
 
   def to_param
     "#{slug}"
@@ -96,6 +97,11 @@ class Post < ApplicationRecord
     where('id > ?', id)
   end
 
+  def user_verified(verified_username, password)
+    verified = authenticate(password)
+    verified && verified_username
+  end
+
   private
 
     def ensure_only_one_featured_post
@@ -112,6 +118,9 @@ class Post < ApplicationRecord
     end
 
     def clean_up_status
+      if locked
+        status = "preview"
+      end
       case status
       when "preview"
         self.published_at = nil

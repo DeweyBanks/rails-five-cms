@@ -40,7 +40,8 @@ Rails.application.routes.draw do
   resources :messages, only: [:create, :new]
 
   post "/subscribe" => "home#subscribe"
-
+  get "/blog/locked/:slug" => "posts#locked", as: "locked"
+  post "/blog/unlock" => "posts#unlock"
   get "*path", to: redirect('/')
 
 end

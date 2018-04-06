@@ -1,0 +1,21 @@
+<div class="page-header">
+  <div class='row'>
+    <div class='small-12'>
+      <h1 class='title-heading text-center'>Welcome</h1>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='small-12 large-6 column'>
+      <%= form_tag("/blog/unlock") do %>
+        <%= hidden_field_tag :slug, @post.slug %>
+        <%= label_tag("username") %>
+        <%= text_field_tag(:username) %>
+        <%= label_tag("password") %>
+        <%= password_field_tag(:password) %>
+        <%= submit_tag("Submit") %>
+      <% end %>
+    </div>
+  </div>
+</div>
