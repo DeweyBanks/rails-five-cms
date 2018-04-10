@@ -79,7 +79,6 @@ module Admin
 
     def create
       @post = Post.new(post_params)
-
       respond_to do |format|
         if @post.save
           format.html { redirect_to admin_post_path(@post), notice: 'Post was successfully created.' }

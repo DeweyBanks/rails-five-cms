@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   validates :password,
     length: { minimum: 6 },
     allow_blank: true
-  validates_confirmation_of :password
+  validates_confirmation_of :password, allow_blank: true
 
   belongs_to :campaign, optional: true
   belongs_to :category, optional: true
