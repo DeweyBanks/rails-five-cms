@@ -47,9 +47,9 @@ class Post < ApplicationRecord
     self.keywords.map(&:name).uniq.join(", ")
   end
 
-  # def self.category(category_id)
-  #   where(category_id: category_id)
-  # end
+  def self.category(category_id)
+    where(category_id: category_id)
+  end
 
   def self.tagged_with(name)
     Tag.find_by_name!(name).posts
