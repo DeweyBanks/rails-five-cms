@@ -26,3 +26,4 @@
 .idea/
 config/database.yml
 /public/system
+.rvmrc

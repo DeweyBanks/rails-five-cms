@@ -7,6 +7,8 @@
 
 $(document).ready(function(){
   $(document).foundation();
+  toggleLocked();
+
 
   $('#check_all').on("click", function(){
     var cbxs = $('input[type="checkbox"]');
@@ -26,7 +28,6 @@ $(document).ready(function(){
 
   var change_visibility;
   change_visibility = function(status) {
-    console.log("status::  ", status);
     if (status === "scheduled") {
       return $('.published_at').datetimepicker({
                     dateFormat: 'yy-mm-dd ',
@@ -54,7 +55,6 @@ $(document).ready(function(){
                   });
 
   $("#post_status").on("change", function(e) {
-    console.log("Status changed::  ", $(this).find(":selected").text())
     return change_visibility($(this).find(":selected").text());
   });
 
@@ -71,13 +71,18 @@ $(document).ready(function(){
   });
 
   $("#locked").on("click", function(e){
-    if ($('#locked').is(":checked"))
-    {
-      console.log("LOCKED:::");
-    }
-
+    toggleLocked();
   })
 
+
+  function toggleLocked(){
+    if ($('#locked').is(":checked"))
+    {
+      $('.password_fields').show();
+    } else {
+      $('.password_fields').hide();
+    }
+  }
 
 
 });

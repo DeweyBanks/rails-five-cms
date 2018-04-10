@@ -17,17 +17,19 @@
       <%= form.label :locked %>
       <%= form.check_box :locked, id: :locked %>
     </div>
-    <div class="field">
-      <%= form.label :username %>
-      <%= form.text_field :username %>
-    </div>
-    <div class="field">
-      <%= form.label :password %>
-      <%= form.password_field :password %>
-    </div>
-    <div class="field">
-      <%= form.label :password_confirmation %>
-      <%= form.password_field :password_confirmation %>
+    <div class="password_fields">
+      <div class="field">
+        <%= form.label :username %>
+        <%= form.text_field :username %>
+      </div>
+      <div class="field">
+        <%= form.label :password %>
+        <%= form.password_field :password %>
+      </div>
+      <div class="field">
+        <%= form.label :password_confirmation %>
+        <%= form.password_field :password_confirmation %>
+      </div>
     </div>
   </div>
 

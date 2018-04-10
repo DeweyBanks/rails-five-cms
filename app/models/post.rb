@@ -1,6 +1,10 @@
 class Post < ApplicationRecord
   include Filterable
-  has_secure_password
+  has_secure_password validations: false
+  validates :password,
+    length: { minimum: 6 },
+    allow_blank: true
+  validates_confirmation_of :password
 
   belongs_to :campaign, optional: true
   belongs_to :category, optional: true
@@ -10,16 +14,14 @@ class Post < ApplicationRecord
   has_many :keywords, through: :keywordings
   has_many :pictures
   has_many :documents
-  accepts_nested_attributes_for :pictures, reject_if: proc { |attributes| attributes[:image].blank? }, allow_destroy: true
-  accepts_nested_attributes_for :documents, reject_if: proc { |attributes| attributes[:file].blank? }, allow_destroy: true
   before_validation :set_slug
   before_validation :clean_up_status
-  validates :title, :presence => true
+  accepts_nested_attributes_for :pictures, reject_if: proc { |attributes| attributes[:image].blank? }, allow_destroy: true
+  accepts_nested_attributes_for :documents, reject_if: proc { |attributes| attributes[:file].blank? }, allow_destroy: true
   has_attached_file :main_image, styles: { medium: "300x300>", thumb: "100x100>" , carousel: "550x550>" }, default_url: "/images/:style/missing.png"
+  validates :title, :presence => true
   validates_attachment_content_type :main_image, content_type: /\Aimage\/.*\z/
-
   after_save :ensure_only_one_featured_post
-  scope :category, -> (category_id) { where category_id: category_id }
 
   def to_param
     "#{slug}"
@@ -44,6 +46,10 @@ class Post < ApplicationRecord
   def all_keywords
     self.keywords.map(&:name).uniq.join(", ")
   end
+
+  # def self.category(category_id)
+  #   where(category_id: category_id)
+  # end
 
   def self.tagged_with(name)
     Tag.find_by_name!(name).posts

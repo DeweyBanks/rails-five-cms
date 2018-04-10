@@ -51,7 +51,7 @@ input .hidden {
     outline: 0;
     vertical-align: text-bottom;
     width: 15px;
-  
+
   display: inline-block;
 
   cursor: pointer;
@@ -71,7 +71,7 @@ input .hidden {
  /* box-shadow: 0 5px #999;*/
 }
 
-#check_all:hover {    
+#check_all:hover {
   border: 1px solid #ffc700;
 }
 
@@ -142,4 +142,17 @@ input .hidden {
 
 .admin select{
   background-color: #eee;
+}
+
+
+/*================= POSTS FORM =============*/
+
+.locked::before {
+    content: url(minus.svg);
+    width: 16px;
+    height: 16px;
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    padding-right: 10px;
 }
