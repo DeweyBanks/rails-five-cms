@@ -91,6 +91,18 @@ module Admin
     end
 
     def update
+      status = post_params["status"]
+      if post_params["locked"] == "0"
+        status = "preview"
+      end
+      case status
+      when "preview"
+       params["post"]["published_at"] = nil
+      when "published"
+        params["post"]["published_at"] = Time.zone.now
+      when "archived"
+        params["post"]["published_at"] = nil
+      end
       respond_to do |format|
         if @post.update_attributes(post_params)
           format.html { redirect_to admin_post_path(@post), notice: 'Post was successfully updated.' }

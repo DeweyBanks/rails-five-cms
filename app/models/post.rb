@@ -15,7 +15,6 @@ class Post < ApplicationRecord
   has_many :pictures
   has_many :documents
   before_validation :set_slug
-  before_validation :clean_up_status
   accepts_nested_attributes_for :pictures, reject_if: proc { |attributes| attributes[:image].blank? }, allow_destroy: true
   accepts_nested_attributes_for :documents, reject_if: proc { |attributes| attributes[:file].blank? }, allow_destroy: true
   has_attached_file :main_image, styles: { medium: "300x300>", thumb: "100x100>" , carousel: "550x550>" }, default_url: "/images/:style/missing.png"
@@ -75,10 +74,6 @@ class Post < ApplicationRecord
     status == "preview"
   end
 
-  def featured?
-    featured
-  end
-
   def self.archived
     where(:status => "archived")
   end
@@ -93,10 +88,6 @@ class Post < ApplicationRecord
 
   def self.preview
     where(published_at: nil)
-  end
-
-  def self.without(id)
-    where.not(:id => id)
   end
 
   def self.last_loaded(id)
@@ -121,21 +112,6 @@ class Post < ApplicationRecord
       end
       self.slug = slug_title unless self.slug.present?
       self.slug.downcase!
-    end
-
-    def clean_up_status
-      if locked
-        status = "preview"
-      end
-      case status
-      when "preview"
-        self.published_at = nil
-      when "published"
-        self.published_at = Time.zone.now
-      when "archived"
-        self.published_at = nil
-      end
-      true
     end
 
     def update_status
