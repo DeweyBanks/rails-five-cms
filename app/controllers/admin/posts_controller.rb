@@ -92,7 +92,7 @@ module Admin
 
     def update
       status = post_params["status"]
-      if post_params["locked"] == "0"
+      if post_params["locked"] == "1"
         status = "preview"
       end
       case status
