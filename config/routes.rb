@@ -7,8 +7,6 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  get "/pages/*page" => "home#show", as: "pages"
-
   namespace :admin do
     root to: "dashboard#index", as: "dashboard"
     resources :posts do
@@ -42,6 +40,6 @@ Rails.application.routes.draw do
   post "/subscribe" => "home#subscribe"
   get "/blog/locked/:slug" => "posts#locked", as: "locked"
   post "/blog/unlock" => "posts#unlock"
-  get "*path", to: redirect('/')
+  get "/*page" => "home#show", as: "pages"
 
 end
