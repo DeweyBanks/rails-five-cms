@@ -28,10 +28,6 @@ gem 'will_paginate', '~> 3.1.0'
 source 'https://rails-assets.org' do
   gem 'rails-assets-datetimepicker'
 end
-gem 'rack-mini-profiler'
-gem 'flamegraph'
-gem 'stackprof'
-gem 'memory_profiler'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 

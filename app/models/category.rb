@@ -1,4 +1,5 @@
 class Category < ApplicationRecord
+  include Filterable
   has_many :posts, -> { order("title") }
   validates :name, presence: true
   has_one :featured_post, -> {where(featured: true)}, class_name: "Post"
