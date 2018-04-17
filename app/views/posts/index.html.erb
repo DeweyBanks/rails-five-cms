@@ -62,9 +62,15 @@
 <!-- start blog listing container -->
 <div class="blog-container bot-space-65">
   <div class='row'>
-    <% @posts.each do |post| %>
-      <% cache post do %>
-        <%= render post %>
+     <% @posts.each_with_index do |post, index| %>
+      <%= link_to post_path(post) do %>
+        <div class="record <%= get_row_class(index) %>" data_id="<%= post.id %>" style="background-image: url(<%= post.main_image.url(:medium) %>);">
+          <div class="content-container">
+            <p class="white-text"><%= post.title %></p>
+            <p class="white-text"><%= h post.created_at.to_s(:post_date) %></p>
+          </div>
+          <div class="color-block"></div>
+        </div>
       <% end %>
     <% end %>
   </div>

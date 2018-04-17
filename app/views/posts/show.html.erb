@@ -63,14 +63,12 @@
 
       <!-- Additional Blog posts -->
       <% @recent_posts.each do |post| %>
-        <% cache post do %>
         <div class="row bot-space-75">
            <div class="small-12 column">
             <p class="gray-text"><%= h post.created_at.to_s(:post_date) %>  |  <%= post.category.name %></p>
             <%= link_to post.title, post_path(post), :class => "drkr-blue-text font-bold" %>
             </div>
         </div>
-        <% end %>
       <% end %>
       <!-- End Additional Blog posts -->
     </div>
