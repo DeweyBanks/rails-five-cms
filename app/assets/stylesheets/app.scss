@@ -7560,6 +7560,11 @@ a:hover, .posts a:hover {
   transition: all 0.5s ease;
 }
 
+.hero .round-button {
+  background-color: rgba(10, 10, 10, 0.2);
+  padding: 10px 35px;
+}
+
 .button-white {
   border: 1px solid #ffffff;
   color: #ffffff;
@@ -13218,7 +13223,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 .custom-accordion .accordion-title {
   color: #616264;
   height: 106px;
-  line-height: 60px;
+  line-height: 20px;
+}
+
+@media screen and (min-width: 37.5em) {
+  .custom-accordion .accordion-title {
+    line-height: 60px;
+  }
 }
 
 .custom-accordion .accordion-title::before {
