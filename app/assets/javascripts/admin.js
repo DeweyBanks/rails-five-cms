@@ -29,13 +29,12 @@ $(document).ready(function(){
   var change_visibility;
   change_visibility = function(status) {
     if (status === "scheduled") {
+      $('.published-field').show();
       return $('.published_at').datetimepicker({
-                    dateFormat: 'yy-mm-dd ',
-                    timeFormat: 'hh:mm:ss ',
-                    step: 5,
-                    ampm: true,
-                    inline:true,
-                    lang:'en'
+                      format: 'D M-d-Y g:i a',
+                      formatTime: 'g:i a',
+                      lang: 'en',
+                      step: 15
                   });
     } else {
       $('.published-field').hide();

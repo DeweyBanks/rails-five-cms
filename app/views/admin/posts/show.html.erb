@@ -48,13 +48,10 @@
         <% if @post.locked %>
           <p>Locked</p>
         <% else %>
-          <p><%= @post.status %></p>
-           <% if @post.status == "scheduled" %>
-              <p>Will be published on: <%= @post.published_at.strftime('%m/%d/%Y') %></p>
-            <% end %>
-            <% unless @post.published? %>
-              <%= button_to "Publish Now", admin_publish_post_path(@post) %>
-            <% end %>
+          <p><%= @post.status %></p><br>
+          <% unless @post.published? %>
+            <%= button_to "Publish Now", admin_publish_post_path(@post) %>
+          <% end %>
         <% end %>
       </div>
 
@@ -64,6 +61,14 @@
       <!-- Additional Blog posts -->
         <div class="row bot-space-75">
            <div class="small-12 column">
+            <h4> Publish Date </h4>
+              <% if @post.published_at.nil? %>
+                <p>Publish date not set</p>
+              <% else %>
+                <p>published date: <br>
+                  <%= @post.published_at.strftime('%-m/%d/%Y  %-I:%M%p') %>
+                </p>
+              <% end %>
               <p>
                 <%= link_to 'Edit', edit_admin_post_path(@post) %> |
                 <%= link_to 'Back', admin_posts_path %>
