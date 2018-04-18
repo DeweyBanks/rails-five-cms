@@ -3,7 +3,6 @@ class PostsController < ApplicationController
   def index
     @page = "index"
     @categories = Category.all
-    @featured_post = Category.find_by(name: "Blog").featured_post
     if params[:category]
       @featured_post = Category.find(params[:category]).featured_post
     end
