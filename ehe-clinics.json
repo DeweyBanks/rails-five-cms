@@ -1,0 +1,1642 @@
+[
+  {
+    "id": 1,
+    "name": "New York",
+    "type": 1,
+    "address": "10 Rockefeller Plaza",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10020",
+    "phone": "212.332.3700"
+  },
+  {
+    "id": 2,
+    "name": "Stamford",
+    "type": 1,
+    "address": "750 Washington Blvd.",
+    "city": "Stamford",
+    "state": "CT",
+    "zip": "06901",
+    "phone": "203.348.7500"
+  },
+  {
+    "id": 3,
+    "name": "Morristown",
+    "type": 1,
+    "address": "44 Whippany Road",
+    "city": "Morristown",
+    "state": "NJ",
+    "zip": "07960",
+    "phone": "973.540.0177"
+  },
+  {
+    "id": 4,
+    "name": "Houston",
+    "type": 1,
+    "address": "5555 San Felipe Road",
+    "city": "Houston",
+    "state": "TX",
+    "zip": "77056",
+    "phone": "713.622.9900"
+  },
+  {
+    "id": 5,
+    "name": "Chicago",
+    "type": 1,
+    "address": "181 West Madison",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60602",
+    "phone": "312.641.2586"
+  },
+  {
+    "id": 6,
+    "name": "Boston",
+    "type": 1,
+    "address": "125 High Street",
+    "city": "Boston",
+    "state": "MA",
+    "zip": "02110",
+    "phone": "617.526.8888"
+  },
+  {
+    "id": 7,
+    "name": "McLean",
+    "type": 1,
+    "address": "8300 Greensboro Drive",
+    "city": "McLean",
+    "state": "VA",
+    "zip": "22102",
+    "phone": "703.394.3400"
+  },
+  {
+    "id": 8,
+    "name": "Deloitte University",
+    "type": 1,
+    "address": "One Deloitte Way",
+    "city": "Westlake",
+    "state": "TX",
+    "zip": "76262",
+    "phone": "682.388.1110"
+  },
+  {
+    "id": 9,
+    "name": "Baton Rouge Clinic",
+    "type": 2,
+    "address": "7373 Perkins Road",
+    "city": "Baton Rouge",
+    "state": "LA",
+    "zip": "70808",
+    "phone": "225.246.9296"
+  },
+  {
+    "id": 10,
+    "name": "Irvine Internal Medical Group",
+    "type": 2,
+    "address": "22 Odyssey",
+    "city": "Irvine",
+    "state": "CA",
+    "zip": "92618",
+    "phone": "949.428.3498"
+  },
+  {
+    "id": 11,
+    "name": "Canyon Medical Center",
+    "type": 2,
+    "address": "5969 East Broad Street",
+    "city": "Columbus",
+    "state": "OH",
+    "zip": "43213",
+    "phone": "614.552.5109"
+  },
+  {
+    "id": 12,
+    "name": "Wesley Medical Center",
+    "type": 2,
+    "address": "231 Methodist Boulevard",
+    "city": "Hattiesburg",
+    "state": "MS",
+    "zip": "39404",
+    "phone": "601.268.8088"
+  },
+  {
+    "id": 13,
+    "name": "UPMC Corporate Health Program",
+    "type": 2,
+    "address": "339 Sixth Avenue",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "zip": "15222",
+    "phone": "412.560.8765"
+  },
+  {
+    "id": 14,
+    "name": "Health Mark Center, LLC.",
+    "type": 2,
+    "address": "4700 East Iliff Avenue",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80222",
+    "phone": "303.584.5850"
+  },
+  {
+    "id": 15,
+    "name": "Intermountain Murray WorkMed",
+    "type": 2,
+    "address": "201 E. 5900 South",
+    "city": "Murray",
+    "state": "UT",
+    "zip": "84107",
+    "phone": "801.288.4900"
+  },
+  {
+    "id": 16,
+    "name": "Richmond Primary Care",
+    "type": 2,
+    "address": "1800 Glenside Drive",
+    "city": "Richmond",
+    "state": "VA",
+    "zip": "23226",
+    "phone": "804.288.3001"
+  },
+  {
+    "id": 17,
+    "name": "BaySport - Santa Clara",
+    "type": 2,
+    "address": "3250 Central Expressway",
+    "city": "Santa Clara",
+    "state": "CA",
+    "zip": "95051",
+    "phone": "408.738.3200"
+  },
+  {
+    "id": 18,
+    "name": "BaySport - San Francisco",
+    "type": 2,
+    "address": "275 Battery Street",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": "94111",
+    "phone": "415.901.9090"
+  },
+  {
+    "id": 19,
+    "name": "BaySport - Redwood City",
+    "type": 2,
+    "address": "200 Redwood Shores Pkwy.",
+    "city": "Redwood City",
+    "state": "CA",
+    "zip": "94065",
+    "phone": "650.593.2800"
+  },
+  {
+    "id": 20,
+    "name": "Providence Occupational Health Partners, St. John Health",
+    "type": 2,
+    "address": "47601 Grand River Avenue",
+    "city": "Novi",
+    "state": "MI",
+    "zip": "48374",
+    "phone": "248.849.3959"
+  },
+  {
+    "id": 21,
+    "name": "Ochsner Clinic Foundation",
+    "type": 2,
+    "address": "1514 Jefferson Highway",
+    "city": "New Orleans",
+    "state": "LA",
+    "zip": "70121",
+    "phone": "504.842.4927"
+  },
+  {
+    "id": 22,
+    "name": "Simi Doctors Medical Clinic",
+    "type": 2,
+    "address": "2840 East Los Angeles Avenue",
+    "city": "Simi Valley",
+    "state": "CA",
+    "zip": "93065",
+    "phone": "805.526.8360"
+  },
+  {
+    "id": 23,
+    "name": "Primary Care Associates",
+    "type": 2,
+    "address": "4100 Lake Otis Parkway",
+    "city": "Anchorage",
+    "state": "AK",
+    "zip": "99508",
+    "phone": "907.562.1234"
+  },
+  {
+    "id": 24,
+    "name": "BaySport - Los Gatos",
+    "type": 2,
+    "address": "14830 Los Gatos Blvd.",
+    "city": "Los Gatos",
+    "state": "CA",
+    "zip": "95032",
+    "phone": "408.395.7300"
+  },
+  {
+    "id": 25,
+    "name": "Padmaja M. Patel, MD, PA",
+    "type": 2,
+    "address": "4214 Andrews  Hwy.",
+    "city": "Midland",
+    "state": "TX",
+    "zip": "79703",
+    "phone": "432.689.0291"
+  },
+  {
+    "id": 26,
+    "name": "Straub Occupational Health Services",
+    "type": 2,
+    "address": "800 South King Street",
+    "city": "Honolulu",
+    "state": "HI",
+    "zip": "96813",
+    "phone": "808.529.4957"
+  },
+  {
+    "id": 27,
+    "name": "Keck Medical Center of USC-Downtown",
+    "type": 2,
+    "address": "830 S. Flower Street",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90017",
+    "phone": "213.437.1000"
+  },
+  {
+    "id": 28,
+    "name": "Highland Clinic",
+    "type": 2,
+    "address": "1455 East Bert Kouns Industrial Loop",
+    "city": "Shreveport",
+    "state": "LA",
+    "zip": "71135",
+    "phone": "318 798 4577"
+  },
+  {
+    "id": 29,
+    "name": "Ochsner Family Doctor Clinic of Mathews",
+    "type": 2,
+    "address": "111 Acadia Drive",
+    "city": "Raceland",
+    "state": "LA",
+    "zip": "70394",
+    "phone": "985.537.2631"
+  },
+  {
+    "id": 30,
+    "name": "Anil George, MD",
+    "type": 2,
+    "address": "915 West Monroe Street",
+    "city": "Jacksonville",
+    "state": "FL",
+    "zip": "32204",
+    "phone": "904.365.8752"
+  },
+  {
+    "id": 31,
+    "name": "Northampton Medical Associates",
+    "type": 2,
+    "address": "602 B East 21st Street",
+    "city": "Northampton",
+    "state": "PA",
+    "zip": "18067",
+    "phone": "610.262.1519"
+  },
+  {
+    "id": 32,
+    "name": "Blackhawk Medical Group",
+    "type": 2,
+    "address": "4165 Blackhawk Plaza Circle",
+    "city": "Danville",
+    "state": "CA",
+    "zip": "94506",
+    "phone": "925.736.7070 Ext. 127"
+  },
+  {
+    "id": 33,
+    "name": "First Charlotte Physicians",
+    "type": 2,
+    "address": "210 East Trade Street",
+    "city": "Charlotte",
+    "state": "NC",
+    "zip": "28202",
+    "phone": "704.617.0952"
+  },
+  {
+    "id": 34,
+    "name": "Tri Health Executive Health",
+    "type": 2,
+    "address": "3219 Clifton Avenue",
+    "city": "Cincinnati",
+    "state": "OH",
+    "zip": "45220",
+    "phone": "513.862.2843"
+  },
+  {
+    "id": 35,
+    "name": "USF Health Morsani Center for Advanced Healthcare",
+    "type": 2,
+    "address": "13330 USF Laurel Drive",
+    "city": "Tampa",
+    "state": "FL",
+    "zip": "33612",
+    "phone": "813.974.1794"
+  },
+  {
+    "id": 36,
+    "name": "Premier Family Health Care",
+    "type": 2,
+    "address": "3300 Buena Vista Road",
+    "city": "Bakersfield",
+    "state": "CA",
+    "zip": "93311",
+    "phone": "661.664.1682"
+  },
+  {
+    "id": 37,
+    "name": "Wellness Alliance",
+    "type": 2,
+    "address": "Millennium Park Plaza #15 - Second Street",
+    "city": "Guaynabo",
+    "state": "PR",
+    "zip": "00968-1743",
+    "phone": "787.708.6777"
+  },
+  {
+    "id": 38,
+    "name": "Hamilton Medical Group",
+    "type": 2,
+    "address": "4809 Ambassador Caffery Parkway",
+    "city": "Lafayette",
+    "state": "LA",
+    "zip": "70508",
+    "phone": "337.988.8810"
+  },
+  {
+    "id": 39,
+    "name": "West Michigan Family Medicine",
+    "type": 2,
+    "address": "1550 3 Mile Road NW",
+    "city": "Grand Rapids",
+    "state": "MI",
+    "zip": "49544",
+    "phone": "616.785.3883"
+  },
+  {
+    "id": 40,
+    "name": "West Plano Medical Associates",
+    "type": 2,
+    "address": "3060 Communications Parkway",
+    "city": "Plano",
+    "state": "TX",
+    "zip": "75093",
+    "phone": "972.312.8429"
+  },
+  {
+    "id": 41,
+    "name": "Gerard W. Boynton, MD - Doctors' Medical Building",
+    "type": 2,
+    "address": "3301 South Alameda Street",
+    "city": "Corpus Christi",
+    "state": "TX",
+    "zip": "78411",
+    "phone": "361.452.2480"
+  },
+  {
+    "id": 42,
+    "name": "Robert C. Ammlung, MD, PA",
+    "type": 2,
+    "address": "516  N. Rolling Road",
+    "city": "Catonsville",
+    "state": "MD",
+    "zip": "21228",
+    "phone": "410.788.0383"
+  },
+  {
+    "id": 43,
+    "name": "Adventist Health Medical Group Occupational Medicine",
+    "type": 2,
+    "address": "1350 NE 122nd Ave",
+    "city": "Portland",
+    "state": "OR",
+    "zip": "97230",
+    "phone": "503.408.7040"
+  },
+  {
+    "id": 44,
+    "name": "Kettering Medical Center",
+    "type": 2,
+    "address": "3535 Southern Boulevard",
+    "city": "Kettering",
+    "state": "OH",
+    "zip": "45429",
+    "phone": "937.395.8173"
+  },
+  {
+    "id": 45,
+    "name": "Osler Medical Center",
+    "type": 2,
+    "address": "7600 Osler Drive",
+    "city": "Towson",
+    "state": "MD",
+    "zip": "21204",
+    "phone": "410.337.2021"
+  },
+  {
+    "id": 46,
+    "name": "Doctors of Internal Medicine",
+    "type": 2,
+    "address": "5941 Dallas Parkway",
+    "city": "Plano",
+    "state": "TX",
+    "zip": "75093",
+    "phone": "972.758.4455 x 4197"
+  },
+  {
+    "id": 47,
+    "name": "Tupelo Medical Group",
+    "type": 2,
+    "address": "1265 Cliff Gookin Blvd.",
+    "city": "Tupelo",
+    "state": "MS",
+    "zip": "38801",
+    "phone": "662.407.2528"
+  },
+  {
+    "id": 48,
+    "name": "Keith A. Gray, MD, PA",
+    "type": 2,
+    "address": "100 West Gore Street",
+    "city": "Orlando",
+    "state": "FL",
+    "zip": "32806",
+    "phone": "407.423.9920"
+  },
+  {
+    "id": 49,
+    "name": "PrivaMedis, LLC",
+    "type": 2,
+    "address": "4308 Alton Road",
+    "city": "Miami Beach",
+    "state": "FL",
+    "zip": "33140",
+    "phone": "305.604.2888"
+  },
+  {
+    "id": 50,
+    "name": "St. Elizabeth-Business Health Edgewood",
+    "type": 2,
+    "address": "200 Medical Village Drive",
+    "city": "Edgewood",
+    "state": "KY",
+    "zip": "41017",
+    "phone": "859.301.2992"
+  },
+  {
+    "id": 51,
+    "name": "Donna H. Canney, MD, PhD",
+    "type": 2,
+    "address": "222 E. Washington Avenue",
+    "city": "Navasota",
+    "state": "TX",
+    "zip": "77868",
+    "phone": "936.825.1721"
+  },
+  {
+    "id": 52,
+    "name": "Woodlands Internists",
+    "type": 2,
+    "address": "150 Pine Forest Dr",
+    "city": "The Woodlands",
+    "state": "TX",
+    "zip": "77384",
+    "phone": "936.273.2016"
+  },
+  {
+    "id": 53,
+    "name": "Riverside Family Medicine",
+    "type": 2,
+    "address": "3129 Blattner Drive",
+    "city": "Cape Girardeau",
+    "state": "MO",
+    "zip": "63703",
+    "phone": "573.335.0166"
+  },
+  {
+    "id": 54,
+    "name": "Holy Cross HealthPlex",
+    "type": 2,
+    "address": "1000 NE 56th Street",
+    "city": "Fort Lauderdale",
+    "state": "FL",
+    "zip": "33334",
+    "phone": "954.771.8000"
+  },
+  {
+    "id": 55,
+    "name": "Richardson Primary Care Clinic",
+    "type": 2,
+    "address": "2821 East President George Bush Highway",
+    "city": "Richardson",
+    "state": "TX",
+    "zip": "75082",
+    "phone": "972.437.9210"
+  },
+  {
+    "id": 56,
+    "name": "Greenville Medical Associates",
+    "type": 2,
+    "address": "545 West Butler Road",
+    "city": "Greenville",
+    "state": "SC",
+    "zip": "29607",
+    "phone": "864.299.1990"
+  },
+  {
+    "id": 57,
+    "name": "Summit Primary Care",
+    "type": 2,
+    "address": "3939 Central Pike",
+    "city": "Hermitage",
+    "state": "TN",
+    "zip": "37076",
+    "phone": "615.883.2331"
+  },
+  {
+    "id": 58,
+    "name": "Perspective Health and Wellness",
+    "type": 2,
+    "address": "4525 Cameron Valley Parkway",
+    "city": "Charlotte",
+    "state": "NC",
+    "zip": "28211",
+    "phone": "704.512.3800"
+  },
+  {
+    "id": 59,
+    "name": "Woodhill Family Medicine",
+    "type": 2,
+    "address": "813 Leesburg Road",
+    "city": "Columbia",
+    "state": "SC",
+    "zip": "29209",
+    "phone": "803.783.4433"
+  },
+  {
+    "id": 60,
+    "name": "Texas Internal Medicine Associates",
+    "type": 2,
+    "address": "8210 Walnut Hill Lane",
+    "city": "Dallas",
+    "state": "TX",
+    "zip": "75231",
+    "phone": "214.368.7787"
+  },
+  {
+    "id": 61,
+    "name": "Occupational Medicine Consultants",
+    "type": 2,
+    "address": "6515 Barrie Road",
+    "city": "Edina",
+    "state": "MN",
+    "zip": "55435",
+    "phone": "952.920.5663"
+  },
+  {
+    "id": 62,
+    "name": "City Docs",
+    "type": 2,
+    "address": "2891 Matlock Road",
+    "city": "Mansfield",
+    "state": "TX",
+    "zip": "76063",
+    "phone": "817.225.1840"
+  },
+  {
+    "id": 63,
+    "name": "Lourdes Physician Group",
+    "type": 2,
+    "address": "3824 NE Evangeline Thruway",
+    "city": "Carencro",
+    "state": "LA",
+    "zip": "70520",
+    "phone": "337.470.3280"
+  },
+  {
+    "id": 64,
+    "name": "Claudia G. Mercado, MD",
+    "type": 2,
+    "address": "1405 Jacaman Road",
+    "city": "Laredo",
+    "state": "TX",
+    "zip": "78041",
+    "phone": "956.727.3047"
+  },
+  {
+    "id": 65,
+    "name": "Aspen Leaf Internal Medicine",
+    "type": 2,
+    "address": "751 Horizon Court",
+    "city": "Grand Junction",
+    "state": "CO",
+    "zip": "81506",
+    "phone": "970.242.4145"
+  },
+  {
+    "id": 66,
+    "name": "San Antonio Wellness Institute",
+    "type": 2,
+    "address": "8122 Datapoint Dr.",
+    "city": "San Antonio",
+    "state": "TX",
+    "zip": "78229",
+    "phone": "210.615.0600"
+  },
+  {
+    "id": 67,
+    "name": "Bethany Medical Clinic-Dr. Smith",
+    "type": 2,
+    "address": "1580 Skeet Club Road",
+    "city": "High Point",
+    "state": "NC",
+    "zip": "27265",
+    "phone": "336.883.0029"
+  },
+  {
+    "id": 68,
+    "name": "Adventist Bolingbrook Hospital-Executive Health Department",
+    "type": 2,
+    "address": "500 Remington Blvd.",
+    "city": "Bolingbrook",
+    "state": "IL",
+    "zip": "60440",
+    "phone": "630.312.2007"
+  },
+  {
+    "id": 69,
+    "name": "ProPartnersMD",
+    "type": 2,
+    "address": "4501 College Boulevard",
+    "city": "Leawood",
+    "state": "KS",
+    "zip": "66211",
+    "phone": "913.451.4776"
+  },
+  {
+    "id": 70,
+    "name": "Ochsner Clinic Baton Rouge",
+    "type": 2,
+    "address": "9001 Summa Ave.",
+    "city": "Baton Rouge",
+    "state": "LA",
+    "zip": "70809",
+    "phone": "225.761.5764"
+  },
+  {
+    "id": 71,
+    "name": "David Abrams, MD",
+    "type": 2,
+    "address": "18370 Burbank Blvd.",
+    "city": "Tarzana",
+    "state": "CA",
+    "zip": "91356",
+    "phone": "818.385.1018"
+  },
+  {
+    "id": 72,
+    "name": "Spring Valley Internal Medicine",
+    "type": 2,
+    "address": "4910 Massachusetts Avenue Northwest",
+    "city": "Washington",
+    "state": "DC",
+    "zip": "20016",
+    "phone": "202.244.0812"
+  },
+  {
+    "id": 73,
+    "name": "Boyd Internal Medicine, P.C.",
+    "type": 2,
+    "address": "2022 Brookwood Medical Center Drive",
+    "city": "Birmingham",
+    "state": "AL",
+    "zip": "35209",
+    "phone": "205.877.2884"
+  },
+  {
+    "id": 74,
+    "name": "PMA Medical Specialists, LLC",
+    "type": 2,
+    "address": "78 Second Avenue",
+    "city": "Collegeville",
+    "state": "PA",
+    "zip": "19426",
+    "phone": "610.409.9999"
+  },
+  {
+    "id": 75,
+    "name": "Internal Medicine & Family Physicians",
+    "type": 2,
+    "address": "17030 Lakeside Hills Plaza",
+    "city": "Omaha",
+    "state": "NE",
+    "zip": "68130",
+    "phone": "402.758.5800"
+  },
+  {
+    "id": 76,
+    "name": "Romeo P. Papica II, MD, PA",
+    "type": 2,
+    "address": "3413 Caldera Boulevard",
+    "city": "Midland",
+    "state": "TX",
+    "zip": "79707",
+    "phone": "432.689.3136"
+  },
+  {
+    "id": 77,
+    "name": "Christopher W. Ley, MD",
+    "type": 2,
+    "address": "148 West River Street",
+    "city": "Providence",
+    "state": "RI",
+    "zip": "02904",
+    "phone": "401.572.3887"
+  },
+  {
+    "id": 78,
+    "name": "Broken Arrow Family Practice",
+    "type": 2,
+    "address": "817 South Elm Place",
+    "city": "Broken Arrow",
+    "state": "OK",
+    "zip": "74012",
+    "phone": "918.251.2273"
+  },
+  {
+    "id": 79,
+    "name": "Scottsdale Private Physicians - Dr. Scott Bernstein, MD",
+    "type": 2,
+    "address": "9458 East Ironwood Square Drive",
+    "city": "Scottsdale",
+    "state": "AZ",
+    "zip": "85258",
+    "phone": "480.767.7699"
+  },
+  {
+    "id": 80,
+    "name": "Scottsdale Private Physicians - Dr. Helene Wechsler, MD",
+    "type": 2,
+    "address": "10900 North Scottsdale Road, Suite 104",
+    "city": "Scottsdale",
+    "state": "AZ",
+    "zip": "85254",
+    "phone": "480.990.1564"
+  },
+  {
+    "id": 81,
+    "name": "Newport Center Medical Group",
+    "type": 2,
+    "address": "400 Newport Center Drive",
+    "city": "Newport Beach",
+    "state": "CA",
+    "zip": "92660",
+    "phone": "949.644.3559"
+  },
+  {
+    "id": 82,
+    "name": "Northeast Tarrant Internal Medicine Associates",
+    "type": 2,
+    "address": "479 Westpark Way",
+    "city": "Euless",
+    "state": "TX",
+    "zip": "76040",
+    "phone": "817.283.2888"
+  },
+  {
+    "id": 83,
+    "name": "Health Dynamics",
+    "type": 2,
+    "address": "377 West River Woods Parkway",
+    "city": "Glendale",
+    "state": "WI",
+    "zip": "53212",
+    "phone": "414.443.0200"
+  },
+  {
+    "id": 84,
+    "name": "Speck Health",
+    "type": 2,
+    "address": "805 Madison St.",
+    "city": "Seattle",
+    "state": "WA",
+    "zip": "98104",
+    "phone": "206.466.5936"
+  },
+  {
+    "id": 85,
+    "name": "Personal Care Physicians, LLC",
+    "type": 2,
+    "address": "501 Farmington Avenue",
+    "city": "Farmington",
+    "state": "CT",
+    "zip": "06030",
+    "phone": "860.674.4334"
+  },
+  {
+    "id": 86,
+    "name": "Sora Medical Clinic",
+    "type": 2,
+    "address": "280 Legacy Drive",
+    "city": "Plano",
+    "state": "TX",
+    "zip": "75023",
+    "phone": "972.517.2171"
+  },
+  {
+    "id": 87,
+    "name": "Horn Lake Family Practice",
+    "type": 2,
+    "address": "3102 Goodman Road West",
+    "city": "Horn Lake",
+    "state": "MS",
+    "zip": "38637",
+    "phone": "662.342.6677"
+  },
+  {
+    "id": 88,
+    "name": "Insight Primary Care",
+    "type": 2,
+    "address": "2373 Central Park Blvd.",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80238",
+    "phone": "303.377.2494"
+  },
+  {
+    "id": 89,
+    "name": "Epitomedical",
+    "type": 2,
+    "address": "8859 West Flamingo Road",
+    "city": "Las Vegas",
+    "state": "NV",
+    "zip": "89147",
+    "phone": "702.419.3482"
+  },
+  {
+    "id": 90,
+    "name": "City Docs - Fort Worth",
+    "type": 2,
+    "address": "3020 W 7th Street",
+    "city": "Fort Worth",
+    "state": "TX",
+    "zip": "76107",
+    "phone": "817.225.1840"
+  },
+  {
+    "id": 91,
+    "name": "Pacific Wellness Center",
+    "type": 2,
+    "address": "975 Garnet Ave",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92109",
+    "phone": "858.230.7770"
+  },
+  {
+    "id": 92,
+    "name": "Diamond Physicians - Frisco",
+    "type": 2,
+    "address": "4060 Legacy Dr.",
+    "city": "Frisco",
+    "state": "TX",
+    "zip": "75034",
+    "phone": "214.945.3621"
+  },
+  {
+    "id": 93,
+    "name": "Total Access Medical, LLC",
+    "type": 2,
+    "address": "418 E Lancaster Avenue",
+    "city": "St. Davids",
+    "state": "PA",
+    "zip": "19087",
+    "phone": "610.688.8788"
+  },
+  {
+    "id": 94,
+    "name": "Howard University Hospital",
+    "type": 2,
+    "address": "2041 Georgia Avenue NW",
+    "city": "Washington",
+    "state": "DC",
+    "zip": "20060",
+    "phone": "202.865.3399"
+  },
+  {
+    "id": 95,
+    "name": "Internal Medicine of St. Luke's, LLC",
+    "type": 2,
+    "address": "121 St. Lukes Center Drive",
+    "city": "Chesterfield",
+    "state": "MO",
+    "zip": "63017",
+    "phone": "314.205.6907 "
+  },
+  {
+    "id": 96,
+    "name": "Elevation Physicians",
+    "type": 2,
+    "address": "1050 Iron Point Rd",
+    "city": "Folsom",
+    "state": "CA",
+    "zip": "95630",
+    "phone": "916.597.2340"
+  },
+  {
+    "id": 97,
+    "name": "Advanced Family Medicine",
+    "type": 2,
+    "address": "2007 152 Avenue NE",
+    "city": "Redmond",
+    "state": "WA",
+    "zip": "98052",
+    "phone": "425.453.6838"
+  },
+  {
+    "id": 98,
+    "name": "Clifford Family Practice, LLC",
+    "type": 2,
+    "address": "660 Cherokee St NE",
+    "city": "Marietta",
+    "state": "GA",
+    "zip": "30060",
+    "phone": "678.388.1355"
+  },
+  {
+    "id": 99,
+    "name": "Dunwoody Village Clinic P.C.",
+    "type": 2,
+    "address": "5471 Chamblee Dunwoody Road",
+    "city": "Dunwoody",
+    "state": "GA",
+    "zip": "30338",
+    "phone": "770.481.0889"
+  },
+  {
+    "id": 100,
+    "name": "Columbia Primary Care Associates",
+    "type": 2,
+    "address": "1605 East Broadway",
+    "city": "Columbia",
+    "state": "MO",
+    "zip": "65201",
+    "phone": "573.815.8155"
+  },
+  {
+    "id": 101,
+    "name": "Wake Family Medicine",
+    "type": 2,
+    "address": "1000 Darrington Drive, Suite 104",
+    "city": "Cary",
+    "state": "NC",
+    "zip": "27513",
+    "phone": "919.380.1849"
+  },
+  {
+    "id": 102,
+    "name": "Crittenton Hospital Medical Center - Executive Health",
+    "type": 2,
+    "address": "1101 W. University Dr.",
+    "city": "Rochester",
+    "state": "MI",
+    "zip": "48307",
+    "phone": "248.849.3959"
+  },
+  {
+    "id": 103,
+    "name": "Shelton Hospitalist Group LLC",
+    "type": 2,
+    "address": "315 Boulevard NE",
+    "city": "Atlanta",
+    "state": "GA",
+    "zip": "30312",
+    "phone": "678.705.2355"
+  },
+  {
+    "id": 104,
+    "name": "Premier Physicians",
+    "type": 2,
+    "address": "25200 Center Ridge Road",
+    "city": "Westlake",
+    "state": "OH",
+    "zip": "44145",
+    "phone": "216.522.9100"
+  },
+  {
+    "id": 105,
+    "name": "MedCenter 100",
+    "type": 2,
+    "address": "625 N. Pottstown Pike",
+    "city": "Exton",
+    "state": "PA",
+    "zip": "19341",
+    "phone": "610.903.0645"
+  },
+  {
+    "id": 106,
+    "name": "Lafferty Family Care",
+    "type": 2,
+    "address": "1706 SE Walton Boulevard",
+    "city": "Bentonville",
+    "state": "AR",
+    "zip": "72712",
+    "phone": "479.464.0400"
+  },
+  {
+    "id": 107,
+    "name": "Total Access Medical - Mt. Laurel",
+    "type": 2,
+    "address": "3814 Church Road",
+    "city": "Mt. Laurel",
+    "state": "NJ",
+    "zip": "08054",
+    "phone": "856.231.9792"
+  },
+  {
+    "id": 108,
+    "name": "ExecuCare of Liberty Hospital",
+    "type": 2,
+    "address": "8300 North Church Road",
+    "city": "Kansas City",
+    "state": "MO",
+    "zip": "64158",
+    "phone": "816.792.7082 "
+  },
+  {
+    "id": 109,
+    "name": "Cheryl Black, MD",
+    "type": 2,
+    "address": "4205 McAuley Boulevard",
+    "city": "Oklahoma City",
+    "state": "OK",
+    "zip": "73120",
+    "phone": "405.751.6111"
+  },
+  {
+    "id": 110,
+    "name": "North Memorial Health Care",
+    "type": 2,
+    "address": "15450 Highway 7",
+    "city": "Minnetonka",
+    "state": "MN",
+    "zip": "55345",
+    "phone": "763.581.3331"
+  },
+  {
+    "id": 111,
+    "name": "Wellness Clinic for Executive Health, PLLC",
+    "type": 2,
+    "address": "5656 Bee Caves Road",
+    "city": "Austin",
+    "state": "TX",
+    "zip": "78746",
+    "phone": "512.766.3650"
+  },
+  {
+    "id": 112,
+    "name": "Health Associates",
+    "type": 2,
+    "address": "2700 Quarry Lake Drive",
+    "city": "Baltimore",
+    "state": "MD",
+    "zip": "21209",
+    "phone": "410.484.8600"
+  },
+  {
+    "id": 113,
+    "name": "Family Medicine",
+    "type": 2,
+    "address": "3008 Dawn Drive",
+    "city": "Georgetown",
+    "state": "TX",
+    "zip": "78628",
+    "phone": "512.863.4597"
+  },
+  {
+    "id": 114,
+    "name": "Ninth Street Internal Medicine",
+    "type": 2,
+    "address": "805 Locust Street",
+    "city": "Philadelphia",
+    "state": "PA",
+    "zip": "19107",
+    "phone": "215.440.8681"
+  },
+  {
+    "id": 115,
+    "name": "Washington Occupational Health Associates",
+    "type": 2,
+    "address": "1140 19th St., N.W.",
+    "city": "Washington",
+    "state": "DC",
+    "zip": "20036",
+    "phone": "202.463.6698"
+  },
+  {
+    "id": 116,
+    "name": "Nourish Wellness Family Medicine, LLC",
+    "type": 2,
+    "address": "826 West 64th Street",
+    "city": "Indianapolis",
+    "state": "IN",
+    "zip": "46260",
+    "phone": "317.524.2266"
+  },
+  {
+    "id": 117,
+    "name": "Alpine Internal Medicine",
+    "type": 2,
+    "address": "1060 East 100 South",
+    "city": "Salt Lake City",
+    "state": "UT",
+    "zip": "84102",
+    "phone": "801.328.1260"
+  },
+  {
+    "id": 118,
+    "name": "Barnard Medical Center",
+    "type": 2,
+    "address": "5100 Wisconsin Avenue NW",
+    "city": "Washington",
+    "state": "DC",
+    "zip": "20016",
+    "phone": "202.527.7500"
+  },
+  {
+    "id": 119,
+    "name": "Patrick Peters, MD - Huebner Medical Center",
+    "type": 2,
+    "address": "9150 Huebner Road",
+    "city": "San Antonio",
+    "state": "TX",
+    "zip": "78240",
+    "phone": "210.521.7676"
+  },
+  {
+    "id": 120,
+    "name": "Southwest Family Medicine Associates",
+    "type": 2,
+    "address": "8877 Harry Hines Boulevard",
+    "city": "Dallas",
+    "state": "TX",
+    "zip": "75235",
+    "phone": "214.393.2940"
+  },
+  {
+    "id": 121,
+    "name": "The Atlanta Internists-Dr. Capo",
+    "type": 2,
+    "address": "1100 Johnson Ferry Road NE",
+    "city": "Atlanta",
+    "state": "GA",
+    "zip": "30342",
+    "phone": "404.303.8651"
+  },
+  {
+    "id": 122,
+    "name": "The Atlanta Internists - Dr. Fitzgerald",
+    "type": 2,
+    "address": "1100 Johnson Ferry Road NE",
+    "city": "Atlanta",
+    "state": "GA",
+    "zip": "30342",
+    "phone": "404.303.8651"
+  },
+  {
+    "id": 123,
+    "name": "Empire Medical Associates",
+    "type": 2,
+    "address": "55 Morris Avenue",
+    "city": "Springfield",
+    "state": "NJ",
+    "zip": "07081",
+    "phone": "973.376.0540"
+  },
+  {
+    "id": 124,
+    "name": "Astrahealth Centers-Bayonne",
+    "type": 2,
+    "address": "564 Broadway",
+    "city": "Bayonne",
+    "state": "NJ",
+    "zip": "07002",
+    "phone": "201.468.8888"
+  },
+  {
+    "id": 125,
+    "name": "Cape Fear Family Medical Care",
+    "type": 2,
+    "address": "405 Owen Drive",
+    "city": "Fayetteville",
+    "state": "NC",
+    "zip": "28304",
+    "phone": "910.323.3183"
+  },
+  {
+    "id": 126,
+    "name": "Sentara BelleHarbour / SMG Occupational Medicine",
+    "type": 2,
+    "address": "3920 Bridge Road",
+    "city": "Suffolk",
+    "state": "VA",
+    "zip": "23435",
+    "phone": "757.983.0080"
+  },
+  {
+    "id": 127,
+    "name": "Priority Physicians",
+    "type": 2,
+    "address": "13914 Southeastern Parkway",
+    "city": "Fishers",
+    "state": "IN",
+    "zip": "46037",
+    "phone": "317.415.9900"
+  },
+  {
+    "id": 128,
+    "name": "Joseph Barry, MD",
+    "type": 2,
+    "address": "5415 West Genesee Street",
+    "city": "Camillus",
+    "state": "NY",
+    "zip": "13031",
+    "phone": "315.410.0651"
+  },
+  {
+    "id": 129,
+    "name": "April M. Thomson, D.O. PLLC",
+    "type": 2,
+    "address": "2800 S. Seacrest Boulevard",
+    "city": "Boynton Beach",
+    "state": "FL",
+    "zip": "33435",
+    "phone": "561.369.1101"
+  },
+  {
+    "id": 130,
+    "name": "Stoll Medical Group",
+    "type": 2,
+    "address": "1528 Walnut Street",
+    "city": "Philadelphia",
+    "state": "PA",
+    "zip": "19102",
+    "phone": "267.273.1196"
+  },
+  {
+    "id": 131,
+    "name": "Premier Medicine & Wellness, Monroe",
+    "type": 2,
+    "address": "8 Centre Drive",
+    "city": "Monroe Township",
+    "state": "NJ",
+    "zip": "08831",
+    "phone": "609.655.2411"
+  },
+  {
+    "id": 132,
+    "name": "Premier Medicine & Wellness, Bordentown",
+    "type": 2,
+    "address": "231 Crosswicks Road",
+    "city": "Bordentown",
+    "state": "NJ",
+    "zip": "08505",
+    "phone": "609.298.7204"
+  },
+  {
+    "id": 133,
+    "name": "Bluegrass Family Wellness",
+    "type": 2,
+    "address": "6225 W Highway 146",
+    "city": "Crestwood",
+    "state": "KY",
+    "zip": "40014",
+    "phone": "502.822.3499"
+  },
+  {
+    "id": 134,
+    "name": "New Jersey Associates in Medicine",
+    "type": 2,
+    "address": "31-00 Broadway",
+    "city": "Fair Lawn",
+    "state": "NJ",
+    "zip": "07410",
+    "phone": "201.796.2255"
+  },
+  {
+    "id": 135,
+    "name": "Cherry Hill Associates in Internal Medicine",
+    "type": 2,
+    "address": "1401 NJ-70",
+    "city": "Cherry Hill",
+    "state": "NJ",
+    "zip": "08034",
+    "phone": "856.479.9400"
+  },
+  {
+    "id": 136,
+    "name": "Delran Family Practice",
+    "type": 2,
+    "address": "8008 US-130",
+    "city": "Delran",
+    "state": "NJ",
+    "zip": "08075",
+    "phone": "856.764.7997"
+  },
+  {
+    "id": 137,
+    "name": "Empire Medical Associates - Maplewood",
+    "type": 2,
+    "address": "264 Boyden Avenue",
+    "city": "Maplewood",
+    "state": "NJ",
+    "zip": "07040",
+    "phone": "973.761.5200"
+  },
+  {
+    "id": 138,
+    "name": "Ferguson Medical Group",
+    "type": 2,
+    "address": "1012 North Main Street",
+    "city": "Sikeston",
+    "state": "MO",
+    "zip": "63801",
+    "phone": "573.471.0330"
+  },
+  {
+    "id": 139,
+    "name": "Sneh Jain, MD",
+    "type": 2,
+    "address": "900 Route 168",
+    "city": "Blackwood",
+    "state": "NJ",
+    "zip": "08012",
+    "phone": "856.232.6500"
+  },
+  {
+    "id": 140,
+    "name": "Astrahealth Centers - Piscataway",
+    "type": 2,
+    "address": "1100 Centennial Avenue",
+    "city": "Piscataway",
+    "state": "NJ",
+    "zip": "08854",
+    "phone": "732.981.1111"
+  },
+  {
+    "id": 141,
+    "name": "RWJPE-Comprehensive Family Medicine",
+    "type": 2,
+    "address": "8 Mountain Blvd",
+    "city": "Warren",
+    "state": "NJ",
+    "zip": "07059",
+    "phone": "(908) 222.7777"
+  },
+  {
+    "id": 142,
+    "name": "SSM Health Medical Group - Occupational Medicine",
+    "type": 2,
+    "address": "2511 W. Edgewood Drive",
+    "city": "Jefferson City",
+    "state": "MO",
+    "zip": "65109",
+    "phone": "573.761.0458"
+  },
+  {
+    "id": 143,
+    "name": "Excelcare Alliance, LLC",
+    "type": 2,
+    "address": "1206 West Sherman Avenue",
+    "city": "Vineland",
+    "state": "NJ",
+    "zip": "08360",
+    "phone": "(856) 692.7700"
+  },
+  {
+    "id": 144,
+    "name": "RWJPE-Primary Care at Raritan",
+    "type": 2,
+    "address": "34 East Somerset St.",
+    "city": "Raritan",
+    "state": "NJ",
+    "zip": "08869",
+    "phone": "(908)685.2532"
+  },
+  {
+    "id": 145,
+    "name": "Champlain Medical",
+    "type": 2,
+    "address": "150 Kennedy Drive",
+    "city": "South Burlington",
+    "state": "VT",
+    "zip": "05403",
+    "phone": "802.448.9370"
+  },
+  {
+    "id": 146,
+    "name": "Capital Health Medical Center-Hopewell",
+    "type": 2,
+    "address": "2 Capital Way",
+    "city": "Pennington",
+    "state": "NJ",
+    "zip": "08534",
+    "phone": "609.689.5755"
+  },
+  {
+    "id": 147,
+    "name": "Olga Zarkh, MD",
+    "type": 2,
+    "address": "1401 West Dundee Road",
+    "city": "Buffalo Grove",
+    "state": "IL",
+    "zip": "60089",
+    "phone": "847.818.7700"
+  },
+  {
+    "id": 148,
+    "name": "Babylon Medical Practice",
+    "type": 2,
+    "address": "350 W Main Street",
+    "city": "Babylon",
+    "state": "NY",
+    "zip": "11702",
+    "phone": "631.661.2277"
+  },
+  {
+    "id": 149,
+    "name": "CareMedica Elite",
+    "type": 2,
+    "address": "2200 Whitney Avenue",
+    "city": "Hamden",
+    "state": "CT",
+    "zip": "06518",
+    "phone": "203.672.0780"
+  },
+  {
+    "id": 150,
+    "name": "Primary Care Medicine",
+    "type": 2,
+    "address": "2709 Industrial Drive",
+    "city": "Jefferson City",
+    "state": "MO",
+    "zip": "65109",
+    "phone": "573.635.2141"
+  },
+  {
+    "id": 151,
+    "name": "King of Prussia Family Medicine",
+    "type": 2,
+    "address": "210 Mall Boulevard",
+    "city": "King of Prussia",
+    "state": "PA",
+    "zip": "19406",
+    "phone": "610.265.3266"
+  },
+  {
+    "id": 152,
+    "name": "Premier Health Associates",
+    "type": 2,
+    "address": "1631 NJ-88",
+    "city": "Brick",
+    "state": "NJ",
+    "zip": "08724",
+    "phone": "732.202.7456"
+  },
+  {
+    "id": 153,
+    "name": "Allied Medical Associates",
+    "type": 2,
+    "address": "510 Hamburg Turnpike",
+    "city": "Wayne",
+    "state": "NJ",
+    "zip": "07470",
+    "phone": "973.942.6005"
+  },
+  {
+    "id": 154,
+    "name": "RWJBH-Marlboro Medical Group",
+    "type": 2,
+    "address": "25 Kilmer Drive",
+    "city": "Morganville",
+    "state": "NJ",
+    "zip": "07751",
+    "phone": "732.385.5262"
+  },
+  {
+    "id": 155,
+    "name": "Heights Medical",
+    "type": 2,
+    "address": "288 Boulevard",
+    "city": "Hasbrouck Heights",
+    "state": "NJ",
+    "zip": "07604",
+    "phone": "(201) 288.6781"
+  },
+  {
+    "id": 156,
+    "name": "Marcus Institute of Integrative Health - Villanova",
+    "type": 2,
+    "address": "789 East Lancaster Avenue",
+    "city": "Villanova",
+    "state": "PA",
+    "zip": "19085",
+    "phone": "215.503.9070"
+  },
+  {
+    "id": 157,
+    "name": "Advanced Internal Medicine Group P.C.",
+    "type": 2,
+    "address": "2200 Northern Boulevard",
+    "city": "East Hills",
+    "state": "NY",
+    "zip": "11548",
+    "phone": "516.352.8100"
+  },
+  {
+    "id": 158,
+    "name": "Essential Health & Wellness",
+    "type": 2,
+    "address": "2011 Falls Valley Drive",
+    "city": "Raleigh",
+    "state": "NC",
+    "zip": "27615",
+    "phone": "919.208.2314"
+  },
+  {
+    "id": 159,
+    "name": "Cooper Family Medical",
+    "type": 2,
+    "address": "5123 4th Ave Circle East",
+    "city": "Bradenton",
+    "state": "FL",
+    "zip": "34208",
+    "phone": "(941) 744.5510"
+  },
+  {
+    "id": 160,
+    "name": "Newcare MD",
+    "type": 2,
+    "address": "129 Fountains Blvd",
+    "city": "Madison",
+    "state": "MS",
+    "zip": "39110",
+    "phone": "769.300.0700"
+  },
+  {
+    "id": 161,
+    "name": "Estep Family Medicine",
+    "type": 2,
+    "address": "3774 Bayley Drive",
+    "city": "Lafayette",
+    "state": "IN",
+    "zip": "47905",
+    "phone": "(765) 807.8200"
+  },
+  {
+    "id": 162,
+    "name": "Dr. Wojnowich and Dr. Griffin",
+    "type": 2,
+    "address": "1326 Eisenhower Drive",
+    "city": "Savannah",
+    "state": "GA",
+    "zip": "31406",
+    "phone": "912.691.3570"
+  },
+  {
+    "id": 163,
+    "name": "North Florida Medical Clinic",
+    "type": 2,
+    "address": "1361 13th Avenue S.",
+    "city": "Jacksonville Beach",
+    "state": "FL",
+    "zip": "32250",
+    "phone": "904.242.7177"
+  },
+  {
+    "id": 164,
+    "name": "Dhar Family Medicine",
+    "type": 2,
+    "address": "537 Stonecrest Parkway",
+    "city": "Smyrna",
+    "state": "TN",
+    "zip": "37167",
+    "phone": "615.625.7777"
+  }
+]
