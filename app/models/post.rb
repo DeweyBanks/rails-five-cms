@@ -17,7 +17,7 @@ class Post < ApplicationRecord
   before_validation :set_slug
   accepts_nested_attributes_for :pictures, reject_if: proc { |attributes| attributes[:image].blank? }, allow_destroy: true
   accepts_nested_attributes_for :documents, reject_if: proc { |attributes| attributes[:file].blank? }, allow_destroy: true
-  has_attached_file :main_image, styles: { medium: "300x300>", thumb: "100x100>" , carousel: "550x550>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :main_image, styles: { medium: "300x300>", thumb: "100x100>" , carousel: "550x550>" }, default_url: "/images/BlogDefault.jpg"
   validates :title, :presence => true
   validates_attachment_content_type :main_image, content_type: /\Aimage\/.*\z/
   after_save :ensure_only_one_featured_post
