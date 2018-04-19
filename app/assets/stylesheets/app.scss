@@ -7484,8 +7484,13 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
+/* ========== keep focus of anchors (a) white =========== */
+a:hover, a:focus {
+  color: #ffffff;
+}
+
 /* === <a> Anchors ==== */
-a:hover, .posts a:hover {
+.privacy_policy a:hover, .privacy_policy a:focus, .hippa_notice a:hover, .hippa_notice a:focus, .terms_of_use a:hover, .terms_of_use a:focus, .posts a:hover, .posts a:focus {
   color: #ffc700;
 }
 
@@ -7794,11 +7799,6 @@ div.bot-space-25, div.row.bot-space-25 {
 
 .color-overlay.bg-opacity {
   opacity: 0.80;
-}
-
-/* ========== keep focus of anchors (a) white =========== */
-a:hover, a:focus {
-  color: #ffffff;
 }
 
 /* === book your appt callout styles  ===*/
