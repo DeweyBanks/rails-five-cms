@@ -14,6 +14,6 @@
 //= require rails-ujs
 //= require app.js
 
-//$(function(){ $(document).foundation(); });
+
 
 
