@@ -9,7 +9,11 @@
     <%= display_meta_tags site: 'EHE' %>
 
   </head>
-  <body class="<%= controller_name %> <%= @page %>">
+  <% if controller_name == "locations" %>
+    <body class="home locations">
+  <% else %>
+    <body class="<%= controller_name %> <%= @page %>">
+  <% end %>
     <%= render :partial => 'shared/header' %>
     <%= yield %>
     <%= render :partial => 'shared/footer' %>

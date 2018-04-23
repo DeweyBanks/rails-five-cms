@@ -1,0 +1,144 @@
+<% title 'Locations' %>
+<% description 'For over 100 years, EHE has been the leader in healthcare and wellbeing. We are pioneers in employee health and lifestyle management and are devoted to emp' %>
+<% keywords 'EHE, Locations' %>
+<script src="http://maps.google.com/maps/api/js"></script>
+<%= javascript_include_tag "gmaps.js" %>
+
+<!-- heading -->
+<div class="page-header">
+  <div class='row'>
+    <div class='small-12 column'>
+      <h1 class='title-heading'>Locations</h1>
+    </div>
+  </div>
+  <div class='row'>
+   <div class='small-12 column'>
+    <p>We have seven clinics around the country, as well as hundreds of affiliated doctors and locations in our expanded physicians network.</p>
+    <p>See everywhere you can find us.</p>
+  </div>
+<!--        <div class='small-12 large-6 column'>
+
+</div>-->
+</div>
+</div>
+
+
+<div class='row bot-space-75'>
+  <div class='small-12 medium-9 medium-push-3 large-9 large-push-3 column address-form-container'>
+    <div class="row medium-collapse">
+     <!-- <div class="address-form-container ">=-->
+      <div class='small-8 columns'>
+        <div class="mapouter">
+          <%= link_to "Redo search in this area", "#", id: "redo-search" %>
+          <% if @locations.size <= 0 %>
+            <h5>No locations found this area</h5>
+          <% end %>
+          <% if @default %>
+            <%= tag.div nil, id: 'map', :class => 'gmap_canvas', data: { locations: @locations.to_json(methods: [:address]),l: params[:l], d: @default} %>
+          <% else %>
+            <%= tag.div nil, id: 'map', :class => 'gmap_canvas', data: { locations: @locations.to_json(methods: [:address]),l: params[:l]} %>
+          <% end %>
+          <style>
+            .mapouter{overflow:hidden;height:750px;width:600px;}
+            .gmap_canvas {background:none!important;height:750px;width:600px;}
+          </style>
+        </div>
+      </div>
+      <div class='small-4 columns'>
+       <div class="row">
+         <div class='small-12 column'>
+
+          <%= form_with(url: locations_path, id: "address-form", local: true, method: :get) do |f| %>
+            <%= f.text_field :near, id: "address-input", :class => "input-group-field address-form-field", placeholder: "city, state, or zip code" %>
+            <button class="button-search" type="submit" value="Submit">
+              <svg class="icon"><use xlink:href="#magnify-glass" /></svg>
+            </button>
+          <% end %>
+        </div>
+      </div>
+      <div class="row search-response">
+       <div class='small-12 column'>
+        <!-- start adress response area -->
+        <ul>
+          <% @locations.each do |location| %>
+
+              <%= render location %>
+
+          <% end %>
+      <!--     <li>
+            <h4 class="drkr-gray-text">State</h4>
+            <p>123 6th st.<br>
+              Melbourne, FL 32904
+            </p>
+            <p>email@email.com<br>
+              Phone 000.000.0000
+            </p>
+          </li>
+          <li>
+            <h4 class="drkr-gray-text">State</h4>
+            <p>123 6th st.<br>
+              Melbourne, FL 32904
+            </p>
+            <p>email@email.com<br>
+              Phone 000.000.0000
+            </p>
+          </li>
+          <li>
+            <h4 class="drkr-gray-text">State</h4>
+            <p>123 6th st.<br>
+              Melbourne, FL 32904
+            </p>
+            <p>email@email.com<br>
+              Phone 000.000.0000
+            </p>
+          </li>
+          <li>
+            <h4 class="drkr-gray-text">State</h4>
+            <p>123 6th st.<br>
+              Melbourne, FL 32904
+            </p>
+            <p>email@email.com<br>
+              Phone 000.000.0000
+            </p>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->
+</div>
+
+<!-- locations column -->
+<div class='small-12 medium-3 medium-pull-9 large-3 large-pull-9 column corp-locations'>
+  <!-- Corporate Office -->
+  <div class="row">
+   <div class='small-12 column bot-space-75'>
+    <h4 class="gray-text">Corporate Office</h4>
+    <p>123 6th st.<br>
+      Melbourne, FL 32904
+    </p>
+    <p>email@email.com<br>
+      Phone 000.000.0000
+    </p>
+  </div>
+</div>
+<!-- End Corporate Office -->
+<!-- New York Clinic -->
+<div class="row">
+  <div class='small-12 column bot-space-75'>
+    <h4 class="gray-text">New York Clinic</h4>
+    <p>123 6th st.<br>
+      Melbourne, FL 32904
+    </p>
+    <p>email@email.com<br>
+      Phone 000.000.0000
+    </p>
+  </div>
+</div>
+<!-- End New York Clinic -->
+</div>
+<!-- end locations column -->
+
+<!--  </div> map component -->
+</div>

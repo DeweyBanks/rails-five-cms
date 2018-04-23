@@ -12,6 +12,10 @@ class HomeController < ApplicationController
       @physicians = Commander.physicians.limit(9)
       @coaches = Commander.coaches.limit(9)
     end
+
+    if @page == "locations"
+      @locations = Location.all
+    end
     @posts = Post.includes(:category).limit(5) if @page == "about"
 
     if valid_page?

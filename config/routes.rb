@@ -36,6 +36,7 @@ Rails.application.routes.draw do
 
   resources :commanders, only: [:index, :show]
   resources :messages, only: [:create, :new]
+  resources :locations, only: [:index, :show]
 
   post "/subscribe" => "home#subscribe"
   get "/blog/locked/:slug" => "posts#locked", as: "locked"

@@ -14,6 +14,7 @@ Rails.application.config.assets.precompile += %w( admin.js )
 Rails.application.config.assets.precompile += %w( admin.css )
 Rails.application.config.assets.precompile += %w( app.js )
 Rails.application.config.assets.precompile += %w( images/* )
+Rails.application.config.assets.precompile += %w( gmaps.js )
 Rails.application.config.assets.paths << "#{Rails.root}/app/assets/videos"
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets

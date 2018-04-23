@@ -30,6 +30,8 @@ source 'https://rails-assets.org' do
 end
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'geocoder'
+gem 'redis'
 
 
 group :development, :test do
