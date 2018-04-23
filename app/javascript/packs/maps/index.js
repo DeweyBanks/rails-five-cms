@@ -39,11 +39,11 @@ if (l) {
   }
 }
 
-document.querySelector("#redo-search").addEventListener("click", function(e) {
-  e.preventDefault();
+// document.querySelector("#redo-search").addEventListener("click", function(e) {
+//   e.preventDefault();
 
-  var bounds = map.getBounds();
-  var location = bounds.getSouthWest().toUrlValue() + "," + bounds.getNorthEast().toUrlValue();
+//   var bounds = map.getBounds();
+//   var location = bounds.getSouthWest().toUrlValue() + "," + bounds.getNorthEast().toUrlValue();
 
-  return window.open('/locations?l=' + location);
-});
+//   return window.open('/locations?l=' + location);
+// });
