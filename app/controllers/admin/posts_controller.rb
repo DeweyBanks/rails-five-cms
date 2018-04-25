@@ -35,6 +35,10 @@ module Admin
       @posts = Post.scheduled.includes(:category, :campaign).order("created_at desc").paginate(:page => params[:page], :per_page => 10)
     end
 
+    def locked
+      @posts = Post.locked.includes(:category, :campaign).order("created_at desc").paginate(:page => params[:page], :per_page => 10)
+    end
+
     def set_featured
       @category = Category.find(params["category"])
       @post = Post.find params[:id]

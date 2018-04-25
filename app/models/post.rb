@@ -86,6 +86,10 @@ class Post < ApplicationRecord
     where("published_at >= ?", Time.zone.now )
   end
 
+  def self.locked
+    where(locked: true)
+  end
+
   def self.preview
     where(published_at: nil)
   end

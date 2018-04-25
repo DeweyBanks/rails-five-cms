@@ -16,7 +16,7 @@ locations.forEach(function(location) {
       lng: location.longitude,
       title: location.address,
       infoWindow: {
-        content: "<h5>" + location.name + "</h5><p>" + location.street + "<br>" + location.state + ", " + location.zip + "<br>" + location.phone + "<br> email@email.com </p><p><a href='https://maps.google.com/maps?q=" + location.address + "' target='_'>view in google maps</a></p>"
+        content: "<p><h6>" + location.name + "</h6><br>" + location.street + "<br>" + location.state + ", " + location.zip + "<br>" + location.phone + "<br> email@email.com</p> <p><a href='https://maps.google.com/maps?q=" + location.address + "' target='_'>view in google maps</a></p>"
       }
     });
   }

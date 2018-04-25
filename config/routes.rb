@@ -15,6 +15,7 @@ Rails.application.routes.draw do
         get :archived
         get :preview
         get :scheduled
+        get :locked
         get :edit_multiple
         put :update_multiple
       end
