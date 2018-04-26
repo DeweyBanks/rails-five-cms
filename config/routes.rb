@@ -40,7 +40,6 @@ Rails.application.routes.draw do
   resources :subscriptions, only: [:create]
   resources :locations, only: [:index, :show]
 
-  post "/subscribe" => "home#subscribe"
   get "/blog/locked/:slug" => "posts#locked", as: "locked"
   post "/blog/unlock" => "posts#unlock"
   get "/*page" => "home#show", as: "pages"

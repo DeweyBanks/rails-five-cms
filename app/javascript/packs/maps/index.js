@@ -25,7 +25,6 @@ locations.forEach(function(location) {
 var l = document.querySelector("#map").dataset.l;
 var d = document.querySelector("#map").dataset.d;
 if (l) {
-  console.log("1  Default:::: ", default_location);
   var latlngs   = l.split(',');
   var southWest = new google.maps.LatLng(latlngs[0], latlngs[1]);
   var northEast = new google.maps.LatLng(latlngs[2], latlngs[3]);
@@ -38,12 +37,3 @@ if (l) {
     map.fitZoom();
   }
 }
-
-// document.querySelector("#redo-search").addEventListener("click", function(e) {
-//   e.preventDefault();
-
-//   var bounds = map.getBounds();
-//   var location = bounds.getSouthWest().toUrlValue() + "," + bounds.getNorthEast().toUrlValue();
-
-//   return window.open('/locations?l=' + location);
-// });

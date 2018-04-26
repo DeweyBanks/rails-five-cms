@@ -15,7 +15,4 @@ class LocationsController < ApplicationController
     end
   end
 
-  def show
-  end
-
 end

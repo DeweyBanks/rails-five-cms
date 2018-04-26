@@ -20,9 +20,9 @@ class PostsController < ApplicationController
   def show
     @page = "show"
     @post = Post.find_by(slug: params[:slug])
-   if @post.locked
-    redirect_to locked_path(@post.slug) and return
-   end
+    if @post.locked
+      redirect_to locked_path(@post.slug) and return
+    end
     unless @post.published?
       redirect_to root_path
     end
@@ -42,6 +42,5 @@ class PostsController < ApplicationController
       render :locked
     end
   end
-
 
 end
