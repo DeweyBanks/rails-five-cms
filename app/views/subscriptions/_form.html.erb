@@ -1,0 +1,30 @@
+<p class="ProximaNova-Bold">Stay Connected</p>
+<%= form_with(model: subscription, local: true, :html => {:id => "subscription_form"}) do |form| %>
+  <% if subscription.errors.any? %>
+    <div class="row">
+      <div class="small-12 large-6 columns">
+        <div id="error_explanation">
+          <h2><%= pluralize(subscription.errors.count, "error") %> prohibited this email from being saved:</h2>
+          <ul>
+            <% subscription.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="small-12 large-6 columns">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+  </div>
+
+  <div class="small-12 large-6 columns">
+    <%= form.email_field :email, placeholder: "name@email.com", required: true %>
+  </div>
+
+  <%= form.submit "Submit", :class => "round-button button-gray ProximaNova-Medium"%>
+<% end %>

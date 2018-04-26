@@ -37,6 +37,7 @@ Rails.application.routes.draw do
 
   resources :commanders, only: [:index, :show]
   resources :messages, only: [:create, :new]
+  resources :subscriptions, only: [:create]
   resources :locations, only: [:index, :show]
 
   post "/subscribe" => "home#subscribe"

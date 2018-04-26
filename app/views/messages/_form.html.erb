@@ -1,104 +1,71 @@
 <%= form_with(model: message, local: true, :html => {:id => "message_form"}) do |form| %>
-  <% if message.errors.any? %>
-   <div class="row">
-    <div class="small-12 large-6 columns">
+<% if message.errors.any? %>
+<div class="row">
+  <div class="small-12 large-6 columns">
     <div id="error_explanation">
       <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
 
       <ul>
-      <% message.errors.full_messages.each do |message| %>
+        <% message.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
+        <% end %>
       </ul>
     </div>
-     </div>
+  </div>
+</div>
+<% end %>
+
+<div class="row">
+  <div class="small-12 large-6 columns">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 large-6 columns">
+    <%= form.text_field :first_name, placeholder: "First Name", id: :message_first_name, :class => "input-group-field", required: true %>
+  </div>
+  <div class="small-12 large-6 columns">
+   <%= form.text_field :last_name, placeholder: "Last Name", id: :message_last_name, :class => "input-group-field", required: true %>
+ </div>
+</div>
+<div class="row">
+  <div class="small-12 large-6 columns">
+   <%= form.text_field :company_name, placeholder: "Company Name", id: :message_company_name, :class => "input-group-field"%>
+ </div>
+ <div class="small-12 large-6 columns">
+   <%= form.email_field :email, placeholder: "email@email.com", id: :message_email, :class => "input-group-field", required: true %>
+ </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <div class="ui fluid selection dropdown transparent-bg">
+      <input type="hidden" name="message[interest]">
+      <i class="dropdown icon"></i>
+      <div class="default text">-What Are You Interested In?-</div>
+      <div class="menu">
+        <div class="item" data-value="learn-more">
+          Learn more about EHE
+        </div>
+        <div class="item" data-value="current-account">
+          Questions about current account
+        </div>
+        <div class="item" data-value="other">
+          Other
+        </div>
       </div>
-  <% end %>
-
-   <div class="row">
-    <div class="small-12 large-6 columns">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-     </div>
-      </div>
-
-        <div class="row">
-            <div class="small-12 large-6 columns">
-                <%= form.text_field :first_name, placeholder: "First Name", id: :message_first_name, :class => "input-group-field" %>
-                <!-- <input class="input-group-field" id="first-name" type="text" placeholder="First Name">-->
-            </div>
-            <div class="small-12 large-6 columns">
-               <%= form.text_field :last_name, placeholder: "Last Name", id: :message_last_name, :class => "input-group-field"%>
-            </div>
-        </div>
-        <div class="row">
-            <div class="small-12 large-6 columns">
-               <%= form.text_field :company_name, placeholder: "Company Name", id: :message_company_name, :class => "input-group-field"%>
-            </div>
-            <div class="small-12 large-6 columns">
-                 <%= form.email_field :email, placeholder: "email@email.com", id: :message_email, :class => "input-group-field"%>
-            </div>
-        </div>
-        <div class="row">
-                <div class="small-12 columns">
-                    <div class="ui fluid selection dropdown transparent-bg">
-                        <input type="hidden" name="message[interest]">
-                        <i class="dropdown icon"></i>
-                        <div class="default text">-What Are You Interested In?-</div>
-                        <div class="menu">
-                        <div class="item" data-value="learn-more">
-                        Learn more about EHE
-                        </div>
-                        <div class="item" data-value="current-account">
-                        Questions about current account
-                        </div>
-                        <div class="item" data-value="other">
-                        Other
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="small-12 columns">
-                   <%= form.text_area :comment, placeholder: "Comment", id: :message_comment, class: "input-group-field", rows: "1"%>
-            </div>
-        </div>
-        <div class="row">
-            <div class="small-12 columns">
-                <%= form.submit "Submit", :class => "round-button button-gray ProximaNova-Medium"%>
-                <!-- <input class="round-button button-gray ProximaNova-Medium" type="submit" value="Submit">-->
-            </div>
-        </div>
-
-
-<!--
-  <div class="field">
-    < %= form.text_field :first_name, placeholder: "First Name", id: :message_first_name %>
+    </div>
   </div>
-
-  <div class="field">
-    < %= form.text_field :last_name, placeholder: "Last Name", id: :message_last_name %>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+   <%= form.text_area :comment, placeholder: "Comment", id: :message_comment, class: "input-group-field", rows: "1"%>
+ </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <%= form.submit "Submit", :class => "round-button button-gray ProximaNova-Medium"%>
   </div>
-
-  <div class="field">
-    < %= form.text_field :company_name, placeholder: "Company Name", id: :message_company_name %>
-  </div>
-
-  <div class="field">
-    < %= form.email_field :email, placeholder: "email@email.com", id: :message_email %>
-  </div>
-
-  <div class="field">
-    < %= form.select(:interest, ['What are you interested in?', 'Offering EHE to my company', 'Corporate Events', 'Biometric Screenings' ], {}, :id => "message_interest")  %>
-
-  </div>
-
-  <div class="field">
-    < %= form.text_area :comment, placeholder: "Comment", id: :message_comment %>
-  </div>
-
-  <div class="actions">
-    < %= form.submit %>
-  </div>-->
+</div>
 <% end %>
