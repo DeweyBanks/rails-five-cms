@@ -8,7 +8,7 @@ class LocationsController < ApplicationController
       box       = Geocoder::Calculations.bounding_box(center, distance)
       @locations = Location.within_bounding_box(box)
     elsif params[:near]
-      @locations = Location.near(params[:near], 250)
+      @locations = Location.near(params[:near], 70)
     else
       @locations = Location.all
       @default = Location.where(name: "New York");
