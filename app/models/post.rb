@@ -26,6 +26,7 @@ class Post < ApplicationRecord
     "#{slug}"
   end
 
+
   def all_tags=(names)
     self.tags = names.split(",").map do |name|
         Tag.where(name: name.strip).first_or_create!
@@ -44,6 +45,10 @@ class Post < ApplicationRecord
 
   def all_keywords
     self.keywords.map(&:name).uniq.join(", ")
+  end
+
+  def self.main_featured_post
+    find_by(main_featured: true)
   end
 
   def self.category(category_id)
@@ -107,6 +112,7 @@ class Post < ApplicationRecord
 
     def ensure_only_one_featured_post
       category.posts.where(featured: true).where.not(id: id).update_all(featured: false)
+      Post.where(main_featured: true).where.not(id: id).update_all(main_featured: false)
     end
 
     def set_slug

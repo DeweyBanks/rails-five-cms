@@ -43,7 +43,6 @@
                     <p class="menu menu-text drkr-blue-text">Featured</p>
                   <% else  %>
                     <%= link_to "Set as Featured",  set_featured_admin_post_path(post.id, category: @category), method: :post, :class => "button callout success" %>
-
                   <% end  %>
                 </td>
                 <td>
