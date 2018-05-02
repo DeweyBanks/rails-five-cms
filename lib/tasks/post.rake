@@ -32,12 +32,9 @@ namespace :post do
   desc "Update Post Status"
   task update_status: :environment do
     time = Time.zone.now
-    posts = Post.scheduled
-    posts.each do |post|
-      if post.published_at <= time
-        post.update_attribute(status: "published")
-      end
-    end
+    posts = Post.scheduled.where(published_at: (time.beginning_of_day..time))
+    posts.update_all(status: "published")
+    puts "updated post status"
   end
 
 end
