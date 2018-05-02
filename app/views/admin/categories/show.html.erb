@@ -34,7 +34,7 @@
           <tbody>
             <% @posts.each do |post| %>
               <tr>
-                <td><%= image_tag post.main_image.url(:thumb) %></td>
+                <td style="width: 100px; height: 100px;"><%= image_tag post.main_image.url(:thumb) %></td>
                 <td><%= truncate(post.title, length: 37, omission: "...") %></td>
                 <td><%= post.status %></td>
                 <td><%= post.created_at.strftime('%m/%d/%Y') %></td>
