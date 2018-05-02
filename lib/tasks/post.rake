@@ -29,4 +29,15 @@ namespace :post do
     end
   end
 
+  desc "Update Post Status"
+  task update_status: :environment do
+    time = Time.zone.now
+    posts = Post.scheduled
+    posts.each do |post|
+      if post.published_at <= time
+        post.update_attribute(status: "published")
+      end
+    end
+  end
+
 end

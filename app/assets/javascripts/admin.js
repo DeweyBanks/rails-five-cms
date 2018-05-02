@@ -45,7 +45,7 @@ $(document).ready(function(){
   change_visibility($("#post_status :selected").text());
 
   $('.published_at').datetimepicker({
-                    dateFormat: 'yy-mm-dd ',
+                    dateFormat: 'D M-d-Y g:i a',
                     timeFormat: 'hh:mm:ss ',
                     step: 5,
                     ampm: true,

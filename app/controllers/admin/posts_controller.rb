@@ -112,7 +112,7 @@ module Admin
     def update
       status = post_params["status"]
       if post_params["locked"] == "1"
-        status = "preview"
+        status = "locked"
       end
       case status
       when "preview"
@@ -121,6 +121,7 @@ module Admin
         params["post"]["published_at"] = Time.zone.now
       when "archived"
         params["post"]["published_at"] = nil
+      else
       end
       respond_to do |format|
         if @post.update_attributes(post_params)

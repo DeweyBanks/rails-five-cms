@@ -64,11 +64,7 @@ class Post < ApplicationRecord
   end
 
   def published?
-    if self.published_at
-      self.published_at <= Time.zone.now.to_s
-    else
-      false
-    end
+    status == "published"
   end
 
   def archived?
@@ -84,11 +80,11 @@ class Post < ApplicationRecord
   end
 
   def self.published
-    where.not(published_at: nil).where("published_at ?" <= Time.zone.now.to_s)
+    where(status: "published")
   end
 
   def self.scheduled
-    where("published_at >= ?", Time.zone.now )
+    where(status: "scheduled")
   end
 
   def self.locked
@@ -96,7 +92,7 @@ class Post < ApplicationRecord
   end
 
   def self.preview
-    where(published_at: nil)
+    where(status: "preview")
   end
 
   def self.last_loaded(id)
@@ -122,13 +118,6 @@ class Post < ApplicationRecord
       end
       self.slug = slug_title unless self.slug.present?
       self.slug.downcase!
-    end
-
-    def update_status
-      if self.published_at <= Time.zone.now
-        self.status == "published"
-        self.save
-      end
     end
 
 end
