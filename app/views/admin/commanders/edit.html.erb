@@ -1,6 +1,14 @@
-<h1>Editing Commander</h1>
-
-<%= render 'form', commander: @commander %>
-
-<%= link_to 'Show', admin_commander_path(@commander) %> |
-<%= link_to 'Back', admin_commanders_path %>
+<div class="page-header">
+  <div class='row'>
+    <div class='small-12'>
+      <h1 class='title-heading text-center'>Editing Commander: <%= @commander.fullname %></h1>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= render 'form', commander: @commander %>
+        <%= link_to 'Show', admin_commander_path(@commander) %> |
+        <%= link_to 'Back', admin_commanders_path %>
+      </div>
+    </div>
+  </div>
+</div>
