@@ -8,8 +8,9 @@ namespace :location do
     csv.each do |row|
       Location.create({
         name: row["name"],
+        rank: row["rank"],
         location_type: row["type"],
-        street: row["address"],
+        street: row["street"],
         city: row["city"],
         state: row["state"],
         zip: row["zip"],
