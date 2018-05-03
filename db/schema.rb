@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 20180502155106) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+  create_table "locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "name"
     t.integer "location_type"
     t.string "street"
@@ -128,7 +128,7 @@ ActiveRecord::Schema.define(version: 20180502155106) do
     t.datetime "main_image_updated_at"
     t.text "meta_description"
     t.string "status", default: "preview", null: false
-    t.boolean "featured", default: false
+    t.boolean "featured"
     t.datetime "published_at"
     t.string "username"
     t.string "password_digest"
@@ -138,7 +138,7 @@ ActiveRecord::Schema.define(version: 20180502155106) do
     t.index ["category_id"], name: "index_posts_on_category_id"
   end
 
-  create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+  create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -2,6 +2,7 @@ require 'csv'
 namespace :location do
   desc "Populate Locations"
   task create_locations: :environment do
+    Location.delete_all
     csv_text = File.read(Rails.root.join('lib', 'seeds', 'ehe_health_locations.csv'))
     csv = CSV.parse(csv_text, :headers => true)
 
@@ -9,7 +10,7 @@ namespace :location do
       Location.create({
         name: row["name"],
         rank: row["rank"],
-        location_type: row["type"],
+        location_type: row["location_type"],
         street: row["street"],
         city: row["city"],
         state: row["state"],
