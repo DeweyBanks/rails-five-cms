@@ -47,6 +47,11 @@ class Post < ApplicationRecord
     self.keywords.map(&:name).uniq.join(", ")
   end
 
+  def self.live_posts
+    time = Time.zone.now
+    where(status: 'scheduled').where(published_at: (time.beginning_of_day..time))
+  end
+
   def self.main_featured_post
     find_by(main_featured: true)
   end
