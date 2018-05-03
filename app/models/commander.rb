@@ -15,6 +15,10 @@ class Commander < ApplicationRecord
   def self.coaches
     where(commander_type_id: CommanderType.find_by(name: 'Coach').id)
   end
+
+  def fullname
+    self.first_name + " " + self.last_name
+  end
 end
 
 

@@ -14,7 +14,7 @@
   </div>
 </div>
 
-<div class="page-header">
+<div class="admin-posts">
   <div class='row'>
     <div class='small-12'>
       <h1 class='title-heading text-center'>Set Featured Post</h1>
@@ -34,7 +34,7 @@
           <tbody>
             <% @posts.each do |post| %>
               <tr>
-                <td><%= image_tag post.main_image.url(:thumb) %></td>
+                <td style="width: 100px; height: 100px;"><%= image_tag post.main_image.url(:thumb) %></td>
                 <td><%= truncate(post.title, length: 37, omission: "...") %></td>
                 <td><%= post.status %></td>
                 <td><%= post.created_at.strftime('%m/%d/%Y') %></td>
@@ -43,7 +43,6 @@
                     <p class="menu menu-text drkr-blue-text">Featured</p>
                   <% else  %>
                     <%= link_to "Set as Featured",  set_featured_admin_post_path(post.id, category: @category), method: :post, :class => "button callout success" %>
-
                   <% end  %>
                 </td>
                 <td>

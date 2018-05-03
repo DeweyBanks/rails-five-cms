@@ -24,6 +24,7 @@ gem 'meta-tags'
 gem "paperclip", "~> 5.0.0"
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'kaminari'
+gem 'whenever', require: false
 gem 'will_paginate', '~> 3.1.0'
 source 'https://rails-assets.org' do
   gem 'rails-assets-datetimepicker'

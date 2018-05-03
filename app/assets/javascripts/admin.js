@@ -29,6 +29,7 @@ $(document).ready(function(){
   var change_visibility;
   change_visibility = function(status) {
     if (status === "scheduled") {
+      $('.published-field').datetimepicker('setDate', new Date());
       $('.published-field').show();
       return $('.published_at').datetimepicker({
                       format: 'D M-d-Y g:i a',
@@ -45,7 +46,7 @@ $(document).ready(function(){
   change_visibility($("#post_status :selected").text());
 
   $('.published_at').datetimepicker({
-                    dateFormat: 'yy-mm-dd ',
+                    dateFormat: 'D M-d-Y g:i a',
                     timeFormat: 'hh:mm:ss ',
                     step: 5,
                     ampm: true,

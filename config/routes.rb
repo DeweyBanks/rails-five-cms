@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     root to: "dashboard#index", as: "dashboard"
     resources :posts do
       post :set_featured, on: :member
+      post :set_main_feature, on: :member
       collection do
         get :archived
         get :preview

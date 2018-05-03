@@ -29,8 +29,19 @@
   </div>
     <!-- left column -->
   <div class='small-12 medium-3 column medium-pull-9'>
-
-     <div class="row bot-space-75">
+    <div class="row bot-space-75">
+      <div class="small-12 column blog-categories">
+        <% if @post.published? %>
+          <% if @post.main_featured %>
+            <h4>Main Featured Article</h4>
+          <% else %>
+            <h4>Set As Main Featured Article:</h4>
+            <%= link_to "Featured", set_main_feature_admin_post_path(@post.id), method: :post, :class => 'round-button ProximaNova-Medium cta button-gray' %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="row bot-space-75">
       <div class="small-12 column blog-categories">
         <h4>Url:</h4>
         <%=raw "http://13.88.22.83" + post_path(@post) %>

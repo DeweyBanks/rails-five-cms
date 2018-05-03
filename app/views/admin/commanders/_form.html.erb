@@ -1,5 +1,5 @@
 
-<%= form_with(model: [ 'admin', commander], local: true) do |form| %>
+<%= form_with(model: [ 'admin', commander], multipart: true, local: true) do |form| %>
   <% if commander.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(commander.errors.count, "error") %> prohibited this commander from being saved:</h2>
@@ -13,8 +13,11 @@
   <% end %>
 
   <div class="field">
+    <% if commander.avatar.present? %>
+      <%= image_tag commander.avatar.url(:thumb) %>
+    <% end %>
     <%= form.label :avatar %>
-    <%= form.file_field :avatar, id: :commander_avatar %>
+    <%= form.file_field :avatar, id: :commander_avatar, value: commander.avatar.url() %>
   </div>
 
   <div class="field">

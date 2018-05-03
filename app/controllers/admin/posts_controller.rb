@@ -55,6 +55,21 @@ module Admin
       end
     end
 
+    def set_main_feature
+      @post = Post.find params[:id]
+      @post.main_featured = true
+      respond_to do |format|
+        if @post.save
+          format.html { redirect_to admin_post_path(@post), notice: 'Post was set as main featured post.' }
+          format.js   {}
+          format.json { render json: @post, status: :created, location: @post }
+        else
+          format.html { render action: "show" }
+          format.json { render json: @post.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+
     def new
       @campaigns = Campaign.all
       @post = Post.new
@@ -97,7 +112,7 @@ module Admin
     def update
       status = post_params["status"]
       if post_params["locked"] == "1"
-        status = "preview"
+        status = "locked"
       end
       case status
       when "preview"
@@ -106,6 +121,7 @@ module Admin
         params["post"]["published_at"] = Time.zone.now
       when "archived"
         params["post"]["published_at"] = nil
+      else
       end
       respond_to do |format|
         if @post.update_attributes(post_params)

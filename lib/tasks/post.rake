@@ -29,4 +29,11 @@ namespace :post do
     end
   end
 
+  desc "Update Post Status"
+  task update_status: :environment do
+    posts = Post.live_posts
+    posts.update_all(status: "published")
+    puts "updated post status"
+  end
+
 end

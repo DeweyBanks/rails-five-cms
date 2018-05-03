@@ -26,6 +26,7 @@ class Post < ApplicationRecord
     "#{slug}"
   end
 
+
   def all_tags=(names)
     self.tags = names.split(",").map do |name|
         Tag.where(name: name.strip).first_or_create!
@@ -46,6 +47,15 @@ class Post < ApplicationRecord
     self.keywords.map(&:name).uniq.join(", ")
   end
 
+  def self.live_posts
+    time = Time.zone.now
+    where(status: 'scheduled').where(published_at: (time.beginning_of_day..time))
+  end
+
+  def self.main_featured_post
+    find_by(main_featured: true)
+  end
+
   def self.category(category_id)
     where(category_id: category_id)
   end
@@ -59,11 +69,7 @@ class Post < ApplicationRecord
   end
 
   def published?
-    if self.published_at
-      self.published_at <= Time.zone.now.to_s
-    else
-      false
-    end
+    status == "published"
   end
 
   def archived?
@@ -79,11 +85,11 @@ class Post < ApplicationRecord
   end
 
   def self.published
-    where.not(published_at: nil).where("published_at ?" <= Time.zone.now.to_s)
+    where(status: "published")
   end
 
   def self.scheduled
-    where("published_at >= ?", Time.zone.now )
+    where(status: "scheduled")
   end
 
   def self.locked
@@ -91,7 +97,7 @@ class Post < ApplicationRecord
   end
 
   def self.preview
-    where(published_at: nil)
+    where(status: "preview")
   end
 
   def self.last_loaded(id)
@@ -107,6 +113,7 @@ class Post < ApplicationRecord
 
     def ensure_only_one_featured_post
       category.posts.where(featured: true).where.not(id: id).update_all(featured: false)
+      Post.where(main_featured: true).where.not(id: id).update_all(main_featured: false)
     end
 
     def set_slug
@@ -116,13 +123,6 @@ class Post < ApplicationRecord
       end
       self.slug = slug_title unless self.slug.present?
       self.slug.downcase!
-    end
-
-    def update_status
-      if self.published_at <= Time.zone.now
-        self.status == "published"
-        self.save
-      end
     end
 
 end
