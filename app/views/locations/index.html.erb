@@ -49,10 +49,14 @@
          <div class='small-12 column'>
 
           <%= form_with(url: locations_path, id: "address-form", local: true, method: :get) do |f| %>
+           <div class="input-group">
             <%= f.text_field :near, id: "address-input", :class => "input-group-field address-form-field", placeholder: "city, state, or zip code" %>
+            <div class="input-group-button">
             <button class="button-search" type="submit" value="Submit">
               <svg class="icon"><use xlink:href="#magnify-glass" /></svg>
             </button>
+           </div>
+           </div>
           <% end %>
         </div>
       </div>

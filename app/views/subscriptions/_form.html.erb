@@ -1,4 +1,5 @@
-<p class="ProximaNova-Bold">Stay Connected</p>
+
+ <p class="ProximaNova-Bold">Stay Connected</p>
 <%= form_with(model: subscription, local: true, :html => {:id => "subscription_form"}) do |form| %>
   <% if subscription.errors.any? %>
     <div class="row">
@@ -22,9 +23,11 @@
     </div>
   </div>
 
-  <div class="small-12 large-6 columns">
+<div class="row">
+    <div class="small-8 small-centered medium-7 medium-uncentered column" >
     <%= form.email_field :email, placeholder: "name@email.com", required: true %>
-  </div>
+    </div>
+</div>
 
   <%= form.submit "Submit", :class => "round-button button-gray ProximaNova-Medium"%>
 <% end %>

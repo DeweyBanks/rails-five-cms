@@ -8108,7 +8108,6 @@ header #header-contain nav ul li {
   position: relative;
   padding: 0;
   display: block;
-  top: 175px;
 }
 
 @media screen and (min-width: 64em) {
@@ -12225,11 +12224,6 @@ input[type="submit"] {
   background-repeat: no-repeat;
 }
 
-.book-your-appointment.v2.img-contain {
-  background-image: url(../images/home/home-coaches-bg-1440.jpg);
-  background-repeat: no-repeat;
-}
-
 .coaches-section .row {
   position: relative;
   z-index: 10;
@@ -12848,6 +12842,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 .posts a {
   color: #11346d;
+}
+
+.posts header a {
+  color: #ffffff;
 }
 
 .blog-hero {

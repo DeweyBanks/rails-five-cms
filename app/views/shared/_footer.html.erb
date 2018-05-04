@@ -5,11 +5,9 @@
             <div class="small-12 medium-8 columns" >
                <h6 class="ProximaNova-Bold">Engaging Healthy Employees <span class="small">| EST</span> 1913</h6>
 
-                <div class="row">
-                    <div class="small-8 small-centered medium-7 medium-uncentered column" >
-                       <%= render :partial => 'subscriptions/form', :locals => {:subscription => Subscription.new} %>
-                    </div>
-                </div>
+                
+                <%= render :partial => 'subscriptions/form', :locals => {:subscription => Subscription.new} %>
+                
             <p class="ProximaNova-Bold">Questions: <span class="ProximaNova-Regular">800.362.8671</span></p>
             </div><!-- end first column -->
             <div class="small-12 medium-2 columns" >
