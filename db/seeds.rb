@@ -2,7 +2,7 @@ require 'csv'
 CommanderType.destroy_all
 CommanderType.create([{ name: 'Physician'}, { name: 'Coach'}])
 Category.destroy_all
-Category.create([{name: 'News'}, {name: 'Uncategorized'}, {name: 'Recipes'}, {name: 'PR'}, {name: 'Eat'}, {name: 'Move'}, {name: 'Think'}, {name: 'Prevent'})
+Category.create([{name: 'News'}, {name: 'Uncategorized'}, {name: 'Recipes'}, {name: 'PR'}, {name: 'Eat'}, {name: 'Move'}, {name: 'Think'}, {name: 'Prevent'}])
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'ehe-wp-3-22.csv'))
 # csv = CSV.read(csv_text, :headers => true, :quote_char => "^")
