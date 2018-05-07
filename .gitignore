@@ -25,5 +25,4 @@
 /node_modules
 .idea/
 config/database.yml
-/public/system
 .rvmrc
