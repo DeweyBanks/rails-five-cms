@@ -1,5 +1,5 @@
 # EHE configuration settings
-EHEANDME_LANDING_URI = 'https://eheandme.com/landing/signin'.freeze
+EHEANDME_LANDING_URI = 'https://www.eheandme.com/landing/signin'.freeze
 EHEANDME_HOME = EHEANDME_LANDING_URI.freeze #'https://eheandme.com'.freeze
 
 # Internal Links
