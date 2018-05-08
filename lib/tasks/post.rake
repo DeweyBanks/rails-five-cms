@@ -37,3 +37,6 @@ namespace :post do
   end
 
 end
+
+
+scp -r ehehealth@ehe-health: /var/www/ehe_health/current/public/system/ /Users/mjh/dev/ehe/ehehealth/public/zz_system
