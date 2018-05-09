@@ -7785,6 +7785,12 @@ div.bot-space-25, div.row.bot-space-25 {
   background-size: cover;
 }
 
+@media screen and (max-width: 42.75em) {
+  .paraxify {
+    background-attachment: scroll;
+  }
+}
+
 /* ========== color overlay for callout boxes that change color =============  */
 .color-overlay {
   -webkit-transition: all 0.5s ease;
