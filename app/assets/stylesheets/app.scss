@@ -8362,6 +8362,9 @@ SlideUpTopBar for Foundation styles
   #footer-contain {
     text-align: center;
   }
+  #footer-contain div.small-12:first-child {
+    margin-bottom: 40px;
+  }
 }
 
 #footer-contain a {
