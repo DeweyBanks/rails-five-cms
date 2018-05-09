@@ -7740,7 +7740,7 @@ div.bot-space-25, div.row.bot-space-25 {
 
 @media screen and (min-width: 64em) {
   .about-internal div.page-header, .careers div.page-header, .contact div.page-header, .locations div.page-header, .commanders_in_wellness div.page-header {
-    margin-top: 200px;
+    margin-top: 120px;
     margin-bottom: 20px;
   }
 }
@@ -7964,7 +7964,7 @@ header #header-contain .nav-contain {
     height: auto;
     background: transparent;
     float: left;
-    top: unset;
+    top: 0px;
   }
 }
 
@@ -13659,6 +13659,13 @@ button.slick-next.slick-arrow {
 @media screen and (min-width: 48.0625em) {
   button.slick-next.slick-arrow {
     right: 32.5%;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  button.slick-next.slick-arrow {
+    /* IE10+ CSS styles go here */
+    left: auto;
   }
 }
 
