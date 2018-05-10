@@ -21,6 +21,6 @@
     <%= yield :js %>
     <%= javascript_pack_tag 'application' %>
     <%= stylesheet_pack_tag 'application' %>
-    <%= GOOGLE_ANALYTICS %>
+    <%= GOOGLE_ANALYTICS.raw %>
   </body>
 </html>
