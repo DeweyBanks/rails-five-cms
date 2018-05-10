@@ -21,6 +21,6 @@
     <%= yield :js %>
     <%= javascript_pack_tag 'application' %>
     <%= stylesheet_pack_tag 'application' %>
-    <%= sanitize GOOGLE_ANALYTICS %>
+    <%= GOOGLE_ANALYTICS.html_safe %>
   </body>
 </html>
