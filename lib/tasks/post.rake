@@ -36,7 +36,7 @@ namespace :post do
     puts "updated post status"
   end
 
-  desc "Update Post Status"
+  desc "Pull in missing posts"
   task :pull_missing => :environment do |name|
    category = Category.find_by(name: "Uncategorized")
 
